@@ -4,13 +4,12 @@
   "module": "dev-portfolio/index.js",
   "main": "dev-portfolio/index.js",
   "description": "Open source library to help you develop your web portfolio easily and quickly",
-  "author": { 
-    "name": "modern.agile.team", 
-    "email": "modern.agile.team@gmail.com", 
-    "url": "https://github.com/modern-agile-team" 
+  "author": {
+    "name": "modern.agile.team",
+    "email": "modern.agile.team@gmail.com",
+    "url": "https://github.com/modern-agile-team"
   },
-  "contributors": [
-  ],
+  "contributors": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/modern-agile-team/dev-portfolio"
@@ -31,11 +30,16 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.42",
+    "@types/react-dom": "^17.0.14",
+    "@types/styled-components": "^5.1.24",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-scripts": "5.0.0",
-    "styled-components": "^5.3.3",
+    "typescript": "^4.6.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
