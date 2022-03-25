@@ -1,4 +1,4 @@
-import { Header, TechStackInput, TechStacks, Contact } from "./lib/index";
+import { Header, TechStackInput, TechStacks, Contact } from './lib/index';
 
 const App = () => {
   return (

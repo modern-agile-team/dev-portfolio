@@ -71,6 +71,13 @@
     "@babel/cli": "^7.17.6",
     "@babel/preset-react": "^7.16.7",
     "@iconify/react": "^3.1.4",
-    "babel-plugin-styled-components": "^2.0.6"
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "babel-plugin-styled-components": "^2.0.6",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0"
   }
 }
