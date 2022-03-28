@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import Channels from "../../Channels/Channels";
-import SideBarIcon from "./SideBarIcon";
-import SideBar from "./SideBar";
+import Channels from '../../Channels/Channels';
+import SideBarIcon from './SideBarIcon';
+import SideBar from './SideBar';
 
 const Container = styled.div`
   display: flex;
@@ -11,20 +11,20 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const SideContainer = ({ channels, sideBarOption }) => {
+const SideContainer = ({ channels, sideBarOption }: any) => {
   let { mainTitle, items, styles } = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
   const [sideBarItems, setSideBarItems] = useState(items);
 
   const onClickSideBarIconHandler = () => {
-    const $tags = document.querySelector("#root").childNodes;
+    const $tags: any = document.querySelector('#root')?.childNodes;
     setSideBarItems(
       Array.from($tags)
-        .filter(($tag) => $tag.id !== "Header")
-        .map(($tag) => {
+        .filter(($tag: any) => $tag.id !== 'Header')
+        .map(($tag: any) => {
           return { title: $tag.id };
-        })
+        }),
     );
     setIsClickedSideBarIcon(true);
   };
