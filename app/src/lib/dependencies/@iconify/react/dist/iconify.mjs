@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // src/icon/index.ts
 var matchName = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -16,9 +16,9 @@ function fullIcon(data) {
 }
 
 // src/icon/name.ts
-var stringToIcon = (value, validate, allowSimpleName, provider = "") => {
-  const colonSeparated = value.split(":");
-  if (value.slice(0, 1) === "@") {
+var stringToIcon = (value, validate, allowSimpleName, provider = '') => {
+  const colonSeparated = value.split(':');
+  if (value.slice(0, 1) === '@') {
     if (colonSeparated.length < 2 || colonSeparated.length > 3) {
       return null;
     }
@@ -38,19 +38,19 @@ var stringToIcon = (value, validate, allowSimpleName, provider = "") => {
     return validate && !validateIcon(result) ? null : result;
   }
   const name = colonSeparated[0];
-  const dashSeparated = name.split("-");
+  const dashSeparated = name.split('-');
   if (dashSeparated.length > 1) {
     const result = {
       provider,
       prefix: dashSeparated.shift(),
-      name: dashSeparated.join("-"),
+      name: dashSeparated.join('-'),
     };
     return validate && !validateIcon(result) ? null : result;
   }
-  if (allowSimpleName && provider === "") {
+  if (allowSimpleName && provider === '') {
     const result = {
       provider,
-      prefix: "",
+      prefix: '',
       name,
     };
     return validate && !validateIcon(result, allowSimpleName) ? null : result;
@@ -62,8 +62,8 @@ var validateIcon = (icon, allowSimpleName) => {
     return false;
   }
   return !!(
-    (icon.provider === "" || icon.provider.match(matchName)) &&
-    ((allowSimpleName && icon.prefix === "") || icon.prefix.match(matchName)) &&
+    (icon.provider === '' || icon.provider.match(matchName)) &&
+    ((allowSimpleName && icon.prefix === '') || icon.prefix.match(matchName)) &&
     icon.name.match(matchName)
   );
 };
@@ -80,11 +80,11 @@ function mergeIconData(icon, alias) {
         continue;
       }
       switch (prop) {
-        case "rotate":
+        case 'rotate':
           result[prop] = (result[prop] + value) % 4;
           break;
-        case "hFlip":
-        case "vFlip":
+        case 'hFlip':
+        case 'vFlip':
           result[prop] = value !== result[prop];
           break;
         default:
@@ -113,14 +113,8 @@ function getIconData$1(data, name, full = false) {
       }
       return result2;
     }
-    if (
-      iteration === 0 &&
-      ((_c = data.chars) == null ? void 0 : _c[name2]) !== void 0
-    ) {
-      return getIcon(
-        (_d = data.chars) == null ? void 0 : _d[name2],
-        iteration + 1
-      );
+    if (iteration === 0 && ((_c = data.chars) == null ? void 0 : _c[name2]) !== void 0) {
+      return getIcon((_d = data.chars) == null ? void 0 : _d[name2], iteration + 1);
     }
     return null;
   }
@@ -142,21 +136,21 @@ function validateIconProps(item, fix) {
     const attr = key;
     const value = item[attr];
     const type = typeof value;
-    if (type === "undefined") {
+    if (type === 'undefined') {
       delete item[attr];
       continue;
     }
     switch (key) {
-      case "body":
-      case "parent":
-        if (type !== "string") {
+      case 'body':
+      case 'parent':
+        if (type !== 'string') {
           return key;
         }
         break;
-      case "hFlip":
-      case "vFlip":
-      case "hidden":
-        if (type !== "boolean") {
+      case 'hFlip':
+      case 'vFlip':
+      case 'hidden':
+        if (type !== 'boolean') {
           if (fix) {
             delete item[attr];
           } else {
@@ -164,15 +158,15 @@ function validateIconProps(item, fix) {
           }
         }
         break;
-      case "width":
-      case "height":
-      case "left":
-      case "top":
-      case "rotate":
-      case "inlineHeight":
-      case "inlineTop":
-      case "verticalAlign":
-        if (type !== "number") {
+      case 'width':
+      case 'height':
+      case 'left':
+      case 'top':
+      case 'rotate':
+      case 'inlineHeight':
+      case 'inlineTop':
+      case 'verticalAlign':
+        if (type !== 'number') {
           if (fix) {
             delete item[attr];
           } else {
@@ -181,7 +175,7 @@ function validateIconProps(item, fix) {
         }
         break;
       default:
-        if (type === "object") {
+        if (type === 'object') {
           if (fix) {
             delete item[attr];
           } else {
@@ -195,32 +189,24 @@ function validateIconProps(item, fix) {
 function validateIconSet(obj, options) {
   var _a;
   const fix = !!(options == null ? void 0 : options.fix);
-  if (
-    typeof obj !== "object" ||
-    obj === null ||
-    typeof obj.icons !== "object" ||
-    !obj.icons
-  ) {
-    throw new Error("Bad icon set");
+  if (typeof obj !== 'object' || obj === null || typeof obj.icons !== 'object' || !obj.icons) {
+    throw new Error('Bad icon set');
   }
   const data = obj;
-  if (typeof (options == null ? void 0 : options.prefix) === "string") {
+  if (typeof (options == null ? void 0 : options.prefix) === 'string') {
     data.prefix = options.prefix;
-  } else if (typeof data.prefix !== "string" || !data.prefix.match(matchName)) {
-    throw new Error("Invalid prefix");
+  } else if (typeof data.prefix !== 'string' || !data.prefix.match(matchName)) {
+    throw new Error('Invalid prefix');
   }
-  if (typeof (options == null ? void 0 : options.provider) === "string") {
+  if (typeof (options == null ? void 0 : options.provider) === 'string') {
     data.provider = options.provider;
   } else if (data.provider !== void 0) {
     const value = data.provider;
-    if (
-      typeof value !== "string" ||
-      (value !== "" && !value.match(matchName))
-    ) {
+    if (typeof value !== 'string' || (value !== '' && !value.match(matchName))) {
       if (fix) {
         delete data.provider;
       } else {
-        throw new Error("Invalid provider");
+        throw new Error('Invalid provider');
       }
     }
   }
@@ -234,19 +220,14 @@ function validateIconSet(obj, options) {
       throw new Error(`Invalid icon name: "${name}"`);
     }
     const item = icons[name];
-    if (
-      typeof item !== "object" ||
-      item === null ||
-      typeof item.body !== "string"
-    ) {
+    if (typeof item !== 'object' || item === null || typeof item.body !== 'string') {
       if (fix) {
         delete icons[name];
         return;
       }
       throw new Error(`Invalid icon: "${name}"`);
     }
-    const key =
-      typeof item.parent === "string" ? "parent" : validateIconProps(item, fix);
+    const key = typeof item.parent === 'string' ? 'parent' : validateIconProps(item, fix);
     if (key !== null) {
       if (fix) {
         delete icons[name];
@@ -259,25 +240,22 @@ function validateIconSet(obj, options) {
     if (fix) {
       delete data.not_found;
     } else {
-      throw new Error("Invalid not_found list");
+      throw new Error('Invalid not_found list');
     }
   }
-  if (
-    !Object.keys(data.icons).length &&
-    !((_a = data.not_found) == null ? void 0 : _a.length)
-  ) {
-    throw new Error("Icon set is empty");
+  if (!Object.keys(data.icons).length && !((_a = data.not_found) == null ? void 0 : _a.length)) {
+    throw new Error('Icon set is empty');
   }
   if (data.aliases !== void 0) {
-    if (typeof data.aliases !== "object" || data.aliases === null) {
+    if (typeof data.aliases !== 'object' || data.aliases === null) {
       if (fix) {
         delete data.aliases;
       } else {
-        throw new Error("Invalid aliases list");
+        throw new Error('Invalid aliases list');
       }
     }
   }
-  if (typeof data.aliases === "object") {
+  if (typeof data.aliases === 'object') {
     let validateAlias = function (name, iteration) {
       if (validatedAliases.has(name)) {
         return !failedAliases.has(name);
@@ -285,9 +263,9 @@ function validateIconSet(obj, options) {
       const item = aliases[name];
       if (
         iteration > 5 ||
-        typeof item !== "object" ||
+        typeof item !== 'object' ||
         item === null ||
-        typeof item.parent !== "string" ||
+        typeof item.parent !== 'string' ||
         !name.match(matchName)
       ) {
         if (fix) {
@@ -299,10 +277,7 @@ function validateIconSet(obj, options) {
       }
       const parent = item.parent;
       if (data.icons[parent] === void 0) {
-        if (
-          aliases[parent] === void 0 ||
-          !validateAlias(parent, iteration + 1)
-        ) {
+        if (aliases[parent] === void 0 || !validateAlias(parent, iteration + 1)) {
           if (fix) {
             delete aliases[name];
             failedAliases.add(name);
@@ -314,7 +289,7 @@ function validateIconSet(obj, options) {
       if (fix && item.body !== void 0) {
         delete item.body;
       }
-      const key = item.body !== void 0 ? "body" : validateIconProps(item, fix);
+      const key = item.body !== void 0 ? 'body' : validateIconProps(item, fix);
       if (key !== null) {
         if (fix) {
           delete aliases[name];
@@ -339,24 +314,24 @@ function validateIconSet(obj, options) {
   Object.keys(iconDefaults).forEach((prop) => {
     const expectedType = typeof iconDefaults[prop];
     const actualType = typeof data[prop];
-    if (actualType !== "undefined" && actualType !== expectedType) {
+    if (actualType !== 'undefined' && actualType !== expectedType) {
       throw new Error(`Invalid value type for "${prop}"`);
     }
   });
   if (data.chars !== void 0) {
-    if (typeof data.chars !== "object" || data.chars === null) {
+    if (typeof data.chars !== 'object' || data.chars === null) {
       if (fix) {
         delete data.chars;
       } else {
-        throw new Error("Invalid characters map");
+        throw new Error('Invalid characters map');
       }
     }
   }
-  if (typeof data.chars === "object") {
+  if (typeof data.chars === 'object') {
     const chars = data.chars;
     Object.keys(chars).forEach((char) => {
       var _a2;
-      if (!char.match(matchChar) || typeof chars[char] !== "string") {
+      if (!char.match(matchChar) || typeof chars[char] !== 'string') {
         if (fix) {
           delete chars[char];
           return;
@@ -364,17 +339,12 @@ function validateIconSet(obj, options) {
         throw new Error(`Invalid character "${char}"`);
       }
       const target = chars[char];
-      if (
-        data.icons[target] === void 0 &&
-        ((_a2 = data.aliases) == null ? void 0 : _a2[target]) === void 0
-      ) {
+      if (data.icons[target] === void 0 && ((_a2 = data.aliases) == null ? void 0 : _a2[target]) === void 0) {
         if (fix) {
           delete chars[char];
           return;
         }
-        throw new Error(
-          `Character "${char}" points to missing icon "${target}"`
-        );
+        throw new Error(`Character "${char}" points to missing icon "${target}"`);
       }
     });
     if (fix && !Object.keys(data.chars).length) {
@@ -396,16 +366,13 @@ function isVariation(item) {
 function parseIconSet(data, callback, options) {
   options = options || {};
   const names = [];
-  if (typeof data !== "object" || typeof data.icons !== "object") {
+  if (typeof data !== 'object' || typeof data.icons !== 'object') {
     return names;
   }
   const validate = options.validate;
   if (validate !== false) {
     try {
-      validateIconSet(
-        data,
-        typeof validate === "object" ? validate : { fix: true }
-      );
+      validateIconSet(data, typeof validate === 'object' ? validate : { fix: true });
     } catch (err) {
       return names;
     }
@@ -424,11 +391,11 @@ function parseIconSet(data, callback, options) {
       names.push(name);
     }
   });
-  const parseAliases = options.aliases || "all";
-  if (parseAliases !== "none" && typeof data.aliases === "object") {
+  const parseAliases = options.aliases || 'all';
+  if (parseAliases !== 'none' && typeof data.aliases === 'object') {
     const aliases = data.aliases;
     Object.keys(aliases).forEach((name) => {
-      if (parseAliases === "variations" && isVariation(aliases[name])) {
+      if (parseAliases === 'variations' && isVariation(aliases[name])) {
         return;
       }
       const iconData = getIconData$1(data, name, true);
@@ -491,7 +458,7 @@ function addIconSet(storage2, data) {
 }
 function addIconToStorage(storage2, name, icon) {
   try {
-    if (typeof icon.body === "string") {
+    if (typeof icon.body === 'string') {
       storage2.icons[name] = Object.freeze(fullIcon(icon));
       return true;
     }
@@ -505,26 +472,22 @@ function getIconFromStorage(storage2, name) {
 function listIcons(provider, prefix) {
   let allIcons = [];
   let providers;
-  if (typeof provider === "string") {
+  if (typeof provider === 'string') {
     providers = [provider];
   } else {
     providers = Object.keys(storage$1);
   }
   providers.forEach((provider2) => {
     let prefixes;
-    if (typeof provider2 === "string" && typeof prefix === "string") {
+    if (typeof provider2 === 'string' && typeof prefix === 'string') {
       prefixes = [prefix];
     } else {
-      prefixes =
-        storage$1[provider2] === void 0
-          ? []
-          : Object.keys(storage$1[provider2]);
+      prefixes = storage$1[provider2] === void 0 ? [] : Object.keys(storage$1[provider2]);
     }
     prefixes.forEach((prefix2) => {
       const storage2 = getStorage(provider2, prefix2);
       const icons = Object.keys(storage2.icons).map(
-        (name) =>
-          (provider2 !== "" ? "@" + provider2 + ":" : "") + prefix2 + ":" + name
+        (name) => (provider2 !== '' ? '@' + provider2 + ':' : '') + prefix2 + ':' + name,
       );
       allIcons = allIcons.concat(icons);
     });
@@ -535,17 +498,14 @@ function listIcons(provider, prefix) {
 // src/storage/functions.ts
 var simpleNames = false;
 function allowSimpleNames(allow) {
-  if (typeof allow === "boolean") {
+  if (typeof allow === 'boolean') {
     simpleNames = allow;
   }
   return simpleNames;
 }
 function getIconData(name) {
-  const icon =
-    typeof name === "string" ? stringToIcon(name, true, simpleNames) : name;
-  return icon
-    ? getIconFromStorage(getStorage(icon.provider, icon.prefix), icon.name)
-    : null;
+  const icon = typeof name === 'string' ? stringToIcon(name, true, simpleNames) : name;
+  return icon ? getIconFromStorage(getStorage(icon.provider, icon.prefix), icon.name) : null;
 }
 function addIcon(name, data) {
   const icon = stringToIcon(name, true, simpleNames);
@@ -556,17 +516,13 @@ function addIcon(name, data) {
   return addIconToStorage(storage, icon.name, data);
 }
 function addCollection(data, provider) {
-  if (typeof data !== "object") {
+  if (typeof data !== 'object') {
     return false;
   }
-  if (typeof provider !== "string") {
-    provider = typeof data.provider === "string" ? data.provider : "";
+  if (typeof provider !== 'string') {
+    provider = typeof data.provider === 'string' ? data.provider : '';
   }
-  if (
-    simpleNames &&
-    provider === "" &&
-    (typeof data.prefix !== "string" || data.prefix === "")
-  ) {
+  if (simpleNames && provider === '' && (typeof data.prefix !== 'string' || data.prefix === '')) {
     let added = false;
     parseIconSet(
       data,
@@ -578,18 +534,18 @@ function addCollection(data, provider) {
       {
         validate: {
           fix: true,
-          prefix: "",
+          prefix: '',
         },
-      }
+      },
     );
     return added;
   }
   if (
-    typeof data.prefix !== "string" ||
+    typeof data.prefix !== 'string' ||
     !validateIcon({
       provider,
       prefix: data.prefix,
-      name: "a",
+      name: 'a',
     })
   ) {
     return false;
@@ -610,8 +566,8 @@ var defaults = Object.freeze({
   inline: false,
   width: null,
   height: null,
-  hAlign: "center",
-  vAlign: "middle",
+  hAlign: 'center',
+  vAlign: 'middle',
   slice: false,
   hFlip: false,
   vFlip: false,
@@ -627,36 +583,32 @@ function mergeCustomisations(defaults2, item) {
     }
     const value = item[attr];
     switch (attr) {
-      case "inline":
-      case "slice":
-        if (typeof value === "boolean") {
+      case 'inline':
+      case 'slice':
+        if (typeof value === 'boolean') {
           result[attr] = value;
         }
         break;
-      case "hFlip":
-      case "vFlip":
+      case 'hFlip':
+      case 'vFlip':
         if (value === true) {
           result[attr] = !result[attr];
         }
         break;
-      case "hAlign":
-      case "vAlign":
-        if (typeof value === "string" && value !== "") {
+      case 'hAlign':
+      case 'vAlign':
+        if (typeof value === 'string' && value !== '') {
           result[attr] = value;
         }
         break;
-      case "width":
-      case "height":
-        if (
-          (typeof value === "string" && value !== "") ||
-          (typeof value === "number" && value) ||
-          value === null
-        ) {
+      case 'width':
+      case 'height':
+        if ((typeof value === 'string' && value !== '') || (typeof value === 'number' && value) || value === null) {
           result[attr] = value;
         }
         break;
-      case "rotate":
-        if (typeof value === "number") {
+      case 'rotate':
+        if (typeof value === 'number') {
           result[attr] += value;
         }
         break;
@@ -673,10 +625,10 @@ function calculateSize(size, ratio, precision) {
     return size;
   }
   precision = precision === void 0 ? 100 : precision;
-  if (typeof size === "number") {
+  if (typeof size === 'number') {
     return Math.ceil(size * ratio * precision) / precision;
   }
-  if (typeof size !== "string") {
+  if (typeof size !== 'string') {
     return size;
   }
   const oldParts = size.split(unitsSplit);
@@ -699,7 +651,7 @@ function calculateSize(size, ratio, precision) {
     }
     code = oldParts.shift();
     if (code === void 0) {
-      return newParts.join("");
+      return newParts.join('');
     }
     isNumber = !isNumber;
   }
@@ -707,28 +659,28 @@ function calculateSize(size, ratio, precision) {
 
 // src/svg/build.ts
 function preserveAspectRatio(props) {
-  let result = "";
+  let result = '';
   switch (props.hAlign) {
-    case "left":
-      result += "xMin";
+    case 'left':
+      result += 'xMin';
       break;
-    case "right":
-      result += "xMax";
+    case 'right':
+      result += 'xMax';
       break;
     default:
-      result += "xMid";
+      result += 'xMid';
   }
   switch (props.vAlign) {
-    case "top":
-      result += "YMin";
+    case 'top':
+      result += 'YMin';
       break;
-    case "bottom":
-      result += "YMax";
+    case 'bottom':
+      result += 'YMax';
       break;
     default:
-      result += "YMid";
+      result += 'YMid';
   }
-  result += props.slice ? " slice" : " meet";
+  result += props.slice ? ' slice' : ' meet';
   return result;
 }
 function iconToSVG(icon, customisations) {
@@ -748,17 +700,13 @@ function iconToSVG(icon, customisations) {
       if (vFlip) {
         rotation += 2;
       } else {
-        transformations.push(
-          "translate(" + (box.width + box.left) + " " + (0 - box.top) + ")"
-        );
-        transformations.push("scale(-1 1)");
+        transformations.push('translate(' + (box.width + box.left) + ' ' + (0 - box.top) + ')');
+        transformations.push('scale(-1 1)');
         box.top = box.left = 0;
       }
     } else if (vFlip) {
-      transformations.push(
-        "translate(" + (0 - box.left) + " " + (box.height + box.top) + ")"
-      );
-      transformations.push("scale(1 -1)");
+      transformations.push('translate(' + (0 - box.left) + ' ' + (box.height + box.top) + ')');
+      transformations.push('scale(1 -1)');
       box.top = box.left = 0;
     }
     let tempValue;
@@ -769,24 +717,14 @@ function iconToSVG(icon, customisations) {
     switch (rotation) {
       case 1:
         tempValue = box.height / 2 + box.top;
-        transformations.unshift(
-          "rotate(90 " + tempValue + " " + tempValue + ")"
-        );
+        transformations.unshift('rotate(90 ' + tempValue + ' ' + tempValue + ')');
         break;
       case 2:
-        transformations.unshift(
-          "rotate(180 " +
-            (box.width / 2 + box.left) +
-            " " +
-            (box.height / 2 + box.top) +
-            ")"
-        );
+        transformations.unshift('rotate(180 ' + (box.width / 2 + box.left) + ' ' + (box.height / 2 + box.top) + ')');
         break;
       case 3:
         tempValue = box.width / 2 + box.left;
-        transformations.unshift(
-          "rotate(-90 " + tempValue + " " + tempValue + ")"
-        );
+        transformations.unshift('rotate(-90 ' + tempValue + ' ' + tempValue + ')');
         break;
     }
     if (rotation % 2 === 1) {
@@ -802,13 +740,12 @@ function iconToSVG(icon, customisations) {
       }
     }
     if (transformations.length) {
-      body =
-        '<g transform="' + transformations.join(" ") + '">' + body + "</g>";
+      body = '<g transform="' + transformations.join(' ') + '">' + body + '</g>';
     }
   });
   let width, height;
   if (customisations.width === null && customisations.height === null) {
-    height = "1em";
+    height = '1em';
     width = calculateSize(height, box.width / box.height);
   } else if (customisations.width !== null && customisations.height !== null) {
     width = customisations.width;
@@ -820,20 +757,20 @@ function iconToSVG(icon, customisations) {
     width = customisations.width;
     height = calculateSize(width, box.height / box.width);
   }
-  if (width === "auto") {
+  if (width === 'auto') {
     width = box.width;
   }
-  if (height === "auto") {
+  if (height === 'auto') {
     height = box.height;
   }
-  width = typeof width === "string" ? width : width + "";
-  height = typeof height === "string" ? height : height + "";
+  width = typeof width === 'string' ? width : width + '';
+  height = typeof height === 'string' ? height : height + '';
   const result = {
     attributes: {
       width,
       height,
       preserveAspectRatio: preserveAspectRatio(customisations),
-      viewBox: box.left + " " + box.top + " " + box.width + " " + box.height,
+      viewBox: box.left + ' ' + box.top + ' ' + box.width + ' ' + box.height,
     },
     body,
   };
@@ -845,18 +782,12 @@ function iconToSVG(icon, customisations) {
 
 // src/builder/functions.ts
 function buildIcon(icon, customisations) {
-  return iconToSVG(
-    fullIcon(icon),
-    customisations ? mergeCustomisations(defaults, customisations) : defaults
-  );
+  return iconToSVG(fullIcon(icon), customisations ? mergeCustomisations(defaults, customisations) : defaults);
 }
 
 // src/svg/id.ts
 var regex = /\sid="(\S+)"/g;
-var randomPrefix =
-  "IconifyId" +
-  Date.now().toString(16) +
-  ((Math.random() * 16777216) | 0).toString(16);
+var randomPrefix = 'IconifyId' + Date.now().toString(16) + ((Math.random() * 16777216) | 0).toString(16);
 var counter = 0;
 function replaceIDs(body, prefix = randomPrefix) {
   const ids = [];
@@ -868,13 +799,9 @@ function replaceIDs(body, prefix = randomPrefix) {
     return body;
   }
   ids.forEach((id) => {
-    const newID =
-      typeof prefix === "function" ? prefix(id) : prefix + counter++;
-    const escapedID = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    body = body.replace(
-      new RegExp('([#;"])(' + escapedID + ')([")]|\\.[a-z])', "g"),
-      "$1" + newID + "$3"
-    );
+    const newID = typeof prefix === 'function' ? prefix(id) : prefix + counter++;
+    const escapedID = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    body = body.replace(new RegExp('([#;"])(' + escapedID + ')([")]|\\.[a-z])', 'g'), '$1' + newID + '$3');
   });
   return body;
 }
@@ -885,13 +812,13 @@ function setAPIModule(provider, item) {
   storage[provider] = item;
 }
 function getAPIModule(provider) {
-  return storage[provider] || storage[""];
+  return storage[provider] || storage[''];
 }
 
 // src/api/config.ts
 function createAPIConfig(source) {
   let resources;
-  if (typeof source.resources === "string") {
+  if (typeof source.resources === 'string') {
     resources = [source.resources];
   } else {
     resources = source.resources;
@@ -901,7 +828,7 @@ function createAPIConfig(source) {
   }
   const result = {
     resources,
-    path: source.path === void 0 ? "/" : source.path,
+    path: source.path === void 0 ? '/' : source.path,
     maxURL: source.maxURL ? source.maxURL : 500,
     rotate: source.rotate ? source.rotate : 750,
     timeout: source.timeout ? source.timeout : 5e3,
@@ -912,10 +839,7 @@ function createAPIConfig(source) {
   return result;
 }
 var configStorage = Object.create(null);
-var fallBackAPISources = [
-  "https://api.simplesvg.com",
-  "https://api.unisvg.com",
-];
+var fallBackAPISources = ['https://api.simplesvg.com', 'https://api.unisvg.com'];
 var fallBackAPI = [];
 while (fallBackAPISources.length > 0) {
   if (fallBackAPISources.length === 1) {
@@ -928,8 +852,8 @@ while (fallBackAPISources.length > 0) {
     }
   }
 }
-configStorage[""] = createAPIConfig({
-  resources: ["https://api.iconify.design"].concat(fallBackAPI),
+configStorage[''] = createAPIConfig({
+  resources: ['https://api.iconify.design'].concat(fallBackAPI),
 });
 function addAPIProvider(provider, customConfig) {
   const config = createAPIConfig(customConfig);
@@ -949,17 +873,17 @@ function listAPIProviders() {
 // src/api/params.ts
 var mergeParams = (base, params) => {
   let result = base,
-    hasParams = result.indexOf("?") !== -1;
+    hasParams = result.indexOf('?') !== -1;
   function paramToString(value) {
     switch (typeof value) {
-      case "boolean":
-        return value ? "true" : "false";
-      case "number":
+      case 'boolean':
+        return value ? 'true' : 'false';
+      case 'number':
         return encodeURIComponent(value);
-      case "string":
+      case 'string':
         return encodeURIComponent(value);
       default:
-        throw new Error("Invalid parameter");
+        throw new Error('Invalid parameter');
     }
   }
   Object.keys(params).forEach((key) => {
@@ -969,7 +893,7 @@ var mergeParams = (base, params) => {
     } catch (err) {
       return;
     }
-    result += (hasParams ? "&" : "?") + encodeURIComponent(key) + "=" + value;
+    result += (hasParams ? '&' : '?') + encodeURIComponent(key) + '=' + value;
     hasParams = true;
   });
   return result;
@@ -982,7 +906,7 @@ var detectFetch = () => {
   let callback;
   try {
     callback = fetch;
-    if (typeof callback === "function") {
+    if (typeof callback === 'function') {
       return callback;
     }
   } catch (err) {}
@@ -1009,12 +933,12 @@ function calculateMaxLength(provider, prefix) {
       const host = item;
       maxHostLength = Math.max(maxHostLength, host.length);
     });
-    const url = mergeParams(prefix + ".json", {
-      icons: "",
+    const url = mergeParams(prefix + '.json', {
+      icons: '',
     });
     result = config.maxURL - maxHostLength - config.path.length - url.length;
   }
-  const cacheKey = provider + ":" + prefix;
+  const cacheKey = provider + ':' + prefix;
   pathCache[provider] = config.path;
   maxLengthCache[cacheKey] = result;
   return result;
@@ -1028,7 +952,7 @@ var prepare = (provider, prefix, icons) => {
   if (maxLength === void 0) {
     maxLength = calculateMaxLength(provider, prefix);
   }
-  const type = "icons";
+  const type = 'icons';
   let item = {
     type,
     provider,
@@ -1054,41 +978,41 @@ var prepare = (provider, prefix, icons) => {
   return results;
 };
 function getPath(provider) {
-  if (typeof provider === "string") {
+  if (typeof provider === 'string') {
     if (pathCache[provider] === void 0) {
       const config = getAPIConfig(provider);
       if (!config) {
-        return "/";
+        return '/';
       }
       pathCache[provider] = config.path;
     }
     return pathCache[provider];
   }
-  return "/";
+  return '/';
 }
 var send = (host, params, callback) => {
   if (!fetchModule) {
-    callback("abort", 424);
+    callback('abort', 424);
     return;
   }
   let path = getPath(params.provider);
   switch (params.type) {
-    case "icons": {
+    case 'icons': {
       const prefix = params.prefix;
       const icons = params.icons;
-      const iconsList = icons.join(",");
-      path += mergeParams(prefix + ".json", {
+      const iconsList = icons.join(',');
+      path += mergeParams(prefix + '.json', {
         icons: iconsList,
       });
       break;
     }
-    case "custom": {
+    case 'custom': {
       const uri = params.uri;
-      path += uri.slice(0, 1) === "/" ? uri.slice(1) : uri;
+      path += uri.slice(0, 1) === '/' ? uri.slice(1) : uri;
       break;
     }
     default:
-      callback("abort", 400);
+      callback('abort', 400);
       return;
   }
   let defaultError = 503;
@@ -1097,7 +1021,7 @@ var send = (host, params, callback) => {
       const status = response.status;
       if (status !== 200) {
         setTimeout(() => {
-          callback(shouldAbort(status) ? "abort" : "next", status);
+          callback(shouldAbort(status) ? 'abort' : 'next', status);
         });
         return;
       }
@@ -1105,18 +1029,18 @@ var send = (host, params, callback) => {
       return response.json();
     })
     .then((data) => {
-      if (typeof data !== "object" || data === null) {
+      if (typeof data !== 'object' || data === null) {
         setTimeout(() => {
-          callback("next", defaultError);
+          callback('next', defaultError);
         });
         return;
       }
       setTimeout(() => {
-        callback("success", data);
+        callback('success', data);
       });
     })
     .catch(() => {
-      callback("next", defaultError);
+      callback('next', defaultError);
     });
 };
 var fetchAPIModule = {
@@ -1142,16 +1066,12 @@ function sortIcons(icons) {
     return a.name.localeCompare(b.name);
   });
   let lastIcon = {
-    provider: "",
-    prefix: "",
-    name: "",
+    provider: '',
+    prefix: '',
+    name: '',
   };
   icons.forEach((icon) => {
-    if (
-      lastIcon.name === icon.name &&
-      lastIcon.prefix === icon.prefix &&
-      lastIcon.provider === icon.provider
-    ) {
+    if (lastIcon.name === icon.name && lastIcon.prefix === icon.prefix && lastIcon.provider === icon.provider) {
       return;
     }
     lastIcon = icon;
@@ -1169,7 +1089,7 @@ function sortIcons(icons) {
     let list;
     if (localStorage.icons[name] !== void 0) {
       list = result.loaded;
-    } else if (prefix === "" || localStorage.missing[name] !== void 0) {
+    } else if (prefix === '' || localStorage.missing[name] !== void 0) {
       list = result.missing;
     } else {
       list = result.pending;
@@ -1210,10 +1130,7 @@ function updateCallbacks(provider, prefix) {
     providerPendingUpdates[prefix] = true;
     setTimeout(() => {
       providerPendingUpdates[prefix] = false;
-      if (
-        callbacks[provider] === void 0 ||
-        callbacks[provider][prefix] === void 0
-      ) {
+      if (callbacks[provider] === void 0 || callbacks[provider][prefix] === void 0) {
         return;
       }
       const items = callbacks[provider][prefix].slice(0);
@@ -1257,15 +1174,10 @@ function updateCallbacks(provider, prefix) {
                   prefix,
                 },
               ],
-              item.id
+              item.id,
             );
           }
-          item.callback(
-            icons.loaded.slice(0),
-            icons.missing.slice(0),
-            icons.pending.slice(0),
-            item.abort
-          );
+          item.callback(icons.loaded.slice(0), icons.missing.slice(0), icons.pending.slice(0), item.abort);
         }
       });
     });
@@ -1303,8 +1215,7 @@ function storeCallback(callback, icons, pendingSources) {
 function listToIcons(list, validate = true, simpleNames = false) {
   const result = [];
   list.forEach((item) => {
-    const icon =
-      typeof item === "string" ? stringToIcon(item, false, simpleNames) : item;
+    const icon = typeof item === 'string' ? stringToIcon(item, false, simpleNames) : item;
     if (!validate || validateIcon(icon, simpleNames)) {
       result.push({
         provider: icon.provider,
@@ -1329,9 +1240,7 @@ var defaultConfig = {
 // src/query.ts
 function sendQuery(config, payload, query, done) {
   const resourcesCount = config.resources.length;
-  const startIndex = config.random
-    ? Math.floor(Math.random() * resourcesCount)
-    : config.index;
+  const startIndex = config.random ? Math.floor(Math.random() * resourcesCount) : config.index;
   let resources;
   if (config.random) {
     let list = config.resources.slice(0);
@@ -1343,18 +1252,16 @@ function sendQuery(config, payload, query, done) {
     }
     resources = resources.concat(list);
   } else {
-    resources = config.resources
-      .slice(startIndex)
-      .concat(config.resources.slice(0, startIndex));
+    resources = config.resources.slice(startIndex).concat(config.resources.slice(0, startIndex));
   }
   const startTime = Date.now();
-  let status = "pending";
+  let status = 'pending';
   let queriesSent = 0;
   let lastError;
   let timer = null;
   let queue = [];
   let doneCallbacks = [];
-  if (typeof done === "function") {
+  if (typeof done === 'function') {
     doneCallbacks.push(done);
   }
   function resetTimer() {
@@ -1364,13 +1271,13 @@ function sendQuery(config, payload, query, done) {
     }
   }
   function abort() {
-    if (status === "pending") {
-      status = "aborted";
+    if (status === 'pending') {
+      status = 'aborted';
     }
     resetTimer();
     queue.forEach((item) => {
-      if (item.status === "pending") {
-        item.status = "aborted";
+      if (item.status === 'pending') {
+        item.status = 'aborted';
       }
     });
     queue = [];
@@ -1379,7 +1286,7 @@ function sendQuery(config, payload, query, done) {
     if (overwrite) {
       doneCallbacks = [];
     }
-    if (typeof callback === "function") {
+    if (typeof callback === 'function') {
       doneCallbacks.push(callback);
     }
   }
@@ -1395,26 +1302,26 @@ function sendQuery(config, payload, query, done) {
     };
   }
   function failQuery() {
-    status = "failed";
+    status = 'failed';
     doneCallbacks.forEach((callback) => {
       callback(void 0, lastError);
     });
   }
   function clearQueue() {
     queue.forEach((item) => {
-      if (item.status === "pending") {
-        item.status = "aborted";
+      if (item.status === 'pending') {
+        item.status = 'aborted';
       }
     });
     queue = [];
   }
   function moduleResponse(item, response, data) {
-    const isError = response !== "success";
+    const isError = response !== 'success';
     queue = queue.filter((queued) => queued !== item);
     switch (status) {
-      case "pending":
+      case 'pending':
         break;
-      case "failed":
+      case 'failed':
         if (isError || !config.dataAfterTimeout) {
           return;
         }
@@ -1422,7 +1329,7 @@ function sendQuery(config, payload, query, done) {
       default:
         return;
     }
-    if (response === "abort") {
+    if (response === 'abort') {
       lastError = data;
       failQuery();
       return;
@@ -1446,13 +1353,13 @@ function sendQuery(config, payload, query, done) {
         config.index = index;
       }
     }
-    status = "completed";
+    status = 'completed';
     doneCallbacks.forEach((callback) => {
       callback(data);
     });
   }
   function execNext() {
-    if (status !== "pending") {
+    if (status !== 'pending') {
       return;
     }
     resetTimer();
@@ -1461,7 +1368,7 @@ function sendQuery(config, payload, query, done) {
       if (queue.length) {
         timer = setTimeout(() => {
           resetTimer();
-          if (status === "pending") {
+          if (status === 'pending') {
             clearQueue();
             failQuery();
           }
@@ -1472,7 +1379,7 @@ function sendQuery(config, payload, query, done) {
       return;
     }
     const item = {
-      status: "pending",
+      status: 'pending',
       resource,
       callback: (status2, data) => {
         moduleResponse(item, status2, data);
@@ -1490,12 +1397,12 @@ function sendQuery(config, payload, query, done) {
 // src/index.ts
 function setConfig(config) {
   if (
-    typeof config !== "object" ||
-    typeof config.resources !== "object" ||
+    typeof config !== 'object' ||
+    typeof config.resources !== 'object' ||
     !(config.resources instanceof Array) ||
     !config.resources.length
   ) {
-    throw new Error("Invalid Reduncancy configuration");
+    throw new Error('Invalid Reduncancy configuration');
   }
   const newConfig = /* @__PURE__ */ Object.create(null);
   let key;
@@ -1512,7 +1419,7 @@ function initRedundancy(cfg) {
   const config = setConfig(cfg);
   let queries = [];
   function cleanup() {
-    queries = queries.filter((item) => item().status === "pending");
+    queries = queries.filter((item) => item().status === 'pending');
   }
   function query(payload, queryCallback, doneCallback) {
     const query2 = sendQuery(config, payload, queryCallback, (data, error) => {
@@ -1563,7 +1470,7 @@ function getRedundancyCache(provider) {
 function sendAPIQuery(target, query, callback) {
   let redundancy;
   let send;
-  if (typeof target === "string") {
+  if (typeof target === 'string') {
     const api = getAPIModule(target);
     if (!api) {
       callback(void 0, 424);
@@ -1578,7 +1485,7 @@ function sendAPIQuery(target, query, callback) {
     const config = createAPIConfig(target);
     if (config) {
       redundancy = initRedundancy(config);
-      const moduleKey = target.resources ? target.resources[0] : "";
+      const moduleKey = target.resources ? target.resources[0] : '';
       const api = getAPIModule(moduleKey);
       if (api) {
         send = api.send;
@@ -1617,15 +1524,11 @@ function loadedNewIcons(provider, prefix) {
 var errorsCache = Object.create(null);
 function loadNewIcons(provider, prefix, icons) {
   function err() {
-    const key = (provider === "" ? "" : "@" + provider + ":") + prefix;
+    const key = (provider === '' ? '' : '@' + provider + ':') + prefix;
     const time = Math.floor(Date.now() / 6e4);
     if (errorsCache[key] < time) {
       errorsCache[key] = time;
-      console.error(
-        'Unable to retrieve icons for "' +
-          key +
-          '" because API is not configured properly.'
-      );
+      console.error('Unable to retrieve icons for "' + key + '" because API is not configured properly.');
     }
   }
   if (iconsToLoad[provider] === void 0) {
@@ -1643,9 +1546,7 @@ function loadNewIcons(provider, prefix, icons) {
   if (providerIconsToLoad[prefix] === void 0) {
     providerIconsToLoad[prefix] = icons;
   } else {
-    providerIconsToLoad[prefix] = providerIconsToLoad[prefix]
-      .concat(icons)
-      .sort();
+    providerIconsToLoad[prefix] = providerIconsToLoad[prefix].concat(icons).sort();
   }
   if (!providerQueueFlags[prefix]) {
     providerQueueFlags[prefix] = true;
@@ -1662,7 +1563,7 @@ function loadNewIcons(provider, prefix, icons) {
       params.forEach((item) => {
         sendAPIQuery(provider, item, (data, error) => {
           const storage = getStorage(provider, prefix);
-          if (typeof data !== "object") {
+          if (typeof data !== 'object') {
             if (error !== 404) {
               return;
             }
@@ -1701,12 +1602,7 @@ var loadIcons = (icons, callback) => {
     if (callback) {
       setTimeout(() => {
         if (callCallback) {
-          callback(
-            sortedIcons.loaded,
-            sortedIcons.missing,
-            sortedIcons.pending,
-            emptyCallback
-          );
+          callback(sortedIcons.loaded, sortedIcons.missing, sortedIcons.pending, emptyCallback);
         }
       });
     }
@@ -1762,17 +1658,15 @@ var loadIcons = (icons, callback) => {
       loadNewIcons(provider, prefix, newIcons[provider][prefix]);
     }
   });
-  return callback
-    ? storeCallback(callback, sortedIcons, sources)
-    : emptyCallback;
+  return callback ? storeCallback(callback, sortedIcons, sources) : emptyCallback;
 };
 var iconsQueue = Object.create(null);
 var loadIcon = (icon) => {
-  if (typeof icon === "string" && iconsQueue[icon]) {
+  if (typeof icon === 'string' && iconsQueue[icon]) {
     return iconsQueue[icon];
   }
   const result = new Promise((fulfill, reject) => {
-    const iconObj = typeof icon === "string" ? stringToIcon(icon) : icon;
+    const iconObj = typeof icon === 'string' ? stringToIcon(icon) : icon;
     loadIcons([iconObj || icon], (loaded) => {
       if (loaded.length && iconObj) {
         const storage = getStorage(iconObj.provider, iconObj.prefix);
@@ -1785,17 +1679,17 @@ var loadIcon = (icon) => {
       reject(icon);
     });
   });
-  if (typeof icon === "string") {
+  if (typeof icon === 'string') {
     iconsQueue[icon] = result;
   }
   return result;
 };
 
 // src/browser-storage/index.ts
-var cacheVersion = "iconify2";
-var cachePrefix = "iconify";
-var countKey = cachePrefix + "-count";
-var versionKey = cachePrefix + "-version";
+var cacheVersion = 'iconify2';
+var cachePrefix = 'iconify';
+var countKey = cachePrefix + '-count';
+var versionKey = cachePrefix + '-version';
 var hour = 36e5;
 var cacheExpiration = 168;
 var config = {
@@ -1811,11 +1705,11 @@ var emptyList = {
   local: [],
   session: [],
 };
-var _window = typeof window === "undefined" ? {} : window;
+var _window = typeof window === 'undefined' ? {} : window;
 function getGlobal(key) {
-  const attr = key + "Storage";
+  const attr = key + 'Storage';
   try {
-    if (_window && _window[attr] && typeof _window[attr].length === "number") {
+    if (_window && _window[attr] && typeof _window[attr].length === 'number') {
       return _window[attr];
     }
   } catch (err) {}
@@ -1824,7 +1718,7 @@ function getGlobal(key) {
 }
 function setCount(storage, key, value) {
   try {
-    storage.setItem(countKey, value + "");
+    storage.setItem(countKey, value + '');
     count[key] = value;
     return true;
   } catch (err) {
@@ -1867,19 +1761,19 @@ var loadCache = () => {
     const getItem = (index) => {
       const name = cachePrefix + index;
       const item = func.getItem(name);
-      if (typeof item !== "string") {
+      if (typeof item !== 'string') {
         return false;
       }
       let valid = true;
       try {
         const data = JSON.parse(item);
         if (
-          typeof data !== "object" ||
-          typeof data.cached !== "number" ||
+          typeof data !== 'object' ||
+          typeof data.cached !== 'number' ||
           data.cached < minTime ||
-          typeof data.provider !== "string" ||
-          typeof data.data !== "object" ||
-          typeof data.data.prefix !== "string"
+          typeof data.provider !== 'string' ||
+          typeof data.data !== 'object' ||
+          typeof data.data.prefix !== 'string'
         ) {
           valid = false;
         } else {
@@ -1960,19 +1854,19 @@ var storeCache = (provider, data) => {
     data = Object.assign({}, data);
     delete data.not_found;
   }
-  if (!store("local")) {
-    store("session");
+  if (!store('local')) {
+    store('session');
   }
 };
 
 // src/browser-storage/functions.ts
 function toggleBrowserCache(storage, value) {
   switch (storage) {
-    case "local":
-    case "session":
+    case 'local':
+    case 'session':
       config[storage] = value;
       break;
-    case "all":
+    case 'all':
       for (const key in config) {
         config[key] = value;
       }
@@ -1986,10 +1880,10 @@ function flipFromString(custom, flip) {
   flip.split(separator).forEach((str) => {
     const value = str.trim();
     switch (value) {
-      case "horizontal":
+      case 'horizontal':
         custom.hFlip = true;
         break;
-      case "vertical":
+      case 'vertical':
         custom.vFlip = true;
         break;
     }
@@ -1999,21 +1893,21 @@ function alignmentFromString(custom, align) {
   align.split(separator).forEach((str) => {
     const value = str.trim();
     switch (value) {
-      case "left":
-      case "center":
-      case "right":
+      case 'left':
+      case 'center':
+      case 'right':
         custom.hAlign = value;
         break;
-      case "top":
-      case "middle":
-      case "bottom":
+      case 'top':
+      case 'middle':
+      case 'bottom':
         custom.vAlign = value;
         break;
-      case "slice":
-      case "crop":
+      case 'slice':
+      case 'crop':
         custom.slice = true;
         break;
-      case "meet":
+      case 'meet':
         custom.slice = false;
     }
   });
@@ -2021,23 +1915,23 @@ function alignmentFromString(custom, align) {
 
 // src/customisations/rotate.ts
 function rotateFromString(value, defaultValue = 0) {
-  const units = value.replace(/^-?[0-9.]*/, "");
+  const units = value.replace(/^-?[0-9.]*/, '');
   function cleanup(value2) {
     while (value2 < 0) {
       value2 += 4;
     }
     return value2 % 4;
   }
-  if (units === "") {
+  if (units === '') {
     const num = parseInt(value);
     return isNaN(num) ? 0 : cleanup(num);
   } else if (units !== value) {
     let split = 0;
     switch (units) {
-      case "%":
+      case '%':
         split = 25;
         break;
-      case "deg":
+      case 'deg':
         split = 90;
     }
     if (split) {
@@ -2056,10 +1950,10 @@ function rotateFromString(value, defaultValue = 0) {
  * Default SVG attributes
  */
 const svgDefaults = {
-  xmlns: "http://www.w3.org/2000/svg",
-  xmlnsXlink: "http://www.w3.org/1999/xlink",
-  "aria-hidden": true,
-  role: "img",
+  xmlns: 'http://www.w3.org/2000/svg',
+  xmlnsXlink: 'http://www.w3.org/1999/xlink',
+  'aria-hidden': true,
+  role: 'img',
   style: {}, // Include style if it isn't set to add verticalAlign later
 };
 /**
@@ -2077,15 +1971,14 @@ const render = (
   // True if icon should have vertical-align added
   inline,
   // Optional reference for SVG, extracted by React.forwardRef()
-  ref
+  ref,
 ) => {
   // Get default properties
   const defaultProps = inline ? inlineDefaults : defaults;
   // Get all customisations
   const customisations = mergeCustomisations(defaultProps, props);
   // Create style
-  const style =
-    typeof props.style === "object" && props.style !== null ? props.style : {};
+  const style = typeof props.style === 'object' && props.style !== null ? props.style : {};
   // Create SVG component properties
   const componentProps = { ...svgDefaults, ref, style };
   // Get element properties
@@ -2096,48 +1989,48 @@ const render = (
     }
     switch (key) {
       // Properties to ignore
-      case "icon":
-      case "style":
-      case "children":
-      case "onLoad":
-      case "_ref":
-      case "_inline":
+      case 'icon':
+      case 'style':
+      case 'children':
+      case 'onLoad':
+      case '_ref':
+      case '_inline':
         break;
       // Boolean attributes
-      case "inline":
-      case "hFlip":
-      case "vFlip":
-        customisations[key] = value === true || value === "true" || value === 1;
+      case 'inline':
+      case 'hFlip':
+      case 'vFlip':
+        customisations[key] = value === true || value === 'true' || value === 1;
         break;
       // Flip as string: 'horizontal,vertical'
-      case "flip":
-        if (typeof value === "string") {
+      case 'flip':
+        if (typeof value === 'string') {
           flipFromString(customisations, value);
         }
         break;
       // Alignment as string
-      case "align":
-        if (typeof value === "string") {
+      case 'align':
+        if (typeof value === 'string') {
           alignmentFromString(customisations, value);
         }
         break;
       // Color: copy to style
-      case "color":
+      case 'color':
         style.color = value;
         break;
       // Rotation as string
-      case "rotate":
-        if (typeof value === "string") {
+      case 'rotate':
+        if (typeof value === 'string') {
           customisations[key] = rotateFromString(value);
-        } else if (typeof value === "number") {
+        } else if (typeof value === 'number') {
           customisations[key] = value;
         }
         break;
       // Remove aria-hidden
-      case "ariaHidden":
-      case "aria-hidden":
-        if (value !== true && value !== "true") {
-          delete componentProps["aria-hidden"];
+      case 'ariaHidden':
+      case 'aria-hidden':
+        if (value !== true && value !== 'true') {
+          delete componentProps['aria-hidden'];
         }
         break;
       // Copy missing property if it does not exist in customisations
@@ -2152,24 +2045,21 @@ const render = (
   // Counter for ids based on "id" property to render icons consistently on server and client
   let localCounter = 0;
   let id = props.id;
-  if (typeof id === "string") {
+  if (typeof id === 'string') {
     // Convert '-' to '_' to avoid errors in animations
-    id = id.replace(/-/g, "_");
+    id = id.replace(/-/g, '_');
   }
   // Add icon stuff
   componentProps.dangerouslySetInnerHTML = {
-    __html: replaceIDs(
-      item.body,
-      id ? () => id + "ID" + localCounter++ : "iconifyReact"
-    ),
+    __html: replaceIDs(item.body, id ? () => id + 'ID' + localCounter++ : 'iconifyReact'),
   };
   for (let key in item.attributes) {
     componentProps[key] = item.attributes[key];
   }
   if (item.inline && style.verticalAlign === void 0) {
-    style.verticalAlign = "-0.125em";
+    style.verticalAlign = '-0.125em';
   }
-  return React.createElement("svg", componentProps);
+  return React.createElement('svg', componentProps);
 };
 
 /**
@@ -2190,11 +2080,11 @@ function disableCache(storage) {
 // Enable short names
 allowSimpleNames(true);
 // Set API module
-setAPIModule("", fetchAPIModule);
+setAPIModule('', fetchAPIModule);
 /**
  * Browser stuff
  */
-if (typeof document !== "undefined" && typeof window !== "undefined") {
+if (typeof document !== 'undefined' && typeof window !== 'undefined') {
   // Set cache and load existing cache
   cache.store = storeCache;
   loadCache();
@@ -2202,18 +2092,18 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
   // Load icons from global "IconifyPreload"
   if (_window.IconifyPreload !== void 0) {
     const preload = _window.IconifyPreload;
-    const err = "Invalid IconifyPreload syntax.";
-    if (typeof preload === "object" && preload !== null) {
+    const err = 'Invalid IconifyPreload syntax.';
+    if (typeof preload === 'object' && preload !== null) {
       (preload instanceof Array ? preload : [preload]).forEach((item) => {
         try {
           if (
             // Check if item is an object and not null/array
-            typeof item !== "object" ||
+            typeof item !== 'object' ||
             item === null ||
             item instanceof Array ||
             // Check for 'icons' and 'prefix'
-            typeof item.icons !== "object" ||
-            typeof item.prefix !== "string" ||
+            typeof item.icons !== 'object' ||
+            typeof item.prefix !== 'string' ||
             // Add icon set
             !addCollection(item)
           ) {
@@ -2228,16 +2118,12 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
   // Set API from global "IconifyProviders"
   if (_window.IconifyProviders !== void 0) {
     const providers = _window.IconifyProviders;
-    if (typeof providers === "object" && providers !== null) {
+    if (typeof providers === 'object' && providers !== null) {
       for (let key in providers) {
-        const err = "IconifyProviders[" + key + "] is invalid.";
+        const err = 'IconifyProviders[' + key + '] is invalid.';
         try {
           const value = providers[key];
-          if (
-            typeof value !== "object" ||
-            !value ||
-            value.resources === void 0
-          ) {
+          if (typeof value !== 'object' || !value || value.resources === void 0) {
             continue;
           }
           if (!addAPIProvider(key, value)) {
@@ -2284,13 +2170,9 @@ class IconComponent extends React.Component {
     const state = this.state;
     const icon = this.props.icon;
     // Icon is an object
-    if (
-      typeof icon === "object" &&
-      icon !== null &&
-      typeof icon.body === "string"
-    ) {
+    if (typeof icon === 'object' && icon !== null && typeof icon.body === 'string') {
       // Stop loading
-      this._icon = "";
+      this._icon = '';
       this._abortLoading();
       if (changed || state.icon === null) {
         // Set data if it was changed
@@ -2302,10 +2184,7 @@ class IconComponent extends React.Component {
     }
     // Invalid icon?
     let iconName;
-    if (
-      typeof icon !== "string" ||
-      (iconName = stringToIcon(icon, false, true)) === null
-    ) {
+    if (typeof icon !== 'string' || (iconName = stringToIcon(icon, false, true)) === null) {
       this._abortLoading();
       this._setData(null);
       return;
@@ -2317,7 +2196,7 @@ class IconComponent extends React.Component {
       if (!this._loading || this._loading.name !== icon) {
         // New icon to load
         this._abortLoading();
-        this._icon = "";
+        this._icon = '';
         this._setData(null);
         this._loading = {
           name: icon,
@@ -2332,12 +2211,12 @@ class IconComponent extends React.Component {
       this._abortLoading();
       this._icon = icon;
       // Add classes
-      const classes = ["iconify"];
-      if (iconName.prefix !== "") {
-        classes.push("iconify--" + iconName.prefix);
+      const classes = ['iconify'];
+      if (iconName.prefix !== '') {
+        classes.push('iconify--' + iconName.prefix);
       }
-      if (iconName.provider !== "") {
-        classes.push("iconify--" + iconName.provider);
+      if (iconName.provider !== '') {
+        classes.push('iconify--' + iconName.provider);
       }
       // Set data
       this._setData({
@@ -2377,16 +2256,14 @@ class IconComponent extends React.Component {
     const icon = this.state.icon;
     if (icon === null) {
       // Render placeholder
-      return props.children ? props.children : React.createElement("span", {});
+      return props.children ? props.children : React.createElement('span', {});
     }
     // Add classes
     let newProps = props;
     if (icon.classes) {
       newProps = {
         ...props,
-        className:
-          (typeof props.className === "string" ? props.className + " " : "") +
-          icon.classes.join(" "),
+        className: (typeof props.className === 'string' ? props.className + ' ' : '') + icon.classes.join(' '),
       };
     }
     // Render icon
