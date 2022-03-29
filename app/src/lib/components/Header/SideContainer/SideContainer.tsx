@@ -31,7 +31,7 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
 
   return (
     <Container>
-      <Channels channels={channels}></Channels>
+      <Channels channels={channels} />
       <SideBarIcon styles={styles} onClick={onClickSideBarIconHandler} />
       <SideBar
         mainTitle={mainTitle}

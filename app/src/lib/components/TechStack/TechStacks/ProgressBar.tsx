@@ -71,7 +71,7 @@ const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }: any) =
   return (
     <ProgressBarContainer>
       <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
-        <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }}></ProgressBarLiquid>
+        <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} />
       </ProgressBarComplete>
       <ProgressBarInnerText>{rate}</ProgressBarInnerText>
     </ProgressBarContainer>

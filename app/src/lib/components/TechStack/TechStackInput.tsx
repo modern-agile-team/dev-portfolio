@@ -36,8 +36,6 @@ const Modal = styled.div`
   top: 120%;
   left: 30px;
   z-index: 1011;
-  /* width: 80%; */
-  /* height: 400px; */
   padding: 16px;
   background-color: white;
   border-radius: 12px;
@@ -80,7 +78,7 @@ const TechStackInput = ({}) => {
 
   return (
     <Container id="TechStackInput">
-      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus}></Input>
+      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
       {isFocus && (
         <>
           <Modal onClick={() => setIsFocus(false)}>

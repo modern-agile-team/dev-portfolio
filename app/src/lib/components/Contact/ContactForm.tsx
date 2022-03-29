@@ -39,7 +39,7 @@ const ContactForm = ({ contactOption }: any) => {
 
   return (
     <Container>
-      <Channels channels={channels}></Channels>
+      <Channels channels={channels} />
       <TitleContainer>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>

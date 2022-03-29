@@ -51,8 +51,8 @@ const Header = ({
 }) => {
   return (
     <Container id="Header">
-      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }}></Logo>
-      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }}></SideContainer>
+      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
+      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
     </Container>
   );
 };
