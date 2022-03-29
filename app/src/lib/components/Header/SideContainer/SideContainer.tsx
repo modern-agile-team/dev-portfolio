@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import Channels from '../../Channels/Channels';
 import SideBarIcon from './SideBarIcon';
 import SideBar from './SideBar';
@@ -24,7 +23,7 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
         .filter(($tag: any) => $tag.id !== 'Header')
         .map(($tag: any) => {
           return { title: $tag.id };
-        }),
+        })
     );
     setIsClickedSideBarIcon(true);
   };
