@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Channels from "../Channels/Channels";
+import Channels from '../Channels/Channels';
 
 const Container = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const SendEmailButton = styled.button`
   }
 `;
 
-const ContactForm = ({ contactOption }) => {
+const ContactForm = ({ contactOption }: any) => {
   const { title, subTitle, buttonText, channels } = contactOption;
 
   return (

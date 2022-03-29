@@ -1,15 +1,15 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
-const g = ({ from, to }) => keyframes`
+const g = ({ from, to }: any) => keyframes`
   0% { 
-    background-color: ${to || "#434521"}; 
+    background-color: ${to || '#434521'}; 
   }
   50% { 
-    background-color: ${from || "#607e9e"}; 
+    background-color: ${from || '#607e9e'}; 
   }
   100% { 
-    background-color: ${to || "#434521"}; 
+    background-color: ${to || '#434521'}; 
   }
 `;
 
@@ -35,24 +35,26 @@ const ProgressBarContainer = styled.div`
   background: whitesmoke;
 `;
 
-const ProgressBarComplete = styled.div`
+const ProgressBarComplete = styled.div<{
+  progressColor?: any;
+}>`
   position: absolute;
   left: 0;
   top: 0px;
   height: 100%;
   background-color: #5225bd;
   border-radius: 10px;
-  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite
-    ease-in-out;
+  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite ease-in-out;
   z-index: 2;
 `;
 
-const ProgressBarLiquid = styled.div`
+const ProgressBarLiquid = styled.div<{
+  progressColor?: any;
+}>`
   z-index: 1;
   width: 70px;
   height: 70px;
-  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite
-      ease-in-out,
+  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite ease-in-out,
     ${r} 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
   position: absolute;
   right: -5px;
@@ -65,16 +67,11 @@ const ProgressBarInnerText = styled.span`
   z-index: 2;
 `;
 
-const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }) => {
+const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }: any) => {
   return (
     <ProgressBarContainer>
-      <ProgressBarComplete
-        progressColor={{ from: colorFrom, to: colorTo }}
-        style={{ width: rate }}
-      >
-        <ProgressBarLiquid
-          progressColor={{ from: colorFrom, to: colorTo }}
-        ></ProgressBarLiquid>
+      <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
+        <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }}></ProgressBarLiquid>
       </ProgressBarComplete>
       <ProgressBarInnerText>{rate}</ProgressBarInnerText>
     </ProgressBarContainer>

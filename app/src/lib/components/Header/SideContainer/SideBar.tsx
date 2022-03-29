@@ -1,7 +1,7 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
-import SideBarItems from "./SideBarItems";
+import SideBarItems from './SideBarItems';
 
 const showUp = keyframes`
   from {
@@ -21,24 +21,25 @@ const showOut = keyframes`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.div<{
+  isClickedSideBarIcon?: any;
+}>`
   position: absolute;
   top: 0%;
-  right: ${({ isClickedSideBarIcon }) =>
-    isClickedSideBarIcon ? "0%" : "-40%"};
+  right: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? '0%' : '-40%')};
   z-index: 1011;
   width: 30%;
   max-width: 280px;
   padding: 16px;
   background-color: white;
   border-radius: 10px 0px 10px 10px;
-  animation: 0.3s
-    ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? showUp : showOut)};
+  animation: 0.3s ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? showUp : showOut)};
 `;
 
-const Background = styled.div`
-  display: ${({ isClickedSideBarIcon }) =>
-    isClickedSideBarIcon ? "block" : "none"};
+const Background = styled.div<{
+  isClickedSideBarIcon?: any;
+}>`
+  display: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? 'block' : 'none')};
   position: fixed;
   left: 50%;
   top: 50%;
@@ -58,27 +59,16 @@ const Line = styled.hr`
   border: 0.05px solid #00000022;
 `;
 
-const SideBar = ({
-  mainTitle,
-  sideBarItems,
-  isClickedSideBarIcon,
-  setIsClickedSideBarIcon,
-}) => {
+const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: any) => {
   return (
     <>
       <Container isClickedSideBarIcon={isClickedSideBarIcon}>
         <MainTitle>{mainTitle}</MainTitle>
         <Line />
-        <SideBarItems
-          setIsClickedSideBarIcon={setIsClickedSideBarIcon}
-          sideBarItems={sideBarItems}
-        />
+        <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
       </Container>
 
-      <Background
-        isClickedSideBarIcon={isClickedSideBarIcon}
-        onClick={() => setIsClickedSideBarIcon(false)}
-      />
+      <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
     </>
   );
 };

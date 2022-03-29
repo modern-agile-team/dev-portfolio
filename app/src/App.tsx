@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, TechStackInput, TechStacks, Contact } from './lib/index';
 
-const App = () => {
+function App() {
   return (
     <>
       <Header />
@@ -10,6 +10,6 @@ const App = () => {
       <Contact />
     </>
   );
-};
+}
 
 export default App;

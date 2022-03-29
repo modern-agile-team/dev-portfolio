@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import { Icon } from "../../dependencies/@iconify/react";
+import { Icon } from '../../dependencies/@iconify/react/dist/iconify';
 
-const Container = styled.div`
+const Container = styled.div<{
+  headerHeight?: any;
+  headerWidth?: any;
+  headerBackgroundColor?: any;
+}>`
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: ${({ headerHeight }) => headerHeight ?? "100px"};
-  width: ${({ headerWidth }) => headerWidth ?? "100%"};
-  /* background-color: ${({ headerBackgroundColor }) =>
-    headerBackgroundColor ?? "purple"}; */
+  height: ${({ headerHeight }) => headerHeight ?? '100px'};
+  width: ${({ headerWidth }) => headerWidth ?? '100%'};
+  /* background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'purple'}; */
 `;
 
-const Input = styled.input`
+const Input = styled.input<{
+  isFocus?: boolean;
+}>`
   color: black;
   font-size: 24px;
   width: 50%;
@@ -65,31 +70,22 @@ const TechStackName = styled.span`
 `;
 
 const TechStackInput = ({}) => {
-  const [inputValue, setInputValue] = useState("");
-  const [isFocus, setIsFocus] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [isFocus, setIsFocus] = useState<boolean>(false);
 
-  const onChange = ({ target }) => {
-    setInputValue(target.value);
-    target.value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    e.target.value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
   };
 
   return (
     <Container id="TechStackInput">
-      <Input
-        type="text"
-        placeholder="Please write the tech-stack"
-        onChange={onChange}
-        isFocus={isFocus}
-      ></Input>
+      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus}></Input>
       {isFocus && (
         <>
-          <Modal isFocus={isFocus} onClose={() => setIsFocus(false)}>
+          <Modal onClick={() => setIsFocus(false)}>
             <TechStackEachBox>
-              <Icon
-                icon={`simple-icons:${inputValue}`}
-                color={"black"}
-                fontSize={"80px"}
-              />
+              <Icon icon={`simple-icons:${inputValue}`} color={'black'} fontSize={'80px'} />
               <TechStackName>{inputValue}</TechStackName>
             </TechStackEachBox>
           </Modal>
