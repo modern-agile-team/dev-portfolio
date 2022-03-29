@@ -1,12 +1,40 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import { Icon } from '../../dependencies/@iconify/react/dist/iconify';
 
+const TechStackInput = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [isFocus, setIsFocus] = useState<boolean>(false);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    e.target.value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
+  };
+
+  return (
+    <Container id="TechStackInput">
+      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
+      {isFocus && (
+        <>
+          <Modal onClick={() => setIsFocus(false)}>
+            <TechStackEachBox>
+              <Icon icon={`simple-icons:${inputValue}`} color={'black'} fontSize={'80px'} />
+              <TechStackName>{inputValue}</TechStackName>
+            </TechStackEachBox>
+          </Modal>
+          <ModalBackground onClick={() => setIsFocus(false)} />
+        </>
+      )}
+    </Container>
+  );
+};
+
+export default TechStackInput;
+
 const Container = styled.div<{
-  headerHeight?: any;
-  headerWidth?: any;
-  headerBackgroundColor?: any;
+  headerHeight?: string;
+  headerWidth?: string;
+  headerBackgroundColor?: string;
 }>`
   position: relative;
   display: flex;
@@ -66,32 +94,3 @@ const TechStackName = styled.span`
   margin: 8px 0px;
   font-weight: bold;
 `;
-
-const TechStackInput = ({}) => {
-  const [inputValue, setInputValue] = useState('');
-  const [isFocus, setIsFocus] = useState<boolean>(false);
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    e.target.value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
-  };
-
-  return (
-    <Container id="TechStackInput">
-      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
-      {isFocus && (
-        <>
-          <Modal onClick={() => setIsFocus(false)}>
-            <TechStackEachBox>
-              <Icon icon={`simple-icons:${inputValue}`} color={'black'} fontSize={'80px'} />
-              <TechStackName>{inputValue}</TechStackName>
-            </TechStackEachBox>
-          </Modal>
-          <ModalBackground onClick={() => setIsFocus(false)} />
-        </>
-      )}
-    </Container>
-  );
-};
-
-export default TechStackInput;
