@@ -2,10 +2,17 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import SideContainer from './SideContainer/SideContainer';
 
+export type LogoOptionType = {
+  uriToMove: string;
+  logoImg?: string;
+  title: string;
+  styles?: any;
+};
+
 const Container = styled.div<{
-  headerHeight?: any;
-  headerWidth?: any;
-  headerBackgroundColor?: any;
+  headerHeight?: string;
+  headerWidth?: string;
+  headerBackgroundColor?: string;
 }>`
   position: sticky;
   top: 0;
@@ -51,8 +58,8 @@ const Header = ({
 }) => {
   return (
     <Container id="Header">
-      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }}></Logo>
-      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }}></SideContainer>
+      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
+      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
     </Container>
   );
 };

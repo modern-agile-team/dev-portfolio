@@ -2,8 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../../../dependencies/@iconify/react/dist/iconify';
 
+interface Props {
+  nameOption: {
+    name: string;
+    iconColor: string;
+    size: string;
+  };
+}
+
+const TechStackName = ({ nameOption }: Props) => {
+  const { name, iconColor, size } = nameOption;
+
+  return (
+    <NameContainer>
+      <Icon icon={`simple-icons:${name.toLowerCase()}`} color={iconColor} fontSize={size} />
+      <Name>{name}</Name>
+    </NameContainer>
+  );
+};
+
+export default TechStackName;
+
 const NameContainer = styled.div<{
-  margin?: any;
+  margin?: string;
 }>`
   display: flex;
   flex-direction: row;
@@ -15,14 +36,3 @@ const Name = styled.span`
   margin-left: 8px;
   font-weight: bold;
 `;
-
-const TechStackName = ({ nameOption: { name, iconColor, size } }: any) => {
-  return (
-    <NameContainer>
-      <Icon icon={`simple-icons:${name.toLowerCase()}`} color={iconColor} fontSize={size} />
-      <Name>{name}</Name>
-    </NameContainer>
-  );
-};
-
-export default TechStackName;

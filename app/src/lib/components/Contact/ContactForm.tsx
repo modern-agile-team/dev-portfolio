@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import Channels from '../Channels/Channels';
 
 const Container = styled.div`
@@ -20,8 +19,6 @@ const Title = styled.div`
   font-size: 18px;
 `;
 
-const SubTitle = styled.span``;
-
 const SendEmailButton = styled.button`
   padding: 10px 10px;
   margin: 10px 0px 0px 0px;
@@ -39,10 +36,10 @@ const ContactForm = ({ contactOption }: any) => {
 
   return (
     <Container>
-      <Channels channels={channels}></Channels>
+      <Channels channels={channels} />
       <TitleContainer>
         <Title>{title}</Title>
-        <SubTitle>{subTitle}</SubTitle>
+        <span>{subTitle}</span>
       </TitleContainer>
       <SendEmailButton>{buttonText}</SendEmailButton>
     </Container>

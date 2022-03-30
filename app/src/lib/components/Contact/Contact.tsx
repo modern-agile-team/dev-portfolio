@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
 
