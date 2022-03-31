@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { IntroOptionType } from './Intro';
 
-type IntroDesProps = {
+interface IntroDesProps {
   introDes: IntroOptionType;
-};
+}
 
 export const IntroForm = ({ introDes }: IntroDesProps) => {
   const { description } = introDes;

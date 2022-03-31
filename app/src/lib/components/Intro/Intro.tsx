@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { IntroForm } from './IntroForm';
 import { IntroTitle } from './IntroTitle';
 
-export type IntroOptionType = {
+export interface IntroOptionType {
   title: string;
   shortIntro: string;
   description: string;
-};
+}
 
 const Intro = ({ introOption = IntroOptionDefault }) => {
   return (

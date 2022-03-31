@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { IntroOptionType } from './Intro';
 
-type IntroTitleProps = {
+interface IntroTitleProps {
   introOption: IntroOptionType;
-};
+}
 
 export const IntroTitle = ({ introOption }: IntroTitleProps) => {
   const { title, shortIntro } = introOption;
