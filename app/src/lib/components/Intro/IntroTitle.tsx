@@ -6,7 +6,7 @@ interface IntroTitleProps {
   introOption: IntroOptionType;
 }
 
-export const IntroTitle = ({ introOption }: IntroTitleProps) => {
+const IntroTitle = ({ introOption }: IntroTitleProps) => {
   const { title, shortIntro } = introOption;
 
   return (
@@ -16,6 +16,8 @@ export const IntroTitle = ({ introOption }: IntroTitleProps) => {
     </Wrap>
   );
 };
+
+export default IntroTitle;
 
 const Wrap = styled.div`
   display: flex;

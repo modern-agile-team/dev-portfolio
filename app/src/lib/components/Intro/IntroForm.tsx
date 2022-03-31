@@ -6,7 +6,7 @@ interface IntroDesProps {
   introDes: IntroOptionType;
 }
 
-export const IntroForm = ({ introDes }: IntroDesProps) => {
+const IntroForm = ({ introDes }: IntroDesProps) => {
   const { description } = introDes;
 
   return (
@@ -15,6 +15,8 @@ export const IntroForm = ({ introDes }: IntroDesProps) => {
     </Wrap>
   );
 };
+
+export default IntroForm;
 
 const Wrap = styled.div`
   display: flex;

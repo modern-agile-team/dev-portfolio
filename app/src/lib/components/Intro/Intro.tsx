@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IntroForm } from './IntroForm';
-import { IntroTitle } from './IntroTitle';
+import { IntroTitle, IntroForm } from './index';
 
 export interface IntroOptionType {
   title: string;
