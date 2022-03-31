@@ -35,8 +35,8 @@ function App() {
         <Item />
       </Gallery>
       <Intro />
-      <TechStacks techStacks={techStacksDefault} />
       <TechStackInput />
+      <TechStacks techStacks={techStacksDefault} />
       <Contact />
     </>
   );
