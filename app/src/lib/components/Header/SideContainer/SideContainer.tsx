@@ -32,12 +32,14 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
     <Container>
       <Channels channels={channels} />
       <SideBarIcon styles={styles} onClick={onClickSideBarIconHandler} />
-      <SideBar
-        mainTitle={mainTitle}
-        sideBarItems={sideBarItems}
-        isClickedSideBarIcon={isClickedSideBarIcon}
-        setIsClickedSideBarIcon={setIsClickedSideBarIcon}
-      />
+      {isClickedSideBarIcon && (
+        <SideBar
+          mainTitle={mainTitle}
+          sideBarItems={sideBarItems}
+          isClickedSideBarIcon={isClickedSideBarIcon}
+          setIsClickedSideBarIcon={setIsClickedSideBarIcon}
+        />
+      )}
     </Container>
   );
 };

@@ -8,20 +8,26 @@ interface Props {
   theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'poppy';
 }
 
-const Gallery = ({ children, col = 3, gap = 'normal', theme = 'poppy' }: Props) => {
+const Gallery = ({ children, col, gap, theme }: Props) => {
   return (
     <Wrapper theme={theme} col={col} gap={gap}>
-      <ul> {children}</ul>
+      <ul>{children}</ul>
     </Wrapper>
   );
 };
 
 export default Gallery;
 
+Gallery.defaultProps = {
+  col: 3,
+  gap: 'normal',
+  theme: 'poppy',
+};
+
 const Wrapper = styled.div<{
-  theme: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'poppy';
-  gap: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  col: number;
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'poppy';
+  gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
+  col?: number;
 }>`
   position: relative;
   display: flex;

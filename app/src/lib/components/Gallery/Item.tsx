@@ -8,12 +8,7 @@ interface Props {
   imgURL?: string;
 }
 
-const Item = ({
-  moveURL,
-  title = '제목을 입력하세요',
-  description = '본문을 입력하세요',
-  imgURL = 'https://img.marieclairekorea.com/2022/02/mck_620b83ff0751b.jpg',
-}: Props) => {
+const Item = ({ moveURL, title, description, imgURL }: Props) => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   return (
@@ -39,6 +34,13 @@ const Item = ({
 };
 
 export default Item;
+
+Item.defaultProps = {
+  moveURL: '',
+  title: '제목을 입력하세요',
+  description: '본문을 입력하세요',
+  imgURL: 'https://img.marieclairekorea.com/2022/02/mck_620b83ff0751b.jpg',
+};
 
 const StyledItem = styled.li<{
   isHover: boolean;
