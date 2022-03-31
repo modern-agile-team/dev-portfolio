@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, TechStackInput, TechStacks, Contact } from './lib/index';
+import { Header, TechStackInput, TechStacks, Contact, Intro } from './lib/index';
 
 function App() {
   const techStacksDefault = [
@@ -23,6 +23,7 @@ function App() {
   return (
     <>
       <Header />
+      <Intro />
       <TechStacks techStacks={techStacksDefault} />
       <TechStackInput />
       <Contact />
