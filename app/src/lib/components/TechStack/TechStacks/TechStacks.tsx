@@ -4,20 +4,20 @@ import styled from 'styled-components';
 import TechStackName from './TechStackName';
 import ProgressBarContainer from './ProgressBar';
 
-interface Props {
+interface TechStacksType {
   techStacks: {
     nameOption: { name: string; size: string; iconColor: string };
     progressBarOption: { rate: string; colorTo?: string; colorFrom?: string };
   }[];
 }
 
-const TechStacks = ({ techStacks }: Props) => {
+const TechStacks = ({ techStacks }: TechStacksType) => {
   return (
     <div id="TechStacks">
       {techStacks?.map(({ nameOption, progressBarOption }, idx) => (
         <TechStack key={idx}>
           <TechStackName nameOption={nameOption} />
-          <ProgressBarContainer progressBarOption={progressBarOption} />
+          <ProgressBarContainer {...progressBarOption} />
         </TechStack>
       ))}
     </div>

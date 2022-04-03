@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../../../dependencies/@iconify/react/dist/iconify';
 
-interface Props {
+interface TechStackNameType {
   nameOption: {
     name: string;
     iconColor: string;
@@ -10,7 +10,7 @@ interface Props {
   };
 }
 
-const TechStackName = ({ nameOption }: Props) => {
+const TechStackName = ({ nameOption }: TechStackNameType) => {
   const { name, iconColor, size } = nameOption;
 
   return (
