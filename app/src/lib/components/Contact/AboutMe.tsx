@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ContactOptionTypes } from './Contact';
 
 interface AboutProps {
   title: string;
@@ -19,15 +20,13 @@ const AboutMeTitle = styled.div`
   color: #00000066;
 `;
 
-const AboutMeDescription = styled.div``;
-
 const AboutMe = ({ aboutMeInfos }: any) => {
   return (
     <Container>
       {aboutMeInfos.map(({ title, description }: AboutProps, idx: number) => (
         <AboutMeEachContainer key={idx}>
           <AboutMeTitle>{title}</AboutMeTitle>
-          <AboutMeDescription>{description}</AboutMeDescription>
+          <div>{description}</div>
         </AboutMeEachContainer>
       ))}
     </Container>
