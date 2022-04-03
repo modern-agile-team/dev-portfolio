@@ -16,7 +16,7 @@ const TechStacks = ({ techStacks }: TechStacksType) => {
     <div id="TechStacks">
       {techStacks?.map(({ nameOption, progressBarOption }, idx) => (
         <TechStack key={idx}>
-          <TechStackName nameOption={nameOption} />
+          <TechStackName {...nameOption} />
           <ProgressBarContainer {...progressBarOption} />
         </TechStack>
       ))}
