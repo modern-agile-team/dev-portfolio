@@ -4,17 +4,17 @@ import styled from 'styled-components';
 import TechStackName from './TechStackName';
 import ProgressBarContainer from './ProgressBar';
 
-interface TechStacksType {
-  techStacks: {
-    nameOption: { name: string; size: string; iconColor: string };
-    progressBarOption: { rate: string; colorTo?: string; colorFrom?: string };
+interface TechStackListType {
+  teckStackList: {
+    nameOption?: { name?: string; size?: string; iconColor?: string };
+    progressBarOption?: { rate?: string; colorTo?: string; colorFrom?: string };
   }[];
 }
 
-const TechStacks = ({ techStacks }: TechStacksType) => {
+const TechStackList = ({ teckStackList }: TechStackListType) => {
   return (
     <div id="TechStacks">
-      {techStacks?.map(({ nameOption, progressBarOption }, idx) => (
+      {teckStackList?.map(({ nameOption, progressBarOption }, idx) => (
         <TechStack key={idx}>
           <TechStackName {...nameOption} />
           <ProgressBarContainer {...progressBarOption} />
@@ -24,7 +24,7 @@ const TechStacks = ({ techStacks }: TechStacksType) => {
   );
 };
 
-export default TechStacks;
+export default TechStackList;
 
 const TechStack = styled.div<{
   margin?: any;
