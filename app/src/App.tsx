@@ -35,7 +35,7 @@ function App() {
         <Item />
       </Gallery>
       <Intro />
-      <TechStackList teckStackList={techStacksDefault} />
+      <TechStackList techStackList={techStacksDefault} />
       <TechStackInput />
       <Contact />
     </>

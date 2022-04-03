@@ -1,33 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import TechStackName from './TechStackName';
-import ProgressBarContainer from './ProgressBar';
+import TechStack from './TechStack';
 
 interface TechStackListType {
-  teckStackList: {
-    nameOption?: { name?: string; size?: string; iconColor?: string };
-    progressBarOption?: { rate?: string; colorTo?: string; colorFrom?: string };
+  techStackList: {
+    nameOption: { name?: string; size?: string; iconColor?: string };
+    progressBarOption: { rate?: string; colorTo?: string; colorFrom?: string };
   }[];
 }
 
-const TechStackList = ({ teckStackList }: TechStackListType) => {
+const TechStackList = ({ techStackList }: TechStackListType) => {
   return (
     <div id="TechStacks">
-      {teckStackList?.map(({ nameOption, progressBarOption }, idx) => (
-        <TechStack key={idx}>
-          <TechStackName {...nameOption} />
-          <ProgressBarContainer {...progressBarOption} />
-        </TechStack>
+      {techStackList?.map(({ nameOption, progressBarOption }, idx) => (
+        <TechStack key={idx} nameOption={nameOption} progressBarOption={progressBarOption} />
       ))}
     </div>
   );
 };
 
 export default TechStackList;
-
-const TechStack = styled.div<{
-  margin?: any;
-}>`
-  margin: ${({ margin }) => margin ?? '10px 30px'};
-`;
