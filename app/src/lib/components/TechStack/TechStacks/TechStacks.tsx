@@ -13,20 +13,18 @@ interface Props {
 
 const TechStacks = ({ techStacks }: Props) => {
   return (
-    <Container id="TechStacks">
+    <div id="TechStacks">
       {techStacks?.map(({ nameOption, progressBarOption }, idx) => (
         <TechStack key={idx}>
           <TechStackName nameOption={nameOption} />
           <ProgressBarContainer progressBarOption={progressBarOption} />
         </TechStack>
       ))}
-    </Container>
+    </div>
   );
 };
 
 export default TechStacks;
-
-const Container = styled.div``;
 
 const TechStack = styled.div<{
   margin?: any;
