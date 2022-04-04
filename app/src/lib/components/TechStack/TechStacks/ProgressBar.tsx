@@ -1,7 +1,13 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }: any) => {
+interface ProgressBarType {
+  rate?: string;
+  colorFrom?: string;
+  colorTo?: string;
+}
+
+const ProgressBar = ({ rate = '100%', colorFrom = 'red', colorTo = 'white' }: ProgressBarType) => {
   return (
     <ProgressBarContainer>
       <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
@@ -13,6 +19,12 @@ const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }: any) =
 };
 
 export default ProgressBar;
+
+ProgressBar.defaultProps = {
+  rate: '100%',
+  colorFrom: 'red',
+  colorTo: 'white',
+};
 
 const g = ({ from, to }: { from?: string; to?: string }) => keyframes`
   0% { 

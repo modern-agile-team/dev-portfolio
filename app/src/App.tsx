@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, TechStackInput, TechStacks, Contact } from './lib/index';
+import { Header, TechStackInput, TechStackList, Contact, Intro, Gallery, Item } from './lib/index';
 
 function App() {
   const techStacksDefault = [
@@ -23,7 +23,19 @@ function App() {
   return (
     <>
       <Header />
-      <TechStacks techStacks={techStacksDefault} />
+      <Gallery>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+      </Gallery>
+      <Intro />
+      <TechStackList techStackList={techStacksDefault} />
       <TechStackInput />
       <Contact />
     </>
