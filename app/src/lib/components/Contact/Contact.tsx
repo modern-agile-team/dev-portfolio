@@ -3,6 +3,24 @@ import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
 
+export interface ContactOptionTypes {
+  title?: string;
+  subTitle?: string;
+  buttonText?: string;
+  channels?: object;
+  aboutMeInfos?: object;
+}
+
+const Contact = ({ contactOption = contactOptionDefault }) => {
+  const { aboutMeInfos } = contactOption;
+  return (
+    <Container id="Contact">
+      <ContactForm contactOption={contactOption} />
+      <AboutMe aboutMeInfos={aboutMeInfos} />
+    </Container>
+  );
+};
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -59,16 +77,6 @@ const contactOptionDefault = {
       description: 'dev-portfolio@gmail.com',
     },
   ],
-};
-
-const Contact = ({ contactOption = contactOptionDefault }) => {
-  const { aboutMeInfos } = contactOption;
-  return (
-    <Container id="Contact">
-      <ContactForm contactOption={contactOption} />
-      <AboutMe aboutMeInfos={aboutMeInfos} />
-    </Container>
-  );
 };
 
 export default Contact;
