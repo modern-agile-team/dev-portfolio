@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../../../dependencies/@iconify/react/dist/iconify';
 
-interface Props {
-  nameOption: {
-    name: string;
-    iconColor: string;
-    size: string;
-  };
+interface TechStackNameType {
+  name?: string;
+  iconColor?: string;
+  size?: string;
 }
 
-const TechStackName = ({ nameOption }: Props) => {
-  const { name, iconColor, size } = nameOption;
+const TechStackName = (props: TechStackNameType) => {
+  const { name = 'name of skill', iconColor = 'black', size = '16px' } = props;
 
   return (
     <NameContainer>
@@ -22,6 +20,12 @@ const TechStackName = ({ nameOption }: Props) => {
 };
 
 export default TechStackName;
+
+TechStackName.defaultProps = {
+  name: 'name of skill',
+  iconColor: 'black',
+  size: '16px',
+};
 
 const NameContainer = styled.div<{
   margin?: string;
