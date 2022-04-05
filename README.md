@@ -169,7 +169,7 @@ export default App;
 ```
 
 <details>
-<summary>Props of TechStackList</summary>
+<summary>Props of Contact</summary>
 
   #### contactOption
   ```js
