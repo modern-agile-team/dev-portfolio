@@ -15,7 +15,7 @@ const TechStackName = ({ nameOption }: Props) => {
 
   return (
     <NameContainer>
-      <Icon icon={`simple-icons:${name.toLowerCase()}`} color={iconColor} fontSize={size} />
+      <Icon icon={`logos:${name.toLowerCase()}`} color={iconColor} fontSize={size} />
       <Name>{name}</Name>
     </NameContainer>
   );

@@ -13,7 +13,7 @@ const TechStackInput = () => {
     value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
     
     if (value.length >= 2) {
-      fetch(`https://api.iconify.design/search?query=simple-icons:${value}`)
+      fetch(`https://api.iconify.design/search?query=logos:${value}`)
         .then((res) => res.json())
         .then((res) => setIcons(res.icons));
     }
@@ -28,6 +28,7 @@ const TechStackInput = () => {
             {icons?.length >= 1 ? icons.map((icon, idx) => (
               <TechStackEachBox key={idx}>
                 <Icon icon={icon} fontSize={'50px'} />
+                <TechStackName>{icon}</TechStackName>
               </TechStackEachBox>
             )) : "There are no icons you entered."}
           </Modal>
