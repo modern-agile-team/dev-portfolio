@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContactOptionTypes } from './Contact';
+import { ContactOptionTypes } from '@global/types/contact';
 
 interface AboutProps {
   title: string;

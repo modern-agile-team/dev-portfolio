@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from './Intro';
+import { IntroOptionType } from '@global/types/intro';
 
 interface IntroTitleProps {
   introOption: IntroOptionType;

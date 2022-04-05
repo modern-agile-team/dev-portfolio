@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Channels from '../Channels/Channels';
-import { ContactOptionTypes } from './Contact';
+import { ContactOptionTypes } from '@global/types/contact';
 
 interface ContactOptionProps {
   contactOption: ContactOptionTypes;
