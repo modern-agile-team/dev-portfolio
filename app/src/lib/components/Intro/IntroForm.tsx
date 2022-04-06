@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from '@global/types/intro';
+import { IntroOptionType } from 'src/lib/common/types/intro';
 
 interface IntroDesProps {
   introDes: IntroOptionType;
