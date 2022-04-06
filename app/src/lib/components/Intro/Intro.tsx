@@ -2,12 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { IntroTitle, IntroForm } from './index';
 
-export interface IntroOptionType {
-  title: string;
-  shortIntro: string;
-  description: string;
-}
-
 const Intro = ({ introOption = IntroOptionDefault }) => {
   return (
     <Wrap>
