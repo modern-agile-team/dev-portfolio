@@ -1,3 +1,4 @@
+import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -23,9 +24,7 @@ const Carousel = ({ children, transistion = 2000 }: Props) => {
 
   return (
     <Wrapper>
-      <button type="button" onClick={showPrev}>
-        prev
-      </button>
+      <FaArrowCircleLeft id="prev-button" onClick={showPrev} />
       {React.Children.map(children, (child, idx) => {
         return (
           <Container transistion={transistion} currentIndex={idx} showIndex={showIndex}>
@@ -33,9 +32,7 @@ const Carousel = ({ children, transistion = 2000 }: Props) => {
           </Container>
         );
       })}
-      <button type="button" onClick={showNext}>
-        next
-      </button>
+      <FaArrowCircleRight id="next-button" onClick={showNext} />
     </Wrapper>
   );
 };
@@ -43,11 +40,23 @@ const Carousel = ({ children, transistion = 2000 }: Props) => {
 export default Carousel;
 
 const Wrapper = styled.div`
+  min-height: 500px;
   display: flex;
   position: relative;
   justify-content: space-between;
   background-color: lightcoral;
   overflow-x: hidden;
+  #prev-button,
+  #next-button {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  #next-button {
+    right: 0;
+  }
 `;
 
 const Container = styled.div<{
@@ -57,25 +66,24 @@ const Container = styled.div<{
 }>`
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%;
   transition: ${(props) => props.transistion / 1000}s;
   ${({ currentIndex, showIndex }) => {
+    const width = document.documentElement.clientWidth;
     // this present current component
     if (currentIndex === showIndex) {
       return css`
-        left: 50%;
+        transform: translate(-50%, -50%);
       `;
     } else if (showIndex > currentIndex) {
       // this present previous component
-      const difference = currentIndex - showIndex * 50;
       return css`
-        left: ${difference}%;
+        transform: translate(-${width * 2}%, -50%);
       `;
     } else {
       // this present next component
-      const difference = showIndex - currentIndex * 50;
       return css`
-        right: ${difference}%;
+        transform: translate(${width * 2}%, -50%);
       `;
     }
   }}
