@@ -2,34 +2,40 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 interface Props {
-  array: React.ReactElement[];
+  children: React.ReactNode;
   transistion?: number;
 }
 
-const Carousel = ({ array, transistion = 2000 }: Props) => {
+const Carousel = ({ children, transistion = 2000 }: Props) => {
   const [showIndex, setShowIndex] = useState<number>(0);
 
   const showPrev = () => {
-    if (showIndex === 0) setShowIndex(array.length - 1);
+    const len = React.Children.toArray(children).length;
+    if (showIndex === 0) setShowIndex(len - 1);
     else setShowIndex(showIndex - 1);
   };
 
   const showNext = () => {
-    if (showIndex === array.length - 1) setShowIndex(0);
+    const len = React.Children.toArray(children).length;
+    if (showIndex === len - 1) setShowIndex(0);
     else setShowIndex(showIndex + 1);
   };
 
   return (
     <Wrapper>
-      <button onClick={showPrev}>prev</button>
-      {array.map((el, idx) => {
+      <button type="button" onClick={showPrev}>
+        prev
+      </button>
+      {React.Children.map(children, (child, idx) => {
         return (
           <Container transistion={transistion} currentIndex={idx} showIndex={showIndex}>
-            {el}
+            {child}
           </Container>
         );
       })}
-      <button onClick={showNext}>next</button>
+      <button type="button" onClick={showNext}>
+        next
+      </button>
     </Wrapper>
   );
 };
