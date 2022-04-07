@@ -7,3 +7,4 @@ export { default as Contact } from '@components/Contact/Contact';
 export { default as Intro } from '@components/Intro/Intro';
 export { default as Gallery } from '@components/Gallery/Gallery';
 export { default as Item } from '@components/Gallery/Item';
+export { default as Card } from '@components/Card/Card';

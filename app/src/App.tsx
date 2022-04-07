@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, TechStackInput, TechStackList, Contact, Intro, Gallery, Item } from './lib/index';
+import { Header, TechStackInput, TechStackList, Contact, Intro, Gallery, Item, Card } from './lib/index';
 
 function App() {
   const techStacksDefault = [
@@ -23,6 +23,9 @@ function App() {
   return (
     <>
       <Header />
+      <Card radius="square" width="150px" height="150px" hover="up">
+        이거슨 카드이다
+      </Card>
       <Gallery>
         <Item />
         <Item />
