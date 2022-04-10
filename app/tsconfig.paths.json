@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/lib/components/*"],
-      "@dependencies/*": ["src/lib/dependencies/*"]
+      "@dependencies/*": ["src/lib/dependencies/*"],
+      "@global/*": ["src/lib/global/*"]
     }
   }
 }

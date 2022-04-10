@@ -3,14 +3,6 @@ import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
 
-export interface ContactOptionTypes {
-  title?: string;
-  subTitle?: string;
-  buttonText?: string;
-  channels?: object;
-  aboutMeInfos?: object;
-}
-
 const Contact = ({ contactOption = contactOptionDefault }) => {
   const { aboutMeInfos } = contactOption;
   return (

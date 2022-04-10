@@ -9,7 +9,7 @@ function App() {
       progressBarOption: { rate: '45%' },
     },
     {
-      nameOption: { name: 'HTML5', size: '24px', iconColor: '#E34F26' },
+      nameOption: { name: 'HTML-5', size: '24px', iconColor: '#E34F26' },
       progressBarOption: { rate: '30%' },
     },
     {
@@ -36,8 +36,8 @@ function App() {
         <Item />
       </Gallery>
       <Intro />
-      <TechStackList techStackList={techStacksDefault} />
       <TechStackInput />
+      <TechStackList techStackList={techStacksDefault} />
       <Contact />
       <Carousel transistion={1000}>
         <Item title="1" />
