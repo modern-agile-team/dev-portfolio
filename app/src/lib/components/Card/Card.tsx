@@ -5,13 +5,13 @@ interface Props {
   children?: React.ReactChild;
   width?: string;
   height?: string;
-  radius?: 'square' | 'round-square' | 'round';
+  shape?: 'square' | 'round-square' | 'round';
   hover?: 'up' | 'down' | 'zoom';
 }
 
-const Card = ({ children, width, height, radius, hover }: Props) => {
+const Card = ({ children, width, height, shape, hover }: Props) => {
   return (
-    <CardWrap width={width} height={height} radius={radius} hover={hover}>
+    <CardWrap width={width} height={height} shape={shape} hover={hover}>
       <div className="child">{children}</div>
     </CardWrap>
   );
@@ -22,15 +22,16 @@ export default Card;
 const CardWrap = styled.div<{
   width?: string;
   height?: string;
-  radius?: 'square' | 'round-square' | 'round';
+  shape?: 'square' | 'round-square' | 'round';
   hover?: 'up' | 'down' | 'zoom';
 }>`
-  width: ${({ width }) => width ?? '20%'};
-  height: ${({ height }) => height ?? '30%'};
+  width: ${({ width }) => width ?? '10em'};
+  height: ${({ height }) => height ?? '10em'};
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.14);
   padding: 16px;
-  ${({ radius }) => {
-    switch (radius) {
+  transition: 0.3s;
+  ${({ shape }) => {
+    switch (shape) {
       case 'square':
         return css`
           border-radius: 0px;
@@ -58,7 +59,7 @@ const CardWrap = styled.div<{
           `;
         case 'zoom':
           return css`
-            zoom: 1.05;
+            transform: scale(110%);
           `;
       }
     }}
@@ -68,5 +69,6 @@ const CardWrap = styled.div<{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
 `;

@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Header />
-      <Card radius="square" width="150px" height="150px" hover="up">
+      <Card shape="square" width="150px" height="150px" hover="up">
         이거슨 카드이다
       </Card>
       <Gallery>
