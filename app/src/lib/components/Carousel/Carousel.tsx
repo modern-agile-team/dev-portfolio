@@ -1,6 +1,6 @@
 import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
-import React, { useMemo, useRef, useState, useEffect, useCallback } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useMemo, useRef, useState, useCallback } from 'react';
+import styled from 'styled-components';
 
 interface Props {
   children: React.ReactNode;
@@ -16,28 +16,28 @@ const Carousel = ({ children, transistion = 2000 }: Props) => {
 
   const showPrev = useCallback(() => {
     if (showIndex === 0) {
-      setShowIndex(() => len);
+      setShowIndex(() => len - 1);
       if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * len}vw)`;
+        ref.current.style.transform = `translate(${-100 * (len - 1)}vw)`;
       }
     } else {
       setShowIndex((prev) => prev - 1);
       if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * showIndex}vw)`;
+        ref.current.style.transform = `translate(${-100 * (showIndex - 1)}vw)`;
       }
     }
   }, [len, showIndex]);
 
   const showNext = useCallback(() => {
-    if (showIndex === len) {
+    if (showIndex === len - 1) {
       setShowIndex(0);
       if (ref.current) {
-        ref.current.style.transform = `translate(${100 * len}vw)`;
+        ref.current.style.transform = `translate(0)`;
       }
     } else {
       setShowIndex((prev) => prev + 1);
       if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * showIndex}vw)`;
+        ref.current.style.transform = `translate(${-100 * (showIndex + 1)}vw)`;
       }
     }
   }, [len, showIndex]);
