@@ -1,3 +1,4 @@
+import Masonry from '@components/Masonry/Masonry';
 import React from 'react';
 import { Header, TechStackInput, TechStackList, Contact, Intro, Gallery, Item } from './lib/index';
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <Header />
+      <Masonry />
       <Gallery>
         <Item />
         <Item />
