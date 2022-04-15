@@ -1,26 +1,27 @@
 import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
 import React, { useMemo, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
 
 interface Props {
   children: React.ReactNode;
   transistion?: number;
   autoplaySpeed?: number;
+  slideToShow?: number;
 }
 
-const Carousel = ({ children, transistion = 1000, autoplaySpeed = 3000 }: Props) => {
+const Carousel = ({ children, transistion = 1000, autoplaySpeed = 3000, slideToShow = 1 }: Props) => {
   const [showIndex, setShowIndex] = useState<number>(0);
 
   const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
 
   const showPrev = () => {
-    if (showIndex === 0) return setShowIndex(() => childrenLen - 1);
+    if (showIndex === 0) return setShowIndex(() => Math.floor((childrenLen - 1) / slideToShow));
     setShowIndex((prev) => prev - 1);
   };
 
   const showNext = () => {
-    if (showIndex === childrenLen - 1) return setShowIndex(() => 0);
+    if (showIndex === Math.floor((childrenLen - 1) / slideToShow)) return setShowIndex(() => 0);
     setShowIndex((prev) => prev + 1);
   };
 
@@ -32,7 +33,11 @@ const Carousel = ({ children, transistion = 1000, autoplaySpeed = 3000 }: Props)
       <div className="carousel-wrapper">
         <div className="carousel-container">
           {React.Children.map(children, (child) => {
-            return <Container key={child?.toString()}>{child}</Container>;
+            return (
+              <Container len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
+                {child}
+              </Container>
+            );
           })}
         </div>
       </div>
@@ -46,6 +51,7 @@ export default Carousel;
 Carousel.defaultProps = {
   transistion: 1000,
   autoplaySpeed: 3000,
+  slideToShow: 1,
 };
 
 const Wrapper = styled.div<{
@@ -78,8 +84,21 @@ const Wrapper = styled.div<{
   }
 `;
 
-const Container = styled.div`
+const Container = styled.div<{
+  slideToShow: number;
+  len: number;
+}>`
   display: flex;
   justify-content: center;
-  width: 100%;
+  ${({ len, slideToShow }) => {
+    if (slideToShow === 1) {
+      return css`
+        width: 100%;
+      `;
+    } else {
+      return css`
+        width: calc(100% / ${len * slideToShow});
+      `;
+    }
+  }}
 `;
