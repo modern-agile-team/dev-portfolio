@@ -24,7 +24,7 @@ const Carousel = ({ children, transistion = 1000, autoplaySpeed = 3000 }: Props)
     setShowIndex((prev) => prev + 1);
   };
 
-  useInterval(showNext, autoplaySpeed);
+  useInterval(showNext, autoplaySpeed, [showIndex]);
 
   return (
     <Wrapper len={childrenLen} transistion={transistion}>

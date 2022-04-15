@@ -1,25 +1,24 @@
 import { useEffect, useRef } from 'react';
 
-const useInterval = (callback: Function, delay: number) => {
-  const autoPlayRef = useRef<Function | null>(null);
+const useInterval = (callback: Function, delay: number, deps?: any[]) => {
+  const autoPlayRef = useRef<any>(null);
 
-  useEffect(() => {
-    autoPlayRef.current = callback;
-  });
-
-  useEffect(() => {
-    function autoPlay() {
-      if (autoPlayRef.current === null) return;
-      autoPlayRef.current();
+  function resetTimeout() {
+    if (autoPlayRef.current) {
+      clearTimeout(autoPlayRef.current);
     }
-    const tick = setInterval(() => {
-      autoPlay();
+  }
+  useEffect(() => {
+    resetTimeout();
+
+    autoPlayRef.current = setTimeout(() => {
+      callback();
     }, delay);
 
     return () => {
-      clearInterval(tick);
+      resetTimeout();
     };
-  }, []);
+  }, deps);
 };
 
 export { useInterval };
