@@ -1,53 +1,37 @@
 import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
-import React, { useMemo, useRef, useState, useCallback } from 'react';
+import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { useInterval } from './hooks';
 
 interface Props {
   children: React.ReactNode;
   transistion?: number;
+  autoplaySpeed?: number;
 }
 
-const Carousel = ({ children, transistion = 2000 }: Props) => {
+const Carousel = ({ children, transistion = 1000, autoplaySpeed = 3000 }: Props) => {
   const [showIndex, setShowIndex] = useState<number>(0);
 
-  const len = useMemo(() => React.Children.toArray(children).length, [children]);
+  const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
 
-  const ref = useRef<HTMLDivElement>(null);
+  const showPrev = () => {
+    if (showIndex === 0) return setShowIndex(() => childrenLen - 1);
+    setShowIndex((prev) => prev - 1);
+  };
 
-  const showPrev = useCallback(() => {
-    if (showIndex === 0) {
-      setShowIndex(() => len - 1);
-      if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * (len - 1)}vw)`;
-      }
-    } else {
-      setShowIndex((prev) => prev - 1);
-      if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * (showIndex - 1)}vw)`;
-      }
-    }
-  }, [len, showIndex]);
+  const showNext = () => {
+    if (showIndex === childrenLen - 1) return setShowIndex(() => 0);
+    setShowIndex((prev) => prev + 1);
+  };
 
-  const showNext = useCallback(() => {
-    if (showIndex === len - 1) {
-      setShowIndex(0);
-      if (ref.current) {
-        ref.current.style.transform = `translate(0)`;
-      }
-    } else {
-      setShowIndex((prev) => prev + 1);
-      if (ref.current) {
-        ref.current.style.transform = `translate(${-100 * (showIndex + 1)}vw)`;
-      }
-    }
-  }, [len, showIndex]);
+  useInterval(showNext, autoplaySpeed);
 
   return (
-    <Wrapper len={len} transistion={transistion}>
+    <Wrapper len={childrenLen} transistion={transistion}>
       <FaArrowCircleLeft id="prev-button" onClick={showPrev} />
-      <div ref={ref} className="carousel-container">
-        {React.Children.map(children, (child, idx) => {
-          return <Container key={idx}>{child}</Container>;
+      <div className="carousel-container" style={{ transform: `translate3d(${-showIndex * 100}vw, 0, 0)` }}>
+        {React.Children.map(children, (child) => {
+          return <Container key={child?.toString()}>{child}</Container>;
         })}
       </div>
       <FaArrowCircleRight id="next-button" onClick={showNext} />
@@ -57,6 +41,11 @@ const Carousel = ({ children, transistion = 2000 }: Props) => {
 
 export default Carousel;
 
+Carousel.defaultProps = {
+  transistion: 1000,
+  autoplaySpeed: 3000,
+};
+
 const Wrapper = styled.div<{
   len: number;
   transistion: number;
@@ -64,11 +53,10 @@ const Wrapper = styled.div<{
   overflow: hidden;
   #prev-button,
   #next-button {
-    cursor: pointer;
     z-index: 3;
+    cursor: pointer;
   }
-  #next-button {
-  }
+
   .carousel-container {
     position: relative;
     transition: ${(props) => props.transistion / 1000}s;
