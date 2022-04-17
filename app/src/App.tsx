@@ -1,3 +1,4 @@
+import Carousel from '@components/Carousel/Carousel';
 import React from 'react';
 import { Header, TechStackInput, TechStackList, Contact, Intro, Gallery, Item } from './lib/index';
 
@@ -38,6 +39,11 @@ function App() {
       <TechStackInput />
       <TechStackList techStackList={techStacksDefault} />
       <Contact />
+      <Carousel transistion={1000}>
+        <Item title="1" />
+        <Item title="2" />
+        <Item title="3" />
+      </Carousel>
     </>
   );
 }
