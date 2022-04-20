@@ -9,6 +9,7 @@ interface Props {
   autoplaySpeed?: number;
   slideToShow?: number;
   isArrowShow?: boolean;
+  isAutoplay?: boolean;
 }
 
 const Carousel = ({
@@ -17,6 +18,7 @@ const Carousel = ({
   autoplaySpeed = 3000,
   slideToShow = 1,
   isArrowShow = true,
+  isAutoplay = false,
 }: Props) => {
   const [showIndex, setShowIndex] = useState<number>(0);
 
@@ -32,7 +34,7 @@ const Carousel = ({
     setShowIndex((prev) => prev + 1);
   };
 
-  useInterval(showNext, autoplaySpeed, [showIndex]);
+  isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
   return (
     <Wrapper len={childrenLen} transition={transition} showIndex={showIndex}>
@@ -60,6 +62,7 @@ Carousel.defaultProps = {
   autoplaySpeed: 3000,
   slideToShow: 1,
   isArrowShow: true,
+  isAutoplay: false,
 };
 
 const Wrapper = styled.div<{
