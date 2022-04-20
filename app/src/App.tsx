@@ -67,7 +67,7 @@ function App() {
       <TechStackInput />
       <TechStackList techStackList={techStacksDefault} />
       <Contact />
-      <Carousel transistion={1000}>
+      <Carousel transition={1000}>
         <Item title="1" />
         <Item title="2" />
         <Item title="3" />
