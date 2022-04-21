@@ -39,7 +39,8 @@ Item.defaultProps = {
   moveURL: '',
   title: '제목을 입력하세요',
   description: '본문을 입력하세요',
-  imgURL: 'https://img.marieclairekorea.com/2022/02/mck_620b83ff0751b.jpg',
+  imgURL:
+    'https://catnip-echium-964.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fba8bdb9c-c600-453f-bdb7-9c04419b026c%2Fdefault.png?table=block&id=440c81c7-fdfa-4688-87bd-51215d4ef7d3&spaceId=0b241d7f-6520-4240-ac94-27957e3f3aa5&width=2000&userId=&cache=v2',
 };
 
 const StyledItem = styled.li<{
@@ -49,7 +50,7 @@ const StyledItem = styled.li<{
   position: relative;
   top: 0px;
   transition: 0.3s;
-  box-shadow: 10px 10px 10px rgba(63, 63, 63, 0.2);
+  box-shadow: 0px 1px 10px 0px rgba(63, 63, 63, 0.2);
   cursor: pointer;
   img {
     position: relative;

@@ -21,7 +21,7 @@ const Wrap = styled.div<{
   padding?: string;
   column?: number;
 }>`
-  padding: ${({ padding }) => padding ?? '4em'};
+  padding: ${({ padding }) => padding ?? '2em 4em'};
   column-count: ${({ column }) => column ?? 4};
   column-gap: 1.5em;
 `;

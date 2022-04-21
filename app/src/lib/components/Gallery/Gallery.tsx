@@ -2,17 +2,20 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 interface Props {
+  padding?: string;
   children: React.ReactNode;
   col?: number;
   gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'poppy';
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'mint-chocolate';
 }
 
-const Gallery = ({ children, col, gap, theme }: Props) => {
+const Gallery = ({ children, col, gap, theme, padding }: Props) => {
   return (
-    <Wrapper theme={theme} col={col} gap={gap}>
-      <ul>{children}</ul>
-    </Wrapper>
+    <Wrap padding={padding}>
+      <Wrapper theme={theme} col={col} gap={gap}>
+        <ul>{children}</ul>
+      </Wrapper>
+    </Wrap>
   );
 };
 
@@ -21,20 +24,23 @@ export default Gallery;
 Gallery.defaultProps = {
   col: 3,
   gap: 'normal',
-  theme: 'poppy',
+  theme: 'mid-night',
 };
 
+const Wrap = styled.div<{
+  padding?: string;
+}>`
+  padding: ${({ padding }) => padding ?? '2em 10em'};
+`;
+
 const Wrapper = styled.div<{
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'poppy';
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'mint-chocolate';
   gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
   col?: number;
 }>`
   position: relative;
   display: flex;
   justify-content: center;
-  width: 70vw;
-  margin: 0 auto;
-  border: 1px solid;
   outline: 0px;
   padding: 16px;
   border-radius: 6px;
@@ -74,33 +80,28 @@ const Wrapper = styled.div<{
         switch (theme) {
           case 'mid-night':
             return css`
-              background-color: #0c1631b9;
-              color: #fff;
+              background-color: #333333a8;
+              color: #e7e7e7;
             `;
           case 'blossom':
             return css`
-              background-color: #ffa1b2b8;
+              background-color: #b156676e;
               color: #fff;
             `;
           case 'fruits':
             return css`
-              background-color: #fbbd5ac5;
-              color: #fa4529;
+              background-color: #e99f2982;
+              color: #fff;
             `;
           case 'bare-bare':
             return css`
               background: linear-gradient(#c2e3f4b1, 70%, #efb630b1);
               color: #030305;
             `;
-          case 'tropic-green':
+          case 'mint-chocolate':
             return css`
-              background-color: #007f53a9;
-              color: #f6f1ed;
-            `;
-          case 'poppy':
-            return css`
-              background-color: #90c8b6c0;
-              color: #ff4848;
+              background-color: #90c8b64a;
+              color: #530f0f;
             `;
         }
       }}

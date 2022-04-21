@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
   src: string;
-  title?: string;
-  description?: string;
+  subhead?: string;
+  head?: string;
 }
 
-const Image = ({ src, title, description }: Props) => {
+const Image = ({ src, subhead, head }: Props) => {
   return (
     <Wrap>
       <Items>
         <img src={src} />
         <div className="imgDes">
-          <p>{title}</p>
-          <span>{description}</span>
+          <p>{subhead}</p>
+          <span>{head}</span>
         </div>
       </Items>
     </Wrap>
@@ -24,14 +24,13 @@ const Image = ({ src, title, description }: Props) => {
 export default Image;
 
 Image.defaultProps = {
-  title: '제목을 입력하세요',
-  description: '본문을 입력하세요',
+  subhead: 'Write your subhead',
+  head: 'script your head',
 };
 
 const Wrap = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5em;
   display: inline;
 `;
 
@@ -42,7 +41,6 @@ const Items = styled.div`
   margin-bottom: 0.5em;
   img {
     width: 100%;
-    cursor: pointer;
     transition: 0.6s;
     object-fit: cover;
     :hover {
@@ -51,12 +49,13 @@ const Items = styled.div`
   }
   .imgDes {
     p {
-      margin-left: 1px;
+      margin: 11px 0px 11px 1px;
       font-size: 14px;
     }
     span {
       font-size: 22px;
       font-weight: 800;
     }
+    margin-bottom: 8px;
   }
 `;
