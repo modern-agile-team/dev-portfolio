@@ -5,18 +5,20 @@ import { useInterval } from './hooks';
 
 interface Props {
   children: React.ReactNode;
-  transistion?: number;
+  transition?: number;
   autoplaySpeed?: number;
   slideToShow?: number;
   isArrowShow?: boolean;
+  isAutoplay?: boolean;
 }
 
 const Carousel = ({
   children,
-  transistion = 1000,
+  transition = 1000,
   autoplaySpeed = 3000,
   slideToShow = 1,
   isArrowShow = true,
+  isAutoplay = false,
 }: Props) => {
   const [showIndex, setShowIndex] = useState<number>(0);
 
@@ -32,10 +34,10 @@ const Carousel = ({
     setShowIndex((prev) => prev + 1);
   };
 
-  useInterval(showNext, autoplaySpeed, [showIndex]);
+  isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
   return (
-    <Wrapper len={childrenLen} transistion={transistion} showIndex={showIndex}>
+    <Wrapper len={childrenLen} transition={transition} showIndex={showIndex}>
       {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
       <div className="carousel-wrapper">
         <div className="carousel-container">
@@ -56,15 +58,16 @@ const Carousel = ({
 export default React.memo(Carousel);
 
 Carousel.defaultProps = {
-  transistion: 1000,
+  transition: 1000,
   autoplaySpeed: 3000,
   slideToShow: 1,
   isArrowShow: true,
+  isAutoplay: false,
 };
 
 const Wrapper = styled.div<{
   len: number;
-  transistion: number;
+  transition: number;
   showIndex: number;
 }>`
   overflow: hidden;
@@ -86,7 +89,7 @@ const Wrapper = styled.div<{
   .carousel-container {
     display: flex;
     position: relative;
-    transition: ${(props) => props.transistion / 1000}s;
+    transition: ${(props) => props.transition / 1000}s;
     width: ${(props) => `calc(${props.len} * 100%)`};
     transform: ${(props) => `translateX(${(-props.showIndex * 100) / props.len}%)`};
   }
