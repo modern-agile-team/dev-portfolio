@@ -49,13 +49,13 @@ const Items = styled.div`
   }
   .imgDes {
     p {
-      margin: 11px 0px 11px 1px;
+      margin: 5px 0px 2px 1px;
       font-size: 14px;
     }
     span {
       font-size: 22px;
       font-weight: 800;
     }
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 `;
