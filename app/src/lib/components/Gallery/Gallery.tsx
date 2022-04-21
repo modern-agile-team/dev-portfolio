@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
   col?: number;
   gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'mint-chocolate';
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
 }
 
 const Gallery = ({ children, col, gap, theme, padding }: Props) => {
@@ -34,7 +34,7 @@ const Wrap = styled.div<{
 `;
 
 const Wrapper = styled.div<{
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'tropic-green' | 'mint-chocolate';
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
   gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
   col?: number;
 }>`

@@ -29,7 +29,7 @@ const CardWrap = styled.div<{
   height: ${({ height }) => height ?? '10em'};
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.14);
   padding: 16px;
-  transition: 0.3s;
+  transition: 0.4s;
   ${({ shape }) => {
     switch (shape) {
       case 'square':
@@ -59,7 +59,7 @@ const CardWrap = styled.div<{
           `;
         case 'zoom':
           return css`
-            transform: scale(110%);
+            transform: scale(105%);
           `;
       }
     }}
