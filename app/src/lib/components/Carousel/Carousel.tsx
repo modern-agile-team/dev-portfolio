@@ -55,7 +55,9 @@ const Carousel = ({
   );
 };
 
-export default React.memo(Carousel);
+const MemoizedCarousel = React.memo(Carousel);
+
+export default React.forwardRef(MemoizedCarousel);
 
 Carousel.defaultProps = {
   transition: 1000,
