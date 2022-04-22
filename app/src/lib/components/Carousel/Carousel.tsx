@@ -12,52 +12,52 @@ interface Props {
   isAutoplay?: boolean;
 }
 
-const Carousel = ({
-  children,
-  transition = 1000,
-  autoplaySpeed = 3000,
-  slideToShow = 1,
-  isArrowShow = true,
-  isAutoplay = false,
-}: Props) => {
-  const [showIndex, setShowIndex] = useState<number>(0);
+const Carousel = React.forwardRef(
+  ({
+    children,
+    transition = 1000,
+    autoplaySpeed = 3000,
+    slideToShow = 1,
+    isArrowShow = true,
+    isAutoplay = false,
+  }: Props) => {
+    const [showIndex, setShowIndex] = useState<number>(0);
 
-  const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
+    const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
 
-  const showPrev = () => {
-    if (showIndex === 0) return setShowIndex(() => Math.floor((childrenLen - 1) / slideToShow));
-    setShowIndex((prev) => prev - 1);
-  };
+    const showPrev = () => {
+      if (showIndex === 0) return setShowIndex(() => Math.floor((childrenLen - 1) / slideToShow));
+      setShowIndex((prev) => prev - 1);
+    };
 
-  const showNext = () => {
-    if (showIndex === Math.floor((childrenLen - 1) / slideToShow)) return setShowIndex(() => 0);
-    setShowIndex((prev) => prev + 1);
-  };
+    const showNext = () => {
+      if (showIndex === Math.floor((childrenLen - 1) / slideToShow)) return setShowIndex(() => 0);
+      setShowIndex((prev) => prev + 1);
+    };
 
-  isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
+    isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
-  return (
-    <Wrapper len={childrenLen} transition={transition} showIndex={showIndex}>
-      {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
-      <div className="carousel-wrapper">
-        <div className="carousel-container">
-          {React.Children.map(children, (child) => {
-            return (
-              <Container len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
-                {child}
-              </Container>
-            );
-          })}
+    return (
+      <Wrapper len={childrenLen} transition={transition} showIndex={showIndex}>
+        {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
+        <div className="carousel-wrapper">
+          <div className="carousel-container">
+            {React.Children.map(children, (child) => {
+              return (
+                <Container len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
+                  {child}
+                </Container>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      {isArrowShow && <FaArrowCircleRight id="next-button" onClick={showNext} />}
-    </Wrapper>
-  );
-};
+        {isArrowShow && <FaArrowCircleRight id="next-button" onClick={showNext} />}
+      </Wrapper>
+    );
+  }
+);
 
-const MemoizedCarousel = React.memo(Carousel);
-
-export default React.forwardRef(MemoizedCarousel);
+export default React.memo(Carousel);
 
 Carousel.defaultProps = {
   transition: 1000,
