@@ -13,32 +13,36 @@ interface Props {
 }
 
 const Carousel = React.forwardRef(
-  ({
-    children,
-    transition = 1000,
-    autoplaySpeed = 3000,
-    slideToShow = 1,
-    isArrowShow = true,
-    isAutoplay = false,
-  }: Props) => {
+  (
+    {
+      children,
+      transition = 1000,
+      autoplaySpeed = 3000,
+      slideToShow = 1,
+      isArrowShow = true,
+      isAutoplay = false,
+    }: Props,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => {
     const [showIndex, setShowIndex] = useState<number>(0);
 
     const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
+    const lastChildIndex = useMemo(() => Math.floor((childrenLen - 1) / slideToShow), [childrenLen, slideToShow]);
 
     const showPrev = () => {
-      if (showIndex === 0) return setShowIndex(() => Math.floor((childrenLen - 1) / slideToShow));
+      if (showIndex === 0) return setShowIndex(() => lastChildIndex);
       setShowIndex((prev) => prev - 1);
     };
 
     const showNext = () => {
-      if (showIndex === Math.floor((childrenLen - 1) / slideToShow)) return setShowIndex(() => 0);
+      if (showIndex === lastChildIndex) return setShowIndex(() => 0);
       setShowIndex((prev) => prev + 1);
     };
 
     isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
     return (
-      <Wrapper len={childrenLen} transition={transition} showIndex={showIndex}>
+      <Wrapper ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
         {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
         <div className="carousel-wrapper">
           <div className="carousel-container">
