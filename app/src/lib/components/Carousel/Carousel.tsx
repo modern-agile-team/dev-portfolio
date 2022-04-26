@@ -97,7 +97,10 @@ const Wrapper = styled.div<{
             transform: translateY(-50%);
           }
           #next-button {
-            right: 0;
+            right: 30px;
+          }
+          #prev-button {
+            left: 30px;
           }
         `;
       case 'bottom':
