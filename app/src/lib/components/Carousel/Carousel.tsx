@@ -10,6 +10,7 @@ interface Props {
   slideToShow?: number;
   isArrowShow?: boolean;
   isAutoplay?: boolean;
+  arrowLocation?: 'bottom' | 'side';
 }
 
 const Carousel = React.forwardRef(
@@ -21,6 +22,7 @@ const Carousel = React.forwardRef(
       slideToShow = 1,
       isArrowShow = true,
       isAutoplay = false,
+      arrowLocation = 'side',
     }: Props,
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
@@ -42,19 +44,21 @@ const Carousel = React.forwardRef(
     isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
     return (
-      <Wrapper ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
+      <Wrapper arrowLocation={arrowLocation}>
         {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
-        <div className="carousel-wrapper">
-          <div className="carousel-container">
-            {React.Children.map(children, (child) => {
-              return (
-                <Container len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
-                  {child}
-                </Container>
-              );
-            })}
+        <Container ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
+          <div className="carousel-wrapper">
+            <div className="carousel-container">
+              {React.Children.map(children, (child) => {
+                return (
+                  <ChildrenWrapper len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
+                    {child}
+                  </ChildrenWrapper>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Container>
         {isArrowShow && <FaArrowCircleRight id="next-button" onClick={showNext} />}
       </Wrapper>
     );
@@ -69,26 +73,56 @@ Carousel.defaultProps = {
   slideToShow: 1,
   isArrowShow: true,
   isAutoplay: false,
+  arrowLocation: 'side',
 };
 
 const Wrapper = styled.div<{
+  arrowLocation: 'bottom' | 'side';
+}>`
+  position: relative;
+  #prev-button,
+  #next-button {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  ${({ arrowLocation }) => {
+    switch (arrowLocation) {
+      case 'side':
+        return css`
+          #prev-button,
+          #next-button {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          #next-button {
+            right: 0;
+          }
+        `;
+      case 'bottom':
+        return css`
+          #prev-button,
+          #next-button {
+            top: 100%;
+          }
+          #next-button {
+            left: 50%;
+          }
+          #prev-button {
+            right: 50%;
+          }
+        `;
+    }
+  }}
+`;
+
+const Container = styled.div<{
   len: number;
   transition: number;
   showIndex: number;
 }>`
   overflow: hidden;
-  position: relative;
-  #prev-button,
-  #next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    cursor: pointer;
-  }
-  #next-button {
-    right: 0;
-  }
   .carousel-wrapper {
     width: 100%;
   }
@@ -101,7 +135,7 @@ const Wrapper = styled.div<{
   }
 `;
 
-const Container = styled.div<{
+const ChildrenWrapper = styled.div<{
   slideToShow: number;
   len: number;
 }>`
