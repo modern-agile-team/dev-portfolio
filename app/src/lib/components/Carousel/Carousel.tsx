@@ -10,7 +10,7 @@ interface Props {
   slideToShow?: number;
   isArrowShow?: boolean;
   isAutoplay?: boolean;
-  arrowLocation?: 'bottom' | 'side';
+  arrowLocation?: 'bottom' | 'side' | 'top' | 'bottom-side' | 'top-side';
 }
 
 const Carousel = React.forwardRef(
@@ -77,7 +77,7 @@ Carousel.defaultProps = {
 };
 
 const Wrapper = styled.div<{
-  arrowLocation: 'bottom' | 'side';
+  arrowLocation: 'bottom' | 'side' | 'top' | 'bottom-side' | 'top-side';
 }>`
   position: relative;
   #prev-button,
@@ -114,6 +114,45 @@ const Wrapper = styled.div<{
           }
           #prev-button {
             right: 50%;
+          }
+        `;
+      case 'bottom-side':
+        return css`
+          #prev-button,
+          #next-button {
+            top: 100%;
+          }
+          #next-button {
+            right: 30px;
+          }
+          #prev-button {
+            left: 30px;
+          }
+        `;
+      case 'top':
+        return css`
+          #prev-button,
+          #next-button {
+            bottom: 100%;
+          }
+          #next-button {
+            left: 50%;
+          }
+          #prev-button {
+            right: 50%;
+          }
+        `;
+      case 'top-side':
+        return css`
+          #prev-button,
+          #next-button {
+            bottom: 100%;
+          }
+          #next-button {
+            right: 30px;
+          }
+          #prev-button {
+            left: 30px;
           }
         `;
     }
