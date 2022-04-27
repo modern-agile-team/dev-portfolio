@@ -5,6 +5,8 @@ import { useInterval } from './hooks';
 
 interface Props {
   children: React.ReactNode;
+  width?: string;
+  padding?: string;
   transition?: number;
   autoplaySpeed?: number;
   slideToShow?: number;
@@ -17,6 +19,8 @@ const Carousel = React.forwardRef(
   (
     {
       children,
+      width,
+      padding,
       transition = 1000,
       autoplaySpeed = 3000,
       slideToShow = 1,
@@ -44,7 +48,7 @@ const Carousel = React.forwardRef(
     isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
     return (
-      <Wrapper arrowLocation={arrowLocation}>
+      <Wrapper arrowLocation={arrowLocation} width={width} padding={padding}>
         {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
         <Container ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
           <div className="carousel-wrapper">
@@ -78,7 +82,11 @@ Carousel.defaultProps = {
 
 const Wrapper = styled.div<{
   arrowLocation: 'bottom' | 'side' | 'top' | 'bottom-side' | 'top-side';
+  width?: string;
+  padding?: string;
 }>`
+  width: ${(props) => props.width || '100%'};
+  padding: ${(props) => props.padding || 0};
   position: relative;
   #prev-button,
   #next-button {
