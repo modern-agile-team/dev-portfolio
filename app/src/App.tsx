@@ -65,7 +65,7 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel transition={1000} width="1000px" padding="10px">
+      <Carousel transition={1000} width="500px" padding="10px" arrowLocation="mid-side">
         <div style={{ width: '200px', padding: '15px' }}>
           <Item title="1" />
         </div>

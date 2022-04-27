@@ -12,7 +12,7 @@ interface Props {
   slideToShow?: number;
   isArrowShow?: boolean;
   isAutoplay?: boolean;
-  arrowLocation?: 'bottom' | 'side' | 'top' | 'bottom-side' | 'top-side';
+  arrowLocation?: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
 }
 
 const Carousel = React.forwardRef(
@@ -26,7 +26,7 @@ const Carousel = React.forwardRef(
       slideToShow = 1,
       isArrowShow = true,
       isAutoplay = false,
-      arrowLocation = 'side',
+      arrowLocation = 'mid-side',
     }: Props,
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
@@ -77,93 +77,70 @@ Carousel.defaultProps = {
   slideToShow: 1,
   isArrowShow: true,
   isAutoplay: false,
-  arrowLocation: 'side',
+  arrowLocation: 'mid-side',
 };
 
 const Wrapper = styled.div<{
-  arrowLocation: 'bottom' | 'side' | 'top' | 'bottom-side' | 'top-side';
+  arrowLocation: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
   width?: string;
   padding?: string;
 }>`
   width: ${(props) => props.width || '100%'};
   padding: ${(props) => props.padding || 0};
   position: relative;
-  #prev-button,
-  #next-button {
-    position: absolute;
-    z-index: 3;
-    cursor: pointer;
-  }
 
   ${({ arrowLocation }) => {
-    switch (arrowLocation) {
-      case 'side':
-        return css`
-          #prev-button,
-          #next-button {
-            top: 50%;
-            transform: translateY(-50%);
-          }
-          #next-button {
-            right: 30px;
-          }
-          #prev-button {
-            left: 30px;
-          }
-        `;
-      case 'bottom':
-        return css`
-          #prev-button,
-          #next-button {
-            top: 100%;
-          }
-          #next-button {
-            left: 50%;
-          }
-          #prev-button {
-            right: 50%;
-          }
-        `;
-      case 'bottom-side':
-        return css`
-          #prev-button,
-          #next-button {
-            top: 100%;
-          }
-          #next-button {
-            right: 30px;
-          }
-          #prev-button {
-            left: 30px;
-          }
-        `;
+    type locationType = {
+      top?: string;
+      bottom?: string;
+      side?: string;
+      translateY?: string;
+    };
+
+    const location: locationType = {
+      top: undefined,
+      bottom: undefined,
+      side: undefined,
+      translateY: undefined,
+    };
+
+    const [heigthLocation, sideLocation] = arrowLocation.split('-');
+
+    if (sideLocation === 'side') location.side = '15%';
+    else location.side = '50%';
+
+    switch (heigthLocation) {
       case 'top':
-        return css`
-          #prev-button,
-          #next-button {
-            bottom: 100%;
-          }
-          #next-button {
-            left: 50%;
-          }
-          #prev-button {
-            right: 50%;
-          }
-        `;
-      case 'top-side':
-        return css`
-          #prev-button,
-          #next-button {
-            bottom: 100%;
-          }
-          #next-button {
-            right: 30px;
-          }
-          #prev-button {
-            left: 30px;
-          }
-        `;
+        location.bottom = '100%';
+        break;
+      case 'bottom':
+        location.top = '100%';
+        break;
+      case 'mid':
+        location.top = '50%';
+        location.translateY = '-50%';
+        break;
     }
+
+    const { top, bottom, side, translateY } = location;
+
+    return css`
+      #prev-button,
+      #next-button {
+        position: absolute;
+        top: ${top};
+        bottom: ${bottom};
+        transform: translateY(${translateY});
+        z-index: 3;
+        cursor: pointer;
+      }
+      #next-button {
+        ${sideLocation === 'side' ? 'right' : 'left'}: ${side};
+      }
+      #prev-button {
+        ${sideLocation === 'side' ? 'left' : 'right'}: ${side};
+      }
+    `;
   }}
 `;
 
