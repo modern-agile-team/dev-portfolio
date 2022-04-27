@@ -1,5 +1,5 @@
 import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
-import React, { useMemo, useState } from 'react';
+import React, { cloneElement, ReactElement, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
 
@@ -13,7 +13,16 @@ interface Props {
   isArrowShow?: boolean;
   isAutoplay?: boolean;
   arrowLocation?: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
+  prevArrowIcon?: ReactElement<{ size: number }>;
+  nextArrowIcon?: ReactElement<{ size: number }>;
 }
+
+type ArrowLocationType = {
+  top?: string;
+  bottom?: string;
+  side?: string;
+  translateY?: string;
+};
 
 const Carousel = React.forwardRef(
   (
@@ -27,6 +36,8 @@ const Carousel = React.forwardRef(
       isArrowShow = true,
       isAutoplay = false,
       arrowLocation = 'mid-side',
+      prevArrowIcon = <FaArrowCircleLeft />,
+      nextArrowIcon = <FaArrowCircleRight />,
     }: Props,
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
@@ -45,11 +56,20 @@ const Carousel = React.forwardRef(
       setShowIndex((prev) => prev + 1);
     };
 
+    /* These const variables are ArrowIcons received to props */
+    const sizedPrevArrowIcon = useMemo(() => cloneElement(prevArrowIcon), [prevArrowIcon]);
+    const sizedNextArrowIcon = useMemo(() => cloneElement(nextArrowIcon), [nextArrowIcon]);
+
+    /* useInterval is setTimeout custom hook */
     isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
     return (
       <Wrapper arrowLocation={arrowLocation} width={width} padding={padding}>
-        {isArrowShow && <FaArrowCircleLeft id="prev-button" onClick={showPrev} />}
+        {isArrowShow && (
+          <div className="icon-wrapper" id="prev-button" onClick={showPrev}>
+            {sizedPrevArrowIcon}
+          </div>
+        )}
         <Container ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
           <div className="carousel-wrapper">
             <div className="carousel-container">
@@ -63,7 +83,11 @@ const Carousel = React.forwardRef(
             </div>
           </div>
         </Container>
-        {isArrowShow && <FaArrowCircleRight id="next-button" onClick={showNext} />}
+        {isArrowShow && (
+          <div className="icon-wrapper" id="next-button" onClick={showNext}>
+            {sizedNextArrowIcon}
+          </div>
+        )}
       </Wrapper>
     );
   }
@@ -78,6 +102,8 @@ Carousel.defaultProps = {
   isArrowShow: true,
   isAutoplay: false,
   arrowLocation: 'mid-side',
+  prevArrowIcon: <FaArrowCircleLeft />,
+  nextArrowIcon: <FaArrowCircleRight />,
 };
 
 const Wrapper = styled.div<{
@@ -90,14 +116,7 @@ const Wrapper = styled.div<{
   position: relative;
 
   ${({ arrowLocation }) => {
-    type locationType = {
-      top?: string;
-      bottom?: string;
-      side?: string;
-      translateY?: string;
-    };
-
-    const location: locationType = {
+    const location: ArrowLocationType = {
       top: undefined,
       bottom: undefined,
       side: undefined,
