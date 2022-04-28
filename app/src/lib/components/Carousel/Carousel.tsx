@@ -187,6 +187,7 @@ const ChildrenWrapper = styled.div<{
 }>`
   display: flex;
   justify-content: center;
+  align-items: center;
   ${({ len, slideToShow }) => {
     if (slideToShow === 1) {
       return css`

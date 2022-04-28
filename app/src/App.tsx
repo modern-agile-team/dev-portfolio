@@ -78,12 +78,8 @@ function App() {
         <div style={{ width: '200px', padding: '15px' }}>
           <Item title="1" />
         </div>
-        <div style={{ width: '200px', padding: '15px' }}>
-          <Item title="2" />
-        </div>
-        <div style={{ width: '200px', padding: '15px' }}>
-          <Item title="3" />
-        </div>
+        <Item title="2" />
+        <Item title="3" />
       </Carousel>
       <CardWrap>
         <Card width="20em" height="20em" hover="down">
