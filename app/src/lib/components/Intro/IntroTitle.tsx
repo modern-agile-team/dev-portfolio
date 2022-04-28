@@ -32,7 +32,7 @@ const Title = styled.div`
 `;
 
 const ShortIntro = styled.div`
-  padding: 15px 5px 20px 5px;
+  padding: 10px 5px 20px 5px;
   font-size: 17.5px;
   font-weight: bold;
   animation: slide 2s;
