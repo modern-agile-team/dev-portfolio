@@ -1,40 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const History = () => {
+interface Props {
+  startDate?: string;
+  endDate?: string;
+  title?: string;
+  des?: string;
+}
+
+const History = (props: Props) => {
+  const {
+    startDate = '2020.05.o1',
+    endDate = '2020.05.o1',
+    title = '심서현 프로젝트 빨리 마무리 하자',
+    des = '아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩재밌다',
+  } = props;
+
   return (
-    <>
+    <div>
       <Wrap>
         <div className="intro">
-          <div className="date">2020.05.01</div>
-          <div className="child-title">심서현 프로젝트 빨리 마무리 하자</div>
+          <div className="date">
+            <div className="start-date">{startDate}</div>
+            <div className="end-date">{endDate}</div>
+          </div>
+          <div className="child-title">{title}</div>
         </div>
-        <div className="des">
-          아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩
-          재밌다
-        </div>
+        <div className="des">{des}</div>
       </Wrap>
-      <Wrap>
-        <div className="intro">
-          <div className="date">2020.05.01</div>
-          <div className="child-title">심서현 프로젝트 빨리 마무리 하자</div>
-        </div>
-        <div className="des">
-          아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩
-          재밌다
-        </div>
-      </Wrap>
-      <Wrap>
-        <div className="intro">
-          <div className="date">2020.05.01</div>
-          <div className="child-title">심서현 프로젝트 빨리 마무리 하자</div>
-        </div>
-        <div className="des">
-          아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩
-          재밌다
-        </div>
-      </Wrap>
-    </>
+    </div>
   );
 };
 
@@ -51,8 +45,22 @@ const Wrap = styled.div`
     min-width: 40%;
     display: flex;
     justify-content: space-between;
+    .date {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .start-date {
+        ::after {
+          content: '-';
+          margin: 0px 10px;
+        }
+      }
+      .end-date {
+        margin-left: 5px;
+      }
+    }
     .child-title {
-      max-width: 55%;
+      max-width: 60%;
       font-size: 22px;
       font-weight: 600;
     }
@@ -62,3 +70,10 @@ const Wrap = styled.div`
     text-align: center;
   }
 `;
+
+History.defaultProps = {
+  startDate: '2020.05.01',
+  endDate: '2020.05.01',
+  title: '심서현 프로젝트 빨리 마무리 하자',
+  des: '아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩재밌다',
+};

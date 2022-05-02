@@ -2,13 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import History from './History';
 
-const Experience = () => {
+interface Props {
+  historyList: {
+    startDate?: string;
+    endDate?: string;
+    title?: string;
+    des?: string;
+  }[];
+}
+
+const Experience = ({ historyList }: Props) => {
   return (
     <Wrap>
       <div className="title">Experience</div>
       <hr />
       <ChildWrap>
-        <History />
+        {historyList?.map(({ startDate, endDate, title, des }, idx) => (
+          <History key={idx} startDate={startDate} endDate={endDate} title={title} des={des} />
+        ))}
       </ChildWrap>
     </Wrap>
   );
