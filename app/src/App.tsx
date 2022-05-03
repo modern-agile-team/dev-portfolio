@@ -70,7 +70,6 @@ function App() {
       <Carousel
         transition={1000}
         width="500px"
-        padding="10px"
         arrowLocation="mid-side"
         prevArrowIcon={<FaStickerMule size={50} />}
         nextArrowIcon={<FaSuse size={50} />}
