@@ -9,12 +9,15 @@ interface Props {
     title?: string;
     des?: string;
   }[];
+  title?: string;
+  textAlign?: string;
+  background?: string;
 }
 
-const Experience = ({ historyList }: Props) => {
+const Experience = ({ historyList, title, textAlign, background }: Props) => {
   return (
-    <Wrap>
-      <div className="title">Experience</div>
+    <Wrap textAlign={textAlign} background={background}>
+      <div className="title">{title}</div>
       <hr />
       <ChildWrap>
         {historyList?.map(({ startDate, endDate, title, des }, idx) => (
@@ -27,8 +30,17 @@ const Experience = ({ historyList }: Props) => {
 
 export default Experience;
 
-const Wrap = styled.div`
+Experience.defaultProps = {
+  title: 'Experience',
+};
+
+const Wrap = styled.div<{
+  textAlign?: string;
+  background?: string;
+}>`
   padding: 25px;
+  text-align: ${({ textAlign }) => textAlign ?? 'left'};
+  background: ${({ background }) => background ?? 'left'};
   .title {
     padding: 10px 10px 20px 10px;
     font-size: 33px;

@@ -9,12 +9,7 @@ interface Props {
 }
 
 const History = (props: Props) => {
-  const {
-    startDate = '2020.05.o1',
-    endDate = '2020.05.o1',
-    title = '심서현 프로젝트 빨리 마무리 하자',
-    des = '아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩재밌다',
-  } = props;
+  const { startDate, endDate, title, des } = props;
 
   return (
     <div>
@@ -35,24 +30,24 @@ const History = (props: Props) => {
 export default History;
 
 const Wrap = styled.div`
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 2.2em 2em 3.2em 2em;
   border-bottom: 0.2px solid #b4b4b4a2;
+  white-space: pre-wrap;
   .intro {
-    min-width: 40%;
+    min-width: 42%;
     display: flex;
     justify-content: space-between;
     .date {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
       .start-date {
         ::after {
           content: '-';
-          margin: 0px 10px;
+          margin: 0px 7px;
         }
       }
       .end-date {
@@ -60,13 +55,13 @@ const Wrap = styled.div`
       }
     }
     .child-title {
-      max-width: 60%;
+      max-width: 58%;
       font-size: 22px;
       font-weight: 600;
     }
   }
   .des {
-    max-width: 45%;
+    max-width: 50%;
     text-align: center;
   }
 `;
