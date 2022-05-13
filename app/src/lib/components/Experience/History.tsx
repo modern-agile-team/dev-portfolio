@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 interface Props {
   startDate?: string;
   endDate?: string;
@@ -13,65 +12,36 @@ const History = (props: Props) => {
 
   return (
     <div>
-      {des ? (
-        <Wrap status={true}>
-          <div className="intro">
-            <div className="date">
-              <div className="start-date">{startDate}</div>
-              <div className="end-date">{endDate}</div>
-            </div>
-            <div className="child-title">{title}</div>
+      <Wrap>
+        <div className="intro">
+          <div className="date">
+            <div className="start-date">{startDate}</div>
+            <div className="end-date">{endDate}</div>
           </div>
-          <div className="des">{des}</div>
-        </Wrap>
-      ) : (
-        <Wrap status={false}>
-          <div className="intro">
-            <div className="date">
-              <div className="start-date">{startDate}</div>
-              <div className="end-date">{endDate}</div>
-            </div>
-            <div className="child-title">{title}</div>
-          </div>
-        </Wrap>
-      )}
+          <div className="child-title">{title}</div>
+        </div>
+        <div className="des">{des}</div>
+      </Wrap>
     </div>
   );
 };
-
 export default History;
 
-const Wrap = styled.div<{
-  status?: boolean;
-}>`
-  width: ${({ status }) => {
-    return status && '85%';
-  }};
-  margin: ${({ status }) => {
-    return status ? '0 auto' : 0;
-  }};
+const Wrap = styled.div`
+  width: 85%;
+  margin: 0 auto;
   display: flex;
-  justify-content: ${({ status }) => {
-    return status && 'space-between';
-  }};
+  justify-content: space-between;
   padding: 2.2em 2em 3.2em 2em;
   border-bottom: 0.2px solid #b4b4b4a2;
   white-space: pre-wrap;
   .intro {
-    text-align: center;
-    min-width: ${({ status }) => {
-      return status && '42%';
-    }};
+    min-width: 42%;
     display: flex;
-    flex-direction: ${({ status }) => {
-      return status ? null : 'column-reverse';
-    }};
     justify-content: space-between;
     .date {
       display: flex;
-      justify-content: ${({ status }) => {
-        return status ? 'space-between' : 'center';
-      }};
+      justify-content: space-between;
       .start-date {
         ::after {
           content: '-';
@@ -83,14 +53,9 @@ const Wrap = styled.div<{
       }
     }
     .child-title {
-      max-width: ${({ status }) => {
-        return status && '58%';
-      }};
+      max-width: 58%;
       font-size: 22px;
       font-weight: 600;
-      padding: ${({ status }) => {
-        return status ? null : '1em';
-      }};
     }
   }
   .des {
@@ -98,9 +63,3 @@ const Wrap = styled.div<{
     text-align: center;
   }
 `;
-
-History.defaultProps = {
-  startDate: '2020.05.01',
-  endDate: '2020.05.01',
-  title: '심서현 프로젝트 빨리 마무리 하자',
-};
