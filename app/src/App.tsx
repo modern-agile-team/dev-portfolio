@@ -1,3 +1,5 @@
+import { FaSuse } from '@dependencies/react-icons/fa';
+import { FaStickerMule } from '@dependencies/react-icons/fa';
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -64,19 +66,20 @@ function App() {
         <Image src="https://picsum.photos/600/500/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
-      <div style={{ width: '500px', border: '1px solid' }}>
-        <Carousel transition={1000}>
-          <div style={{ width: '200px', padding: '15px' }}>
-            <Item title="1" />
-          </div>
-          <div style={{ width: '200px', padding: '15px' }}>
-            <Item title="2" />
-          </div>
-          <div style={{ width: '200px', padding: '15px' }}>
-            <Item title="3" />
-          </div>
-        </Carousel>
-      </div>
+
+      <Carousel
+        transition={1000}
+        width="500px"
+        arrowLocation="mid-side"
+        prevArrowIcon={<FaStickerMule size={50} />}
+        nextArrowIcon={<FaSuse size={50} />}
+      >
+        <div style={{ width: '200px', padding: '15px' }}>
+          <Item title="1" />
+        </div>
+        <Item title="2" />
+        <Item title="3" />
+      </Carousel>
       <CardWrap>
         <Card width="20em" height="20em" hover="down">
           This is Card component
