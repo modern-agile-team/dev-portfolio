@@ -16,31 +16,6 @@ import {
 } from './lib/index';
 
 function App() {
-  const historyDefault = [
-    {
-      startDate: '2020.05.01',
-      endDate: '2022.05.23',
-      title: '박우림 프로젝트 빨리 마무리 하자',
-    },
-    {
-      startDate: '2020.05.01',
-      endDate: '2020.05.01',
-      title: '김지수 프로젝트 빨리 마무리 하자',
-      des: '아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩재밌다',
-    },
-    {
-      startDate: '2020.05.01',
-      endDate: '2020.05.01',
-      title: '심서현 프로젝트 빨리 마무리 하자',
-    },
-    {
-      startDate: '2020.05.01',
-      endDate: '2020.05.01',
-      title: '민순기 프로젝트 빨리 마무리 하자',
-      des: '아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아아아아아아아아아아아아아아ㅏㅇ아아아아아ㅏ아아아아아아아아하드코딩재밌다',
-    },
-  ];
-
   const techStacksDefault = [
     {
       nameOption: { name: 'Javascript', size: '24px', iconColor: '#E2D784' },
@@ -65,7 +40,7 @@ function App() {
       <TechStackList techStackList={techStacksDefault} />
       <TechStackInput />
       <Intro />
-      <Experience historyList={historyDefault} />
+      <Experience />
       <Gallery>
         <Item />
         <Item />

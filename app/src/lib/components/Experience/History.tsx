@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 interface Props {
   startDate?: string;
   endDate?: string;
@@ -31,14 +32,14 @@ const Wrap = styled.div`
   width: 85%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2.2em 2em 3.2em 2em;
   border-bottom: 0.2px solid #b4b4b4a2;
   white-space: pre-wrap;
   .intro {
     min-width: 42%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     .date {
       display: flex;
       justify-content: space-between;
@@ -53,13 +54,14 @@ const Wrap = styled.div`
       }
     }
     .child-title {
-      max-width: 58%;
+      width: 58%;
       font-size: 22px;
       font-weight: 600;
+      text-align: center;
     }
   }
   .des {
-    max-width: 50%;
+    width: 50%;
     text-align: center;
   }
 `;

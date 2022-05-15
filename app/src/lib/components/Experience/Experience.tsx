@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import History from './History';
 
 interface Props {
-  historyList: {
+  historyList?: {
     startDate?: string;
     endDate?: string;
     title?: string;
@@ -32,6 +32,25 @@ export default Experience;
 
 Experience.defaultProps = {
   title: 'Experience',
+  historyList: [
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+    },
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+    },
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+    },
+  ],
 };
 
 const Wrap = styled.div<{
