@@ -11,7 +11,9 @@ const Image = ({ src, subhead, head }: Props) => {
   return (
     <Wrap>
       <Items>
-        <img src={src} />
+        <div className="imgWrap">
+          <img src={src} />
+        </div>
         <div className="imgDes">
           <p>{subhead}</p>
           <span>{head}</span>
@@ -37,8 +39,10 @@ const Wrap = styled.div`
 const Items = styled.div`
   display: inline-block;
   width: 100%;
-  overflow: hidden;
   margin-bottom: 0.5em;
+  .imgWrap {
+    overflow: hidden;
+  }
   img {
     width: 100%;
     transition: 0.6s;
