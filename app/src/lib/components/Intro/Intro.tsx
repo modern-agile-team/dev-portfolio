@@ -26,7 +26,7 @@ const Wrap = styled.div<{
   display: flex;
   flex-direction: column;
   padding: 30px;
-  padding-top: 10px;
+  padding-top: 20px;
   white-space: pre-wrap; //줄바꿈 인식
   text-align: ${({ textAlign }) => textAlign ?? 'left'};
   background-color: ${({ background }) => background ?? 'whitesmoke'};

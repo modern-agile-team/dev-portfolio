@@ -14,6 +14,7 @@ import {
   Masonry,
   Image,
   Carousel,
+  Experience,
 } from './lib/index';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
       <TechStackList techStackList={techStacksDefault} />
       <TechStackInput />
       <Intro />
+      <Experience />
       <Gallery>
         <Item />
         <Item />
