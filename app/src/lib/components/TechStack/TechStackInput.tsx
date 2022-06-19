@@ -1,12 +1,50 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import { Icon } from '../../dependencies/@iconify/react/dist/iconify';
 
+const TechStackInput = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [isFocus, setIsFocus] = useState<boolean>(false);
+  const [icons, setIcons] = useState([]);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+    value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
+    
+    if (value.length >= 2) {
+      fetch(`https://api.iconify.design/search?query=logos:${value}`)
+        .then((res) => res.json())
+        .then((res) => setIcons(res.icons));
+    }
+  };
+
+  return (
+    <Container id="TechStackInput">
+      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
+      {isFocus && (
+        <>
+          <Modal onClick={() => setIsFocus(false)}>
+            {icons?.length >= 1 ? icons.map((icon, idx) => (
+              <TechStackEachBox key={idx}>
+                <Icon icon={icon} fontSize={'50px'} />
+                <TechStackName>{icon}</TechStackName>
+              </TechStackEachBox>
+            )) : "There are no icons you entered."}
+          </Modal>
+          <ModalBackground onClick={() => setIsFocus(false)} />
+        </>
+      )}
+    </Container>
+  );
+};
+
+export default TechStackInput;
+
 const Container = styled.div<{
-  headerHeight?: any;
-  headerWidth?: any;
-  headerBackgroundColor?: any;
+  headerHeight?: string;
+  headerWidth?: string;
+  headerBackgroundColor?: string;
 }>`
   position: relative;
   display: flex;
@@ -36,11 +74,11 @@ const Modal = styled.div`
   top: 120%;
   left: 30px;
   z-index: 1011;
-  /* width: 80%; */
-  /* height: 400px; */
+  width: 90%;
   padding: 16px;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 12px;
+  white-space: normal;
 `;
 
 const ModalBackground = styled.div`
@@ -55,12 +93,9 @@ const ModalBackground = styled.div`
 `;
 
 const TechStackEachBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 110px;
-  padding-top: 10px;
-  border: 1px solid black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 16px 16px 16px 0px;
   border-radius: 4px;
 `;
 
@@ -68,32 +103,3 @@ const TechStackName = styled.span`
   margin: 8px 0px;
   font-weight: bold;
 `;
-
-const TechStackInput = ({}) => {
-  const [inputValue, setInputValue] = useState('');
-  const [isFocus, setIsFocus] = useState<boolean>(false);
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    e.target.value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
-  };
-
-  return (
-    <Container id="TechStackInput">
-      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus}></Input>
-      {isFocus && (
-        <>
-          <Modal onClick={() => setIsFocus(false)}>
-            <TechStackEachBox>
-              <Icon icon={`simple-icons:${inputValue}`} color={'black'} fontSize={'80px'} />
-              <TechStackName>{inputValue}</TechStackName>
-            </TechStackEachBox>
-          </Modal>
-          <ModalBackground onClick={() => setIsFocus(false)} />
-        </>
-      )}
-    </Container>
-  );
-};
-
-export default TechStackInput;

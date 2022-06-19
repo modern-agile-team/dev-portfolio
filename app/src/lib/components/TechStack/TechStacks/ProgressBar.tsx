@@ -1,7 +1,32 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const g = ({ from, to }: any) => keyframes`
+interface ProgressBarType {
+  rate?: string;
+  colorFrom?: string;
+  colorTo?: string;
+}
+
+const ProgressBar = ({ rate = '100%', colorFrom = 'red', colorTo = 'white' }: ProgressBarType) => {
+  return (
+    <ProgressBarContainer>
+      <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
+        <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} />
+      </ProgressBarComplete>
+      <ProgressBarInnerText>{rate}</ProgressBarInnerText>
+    </ProgressBarContainer>
+  );
+};
+
+export default ProgressBar;
+
+ProgressBar.defaultProps = {
+  rate: '100%',
+  colorFrom: 'red',
+  colorTo: 'white',
+};
+
+const g = ({ from, to }: { from?: string; to?: string }) => keyframes`
   0% { 
     background-color: ${to || '#434521'}; 
   }
@@ -36,7 +61,7 @@ const ProgressBarContainer = styled.div`
 `;
 
 const ProgressBarComplete = styled.div<{
-  progressColor?: any;
+  progressColor?: { from: string; to: string };
 }>`
   position: absolute;
   left: 0;
@@ -49,7 +74,7 @@ const ProgressBarComplete = styled.div<{
 `;
 
 const ProgressBarLiquid = styled.div<{
-  progressColor?: any;
+  progressColor?: { from: string; to: string };
 }>`
   z-index: 1;
   width: 70px;
@@ -66,16 +91,3 @@ const ProgressBarLiquid = styled.div<{
 const ProgressBarInnerText = styled.span`
   z-index: 2;
 `;
-
-const ProgressBar = ({ progressBarOption: { rate, colorFrom, colorTo } }: any) => {
-  return (
-    <ProgressBarContainer>
-      <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
-        <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }}></ProgressBarLiquid>
-      </ProgressBarComplete>
-      <ProgressBarInnerText>{rate}</ProgressBarInnerText>
-    </ProgressBarContainer>
-  );
-};
-
-export default ProgressBar;

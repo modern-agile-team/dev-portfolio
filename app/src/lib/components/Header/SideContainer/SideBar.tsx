@@ -1,7 +1,13 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
 import SideBarItems from './SideBarItems';
+
+interface SideBarProps {
+  mainTitle: string;
+  sideBarItems: string;
+  isClickedSideBarIcon: boolean;
+  setIsClickedSideBarIcon: (clickedSideBarIcon: boolean) => void;
+}
 
 const showUp = keyframes`
   from {
@@ -22,7 +28,7 @@ const showOut = keyframes`
 `;
 
 const Container = styled.div<{
-  isClickedSideBarIcon?: any;
+  isClickedSideBarIcon: boolean;
 }>`
   position: absolute;
   top: 0%;
@@ -37,7 +43,7 @@ const Container = styled.div<{
 `;
 
 const Background = styled.div<{
-  isClickedSideBarIcon?: any;
+  isClickedSideBarIcon: boolean;
 }>`
   display: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? 'block' : 'none')};
   position: fixed;
@@ -59,7 +65,7 @@ const Line = styled.hr`
   border: 0.05px solid #00000022;
 `;
 
-const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: any) => {
+const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: SideBarProps) => {
   return (
     <>
       <Container isClickedSideBarIcon={isClickedSideBarIcon}>
@@ -67,7 +73,6 @@ const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSi
         <Line />
         <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
       </Container>
-
       <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
     </>
   );

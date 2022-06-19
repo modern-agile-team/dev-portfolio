@@ -42,6 +42,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-scripts": "5.0.0",
+    "storybook": "^6.4.21",
     "styled-components": "^5.3.5",
     "typescript": "^4.6.2",
     "web-vitals": "^2.1.4"
@@ -50,7 +51,10 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "publish:npm": "rm -rf dev-portfolio && mkdir dev-portfolio && babel src/lib -d dev-portfolio --copy-files"
+    "eject": "craco eject",
+    "publish:npm": "rm -rf dev-portfolio && mkdir dev-portfolio && babel src/lib -d dev-portfolio --copy-files",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -62,7 +66,17 @@
       "sourceType": "module",
       "allowImportExportEverywhere": true,
       "ecmaVersion": 2017
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -80,6 +94,16 @@
     "@babel/cli": "^7.17.6",
     "@babel/preset-react": "^7.16.7",
     "@iconify/react": "^3.1.4",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "babel-eslint": "^10.1.0",
@@ -89,6 +113,9 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.0"
+    "eslint-plugin-storybook": "^0.5.7",
+    "prettier": "^2.6.0",
+    "storybook-preset-craco": "^0.0.6",
+    "webpack": "^5.70.0"
   }
 }

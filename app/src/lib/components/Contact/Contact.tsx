@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
+
+const Contact = ({ contactOption = contactOptionDefault }) => {
+  const { aboutMeInfos } = contactOption;
+  return (
+    <Container id="Contact">
+      <ContactForm contactOption={contactOption} />
+      <AboutMe aboutMeInfos={aboutMeInfos} />
+    </Container>
+  );
+};
 
 const Container = styled.div`
   display: flex;
@@ -60,16 +69,6 @@ const contactOptionDefault = {
       description: 'dev-portfolio@gmail.com',
     },
   ],
-};
-
-const Contact = ({ contactOption = contactOptionDefault }) => {
-  const { aboutMeInfos } = contactOption;
-  return (
-    <Container id="Contact">
-      <ContactForm contactOption={contactOption} />
-      <AboutMe aboutMeInfos={aboutMeInfos} />
-    </Container>
-  );
 };
 
 export default Contact;

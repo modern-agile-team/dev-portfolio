@@ -1,7 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import Channels from '../Channels/Channels';
+import { ContactOptionTypes } from 'src/lib/common/types/contact';
+
+interface ContactOptionProps {
+  contactOption: ContactOptionTypes;
+}
+
+const ContactForm = ({ contactOption }: ContactOptionProps) => {
+  const { title, subTitle, buttonText, channels } = contactOption;
+
+  return (
+    <Container>
+      <Channels channels={channels} />
+      <TitleContainer>
+        <Title>{title}</Title>
+        <span>{subTitle}</span>
+      </TitleContainer>
+      <SendEmailButton>{buttonText}</SendEmailButton>
+    </Container>
+  );
+};
+
+export default ContactForm;
 
 const Container = styled.div`
   display: flex;
@@ -20,8 +41,6 @@ const Title = styled.div`
   font-size: 18px;
 `;
 
-const SubTitle = styled.span``;
-
 const SendEmailButton = styled.button`
   padding: 10px 10px;
   margin: 10px 0px 0px 0px;
@@ -33,20 +52,3 @@ const SendEmailButton = styled.button`
     background-color: red;
   }
 `;
-
-const ContactForm = ({ contactOption }: any) => {
-  const { title, subTitle, buttonText, channels } = contactOption;
-
-  return (
-    <Container>
-      <Channels channels={channels}></Channels>
-      <TitleContainer>
-        <Title>{title}</Title>
-        <SubTitle>{subTitle}</SubTitle>
-      </TitleContainer>
-      <SendEmailButton>{buttonText}</SendEmailButton>
-    </Container>
-  );
-};
-
-export default ContactForm;
