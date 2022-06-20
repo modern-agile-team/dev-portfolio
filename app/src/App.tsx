@@ -1,5 +1,5 @@
-import { FaSuse } from '@dependencies/react-icons/fa';
-import { FaStickerMule } from '@dependencies/react-icons/fa';
+import { FaSuse } from './lib/dependencies/react-icons/fa';
+import { FaStickerMule } from './lib/dependencies/react-icons/fa';
 import React from 'react';
 import styled from 'styled-components';
 import {

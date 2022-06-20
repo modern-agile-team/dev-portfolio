@@ -1,4 +1,4 @@
-import { FaArrowCircleRight, FaArrowCircleLeft } from '@dependencies/react-icons/fa';
+import { FaArrowCircleRight, FaArrowCircleLeft } from '../../dependencies/react-icons/fa';
 import React, { cloneElement, ReactElement, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
