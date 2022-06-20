@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icon } from '@dependencies/@iconify/react/dist/iconify';
+import { Icon } from '../../dependencies/@iconify/react/dist/iconify';
 import { LogoOptionType } from './Header';
 
 type LogoProps = {

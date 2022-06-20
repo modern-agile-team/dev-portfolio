@@ -603,5 +603,4 @@ module.exports = {
       'Object.freeze', // https://tc39.github.io/ecma262/#sec-object.freeze
     ],
   },
-  extends: ['plugin:storybook/recommended'],
 };
