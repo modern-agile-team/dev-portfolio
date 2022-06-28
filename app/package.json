@@ -1,8 +1,8 @@
 {
   "name": "dev-portfolio",
-  "version": "0.1.0",
-  "module": "dev-portfolio/index.js",
-  "main": "dev-portfolio/index.js",
+  "version": "0.2.44",
+  "module": "lib/index.ts",
+  "main": "src/lib/index.ts",
   "description": "Open source library to help you develop your web portfolio easily and quickly",
   "author": {
     "name": "modern.agile.team",
@@ -21,10 +21,7 @@
   "keywords": [
     "portfolio",
     "dev",
-    "dev-fortfolio",
-    "Header",
-    "Contact",
-    "TechStack"
+    "dev-fortfolio"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -47,9 +44,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "prepare": "npm run build",
     "publish:npm": "rm -rf dev-portfolio && mkdir dev-portfolio && babel src/lib -d dev-portfolio --copy-files"
   },
   "eslintConfig": {
