@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # deploy
-dist
 dev-portfolio/
 demo
 .babelrc
