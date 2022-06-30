@@ -1,6 +1,6 @@
 {
   "name": "dev-portfolio",
-  "version": "0.2.48",
+  "version": "0.2.54",
   "main": "dist/index.js",
   "description": "Open source library to help you develop your web portfolio easily and quickly",
   "author": "modern.agile.team <modern.agile.team@gmail.com> (https://github.com/modern-agile-team)",
