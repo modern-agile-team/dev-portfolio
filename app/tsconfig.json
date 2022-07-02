@@ -12,8 +12,9 @@
     "noImplicitAny": true,
     "removeComments": true,
     "allowJs": true,
+    "resolveJsonModule": true,
     "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
-  "include": ["./src/lib/"],
+  "include": ["./src/lib/", "./src/lib/dependencies/react-icons/**/package.json"],
   "exclude": ["node_modules"]
 }
