@@ -8,7 +8,7 @@ interface ContactOptionProps {
 }
 
 const ContactForm = ({ contactOption }: ContactOptionProps) => {
-  const { title, subTitle, buttonText, channels } = contactOption;
+  const { title, subTitle, buttonText, channels, email } = contactOption;
 
   return (
     <Container>
@@ -17,7 +17,7 @@ const ContactForm = ({ contactOption }: ContactOptionProps) => {
         <Title>{title}</Title>
         <span>{subTitle}</span>
       </TitleContainer>
-      <SendEmailButton>{buttonText}</SendEmailButton>
+      <SendEmailButton href={`mailto:${email}`}>{buttonText?.length ? buttonText : email}</SendEmailButton>
     </Container>
   );
 };
@@ -41,14 +41,22 @@ const Title = styled.div`
   font-size: 18px;
 `;
 
-const SendEmailButton = styled.button`
+const SendEmailButton = styled.a`
+  color: black;
   padding: 10px 10px;
-  margin: 10px 0px 0px 0px;
-  background-color: white;
+  text-decoration: none;
+  text-align: center;
   border-radius: 4px;
   border: 0.5px solid #00000033;
   cursor: pointer;
-  &active {
-    background-color: red;
+  
+  &:hover {
+    transform: scale(1.02);
+    transition: 1ms;
+  }
+
+  &:active {
+    transform: scale(1);
+    transition: 1ms;
   }
 `;
