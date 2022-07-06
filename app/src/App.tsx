@@ -20,19 +20,33 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Javascript', size: '24px', iconColor: '#E2D784' },
-      progressBarOption: { rate: '45%' },
+      nameOption: { name: 'Javascript', fontSize:'18px', logoSize: '24px', iconColor: '#E2D784' },
+      progressBarOption: { 
+        rate: '45%',
+        colorTo: '#E2D784',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+      },
     },
     {
-      nameOption: { name: 'HTML-5', size: '24px', iconColor: '#E34F26' },
-      progressBarOption: { rate: '30%' },
+      nameOption: { name: 'HTML-5', fontSize:'18px', logoSize: '24px', iconColor: '#E34F26' },
+      progressBarOption: { 
+        rate: '30%',
+        colorTo: '#E34F26',
+        colorFrom: 'whitesmoke', 
+        width: '100%',
+        height: '40px',
+      },
     },
     {
-      nameOption: { name: 'Nodejs', size: '24px', iconColor: '#339933' },
+      nameOption: { name: 'Nodejs', fontSize:'18px', logoSize: '24px', iconColor: '#339933' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
         colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
       },
     },
   ];

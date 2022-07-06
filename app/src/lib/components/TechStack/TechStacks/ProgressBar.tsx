@@ -1,15 +1,16 @@
-import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface ProgressBarType {
   rate?: string;
   colorFrom?: string;
   colorTo?: string;
+  width?: string;
+  height?: string;
 }
 
-const ProgressBar = ({ rate = '100%', colorFrom = 'red', colorTo = 'white' }: ProgressBarType) => {
+const ProgressBar = ({ rate, colorFrom = 'red', colorTo = 'white', width, height }: ProgressBarType) => {
   return (
-    <ProgressBarContainer>
+    <ProgressBarContainer width={width} height={height}>
       <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
         <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} />
       </ProgressBarComplete>
@@ -24,6 +25,8 @@ ProgressBar.defaultProps = {
   rate: '100%',
   colorFrom: 'red',
   colorTo: 'white',
+  width: '100%',
+  height: '40px',
 };
 
 const g = ({ from, to }: { from?: string; to?: string }) => keyframes`
@@ -47,13 +50,16 @@ const r = keyframes`
   }
 `;
 
-const ProgressBarContainer = styled.div`
+const ProgressBarContainer = styled.div<{
+  width?: string;
+  height?: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 100%;
-  height: 50px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   border: 1px solid #fff;
   border-radius: 10px;
   overflow: hidden;

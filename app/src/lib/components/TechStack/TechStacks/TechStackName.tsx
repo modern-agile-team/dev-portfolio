@@ -1,20 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Icon } from '@iconify/react';
+import { clearConfigCache } from 'prettier';
 
 interface TechStackNameType {
   name?: string;
   iconColor?: string;
-  size?: string;
+  fontSize?: string;
+  logoSize?: string;
 }
 
 const TechStackName = (props: TechStackNameType) => {
-  const { name = 'name of skill', iconColor = 'black', size = '16px' } = props;
-
+  const { name, iconColor, fontSize, logoSize } = props;
+  
   return (
     <NameContainer>
-      <Icon icon={`logos:${name.toLowerCase()}`} color={iconColor} fontSize={size} />
-      <Name>{name}</Name>
+      <Icon icon={`logos:${name?.toLowerCase()}`} color={iconColor} fontSize={logoSize} />
+      <Name fontSize={fontSize}>{name}</Name>
     </NameContainer>
   );
 };
@@ -24,7 +26,8 @@ export default TechStackName;
 TechStackName.defaultProps = {
   name: 'name of skill',
   iconColor: 'black',
-  size: '16px',
+  fontSize: '16px',
+  logoSize: '24px'
 };
 
 const NameContainer = styled.div<{
@@ -36,7 +39,10 @@ const NameContainer = styled.div<{
   margin: ${({ margin }) => margin ?? '10px 3px'};
 `;
 
-const Name = styled.span`
+const Name = styled.span<{
+  fontSize?: string;
+}>`
   margin-left: 8px;
+  font-size: ${({ fontSize }) => fontSize};
   font-weight: bold;
 `;
