@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
@@ -22,9 +21,10 @@ const Container = styled.div`
 `;
 
 const contactOptionDefault = {
-  title: '안녕하세요 풀스택 개발자 박우림입니다.',
-  subTitle: '저에게 관심이 생기신 분들은 아래 버튼을 눌러주세요 :D',
+  title: 'Hello, my name is DEV_PORTFOLIO',
+  subTitle: `If you're interested in me, please press the button below :D`,
   buttonText: 'Want to work with me?',
+  email: 'abc@dev-portfolio.com',
   channels: [
     {
       name: 'github',
