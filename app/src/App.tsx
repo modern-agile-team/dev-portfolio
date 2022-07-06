@@ -24,7 +24,9 @@ function App() {
       progressBarOption: { 
         rate: '45%',
         colorTo: '#E2D784',
-        colorFrom: 'whitesmoke', 
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
       },
     },
     {
@@ -33,6 +35,8 @@ function App() {
         rate: '30%',
         colorTo: '#E34F26',
         colorFrom: 'whitesmoke', 
+        width: '100%',
+        height: '40px',
       },
     },
     {
@@ -41,6 +45,8 @@ function App() {
         rate: '85%',
         colorTo: '#339933',
         colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
       },
     },
   ];
