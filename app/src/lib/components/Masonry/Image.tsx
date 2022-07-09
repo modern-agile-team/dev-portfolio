@@ -5,19 +5,22 @@ interface Props {
   src: string;
   subhead?: string;
   head?: string;
+  redirectURL?: string;
 }
 
-const Image = ({ src, subhead, head }: Props) => {
+const Image = ({ src, subhead, head, redirectURL }: Props) => {
   return (
     <Wrap>
       <Items>
-        <div className="imgWrap">
-          <img src={src} />
-        </div>
-        <div className="imgDes">
-          <p>{subhead}</p>
-          <span>{head}</span>
-        </div>
+        <a href={redirectURL}>
+          <div className="imgWrap">
+            <img src={src} />
+          </div>
+          <div className="imgDes">
+            <p>{subhead}</p>
+            <span>{head}</span>
+          </div>
+        </a>
       </Items>
     </Wrap>
   );
@@ -28,6 +31,7 @@ export default Image;
 Image.defaultProps = {
   subhead: 'Write your subhead',
   head: 'script your head',
+  redirectURL: '/'
 };
 
 const Wrap = styled.div`

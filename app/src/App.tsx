@@ -69,8 +69,8 @@ function App() {
         <Item />
       </Gallery>
       <Masonry>
-        <Image src="https://picsum.photos/600/600/?random" />
-        <Image src="https://picsum.photos/600/1100/?random" />
+        <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
+        <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
         <Image src="https://picsum.photos/300/400/?random" />
         <Image src="https://picsum.photos/600/400/?random" />
         <Image src="https://picsum.photos/600/900/?random" />
@@ -80,6 +80,7 @@ function App() {
         <Image src="https://picsum.photos/600/800/?random" />
         <Image src="https://picsum.photos/600/1000/?random" />
         <Image src="https://picsum.photos/600/500/?random" />
+        <Image src="https://picsum.photos/500/600/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
