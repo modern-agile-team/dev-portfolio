@@ -47,6 +47,7 @@ const Items = styled.div`
     width: 100%;
     transition: 0.6s;
     object-fit: cover;
+    display: block;
     :hover {
       transform: scale(105%);
     }
