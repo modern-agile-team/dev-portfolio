@@ -20,8 +20,8 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Javascript', fontSize:'18px', logoSize: '24px', iconColor: '#E2D784' },
-      progressBarOption: { 
+      nameOption: { name: 'Javascript', fontSize: '18px', logoSize: '24px', iconColor: '#E2D784' },
+      progressBarOption: {
         rate: '45%',
         colorTo: '#E2D784',
         colorFrom: 'whitesmoke',
@@ -30,17 +30,17 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'HTML-5', fontSize:'18px', logoSize: '24px', iconColor: '#E34F26' },
-      progressBarOption: { 
+      nameOption: { name: 'HTML-5', fontSize: '18px', logoSize: '24px', iconColor: '#E34F26' },
+      progressBarOption: {
         rate: '30%',
         colorTo: '#E34F26',
-        colorFrom: 'whitesmoke', 
+        colorFrom: 'whitesmoke',
         width: '100%',
         height: '40px',
       },
     },
     {
-      nameOption: { name: 'Nodejs', fontSize:'18px', logoSize: '24px', iconColor: '#339933' },
+      nameOption: { name: 'Nodejs', fontSize: '18px', logoSize: '24px', iconColor: '#339933' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
@@ -97,13 +97,13 @@ function App() {
         <Item title="3" />
       </Carousel>
       <CardWrap>
-        <Card width="20em" height="20em" hover="down">
+        <Card width="20vw" height="20vw" hover="down">
           This is Card component
         </Card>
-        <Card width="20em" height="20em" shape="round-square" hover="zoom">
+        <Card width="20vw" height="20vw" shape="round-square" hover="zoom">
           You can use this components anyware
         </Card>
-        <Card width="20em" height="20em" shape="round" hover="up">
+        <Card width="20vw" height="20vw" shape="round" hover="up">
           See official documentation for details
         </Card>
       </CardWrap>
