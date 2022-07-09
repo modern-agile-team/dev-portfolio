@@ -54,7 +54,6 @@ const SendEmailButton = styled.a`
   border-radius: 4px;
   border: 0.5px solid #00000033;
   cursor: pointer;
-
   &:hover {
     transform: scale(1.02);
     transition: 1ms;
