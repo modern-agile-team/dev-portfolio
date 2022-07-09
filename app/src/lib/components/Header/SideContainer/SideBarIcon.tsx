@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaBars } from '../../../dependencies/react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 
 interface SideBarIconProps {
   styles: any;

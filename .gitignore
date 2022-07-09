@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# personal
+.DS_Store
+
 # dependencies
 node_modules/
 .pnp/
@@ -27,4 +30,4 @@ dev-portfolio/
 demo
 .babelrc
 webpack.config.js
-public/
+dist/

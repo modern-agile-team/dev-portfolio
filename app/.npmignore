@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+node_modules
 .pnp/
 .pnp.js
 
@@ -22,7 +23,12 @@ yarn-error.log*
 
 # deploy
 src/
+.eslintrc.js
+.prettierrc
+package-lock.json
+build/
 demo
 .babelrc
 webpack.config.js
 public/
+tsconfig.json
