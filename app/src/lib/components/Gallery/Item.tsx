@@ -2,13 +2,13 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  moveURL?: string;
+  redirectURL?: string;
   title?: string;
   description?: string;
   imgURL?: string;
 }
 
-const Item = ({ moveURL, title, description, imgURL }: Props) => {
+const Item = ({ redirectURL, title, description, imgURL }: Props) => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
@@ -21,7 +21,7 @@ const Item = ({ moveURL, title, description, imgURL }: Props) => {
 
   return (
     <StyledItem className="gallery-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <a href={moveURL}>
+      <a href={redirectURL}>
         <img src={imgURL} alt={title} />
         {isHover && (
           <DescriptionContainer className="hover">
@@ -39,7 +39,7 @@ const Item = ({ moveURL, title, description, imgURL }: Props) => {
 export default Item;
 
 Item.defaultProps = {
-  moveURL: '',
+  redirectURL: '',
   title: 'This is title',
   description: 'description',
   imgURL:
