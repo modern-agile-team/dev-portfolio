@@ -18,6 +18,10 @@ const Container = styled.div`
   justify-content: space-evenly;
   background-color: whitesmoke;
   padding: 10px 10px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    padding: 1em;
+  }
 `;
 
 const contactOptionDefault = {
