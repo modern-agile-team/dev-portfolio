@@ -8,7 +8,7 @@ interface Props {
   des?: string;
 }
 
-const History = (props: Props) => {
+const Basic = (props: Props) => {
   const { startDate, endDate, title, des } = props;
 
   return (
@@ -26,7 +26,7 @@ const History = (props: Props) => {
     </div>
   );
 };
-export default History;
+export default Basic;
 
 const Wrap = styled.div`
   width: 85%;

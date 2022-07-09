@@ -12,16 +12,19 @@ interface Props {
   title?: string;
   textAlign?: string;
   background?: string;
+  theme?: 'basic' | 'others';
 }
 
-const Experience = ({ historyList, title, textAlign, background }: Props) => {
+const Experience = (props: Props) => {
+  const { historyList, title, textAlign, background, theme } = props;
+
   return (
     <Wrap textAlign={textAlign} background={background}>
       <div className="title">{title}</div>
       <hr />
       <ChildWrap>
-        {historyList?.map(({ startDate, endDate, title, des }, idx) => (
-          <History key={idx} startDate={startDate} endDate={endDate} title={title} des={des} />
+        {historyList?.map((elements, idx) => (
+          <History key={idx} {...elements} theme={theme} />
         ))}
       </ChildWrap>
     </Wrap>
@@ -32,6 +35,7 @@ export default Experience;
 
 Experience.defaultProps = {
   title: 'Experience',
+  theme: 'basic',
   historyList: [
     {
       startDate: 'startDate',
