@@ -1,6 +1,10 @@
 {
   "name": "dev-portfolio",
+<<<<<<< HEAD
   "version": " 0.3.1",
+=======
+  "version": " 0.3.0",
+>>>>>>> e29b3c8993fc7f2548e16f7b577c4bef45c14e53
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
