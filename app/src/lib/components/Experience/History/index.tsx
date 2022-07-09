@@ -1,11 +1,12 @@
 import Basic from './Basic';
+import Box from './Box';
 
 interface Props {
   startDate?: string;
   endDate?: string;
   title?: string;
   des?: string;
-  theme?: 'basic' | 'others';
+  theme?: 'basic' | 'box';
 }
 
 const History = (props: Props) => {
@@ -14,8 +15,8 @@ const History = (props: Props) => {
   switch (theme) {
     case 'basic':
       return <Basic {...props} />;
-    case 'others':
-      return <div />;
+    case 'box':
+      return <Box {...props} />;
     default:
       return <Basic {...props} />;
   }

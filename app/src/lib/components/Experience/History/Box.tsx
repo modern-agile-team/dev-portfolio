@@ -8,7 +8,7 @@ interface Props {
   des?: string;
 }
 
-const Basic = (props: Props) => {
+const Box = (props: Props) => {
   const { startDate, endDate, title, des } = props;
 
   return (
@@ -26,14 +26,16 @@ const Basic = (props: Props) => {
     </div>
   );
 };
-export default Basic;
+export default Box;
 
 const Wrap = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   padding: 2.2em 2em 3.2em 2em;
-  border-bottom: 0.2px solid #b4b4b4a2;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 5px;
+  margin: 10px;
   white-space: pre-wrap;
   .intro {
     min-width: 42%;
@@ -57,6 +59,7 @@ const Wrap = styled.div`
       font-size: 22px;
       font-weight: 600;
       text-align: center;
+      border-right: 1px solid #b4b4b4a2;
     }
   }
   .des {

@@ -12,7 +12,7 @@ interface Props {
   title?: string;
   textAlign?: string;
   background?: string;
-  theme?: 'basic' | 'others';
+  theme?: 'basic' | 'box';
 }
 
 const Experience = (props: Props) => {
@@ -35,7 +35,7 @@ export default Experience;
 
 Experience.defaultProps = {
   title: 'Experience',
-  theme: 'basic',
+  theme: 'box',
   historyList: [
     {
       startDate: 'startDate',
