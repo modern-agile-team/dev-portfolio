@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import { MAIN } from '../../common/theme';
 
 interface Props {
   src: string;
@@ -44,6 +44,9 @@ const Items = styled.div`
   display: inline-block;
   width: 100%;
   margin-bottom: 0.5em;
+  a {
+    text-decoration-line: none;
+  }
   .imgWrap {
     overflow: hidden;
   }
@@ -65,6 +68,10 @@ const Items = styled.div`
       font-size: 22px;
       font-weight: 800;
     }
+    color: black;
     margin-bottom: 10px;
+    :hover {
+      color: ${MAIN.MAIN_COLOR};
+    }
   }
 `;
