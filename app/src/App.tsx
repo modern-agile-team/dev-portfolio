@@ -97,14 +97,15 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
+      
       <CardWrap>
-        <Card width="20em" height="20em" hover="down">
+        <Card width="20em" height="20em" hover="down" redirectURL="/1">
           This is Card component
         </Card>
-        <Card width="20em" height="20em" shape="round-square" hover="zoom">
+        <Card width="20em" height="20em" shape="round-square" hover="zoom" redirectURL="/2">
           You can use this components anyware
         </Card>
-        <Card width="20em" height="20em" shape="round" hover="up">
+        <Card width="20em" height="20em" shape="round" hover="up" redirectURL="/3">
           See official documentation for details
         </Card>
       </CardWrap>
