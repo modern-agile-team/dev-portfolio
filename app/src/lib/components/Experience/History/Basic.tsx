@@ -16,12 +16,12 @@ const Basic = (props: Props) => {
       <Wrap>
         <div className="intro">
           <div className="date">
-            <div className="start-date">{startDate}</div>
-            <div className="end-date">{endDate}</div>
+            <span className="start-date">{startDate}</span>
+            <span className="end-date">{endDate}</span>
           </div>
-          <div className="child-title">{title}</div>
+          <span className="child-title">{title}</span>
         </div>
-        <div className="des">{des}</div>
+        <span className="des">{des}</span>
       </Wrap>
     </div>
   );
