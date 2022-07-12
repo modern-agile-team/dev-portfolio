@@ -12,19 +12,23 @@ interface Props {
   title?: string;
   textAlign?: string;
   background?: string;
-  theme?: 'basic' | 'box';
+  theme?: 'basic' | 'box' | 'vertical';
+  verticalOption?: {
+    titleColor?: string;
+    shape?: 'square' | 'round-square';
+  };
 }
 
 const Experience = (props: Props) => {
-  const { historyList, title, textAlign, background, theme } = props;
+  const { historyList, title, textAlign, background, theme, verticalOption } = props;
 
   return (
     <Wrap textAlign={textAlign} background={background}>
       <div className="title">{title}</div>
       <hr />
-      <ChildWrap>
+      <ChildWrap theme={theme}>
         {historyList?.map((elements, idx) => (
-          <History key={idx} {...elements} theme={theme} />
+          <History {...verticalOption} key={idx} {...elements} theme={theme} />
         ))}
       </ChildWrap>
     </Wrap>
@@ -35,8 +39,25 @@ export default Experience;
 
 Experience.defaultProps = {
   title: 'Experience',
-  theme: 'box',
+  theme: 'vertical',
   historyList: [
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+    },
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+    },
+    {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      title: 'this is title',
+    },
     {
       startDate: 'startDate',
       endDate: 'endDate',
@@ -76,7 +97,10 @@ const Wrap = styled.div<{
   }
 `;
 
-const ChildWrap = styled.div`
+const ChildWrap = styled.div<{
+  theme?: 'basic' | 'box' | 'vertical';
+}>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
+  flex-wrap: wrap;
 `;

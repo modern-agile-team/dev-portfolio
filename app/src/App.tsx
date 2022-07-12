@@ -97,7 +97,7 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      
+
       <CardWrap>
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
