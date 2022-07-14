@@ -34,7 +34,6 @@ const Wrap = styled.div`
   flex-wrap: wrap;
   padding: 2.2em 2em 3.2em 2em;
   border-bottom: 0.2px solid #b4b4b4a2;
-  white-space: pre-wrap;
   .date {
     flex-grow: 1;
     text-align: center;
@@ -58,7 +57,7 @@ const Wrap = styled.div`
     flex-grow: 2;
     width: 30%;
     text-align: center;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 800px) {
       width: 100%;
     }
   }
