@@ -12,8 +12,10 @@ interface Props {
 const Gallery = ({ children, col, gap, theme, padding }: Props) => {
   return (
     <Wrap padding={padding}>
-      <Wrapper theme={theme} col={col} gap={gap}>
-        <ul>{children}</ul>
+      <Wrapper>
+        <ItemWrapper theme={theme} col={col} gap={gap}>
+          {children}
+        </ItemWrapper>
       </Wrapper>
     </Wrap>
   );
@@ -31,49 +33,53 @@ const Wrap = styled.div<{
   padding?: string;
 }>`
   padding: ${({ padding }) => padding ?? '2em 10em'};
+  @media (max-width: 568px) {
+    padding: 0;
+  }
 `;
 
-const Wrapper = styled.div<{
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
-  gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  col?: number;
-}>`
+const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   outline: 0px;
   padding: 16px;
   border-radius: 6px;
-  ul {
-    display: grid;
-    grid-template-columns: repeat(${(props) => props.col}, 1fr);
-    padding: 0;
-    margin: 0;
-    ${({ gap }) => {
-      switch (gap) {
-        case 'narrower':
-          return css`
-            gap: 10px;
-          `;
-        case 'narrow':
-          return css`
-            gap: 15px;
-          `;
-        case 'normal':
-          return css`
-            gap: 20px;
-          `;
-        case 'wide':
-          return css`
-            gap: 25px;
-          `;
-        case 'wider':
-          return css`
-            gap: 30px;
-          `;
-      }
-    }}
-  }
+`;
+
+const ItemWrapper = styled.ul<{
+  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
+  gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
+  col?: number;
+}>`
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.col}, 1fr);
+  padding: 0;
+  margin: 0;
+  ${({ gap }) => {
+    switch (gap) {
+      case 'narrower':
+        return css`
+          gap: 10px;
+        `;
+      case 'narrow':
+        return css`
+          gap: 15px;
+        `;
+      case 'normal':
+        return css`
+          gap: 20px;
+        `;
+      case 'wide':
+        return css`
+          gap: 25px;
+        `;
+      case 'wider':
+        return css`
+          gap: 30px;
+        `;
+    }
+  }}
   .gallery-item {
     .hover {
       ${({ theme }) => {
@@ -106,5 +112,8 @@ const Wrapper = styled.div<{
         }
       }}
     }
+  }
+  @media (max-width: 568px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
