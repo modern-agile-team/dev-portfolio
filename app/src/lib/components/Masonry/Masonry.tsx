@@ -24,4 +24,8 @@ const Wrap = styled.div<{
   padding: ${({ padding }) => padding ?? '2em 4em'};
   column-count: ${({ column }) => column ?? 4};
   column-gap: 1.5em;
+  @media screen and (max-width: 500px) {
+    padding: 1em 2em;
+    column-count: 2;
+  }
 `;
