@@ -31,7 +31,7 @@ export default Image;
 Image.defaultProps = {
   subhead: 'Write your subhead',
   head: 'script your head',
-  redirectURL: '/'
+  redirectURL: '/',
 };
 
 const Wrap = styled.div`
@@ -63,10 +63,16 @@ const Items = styled.div`
     p {
       margin: 5px 0px 2px 1px;
       font-size: 14px;
+      @media screen and (max-width: 800px) {
+        font-size: 1.5vw;
+      }
     }
     span {
       font-size: 22px;
       font-weight: 800;
+      @media screen and (max-width: 800px) {
+        font-size: 1.5vw;
+      }
     }
     color: black;
     margin-bottom: 10px;
