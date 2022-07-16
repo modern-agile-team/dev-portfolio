@@ -39,7 +39,7 @@ export default Experience;
 
 Experience.defaultProps = {
   title: 'Experience',
-  theme: 'basic',
+  theme: 'vertical',
   historyList: [
     {
       startDate: 'startDate',
