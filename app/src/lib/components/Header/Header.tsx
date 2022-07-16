@@ -24,6 +24,9 @@ const Container = styled.div<{
   height: ${({ headerHeight }) => headerHeight ?? '100px'};
   width: ${({ headerWidth }) => headerWidth ?? '100%'};
   background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'whitesmoke'};
+  @media screen and (max-width: 600px) {
+    height: 80px;
+  }
 `;
 
 const logoOptionDefault = {
