@@ -38,7 +38,7 @@ const Wrap = styled.div<{
   shape?: 'square' | 'round-square';
   titleColor?: string;
 }>`
-  width: 23%;
+  width: 25em;
   padding: 10px 2em 1.2em 2em;
   margin: 1em auto;
   border: 1px solid #b4b4b4a2;

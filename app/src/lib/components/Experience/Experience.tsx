@@ -102,5 +102,6 @@ const ChildWrap = styled.div<{
 }>`
   display: flex;
   flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
-  flex-wrap: wrap;
+  flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
+  white-space: pre-wrap;
 `;
