@@ -28,6 +28,9 @@ const Title = styled.span<{
   color: ${({ titleColor }) => titleColor ?? 'black'};
   font-size: ${({ titleSize }) => titleSize ?? '24px'};
   font-weight: ${({ titleWeight }) => titleWeight ?? 800};
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Logo = ({ logoOption }: LogoProps): React.ReactElement => {

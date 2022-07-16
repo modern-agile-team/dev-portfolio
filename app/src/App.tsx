@@ -84,16 +84,8 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel
-        transition={1000}
-        width="500px"
-        arrowLocation="mid-side"
-        prevArrowIcon={<FaStickerMule size={50} />}
-        nextArrowIcon={<FaSuse size={50} />}
-      >
-        <div style={{ width: '200px', padding: '15px' }}>
-          <Item title="1" />
-        </div>
+      <Carousel transition={1000} arrowLocation="mid-side">
+        <Item title="1" />
         <Item title="2" />
         <Item title="3" />
       </Carousel>
