@@ -32,9 +32,10 @@ const Wrap = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2.2em 2em 3.2em 2em;
+  /* padding: 2.2em 2em 3.2em 2em; */
   border-bottom: 0.2px solid #b4b4b4a2;
   .date {
+    padding: 2em;
     flex-grow: 1;
     text-align: center;
     .start-date {
@@ -54,6 +55,7 @@ const Wrap = styled.div`
     text-align: center;
   }
   .des {
+    padding: 2em;
     flex-grow: 2;
     width: 30%;
     text-align: center;
