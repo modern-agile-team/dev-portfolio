@@ -29,6 +29,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   max-width: 40%;
+  @media screen and (max-width: 500px) {
+    max-width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -49,7 +54,6 @@ const SendEmailButton = styled.a`
   border-radius: 4px;
   border: 0.5px solid #00000033;
   cursor: pointer;
-  
   &:hover {
     transform: scale(1.02);
     transition: 1ms;
