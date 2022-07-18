@@ -53,51 +53,6 @@ function App() {
   return (
     <>
       <Header />
-      <TechStackList techStackList={techStacksDefault} />
-      <TechStackInput />
-      <Intro />
-      <Experience />
-      <Gallery>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-      </Gallery>
-      <Masonry>
-        <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
-        <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
-        <Image src="https://picsum.photos/300/400/?random" />
-        <Image src="https://picsum.photos/600/400/?random" />
-        <Image src="https://picsum.photos/600/900/?random" />
-        <Image src="https://picsum.photos/600/300/?random" />
-        <Image src="https://picsum.photos/400/100/?random" />
-        <Image src="https://picsum.photos/600/600/?random" />
-        <Image src="https://picsum.photos/600/800/?random" />
-        <Image src="https://picsum.photos/600/1000/?random" />
-        <Image src="https://picsum.photos/600/500/?random" />
-        <Image src="https://picsum.photos/500/600/?random" />
-        <Image src="https://picsum.photos/500/600/?random" />
-      </Masonry>
-
-      <Carousel
-        transition={1000}
-        width="500px"
-        arrowLocation="mid-side"
-        prevArrowIcon={<FaStickerMule size={50} />}
-        nextArrowIcon={<FaSuse size={50} />}
-      >
-        <div style={{ width: '200px', padding: '15px' }}>
-          <Item title="1" />
-        </div>
-        <Item title="2" />
-        <Item title="3" />
-      </Carousel>
-      
       <CardWrap>
         <Card width="20em" height="20em" hover="down" redirectURL="/1">
           This is Card component
@@ -109,6 +64,52 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
+      <Intro />
+      <TechStackList techStackList={techStacksDefault} />
+      {/* <TechStackInput /> */}
+      <Experience />
+      {/* <Gallery>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+      </Gallery> */}
+      <Masonry>
+        <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
+        <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
+        <Image src="https://picsum.photos/300/400/?random" />
+        <Image src="https://picsum.photos/600/400/?random" />
+        <Image src="https://picsum.photos/600/900/?random" />
+        <Image src="https://picsum.photos/600/300/?random" />
+        <Image src="https://picsum.photos/400/100/?random" />
+        <Image src="https://picsum.photos/600/600/?random" />
+        <Image src="https://picsum.photos/600/800/?random" />
+        <Image src="https://picsum.photos/600/1000/?random" />
+        {/* <Image src="https://picsum.photos/600/500/?random" />
+        <Image src="https://picsum.photos/500/600/?random" />
+        <Image src="https://picsum.photos/500/600/?random" /> */}
+      </Masonry>
+
+      {/* <Carousel
+        transition={1000}
+        width="500px"
+        arrowLocation="mid-side"
+        prevArrowIcon={<FaStickerMule size={50} />}
+        nextArrowIcon={<FaSuse size={50} />}
+      >
+        <div style={{ width: '200px', padding: '15px' }}>
+          <Item title="1" />
+        </div>
+        <Item title="2" />
+        <Item title="3" />
+      </Carousel> */}
+      
+      
       <Contact />
     </>
   );
