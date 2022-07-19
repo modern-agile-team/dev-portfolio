@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { MAIN } from '../../common/theme';
 
 interface Props {
   children?: React.ReactChild;
@@ -7,12 +8,15 @@ interface Props {
   height?: string;
   shape?: 'square' | 'round-square' | 'round';
   hover?: 'up' | 'down' | 'zoom';
+  redirectURL?: string;
 }
 
-const Card = ({ children, width, height, shape, hover }: Props) => {
+const Card = ({ children, width, height, shape, hover, redirectURL }: Props) => {
   return (
     <CardWrap width={width} height={height} shape={shape} hover={hover}>
-      <div className="child">{children}</div>
+      <a href={redirectURL}>
+        <div className="child">{children}</div>
+      </a>
     </CardWrap>
   );
 };
@@ -64,6 +68,15 @@ const CardWrap = styled.div<{
       }
     }}
   }
+
+  a {
+    text-decoration-line: none;
+    color: black;
+    :hover {
+      color: ${MAIN.MAIN_COLOR};
+    }
+  }
+
   .child {
     height: 100%;
     display: flex;

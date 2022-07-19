@@ -20,8 +20,8 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Javascript', fontSize:'18px', logoSize: '24px', iconColor: '#E2D784' },
-      progressBarOption: { 
+      nameOption: { name: 'Javascript', fontSize: '18px', logoSize: '24px', iconColor: '#E2D784' },
+      progressBarOption: {
         rate: '45%',
         colorTo: '#E2D784',
         colorFrom: 'whitesmoke',
@@ -30,17 +30,17 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'HTML-5', fontSize:'18px', logoSize: '24px', iconColor: '#E34F26' },
-      progressBarOption: { 
+      nameOption: { name: 'HTML-5', fontSize: '18px', logoSize: '24px', iconColor: '#E34F26' },
+      progressBarOption: {
         rate: '30%',
         colorTo: '#E34F26',
-        colorFrom: 'whitesmoke', 
+        colorFrom: 'whitesmoke',
         width: '100%',
         height: '40px',
       },
     },
     {
-      nameOption: { name: 'Nodejs', fontSize:'18px', logoSize: '24px', iconColor: '#339933' },
+      nameOption: { name: 'Nodejs', fontSize: '18px', logoSize: '24px', iconColor: '#339933' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
@@ -53,11 +53,22 @@ function App() {
   return (
     <>
       <Header />
-      <TechStackList techStackList={techStacksDefault} />
-      <TechStackInput />
+      <CardWrap>
+        <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
+          This is Card component
+        </Card>
+        <Card width="20vw" height="20vw" shape="round-square" hover="zoom" redirectURL="/2">
+          You can use this components anyware
+        </Card>
+        <Card width="20vw" height="20vw" shape="round" hover="up" redirectURL="/3">
+          See official documentation for details
+        </Card>
+      </CardWrap>
       <Intro />
+      <TechStackList techStackList={techStacksDefault} />
+      {/* <TechStackInput /> */}
       <Experience />
-      <Gallery>
+      {/* <Gallery>
         <Item />
         <Item />
         <Item />
@@ -67,10 +78,10 @@ function App() {
         <Item />
         <Item />
         <Item />
-      </Gallery>
+      </Gallery> */}
       <Masonry>
-        <Image src="https://picsum.photos/600/600/?random" />
-        <Image src="https://picsum.photos/600/1100/?random" />
+        <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
+        <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
         <Image src="https://picsum.photos/300/400/?random" />
         <Image src="https://picsum.photos/600/400/?random" />
         <Image src="https://picsum.photos/600/900/?random" />
@@ -79,34 +90,16 @@ function App() {
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/800/?random" />
         <Image src="https://picsum.photos/600/1000/?random" />
-        <Image src="https://picsum.photos/600/500/?random" />
+        {/* <Image src="https://picsum.photos/600/500/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
+        <Image src="https://picsum.photos/500/600/?random" /> */}
       </Masonry>
 
-      <Carousel
-        transition={1000}
-        width="500px"
-        arrowLocation="mid-side"
-        prevArrowIcon={<FaStickerMule size={50} />}
-        nextArrowIcon={<FaSuse size={50} />}
-      >
-        <div style={{ width: '200px', padding: '15px' }}>
-          <Item title="1" />
-        </div>
+      {/* <Carousel transition={1000} arrowLocation="mid-side">
+        <Item title="1" />
         <Item title="2" />
         <Item title="3" />
-      </Carousel>
-      <CardWrap>
-        <Card width="20em" height="20em" hover="down">
-          This is Card component
-        </Card>
-        <Card width="20em" height="20em" shape="round-square" hover="zoom">
-          You can use this components anyware
-        </Card>
-        <Card width="20em" height="20em" shape="round" hover="up">
-          See official documentation for details
-        </Card>
-      </CardWrap>
+      </Carousel> */}
       <Contact />
     </>
   );

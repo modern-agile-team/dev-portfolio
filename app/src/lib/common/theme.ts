@@ -1,5 +1,9 @@
-import React from 'react';
 import { GapTypes, GradationTypes } from './types/themes';
+import { MainTypes } from './types/main';
+
+export const MAIN: MainTypes = {
+  MAIN_COLOR: '#434521',
+}
 
 export const GAPS: GapTypes = {
   NARROWER: '10px',
