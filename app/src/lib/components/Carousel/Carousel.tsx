@@ -1,4 +1,4 @@
-import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
+import { FaArrowCircleRight, FaArrowCircleLeft, FaPlay, FaStop } from 'react-icons/fa';
 import React, { cloneElement, ReactElement, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
@@ -41,6 +41,7 @@ const Carousel = React.forwardRef(
   ) => {
     const [showIndex, setShowIndex] = useState<number>(0);
     const [coordinateX, setCoordinateX] = useState(0);
+    const [autoPlayStatus, setAutoPlayStatus] = useState<boolean>(isAutoplay);
 
     const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
     const lastChildIndex = useMemo(() => Math.floor((childrenLen - 1) / slideToShow), [childrenLen, slideToShow]);
@@ -60,7 +61,7 @@ const Carousel = React.forwardRef(
     const sizedNextArrowIcon = useMemo(() => cloneElement(nextArrowIcon), [nextArrowIcon]);
 
     /* useInterval is setTimeout custom hook */
-    isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
+    useInterval(showNext, autoplaySpeed, autoPlayStatus, [showIndex, autoPlayStatus]);
 
     const onTouchStart = (e: React.TouchEvent) => {
       setCoordinateX(e.touches[0].clientX);
@@ -80,6 +81,14 @@ const Carousel = React.forwardRef(
       if (coordinateX - e.clientX > 100) showNext();
       if (e.clientX - coordinateX > 100) showPrev();
       setCoordinateX(0);
+    };
+
+    const playCarousel = () => {
+      setAutoPlayStatus(true);
+    };
+
+    const stopPlayCarousel = () => {
+      setAutoPlayStatus(false);
     };
 
     return (
@@ -114,6 +123,10 @@ const Carousel = React.forwardRef(
             {sizedNextArrowIcon}
           </div>
         )}
+        <Player>
+          <FaPlay onClick={playCarousel} />
+          <FaStop onClick={stopPlayCarousel} />
+        </Player>
       </Wrapper>
     );
   }
@@ -226,4 +239,14 @@ const ChildrenWrapper = styled.div<{
       `;
     }
   }}
+`;
+
+const Player = styled.div`
+  text-align: center;
+  margin: 15px 0;
+  svg {
+    margin: 0 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+  }
 `;
