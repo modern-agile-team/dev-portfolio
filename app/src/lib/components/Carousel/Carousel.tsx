@@ -40,6 +40,7 @@ const Carousel = React.forwardRef(
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
     const [showIndex, setShowIndex] = useState<number>(0);
+    const [coordinateX, setCoordinateX] = useState(0);
 
     const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
     const lastChildIndex = useMemo(() => Math.floor((childrenLen - 1) / slideToShow), [childrenLen, slideToShow]);
@@ -61,8 +62,35 @@ const Carousel = React.forwardRef(
     /* useInterval is setTimeout custom hook */
     isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
 
+    const onTouchStart = (e: React.TouchEvent) => {
+      setCoordinateX(e.touches[0].clientX);
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+      if (coordinateX - e.changedTouches[0].clientX > 100) showNext();
+      if (e.changedTouches[0].clientX - coordinateX > 100) showPrev();
+      setCoordinateX(0);
+    };
+
+    const onMouseDown = (e: React.MouseEvent) => {
+      setCoordinateX(e.clientX);
+    };
+
+    const onMouseUp = (e: React.MouseEvent) => {
+      if (coordinateX - e.clientX > 100) showNext();
+      if (e.clientX - coordinateX > 100) showPrev();
+      setCoordinateX(0);
+    };
+
     return (
-      <Wrapper arrowLocation={arrowLocation} width={width}>
+      <Wrapper
+        arrowLocation={arrowLocation}
+        width={width}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {isArrowShow && (
           <div className="icon-wrapper" id="prev-button" onClick={showPrev}>
             {sizedPrevArrowIcon}
