@@ -32,28 +32,28 @@ const contactOptionDefault = {
   channels: [
     {
       name: 'github',
-      uriToMove: 'https://',
+      urlToMove: 'https://',
       color: '#181717BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'naver',
-      uriToMove: 'https://',
+      urlToMove: 'https://',
       color: '#47A141BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'facebook',
-      uriToMove: 'https://',
+      urlToMove: 'https://',
       color: '#1877F2BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'youtube',
-      uriToMove: 'https://',
+      urlToMove: 'https://',
       color: '#FF0000BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
