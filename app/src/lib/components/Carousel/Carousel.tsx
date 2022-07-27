@@ -44,30 +44,44 @@ const Carousel = React.forwardRef(
     const [coordinateX, setCoordinateX] = useState(0);
     const [autoPlayStatus, setAutoPlayStatus] = useState<boolean>(isAutoplay);
     const [transitionTime, setTransitionTime] = useState(0);
+    const [disable, setDisable] = useState(false);
 
     const childrenLen = useMemo(() => itemList.length, [itemList]);
     const lastChildIndex = useMemo(() => Math.floor((childrenLen - 1) / slideToShow), [childrenLen, slideToShow]);
 
     const showPrev = () => {
+      if (disable) return;
+      setDisable(true);
       setTransitionTime(transition);
       setShowIndex(showIndex - 1);
+
       if (showIndex === 1) {
-        return setTimeout(() => {
+        setTimeout(() => {
           setTransitionTime(0);
           setShowIndex(lastChildIndex - 1);
         }, transition);
       }
+
+      setTimeout(() => {
+        setDisable(false);
+      }, transition);
     };
 
     const showNext = () => {
+      if (disable) return;
+      setDisable(true);
       setTransitionTime(transition);
       setShowIndex(showIndex + 1);
+
       if (showIndex === lastChildIndex - 1) {
-        return setTimeout(() => {
+        setTimeout(() => {
           setTransitionTime(0);
           setShowIndex(1);
         }, transition);
       }
+      setTimeout(() => {
+        setDisable(false);
+      }, transition);
     };
 
     /* These const variables are ArrowIcons received to props */
