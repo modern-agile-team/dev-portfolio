@@ -7,12 +7,15 @@ interface Props {
   head?: string;
   redirectURL?: string;
   noShowHead?: boolean;
+  zoomWhenHover?: boolean;
 }
 
-const Image = ({ src, subhead, head, redirectURL, noShowHead }: Props) => {
+const Image = (props: Props) => {
+  const { src, subhead, head, redirectURL, noShowHead, zoomWhenHover } = props;
+
   return (
     <Wrap>
-      <Items noShowHead={noShowHead}>
+      <Items noShowHead={noShowHead} zoomWhenHover={zoomWhenHover}>
         <a href={redirectURL}>
           <div className="imgWrap">
             <img src={src} />
@@ -43,6 +46,7 @@ const Wrap = styled.div`
 
 const Items = styled.div<{
   noShowHead?: boolean;
+  zoomWhenHover?: boolean;
 }>`
   display: inline-block;
   width: 100%;
@@ -59,7 +63,7 @@ const Items = styled.div<{
     object-fit: cover;
     display: block;
     :hover {
-      transform: scale(105%);
+      transform: ${({ zoomWhenHover }) => (zoomWhenHover ? 'scale(105%)' : 'none')};
     }
   }
   .imgDes {
