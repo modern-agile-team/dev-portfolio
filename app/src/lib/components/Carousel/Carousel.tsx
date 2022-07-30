@@ -1,5 +1,5 @@
-import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
-import React, { cloneElement, ReactElement, useMemo, useState } from 'react';
+import { FaArrowCircleRight, FaArrowCircleLeft, FaPlay, FaStop } from 'react-icons/fa';
+import React, { cloneElement, ReactElement, useEffect, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
 
@@ -39,19 +39,49 @@ const Carousel = React.forwardRef(
     }: Props,
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
-    const [showIndex, setShowIndex] = useState<number>(0);
+    const [itemList, setItemList] = useState<any[]>([]);
+    const [showIndex, setShowIndex] = useState<number>(1);
+    const [coordinateX, setCoordinateX] = useState(0);
+    const [autoPlayStatus, setAutoPlayStatus] = useState<boolean>(isAutoplay);
+    const [transitionTime, setTransitionTime] = useState(0);
+    const [disable, setDisable] = useState(false);
 
-    const childrenLen = useMemo(() => React.Children.toArray(children).length, [children]);
+    const childrenLen = useMemo(() => itemList.length, [itemList]);
     const lastChildIndex = useMemo(() => Math.floor((childrenLen - 1) / slideToShow), [childrenLen, slideToShow]);
 
     const showPrev = () => {
-      if (showIndex === 0) return setShowIndex(() => lastChildIndex);
-      setShowIndex((prev) => prev - 1);
+      if (disable) return;
+      setDisable(true);
+      setTransitionTime(transition);
+      setShowIndex(showIndex - 1);
+
+      if (showIndex === 1) {
+        setTimeout(() => {
+          setTransitionTime(0);
+          setShowIndex(lastChildIndex - 1);
+        }, transition);
+      }
+
+      setTimeout(() => {
+        setDisable(false);
+      }, transition);
     };
 
     const showNext = () => {
-      if (showIndex === lastChildIndex) return setShowIndex(() => 0);
-      setShowIndex((prev) => prev + 1);
+      if (disable) return;
+      setDisable(true);
+      setTransitionTime(transition);
+      setShowIndex(showIndex + 1);
+
+      if (showIndex === lastChildIndex - 1) {
+        setTimeout(() => {
+          setTransitionTime(0);
+          setShowIndex(1);
+        }, transition);
+      }
+      setTimeout(() => {
+        setDisable(false);
+      }, transition);
     };
 
     /* These const variables are ArrowIcons received to props */
@@ -59,19 +89,67 @@ const Carousel = React.forwardRef(
     const sizedNextArrowIcon = useMemo(() => cloneElement(nextArrowIcon), [nextArrowIcon]);
 
     /* useInterval is setTimeout custom hook */
-    isAutoplay && useInterval(showNext, autoplaySpeed, [showIndex]);
+    useInterval(showNext, autoplaySpeed, autoPlayStatus, [showIndex, autoPlayStatus]);
+
+    const onTouchStart = (e: React.TouchEvent) => {
+      setCoordinateX(e.touches[0].clientX);
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+      if (coordinateX - e.changedTouches[0].clientX > 100) showNext();
+      if (e.changedTouches[0].clientX - coordinateX > 100) showPrev();
+      setCoordinateX(0);
+    };
+
+    const onMouseDown = (e: React.MouseEvent) => {
+      setCoordinateX(e.clientX);
+    };
+
+    const onMouseUp = (e: React.MouseEvent) => {
+      if (coordinateX - e.clientX > 100) showNext();
+      if (e.clientX - coordinateX > 100) showPrev();
+      setCoordinateX(0);
+    };
+
+    const playCarousel = () => {
+      setAutoPlayStatus(true);
+    };
+
+    const stopPlayCarousel = () => {
+      setAutoPlayStatus(false);
+    };
+
+    useEffect(() => {
+      const list = React.Children.toArray(children);
+      const firstChild = list[0];
+      const lastChild = list[list.length - 1];
+      list.push(firstChild);
+      list.unshift(lastChild);
+      setItemList(list);
+    }, []);
+
+    useEffect(() => {
+      setTransitionTime(transition);
+    }, []);
 
     return (
-      <Wrapper arrowLocation={arrowLocation} width={width}>
+      <Wrapper
+        arrowLocation={arrowLocation}
+        width={width}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {isArrowShow && (
           <div className="icon-wrapper" id="prev-button" onClick={showPrev}>
             {sizedPrevArrowIcon}
           </div>
         )}
-        <Container ref={ref} len={childrenLen} transition={transition} showIndex={showIndex}>
+        <Container ref={ref} len={childrenLen} transition={transitionTime} showIndex={showIndex}>
           <div className="carousel-wrapper">
             <div className="carousel-container">
-              {React.Children.map(children, (child) => {
+              {itemList.map((child) => {
                 return (
                   <ChildrenWrapper len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
                     {child}
@@ -86,6 +164,10 @@ const Carousel = React.forwardRef(
             {sizedNextArrowIcon}
           </div>
         )}
+        <Player>
+          <FaPlay onClick={playCarousel} />
+          <FaStop onClick={stopPlayCarousel} />
+        </Player>
       </Wrapper>
     );
   }
@@ -173,9 +255,13 @@ const Container = styled.div<{
   .carousel-container {
     display: flex;
     position: relative;
-    transition: ${(props) => props.transition / 1000}s;
-    width: ${(props) => `calc(${props.len} * 100%)`};
-    transform: ${(props) => `translateX(${(-props.showIndex * 100) / props.len}%)`};
+    ${({ transition, len, showIndex }) => {
+      return css`
+        transition: ${transition / 1000}s;
+        width: calc(${len} * 100%);
+        transform: translateX(${(-showIndex * 100) / len}%);
+      `;
+    }}
   }
 `;
 
@@ -198,4 +284,14 @@ const ChildrenWrapper = styled.div<{
       `;
     }
   }}
+`;
+
+const Player = styled.div`
+  text-align: center;
+  margin: 15px 0;
+  svg {
+    margin: 0 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+  }
 `;
