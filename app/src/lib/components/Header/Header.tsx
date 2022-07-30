@@ -4,7 +4,8 @@ import SideContainer from './SideContainer/SideContainer';
 
 export type LogoOptionType = {
   redirectUrl: string;
-  logoImg?: string;
+  logoImg?: string; 
+  logoHidden?: boolean;
   title: string;
   styles?: any;
 };
@@ -32,6 +33,7 @@ const Container = styled.div<{
 const logoOptionDefault: LogoOptionType = {
   redirectUrl: '/',
   logoImg: "",
+  logoHidden: false,
   title: 'dev-portfolio',
   styles: {
     logoMargin: '0px 16px 0px 16px',
