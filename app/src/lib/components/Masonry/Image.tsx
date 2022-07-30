@@ -6,12 +6,13 @@ interface Props {
   subhead?: string;
   head?: string;
   redirectURL?: string;
+  noShowHead?: boolean;
 }
 
-const Image = ({ src, subhead, head, redirectURL }: Props) => {
+const Image = ({ src, subhead, head, redirectURL, noShowHead }: Props) => {
   return (
     <Wrap>
-      <Items>
+      <Items noShowHead={noShowHead}>
         <a href={redirectURL}>
           <div className="imgWrap">
             <img src={src} />
@@ -40,10 +41,12 @@ const Wrap = styled.div`
   display: inline;
 `;
 
-const Items = styled.div`
+const Items = styled.div<{
+  noShowHead?: boolean;
+}>`
   display: inline-block;
   width: 100%;
-  margin-bottom: 0.5em;
+  margin-bottom: ${({ noShowHead }) => (noShowHead ? 0 : '0.5em')};
   a {
     text-decoration-line: none;
   }
@@ -60,6 +63,7 @@ const Items = styled.div`
     }
   }
   .imgDes {
+    display: ${({ noShowHead }) => (noShowHead ? 'none' : 'inline')};
     p {
       margin: 5px 0px 2px 1px;
       font-size: 14px;
