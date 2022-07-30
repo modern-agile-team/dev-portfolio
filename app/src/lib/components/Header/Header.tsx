@@ -3,7 +3,7 @@ import Logo from './Logo';
 import SideContainer from './SideContainer/SideContainer';
 
 export type LogoOptionType = {
-  urlToMove: string;
+  redirectUrl: string;
   logoImg?: string;
   title: string;
   styles?: any;
@@ -29,9 +29,9 @@ const Container = styled.div<{
   }
 `;
 
-const logoOptionDefault = {
-  urlToMove: '/',
-  logoImg: undefined,
+const logoOptionDefault: LogoOptionType = {
+  redirectUrl: '/',
+  logoImg: "",
   title: 'dev-portfolio',
   styles: {
     logoMargin: '0px 16px 0px 16px',
@@ -42,10 +42,10 @@ const logoOptionDefault = {
 };
 
 const channelsDefault = [
-  { name: 'github', urlToMove: 'https://', color: '#181717BB', size: '30px' },
-  { name: 'naver', urlToMove: 'https://', color: '#47A141BB', size: '30px' },
-  { name: 'facebook', urlToMove: 'https://', color: '#1877F2BB', size: '30px' },
-  { name: 'youtube', urlToMove: 'https://', color: '#FF0000BB', size: '30px' },
+  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
+  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
+  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
+  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
 ];
 
 const sideBarOptionDefault = {
