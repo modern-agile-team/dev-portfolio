@@ -37,6 +37,8 @@ const logoOptionDefault: LogoOptionType = {
   title: 'dev-portfolio',
   styles: {
     logoMargin: '0px 16px 0px 16px',
+    logoWidth: '50px',
+    logoHeight: '50px',
     titleColor: 'black',
     titleSize: '32px',
     titleWeight: '800',

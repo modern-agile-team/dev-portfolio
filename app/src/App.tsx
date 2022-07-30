@@ -52,7 +52,7 @@ function App() {
   ];
   return (
     <>
-      <Header />
+      <Header logoOption={{ redirectUrl: "/", title: "hi", logoImg: "/logo_test.png", logoHidden: false }} />
       <CardWrap>
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
