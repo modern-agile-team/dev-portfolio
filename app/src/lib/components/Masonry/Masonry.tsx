@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, useEffect } from 'react';
 import styled from 'styled-components';
 
 interface Props {
@@ -8,6 +8,12 @@ interface Props {
 }
 
 const Masonry = ({ children, padding, column }: Props) => {
+  const count = Children.count(children);
+
+  if (count <= 6) column = 3;
+  if (count <= 4) column = 2;
+  if (count <= 2) column = 1;
+
   return (
     <Wrap padding={padding} column={column}>
       {children}
