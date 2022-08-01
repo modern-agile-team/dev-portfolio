@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-interface ProgressBarType {
+export interface ProgressBarType {
   rate?: string;
   colorFrom?: string;
   colorTo?: string;
