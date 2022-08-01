@@ -149,9 +149,9 @@ const Carousel = React.forwardRef(
         <Container ref={ref} len={childrenLen} transition={transitionTime} showIndex={showIndex}>
           <div className="carousel-wrapper">
             <div className="carousel-container">
-              {itemList.map((child) => {
+              {itemList.map((child, index) => {
                 return (
-                  <ChildrenWrapper len={childrenLen} slideToShow={slideToShow} key={child?.toString()}>
+                  <ChildrenWrapper len={childrenLen} slideToShow={slideToShow} key={index}>
                     {child}
                   </ChildrenWrapper>
                 );
