@@ -1,11 +1,11 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import TechStackName from './TechStackName';
-import ProgressBarContainer from './ProgressBar';
+import ProgressBarContainer, { ProgressBarType } from './ProgressBar';
+import { TechStackNameType } from './TechStackName';
 
 interface TechStackType {
-  nameOption: { name?: string; size?: string; iconColor?: string };
-  progressBarOption: { rate?: string; colorTo?: string; colorFrom?: string };
+  nameOption: TechStackNameType;
+  progressBarOption: ProgressBarType;
   gap?: 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
 }
 
