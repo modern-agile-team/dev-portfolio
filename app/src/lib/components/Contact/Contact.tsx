@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
+import { ContactOptionTypes } from '../../common/types/contact';
 
-const Contact = ({ contactOption = contactOptionDefault }) => {
+type ContactProps = {
+  id?: string;
+  contactOption?: ContactOptionTypes;
+}
+
+const Contact = ({ id, contactOption = contactOptionDefault }: ContactProps) => {
   const { aboutMeInfos } = contactOption;
   return (
-    <Container id="Contact">
+    <Container id={id}>
       <ContactForm contactOption={contactOption} />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>

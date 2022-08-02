@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
 
 interface Props {
+  id?: string;
   children: React.ReactNode;
   width?: string;
   transition?: number;
@@ -26,6 +27,7 @@ type ArrowLocationType = {
 const Carousel = React.forwardRef(
   (
     {
+      id,
       children,
       width,
       transition = 1000,
@@ -134,6 +136,7 @@ const Carousel = React.forwardRef(
 
     return (
       <Wrapper
+        id={id}
         arrowLocation={arrowLocation}
         width={width}
         onMouseDown={onMouseDown}

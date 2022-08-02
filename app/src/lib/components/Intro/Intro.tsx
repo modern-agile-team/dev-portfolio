@@ -4,14 +4,15 @@ import { IntroOptionType } from '../../common/types/intro';
 import { IntroTitle, IntroForm } from './index';
 
 interface Props {
+  id?: string;
   textAlign?: 'left' | 'center';
   backgroundColor?: string;
   introOption?: IntroOptionType;
 }
 
-const Intro = ({ introOption = IntroOptionDefault, textAlign, backgroundColor }: Props) => {
+const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: Props) => {
   return (
-    <Wrap textAlign={textAlign} backgroundColor={backgroundColor}>
+    <Wrap id={id} textAlign={textAlign} backgroundColor={backgroundColor}>
       <IntroTitle introOption={introOption} />
       <IntroForm introDes={introOption} />
     </Wrap>

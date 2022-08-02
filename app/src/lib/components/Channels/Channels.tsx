@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
-interface ChannelProps {
+export interface ChannelProps {
   redirectUrl: string;
   name: string;
   color?: string;
-  size?: number;
+  size?: string;
   margin?: string;
 }
 
