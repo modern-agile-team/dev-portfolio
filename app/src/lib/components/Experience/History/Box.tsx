@@ -28,7 +28,6 @@ export default Box;
 
 const Wrap = styled.div`
   margin: 10px;
-  padding: 0em 4vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,13 +35,9 @@ const Wrap = styled.div`
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.14);
   border-radius: 5px;
   .date {
-    width: 15%;
     padding: 2em;
     flex-grow: 1;
-    @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
-    }
+    text-align: center;
     .start-date {
       ::after {
         content: '-';
@@ -54,14 +49,12 @@ const Wrap = styled.div`
     }
   }
   .child-title {
-    width: 15%;
     flex-grow: 1;
     font-size: 22px;
     font-weight: 600;
+    text-align: center;
     border-right: 1px solid #b4b4b4a2;
     @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
       border: none;
     }
   }
@@ -69,9 +62,9 @@ const Wrap = styled.div`
     padding: 2em;
     flex-grow: 2;
     width: 30%;
+    text-align: center;
     @media screen and (max-width: 800px) {
       width: 100%;
-      text-align: center;
     }
   }
 `;

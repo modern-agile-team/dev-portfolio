@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 interface Props {
-  id?: string;
   padding?: string;
   children: React.ReactNode;
   col?: number;
@@ -10,9 +9,9 @@ interface Props {
   theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
 }
 
-const Gallery = ({ id, children, col, gap, theme, padding }: Props) => {
+const Gallery = ({ children, col, gap, theme, padding }: Props) => {
   return (
-    <Wrap id={id} padding={padding}>
+    <Wrap padding={padding}>
       <Wrapper>
         <ItemWrapper theme={theme} col={col} gap={gap}>
           {children}
