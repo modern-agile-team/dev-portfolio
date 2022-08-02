@@ -4,10 +4,15 @@ import SideContainer from './SideContainer/SideContainer';
 
 export type LogoOptionType = {
   redirectUrl: string;
+  title: string;
   logoImg?: string; 
   logoHidden?: boolean;
-  title: string;
-  styles?: any;
+  logoMargin?: string;
+  logoWidth?: string;
+  logoHeight?: string;
+  titleColor?: string;
+  titleSize?: string;
+  titleWeight?: string;
 };
 
 const Container = styled.div<{
@@ -35,14 +40,12 @@ const logoOptionDefault: LogoOptionType = {
   logoImg: "",
   logoHidden: false,
   title: 'dev-portfolio',
-  styles: {
-    logoMargin: '0px 16px 0px 16px',
-    logoWidth: '50px',
-    logoHeight: '50px',
-    titleColor: 'black',
-    titleSize: '32px',
-    titleWeight: '800',
-  },
+  logoMargin: '0px 16px 0px 16px',
+  logoWidth: '50px',
+  logoHeight: '50px',
+  titleColor: 'black',
+  titleSize: '32px',
+  titleWeight: '800',
 };
 
 const channelsDefault = [
@@ -55,7 +58,8 @@ const channelsDefault = [
 const sideBarOptionDefault = {
   mainTitle: 'dev-portfolio',
   items: [],
-  styles: { size: '50px', margin: '0px 12px 0px 24px' },
+  size: '50px', 
+  margin: '0px 12px 0px 24px',
 };
 
 const Header = ({
