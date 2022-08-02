@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const useInterval = (callback: Function, delay: number, deps?: any[]) => {
+const useInterval = (callback: Function, delay: number, autoPlayStatus: boolean, deps?: any[]) => {
   const autoPlayRef = useRef<any>(null);
 
   function resetTimeout() {
@@ -9,6 +9,7 @@ const useInterval = (callback: Function, delay: number, deps?: any[]) => {
     }
   }
   useEffect(() => {
+    if (!autoPlayStatus) return;
     resetTimeout();
 
     autoPlayRef.current = setTimeout(() => {

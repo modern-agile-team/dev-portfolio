@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import History from './History';
 
 interface Props {
+  id?: string;
   historyList?: {
     startDate?: string;
     endDate?: string;
@@ -20,10 +21,10 @@ interface Props {
 }
 
 const Experience = (props: Props) => {
-  const { historyList, title, textAlign, background, theme, verticalOption } = props;
+  const { id, historyList, title, textAlign, background, theme, verticalOption } = props;
 
   return (
-    <Wrap textAlign={textAlign} background={background}>
+    <Wrap id={id} textAlign={textAlign} background={background}>
       <div className="title">{title}</div>
       <hr />
       <ChildWrap theme={theme}>
@@ -42,38 +43,21 @@ Experience.defaultProps = {
   theme: 'basic',
   historyList: [
     {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+      startDate: '2020. 01',
+      endDate: '2020. 11',
+      title: '인덕대학교',
+      des: '인덕대학교를 다녔다',
     },
     {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      startDate: '2021. 05. 01',
+      endDate: '2022. 01. 27',
+      title: '모던 애자일',
+      des: `모던애자일 활동을 했음.\n맴버는 오창훈 민순기 이석호 박현우 배범수 유준상 김지수 류가희 그라고 나였다 \n2기들아 보고싶다\n잘지내니?`,
     },
     {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
-    },
-    {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
-    },
-    {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
-    },
-    {
-      startDate: 'startDate',
-      endDate: 'endDate',
-      title: 'this is title',
+      startDate: '2022. 07. 23',
+      endDate: '진행중',
+      title: '아 집에 가고싶다',
     },
   ],
 };
