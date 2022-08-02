@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import Logo from './Logo';
 import SideContainer from './SideContainer/SideContainer';
+import { SideBarType } from './SideContainer/SideContainer';
+import { ChannelProps } from '../Channels/Channels';
+
+interface HeaderProps {
+  id?: string;
+  logoOption?: LogoOptionType;
+  channels?: ChannelProps[];
+  sideBarOption?: SideBarType;
+  headerHeight?: string;
+  headerWidth?: string;
+  headerBackgroundColor?: string;
+}
 
 export type LogoOptionType = {
   redirectUrl: string;
@@ -14,6 +26,52 @@ export type LogoOptionType = {
   titleSize?: string;
   titleWeight?: string;
 };
+
+const logoOptionDefault: LogoOptionType = {
+  redirectUrl: '/',
+  logoImg: "",
+  logoHidden: false,
+  title: 'dev-portfolio',
+  logoMargin: '0px 16px 0px 16px',
+  logoWidth: '50px',
+  logoHeight: '50px',
+  titleColor: 'black',
+  titleSize: '32px',
+  titleWeight: '800',
+};
+
+const channelsDefault: ChannelProps[] = [
+  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
+  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
+  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
+  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
+];
+
+const sideBarOptionDefault: SideBarType = {
+  mainTitle: 'dev-portfolio',
+  items: [],
+  size: '50px', 
+  margin: '0px 12px 0px 24px',
+};
+
+const Header = ({
+  id,
+  logoOption = logoOptionDefault,
+  channels = channelsDefault,
+  sideBarOption = sideBarOptionDefault,
+  headerHeight,
+  headerWidth,
+  headerBackgroundColor,
+}: HeaderProps) => {
+  return (
+    <Container id={id} headerHeight={headerHeight} headerWidth={headerWidth} headerBackgroundColor={headerBackgroundColor}>
+      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
+      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
+    </Container>
+  );
+};
+
+export default Header;
 
 const Container = styled.div<{
   headerHeight?: string;
@@ -34,45 +92,3 @@ const Container = styled.div<{
     height: 80px;
   }
 `;
-
-const logoOptionDefault: LogoOptionType = {
-  redirectUrl: '/',
-  logoImg: "",
-  logoHidden: false,
-  title: 'dev-portfolio',
-  logoMargin: '0px 16px 0px 16px',
-  logoWidth: '50px',
-  logoHeight: '50px',
-  titleColor: 'black',
-  titleSize: '32px',
-  titleWeight: '800',
-};
-
-const channelsDefault = [
-  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
-  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
-  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
-  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
-];
-
-const sideBarOptionDefault = {
-  mainTitle: 'dev-portfolio',
-  items: [],
-  size: '50px', 
-  margin: '0px 12px 0px 24px',
-};
-
-const Header = ({
-  logoOption = logoOptionDefault,
-  channels = channelsDefault,
-  sideBarOption = sideBarOptionDefault,
-}) => {
-  return (
-    <Container id="Header">
-      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
-      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
-    </Container>
-  );
-};
-
-export default Header;

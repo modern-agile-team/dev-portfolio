@@ -1,13 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
-interface ChannelStyleProps {
+export interface ChannelProps {
   redirectUrl: string;
   name: string;
-  color: string;
-  size: number;
-  margin: string;
+  color?: string;
+  size?: string;
+  margin?: string;
 }
 
 const Container = styled.div`
@@ -25,7 +24,7 @@ const Channel = styled.a<{
 const Channels = ({ channels }: any) => {
   return (
     <Container>
-      {channels?.map(({ redirectUrl, name, color, size, margin }: ChannelStyleProps, idx: number) => (
+      {channels?.map(({ redirectUrl, name, color, size, margin = '0px 6px 0px 6px' }: ChannelProps, idx: number) => (
         <Channel key={idx} href={redirectUrl} margin={margin}>
           <Icon icon={`simple-icons:${name}`} color={color} fontSize={size} />
         </Channel>

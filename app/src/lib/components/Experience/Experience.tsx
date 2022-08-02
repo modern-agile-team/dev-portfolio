@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import History from './History';
 
 interface Props {
+  id?: string;
   historyList?: {
     startDate?: string;
     endDate?: string;
@@ -20,10 +21,10 @@ interface Props {
 }
 
 const Experience = (props: Props) => {
-  const { historyList, title, textAlign, background, theme, verticalOption } = props;
+  const { id, historyList, title, textAlign, background, theme, verticalOption } = props;
 
   return (
-    <Wrap textAlign={textAlign} background={background}>
+    <Wrap id={id} textAlign={textAlign} background={background}>
       <div className="title">{title}</div>
       <hr />
       <ChildWrap theme={theme}>
