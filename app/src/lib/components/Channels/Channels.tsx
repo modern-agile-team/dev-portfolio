@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
 interface ChannelStyleProps {
-  urlToMove: string;
+  redirectUrl: string;
   name: string;
   color: string;
   size: number;
@@ -25,8 +25,8 @@ const Channel = styled.a<{
 const Channels = ({ channels }: any) => {
   return (
     <Container>
-      {channels?.map(({ urlToMove, name, color, size, margin }: ChannelStyleProps, idx: number) => (
-        <Channel key={idx} href={urlToMove} margin={margin}>
+      {channels?.map(({ redirectUrl, name, color, size, margin }: ChannelStyleProps, idx: number) => (
+        <Channel key={idx} href={redirectUrl} margin={margin}>
           <Icon icon={`simple-icons:${name}`} color={color} fontSize={size} />
         </Channel>
       ))}

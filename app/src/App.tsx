@@ -52,7 +52,7 @@ function App() {
   ];
   return (
     <>
-      <Header />
+      <Header logoOption={{ redirectUrl: "/", title: "hi", logoImg: "/logo_test.png", logoHidden: false }} />
       <CardWrap>
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -68,7 +68,7 @@ function App() {
       <TechStackList techStackList={techStacksDefault} />
       {/* <TechStackInput /> */}
       <Experience />
-      {/* <Gallery>
+      <Gallery>
         <Item />
         <Item />
         <Item />
@@ -78,7 +78,7 @@ function App() {
         <Item />
         <Item />
         <Item />
-      </Gallery> */}
+      </Gallery>
       <Masonry>
         <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
         <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
@@ -90,16 +90,16 @@ function App() {
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/800/?random" />
         <Image src="https://picsum.photos/600/1000/?random" />
-        {/* <Image src="https://picsum.photos/600/500/?random" />
+        <Image src="https://picsum.photos/600/500/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
-        <Image src="https://picsum.photos/500/600/?random" /> */}
+        <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      {/* <Carousel transition={1000} arrowLocation="mid-side">
+      <Carousel transition={1000} arrowLocation="mid-side">
         <Item title="1" />
         <Item title="2" />
         <Item title="3" />
-      </Carousel> */}
+      </Carousel>
       <Contact />
     </>
   );

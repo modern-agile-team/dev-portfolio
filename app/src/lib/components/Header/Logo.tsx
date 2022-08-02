@@ -34,12 +34,12 @@ const Title = styled.span<{
 `;
 
 const Logo = ({ logoOption }: LogoProps): React.ReactElement => {
-  const { urlToMove, logoImg, title, styles } = logoOption;
-  const { logoMargin, titleColor, titleSize, titleWeight } = styles;
+  const { redirectUrl, logoImg, logoHidden, title, styles } = logoOption;
+  const { logoMargin, logoWidth, logoHeight, titleColor, titleSize, titleWeight } = styles;
   return (
-    <Container href={urlToMove}>
+    <Container href={redirectUrl}>
       <LogoImgContainer logoMargin={logoMargin}>
-        {logoImg ? <img src={logoImg} /> : <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />}
+        {logoHidden ? "" : logoImg?.length ? <img src={logoImg} width={logoWidth} height={logoHeight} /> : <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />}
       </LogoImgContainer>
       <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
         {title}
