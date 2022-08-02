@@ -28,20 +28,16 @@ export default Basic;
 
 const Wrap = styled.div`
   margin: 0 auto;
-  padding: 0em 4vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  /* padding: 2.2em 2em 3.2em 2em; */
   border-bottom: 0.2px solid #b4b4b4a2;
   .date {
-    width: 15%;
     padding: 2em;
     flex-grow: 1;
-    @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
-    }
+    text-align: center;
     .start-date {
       ::after {
         content: '-';
@@ -53,23 +49,18 @@ const Wrap = styled.div`
     }
   }
   .child-title {
-    width: 15%;
     flex-grow: 1;
     font-size: 22px;
     font-weight: 600;
-    @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
-      border: none;
-    }
+    text-align: center;
   }
   .des {
     padding: 2em;
     flex-grow: 2;
     width: 30%;
+    text-align: center;
     @media screen and (max-width: 800px) {
       width: 100%;
-      text-align: center;
     }
   }
 `;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Icon } from '@iconify/react';
 import { clearConfigCache } from 'prettier';
 
-export interface TechStackNameType {
+interface TechStackNameType {
   name?: string;
   iconColor?: string;
   fontSize?: string;

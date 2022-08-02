@@ -1,17 +1,11 @@
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
-import { ContactOptionTypes } from '../../common/types/contact';
 
-type ContactProps = {
-  id?: string;
-  contactOption?: ContactOptionTypes;
-}
-
-const Contact = ({ id, contactOption = contactOptionDefault }: ContactProps) => {
+const Contact = ({ contactOption = contactOptionDefault }) => {
   const { aboutMeInfos } = contactOption;
   return (
-    <Container id={id}>
+    <Container id="Contact">
       <ContactForm contactOption={contactOption} />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>
@@ -38,28 +32,28 @@ const contactOptionDefault = {
   channels: [
     {
       name: 'github',
-      redirectUrl: 'https://',
+      uriToMove: 'https://',
       color: '#181717BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'naver',
-      redirectUrl: 'https://',
+      uriToMove: 'https://',
       color: '#47A141BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'facebook',
-      redirectUrl: 'https://',
+      uriToMove: 'https://',
       color: '#1877F2BB',
       size: '18px',
       margin: '0px 12px 0px 0px',
     },
     {
       name: 'youtube',
-      redirectUrl: 'https://',
+      uriToMove: 'https://',
       color: '#FF0000BB',
       size: '18px',
       margin: '0px 12px 0px 0px',

@@ -1,18 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from '../../common/types/intro';
 import { IntroTitle, IntroForm } from './index';
 
 interface Props {
-  id?: string;
-  textAlign?: 'left' | 'center';
-  backgroundColor?: string;
-  introOption?: IntroOptionType;
+  textAlign?: string;
+  background?: string;
+  introOption?: any;
 }
 
-const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: Props) => {
+const Intro = ({ introOption = IntroOptionDefault, textAlign, background }: Props) => {
   return (
-    <Wrap id={id} textAlign={textAlign} backgroundColor={backgroundColor}>
+    <Wrap textAlign={textAlign} background={background}>
       <IntroTitle introOption={introOption} />
       <IntroForm introDes={introOption} />
     </Wrap>
@@ -23,15 +21,15 @@ export default Intro;
 
 const Wrap = styled.div<{
   textAlign?: string;
-  backgroundColor?: string;
+  background?: string;
 }>`
   display: flex;
   flex-direction: column;
   padding: 30px;
   padding-top: 20px;
   white-space: pre-wrap; //줄바꿈 인식
-  text-align: ${({ textAlign }) => textAlign};
-  background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
+  text-align: ${({ textAlign }) => textAlign ?? 'left'};
+  background-color: ${({ background }) => background ?? 'whitesmoke'};
 `;
 
 const IntroOptionDefault = {

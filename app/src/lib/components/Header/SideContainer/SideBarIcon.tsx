@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 
 interface SideBarIconProps {
-  size?: string;
-  margin?: string;
+  styles: any;
   onClick: () => void;
 }
 
@@ -16,7 +15,8 @@ const Container = styled.div<{
   border: 0px;
 `;
 
-const SideBarIcon = ({ size = '50px', margin = '0px 12px 0px 24px', onClick }: SideBarIconProps) => {
+const SideBarIcon = ({ styles, onClick }: SideBarIconProps) => {
+  const { size, margin } = styles;
 
   return (
     <Container margin={margin} onClick={onClick}>

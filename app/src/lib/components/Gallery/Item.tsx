@@ -59,7 +59,6 @@ const StyledItem = styled.li`
     width: 100%;
     height: 100%;
     flex-grow: 1;
-    object-fit: contain;
   }
   &:hover {
     transform: translateY(10px);

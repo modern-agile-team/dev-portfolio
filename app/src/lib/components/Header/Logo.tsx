@@ -23,7 +23,7 @@ const LogoImgContainer = styled.a<{
 const Title = styled.span<{
   titleColor: string;
   titleSize: string;
-  titleWeight: string;
+  titleWeight: number;
 }>`
   color: ${({ titleColor }) => titleColor ?? 'black'};
   font-size: ${({ titleSize }) => titleSize ?? '24px'};
@@ -34,23 +34,12 @@ const Title = styled.span<{
 `;
 
 const Logo = ({ logoOption }: LogoProps): React.ReactElement => {
-  const {
-    redirectUrl = '/',
-    logoImg = "",
-    logoHidden = false,
-    title = 'dev-portfolio',
-    logoMargin = '0px 16px 0px 16px',
-    logoWidth = '50px',
-    logoHeight = '50px',
-    titleColor = 'black',
-    titleSize = '32px',
-    titleWeight = '800',
-  } = logoOption;
-
+  const { uriToMove, logoImg, title, styles } = logoOption;
+  const { logoMargin, titleColor, titleSize, titleWeight } = styles;
   return (
-    <Container href={redirectUrl}>
+    <Container href={uriToMove}>
       <LogoImgContainer logoMargin={logoMargin}>
-        {logoHidden ? "" : logoImg.length > 0 ? <img src={logoImg} width={logoWidth} height={logoHeight} /> : <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />}
+        {logoImg ? <img src={logoImg} /> : <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />}
       </LogoImgContainer>
       <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
         {title}
