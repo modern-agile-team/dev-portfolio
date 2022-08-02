@@ -1,22 +1,15 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  id?: string;
   children: React.ReactNode;
   padding?: string;
   column?: number;
 }
 
-const Masonry = ({ id, children, padding, column }: Props) => {
-  const count = Children.count(children);
-
-  if (count <= 6) column = 3;
-  if (count <= 4) column = 2;
-  if (count <= 2) column = 1;
-
+const Masonry = ({ children, padding, column }: Props) => {
   return (
-    <Wrap id={id} padding={padding} column={column}>
+    <Wrap padding={padding} column={column}>
       {children}
     </Wrap>
   );

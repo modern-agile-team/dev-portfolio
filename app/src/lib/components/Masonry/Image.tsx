@@ -6,16 +6,12 @@ interface Props {
   subhead?: string;
   head?: string;
   redirectURL?: string;
-  noShowHead?: boolean;
-  zoomWhenHover?: boolean;
 }
 
-const Image = (props: Props) => {
-  const { src, subhead, head, redirectURL, noShowHead, zoomWhenHover } = props;
-
+const Image = ({ src, subhead, head, redirectURL }: Props) => {
   return (
     <Wrap>
-      <Items noShowHead={noShowHead} zoomWhenHover={zoomWhenHover}>
+      <Items>
         <a href={redirectURL}>
           <div className="imgWrap">
             <img src={src} />
@@ -44,13 +40,10 @@ const Wrap = styled.div`
   display: inline;
 `;
 
-const Items = styled.div<{
-  noShowHead?: boolean;
-  zoomWhenHover?: boolean;
-}>`
+const Items = styled.div`
   display: inline-block;
   width: 100%;
-  margin-bottom: ${({ noShowHead }) => (noShowHead ? 0 : '0.5em')};
+  margin-bottom: 0.5em;
   a {
     text-decoration-line: none;
   }
@@ -63,11 +56,10 @@ const Items = styled.div<{
     object-fit: cover;
     display: block;
     :hover {
-      transform: ${({ zoomWhenHover }) => (zoomWhenHover ? 'scale(105%)' : 'none')};
+      transform: scale(105%);
     }
   }
   .imgDes {
-    display: ${({ noShowHead }) => (noShowHead ? 'none' : 'inline')};
     p {
       margin: 5px 0px 2px 1px;
       font-size: 14px;

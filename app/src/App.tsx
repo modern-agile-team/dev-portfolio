@@ -52,8 +52,8 @@ function App() {
   ];
   return (
     <>
-      <Header id="헤더" />
-      <CardWrap id="카드에연">
+      <Header />
+      <CardWrap>
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
         </Card>
@@ -64,11 +64,11 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro id="인트로" />
-      <TechStackList id="기술스택" techStackList={techStacksDefault} />
+      <Intro />
+      <TechStackList techStackList={techStacksDefault} />
       {/* <TechStackInput /> */}
-      <Experience id="경험" />
-      <Gallery id="갤러리">
+      <Experience />
+      {/* <Gallery>
         <Item />
         <Item />
         <Item />
@@ -78,8 +78,8 @@ function App() {
         <Item />
         <Item />
         <Item />
-      </Gallery>
-      <Masonry id="메이젼리">
+      </Gallery> */}
+      <Masonry>
         <Image src="https://picsum.photos/600/600/?random" redirectURL="/1" />
         <Image src="https://picsum.photos/600/1100/?random" redirectURL="/2" />
         <Image src="https://picsum.photos/300/400/?random" />
@@ -90,17 +90,17 @@ function App() {
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/800/?random" />
         <Image src="https://picsum.photos/600/1000/?random" />
-        <Image src="https://picsum.photos/600/500/?random" />
+        {/* <Image src="https://picsum.photos/600/500/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
-        <Image src="https://picsum.photos/500/600/?random" />
+        <Image src="https://picsum.photos/500/600/?random" /> */}
       </Masonry>
 
-      <Carousel id="캐러셀" transition={1000} arrowLocation="mid-side">
+      {/* <Carousel transition={1000} arrowLocation="mid-side">
         <Item title="1" />
         <Item title="2" />
         <Item title="3" />
-      </Carousel>
-      <Contact id="연락처" />
+      </Carousel> */}
+      <Contact />
     </>
   );
 }
