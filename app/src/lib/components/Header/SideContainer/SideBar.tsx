@@ -4,7 +4,7 @@ import SideBarItems from './SideBarItems';
 
 interface SideBarProps {
   mainTitle: string;
-  sideBarItems: string;
+  sideBarItems: any[];
   isClickedSideBarIcon: boolean;
   setIsClickedSideBarIcon: (clickedSideBarIcon: boolean) => void;
 }
