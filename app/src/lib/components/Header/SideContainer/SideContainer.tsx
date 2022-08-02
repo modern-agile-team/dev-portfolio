@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Channels from '../../Channels/Channels';
 import SideBarIcon from './SideBarIcon';
@@ -21,7 +21,6 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
     const $tags: any = document.querySelector('#root')?.childNodes;
     setSideBarItems(
       Array.from($tags)
-        .filter(($tag: any) => $tag.id !== 'Header')
         .map(($tag: any) => {
           return { title: $tag.id };
         })
