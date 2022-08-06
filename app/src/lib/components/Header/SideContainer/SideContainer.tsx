@@ -19,14 +19,16 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
 
   const onClickSideBarIconHandler = () => {
     const $tags: any = document.querySelector('#root')?.childNodes;
+    let idx = 0;
+    
     setSideBarItems(
       Array.from($tags)
         .map(($tag: any) => {
-          return { title: $tag.id };
+          return { title: $tag.id, idx: idx++ };
         })
     );
     setIsClickedSideBarIcon(true);
-  };
+  };  
 
   return (
     <Container>
