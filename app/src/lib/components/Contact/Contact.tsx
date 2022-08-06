@@ -12,7 +12,7 @@ type ContactProps = {
 const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactProps) => {
   const { aboutMeInfos } = contactOption;
   return (
-    <Container id={id}>
+    <Container id={id} backgroundColor={backgroundColor}>
       <ContactForm contactOption={contactOption} />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>

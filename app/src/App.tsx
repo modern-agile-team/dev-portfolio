@@ -100,7 +100,7 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="연락처" />
+      <Contact id="연락처" backgroundColor="whitesmoke" />
     </div>
   );
 }
