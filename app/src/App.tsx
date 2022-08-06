@@ -51,8 +51,8 @@ function App() {
     },
   ];
   return (
-    <>
-      <Header id="헤더" />
+    <div className="App">
+      <Header />
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -64,7 +64,7 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro id="인트로" />
+      <Intro id="인트로짱짱ㅁㄴㄴㄴㅇ" />
       <TechStackList id="기술스택" techStackList={techStacksDefault} />
       {/* <TechStackInput /> */}
       <Experience id="경험" />
@@ -100,8 +100,8 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="연락처" />
-    </>
+      <Contact id="연락처" backgroundColor="whitesmoke" />
+    </div>
   );
 }
 
