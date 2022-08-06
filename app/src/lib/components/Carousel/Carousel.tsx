@@ -1,8 +1,8 @@
-import { FaArrowCircleRight, FaArrowCircleLeft, FaPlay, FaStop } from 'react-icons/fa';
 import React, { cloneElement, ReactElement, useEffect, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useInterval } from './hooks';
-
+import { TbPlayerPlay, TbPlayerPause } from 'react-icons/tb';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 interface Props {
   children: React.ReactNode;
   width?: string;
@@ -11,9 +11,13 @@ interface Props {
   slideToShow?: number;
   isArrowShow?: boolean;
   isAutoplay?: boolean;
+  isAutoplayControl?: boolean;
   arrowLocation?: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
-  prevArrowIcon?: ReactElement<{ size: number }>;
-  nextArrowIcon?: ReactElement<{ size: number }>;
+  playerLocation?: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
+  prevArrowIcon?: ReactElement;
+  nextArrowIcon?: ReactElement;
+  startAutoplayIcon?: ReactElement;
+  pauseAutoplayIcon?: ReactElement;
 }
 
 type ArrowLocationType = {
@@ -31,9 +35,13 @@ const Carousel = ({
   slideToShow = 1,
   isArrowShow = true,
   isAutoplay = false,
+  isAutoplayControl = true,
   arrowLocation = 'mid-side',
-  prevArrowIcon = <FaArrowCircleLeft />,
-  nextArrowIcon = <FaArrowCircleRight />,
+  playerLocation = 'bottom-mid',
+  prevArrowIcon = <FiChevronLeft />,
+  nextArrowIcon = <FiChevronRight />,
+  startAutoplayIcon = <TbPlayerPlay />,
+  pauseAutoplayIcon = <TbPlayerPause />,
 }: Props) => {
   const childrenLength = React.Children.toArray(children).length;
   const [itemList, setItemList] = useState<any[]>([]);
@@ -87,6 +95,9 @@ const Carousel = ({
   /* These const variables are ArrowIcons received to props */
   const sizedPrevArrowIcon = useMemo(() => cloneElement(prevArrowIcon), [prevArrowIcon]);
   const sizedNextArrowIcon = useMemo(() => cloneElement(nextArrowIcon), [nextArrowIcon]);
+
+  const sizedStartAutoplayIcon = useMemo(() => cloneElement(startAutoplayIcon), [startAutoplayIcon]);
+  const sizedPauseAutoplayIcon = useMemo(() => cloneElement(pauseAutoplayIcon), [pauseAutoplayIcon]);
 
   /* useInterval is setTimeout custom hook */
   useInterval(
@@ -150,7 +161,7 @@ const Carousel = ({
       onTouchEnd={onTouchEnd}
     >
       {isArrowShow && (
-        <div className="icon-wrapper" id="prev-button" onClick={showPrev}>
+        <div className="arrow-icon-wrapper" id="prev-button" onClick={showPrev}>
           {sizedPrevArrowIcon}
         </div>
       )}
@@ -168,14 +179,20 @@ const Carousel = ({
         </div>
       </Container>
       {isArrowShow && (
-        <div className="icon-wrapper" id="next-button" onClick={showNext}>
+        <div className="arrow-icon-wrapper" id="next-button" onClick={showNext}>
           {sizedNextArrowIcon}
         </div>
       )}
-      <Player>
-        <FaPlay onClick={playCarousel} />
-        <FaStop onClick={stopPlayCarousel} />
-      </Player>
+      {isAutoplayControl && (
+        <Player playerLocation={playerLocation}>
+          <div className="icon-wrapper" id="start-button" onClick={playCarousel}>
+            {sizedStartAutoplayIcon}
+          </div>
+          <div className="icon-wrapper" id="pause-button" onClick={stopPlayCarousel}>
+            {sizedPauseAutoplayIcon}
+          </div>
+        </Player>
+      )}
     </Wrapper>
   );
 };
@@ -188,9 +205,12 @@ Carousel.defaultProps = {
   slideToShow: 1,
   isArrowShow: true,
   isAutoplay: false,
+  isAutoplayControl: true,
   arrowLocation: 'mid-side',
-  prevArrowIcon: <FaArrowCircleLeft />,
-  nextArrowIcon: <FaArrowCircleRight />,
+  prevArrowIcon: <FiChevronLeft />,
+  nextArrowIcon: <FiChevronRight />,
+  startAutoplayIcon: <TbPlayerPlay />,
+  pauseAutoplayIcon: <TbPlayerPause />,
 };
 
 const Wrapper = styled.div<{
@@ -229,7 +249,7 @@ const Wrapper = styled.div<{
     const { top, bottom, side, translateY } = location;
 
     return css`
-      .icon-wrapper {
+      .arrow-icon-wrapper {
         position: absolute;
         top: ${top};
         bottom: ${bottom};
@@ -293,12 +313,47 @@ const ChildrenWrapper = styled.div<{
   }}
 `;
 
-const Player = styled.div`
+const Player = styled.div<{
+  playerLocation: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
+}>`
+  display: flex;
+  justify-content: center;
   text-align: center;
   margin: 15px 0;
+  position: absolute;
   svg {
     margin: 0 10px;
-    transform: scale(1.5);
     cursor: pointer;
   }
+  ${({ playerLocation }) => {
+    const [heigthLocation, sideLocation] = playerLocation.split('-');
+    const location: { top?: string; bottom?: string; left?: string; right?: string; translateX?: string } = {
+      top: undefined,
+      bottom: undefined,
+      left: undefined,
+      right: undefined,
+      translateX: undefined,
+    };
+    if (heigthLocation === 'top') {
+      location.bottom = '100%';
+    } else {
+      location.top = '100%';
+    }
+    if (sideLocation === 'mid') {
+      location.left = '50%';
+      location.translateX = '-50%';
+    } else if (sideLocation === 'left') {
+      location.left = '0';
+    } else {
+      location.right = '0';
+    }
+    const { top, bottom, left, right, translateX } = location;
+    return css`
+      top: ${top};
+      bottom: ${bottom};
+      left: ${left};
+      right: ${right};
+      transform: translateX(${translateX});
+    `;
+  }}
 `;
