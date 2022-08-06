@@ -4,6 +4,7 @@ import { TbPlayerPlay, TbPlayerPause } from 'react-icons/tb';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ChildrenWrapper, Container, Player, Wrapper } from './style';
 interface Props {
+  id?: string;
   children: React.ReactNode;
   width?: string;
   transition?: number;
@@ -21,6 +22,7 @@ interface Props {
 }
 
 const Carousel = ({
+  id,
   children,
   width,
   transition = 1000,

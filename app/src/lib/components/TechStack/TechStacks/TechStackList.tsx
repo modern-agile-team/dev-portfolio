@@ -1,12 +1,9 @@
-import React from 'react';
 import TechStack from './TechStack';
+import { TechStackType } from "./TechStack";
 
 interface TechStackListType {
   id?: string;
-  techStackList: {
-    nameOption: { name?: string; size?: string; iconColor?: string };
-    progressBarOption: { rate?: string; colorTo?: string; colorFrom?: string };
-  }[];
+  techStackList: TechStackType[];
   gap?: 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
 }
 

@@ -3,13 +3,16 @@ import TechStackName from './TechStackName';
 import ProgressBarContainer, { ProgressBarType } from './ProgressBar';
 import { TechStackNameType } from './TechStackName';
 
-interface TechStackType {
+export interface TechStackType {
   nameOption: TechStackNameType;
   progressBarOption: ProgressBarType;
+}
+
+interface TechStackGapType extends TechStackType {
   gap?: 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
 }
 
-const TechStack = (props: TechStackType) => {
+const TechStack = (props: TechStackGapType) => {
   const { nameOption, progressBarOption, gap = 'normal' } = props;
 
   return (

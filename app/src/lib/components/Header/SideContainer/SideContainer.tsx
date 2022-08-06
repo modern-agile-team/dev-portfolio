@@ -18,15 +18,17 @@ const SideContainer = ({ channels, sideBarOption }: any) => {
   const [sideBarItems, setSideBarItems] = useState(items);
 
   const onClickSideBarIconHandler = () => {
-    const $tags: any = document.querySelector('#root')?.childNodes;
+    const $tags: any = document.querySelector('.App')?.childNodes;
+    let idx = 0;
+
     setSideBarItems(
       Array.from($tags)
         .map(($tag: any) => {
-          return { title: $tag.id };
+          return { title: $tag.id, idx: idx++ };
         })
     );
     setIsClickedSideBarIcon(true);
-  };
+  };  
 
   return (
     <Container>
