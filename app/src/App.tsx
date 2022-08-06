@@ -20,7 +20,7 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Jest', fontSize: '25px', logoSize: '50px' },
+      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '25px', logoSize: '50px' },
       progressBarOption: {
         rate: '45%',
         colorTo: '#E2D784',
@@ -30,7 +30,7 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'HTML-5', fontSize: '18px', logoSize: '24px' },
+      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '30%',
         colorTo: '#E34F26',
@@ -40,7 +40,7 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'Nodejs', fontSize: '18px', logoSize: '24px' },
+      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
