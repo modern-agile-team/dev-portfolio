@@ -1,21 +1,18 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Icon } from '@iconify/react';
-import { clearConfigCache } from 'prettier';
 
 export interface TechStackNameType {
   name?: string;
-  iconColor?: string;
   fontSize?: string;
   logoSize?: string;
 }
 
 const TechStackName = (props: TechStackNameType) => {
-  const { name, iconColor, fontSize, logoSize } = props;
+  const { name, fontSize, logoSize } = props;
   
   return (
     <NameContainer>
-      <Icon icon={`logos:${name?.toLowerCase()}`} color={iconColor} fontSize={logoSize} />
+      <Icon icon={`logos:${name?.toLowerCase()}`} fontSize={logoSize} />
       <Name fontSize={fontSize}>{name}</Name>
     </NameContainer>
   );
@@ -25,7 +22,6 @@ export default TechStackName;
 
 TechStackName.defaultProps = {
   name: 'name of skill',
-  iconColor: 'black',
   fontSize: '16px',
   logoSize: '24px'
 };
