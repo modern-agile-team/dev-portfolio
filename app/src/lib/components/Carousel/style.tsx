@@ -1,11 +1,19 @@
 import styled, { css } from 'styled-components';
 
-type ArrowLocationType = {
+interface ArrowLocationType {
   top?: string;
   bottom?: string;
   side?: string;
   translateY?: string;
-};
+}
+
+interface PlayerLocationType {
+  top?: string;
+  bottom?: string;
+  left?: string;
+  right?: string;
+  translateX?: string;
+}
 
 export const Wrapper = styled.div<{
   arrowLocation: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
@@ -121,7 +129,7 @@ export const Player = styled.div<{
   }
   ${({ playerLocation }) => {
     const [heigthLocation, sideLocation] = playerLocation.split('-');
-    const location: { top?: string; bottom?: string; left?: string; right?: string; translateX?: string } = {
+    const location: PlayerLocationType = {
       top: undefined,
       bottom: undefined,
       left: undefined,
