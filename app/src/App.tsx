@@ -20,7 +20,7 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '25px', logoSize: '50px' },
+      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '45%',
         colorTo: '#E2D784',
