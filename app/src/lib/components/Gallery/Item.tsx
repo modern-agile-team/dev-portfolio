@@ -155,6 +155,7 @@ const DescriptionWrapper = styled.div<{
   width: 90%;
   max-height: calc(70% - 20px);
   overflow: hidden;
+  text-align: center;
   margin: 20px 0;
   text {
     margin: 0;
