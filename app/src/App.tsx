@@ -20,7 +20,7 @@ import {
 function App() {
   const techStacksDefault = [
     {
-      nameOption: { name: 'Javascript', fontSize: '18px', logoSize: '24px', iconColor: '#E2D784' },
+      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '45%',
         colorTo: '#E2D784',
@@ -30,7 +30,7 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'HTML-5', fontSize: '18px', logoSize: '24px', iconColor: '#E34F26' },
+      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '30%',
         colorTo: '#E34F26',
@@ -40,7 +40,7 @@ function App() {
       },
     },
     {
-      nameOption: { name: 'Nodejs', fontSize: '18px', logoSize: '24px', iconColor: '#339933' },
+      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
@@ -51,8 +51,8 @@ function App() {
     },
   ];
   return (
-    <>
-      <Header id="헤더" />
+    <div className="App">
+      <Header />
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -64,7 +64,7 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro id="인트로" />
+      <Intro id="인트로짱짱ㅁㄴㄴㄴㅇ" />
       <TechStackList id="기술스택" techStackList={techStacksDefault} />
       {/* <TechStackInput /> */}
       <Experience id="경험" />
@@ -100,8 +100,8 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="연락처" />
-    </>
+      <Contact id="연락처" backgroundColor="whitesmoke" />
+    </div>
   );
 }
 

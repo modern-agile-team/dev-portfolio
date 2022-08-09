@@ -6,23 +6,26 @@ import { ContactOptionTypes } from '../../common/types/contact';
 type ContactProps = {
   id?: string;
   contactOption?: ContactOptionTypes;
+  backgroundColor?: string;
 }
 
-const Contact = ({ id, contactOption = contactOptionDefault }: ContactProps) => {
+const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactProps) => {
   const { aboutMeInfos } = contactOption;
   return (
-    <Container id={id}>
+    <Container id={id} backgroundColor={backgroundColor}>
       <ContactForm contactOption={contactOption} />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{
+  backgroundColor?: string;
+}>`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: whitesmoke;
+  background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
   padding: 10px 10px;
   @media screen and (max-width: 500px) {
     flex-direction: column;
