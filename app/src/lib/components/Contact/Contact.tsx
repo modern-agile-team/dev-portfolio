@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
-import { ContactPropsType } from '../../common/types/Contact/ContactType';
+import { ContactPropsType } from '../../common/types/ComponentTypes/ContactType';
 
 const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactPropsType) => {
   const { aboutMeInfos } = contactOption;

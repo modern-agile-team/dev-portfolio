@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Channels from '../Channels/Channels';
-import { ContactOptionPropsType } from '../../common/types/Contact/ContactType';
+import { ContactOptionPropsType } from '../../common/types/ComponentTypes/ContactType';
 
 const ContactForm = ({ contactOption }: ContactOptionPropsType) => {
   const { title, subTitle, buttonText, channels, email } = contactOption;
