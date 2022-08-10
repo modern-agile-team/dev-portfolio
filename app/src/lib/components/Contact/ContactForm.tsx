@@ -1,13 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 import Channels from '../Channels/Channels';
-import { ContactOptionTypes } from '../../../../src/lib/common/types/contact';
+import { ContactOptionPropsType } from '../../common/types/Contact/ContactType';
 
-interface ContactOptionProps {
-  contactOption: ContactOptionTypes;
-}
-
-const ContactForm = ({ contactOption }: ContactOptionProps) => {
+const ContactForm = ({ contactOption }: ContactOptionPropsType) => {
   const { title, subTitle, buttonText, channels, email } = contactOption;
 
   return (
