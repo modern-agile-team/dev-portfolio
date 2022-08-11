@@ -1,17 +1,8 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { MAIN } from '../../common/theme';
+import { CardPropsType, CardStyledPropsType } from '../../common/types/ComponentTypes/CardType';
 
-interface Props {
-  children?: React.ReactChild;
-  width?: string;
-  height?: string;
-  shape?: 'square' | 'round-square' | 'round';
-  hover?: 'up' | 'down' | 'zoom';
-  redirectURL?: string;
-}
-
-const Card = ({ children, width, height, shape, hover, redirectURL }: Props) => {
+const Card = ({ children, width, height, shape, hover, redirectURL }: CardPropsType) => {
   return (
     <CardWrap width={width} height={height} shape={shape} hover={hover}>
       <a href={redirectURL}>
@@ -23,12 +14,7 @@ const Card = ({ children, width, height, shape, hover, redirectURL }: Props) => 
 
 export default Card;
 
-const CardWrap = styled.div<{
-  width?: string;
-  height?: string;
-  shape?: 'square' | 'round-square' | 'round';
-  hover?: 'up' | 'down' | 'zoom';
-}>`
+const CardWrap = styled.div<CardStyledPropsType>`
   width: ${({ width }) => width ?? '10em'};
   height: ${({ height }) => height ?? '10em'};
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.14);
