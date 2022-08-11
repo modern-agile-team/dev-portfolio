@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import SideContainer from './SideContainer/SideContainer';
 import { SideBarType } from './SideContainer/SideContainer';
-import { ChannelProps } from '../Channels/Channels';
+import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 
 interface HeaderProps {
   id?: string;
   logoOption?: LogoOptionType;
-  channels?: ChannelProps[];
+  channels?: ChannelType[];
   sideBarOption?: SideBarType;
   headerHeight?: string;
   headerWidth?: string;
@@ -40,7 +40,7 @@ const logoOptionDefault: LogoOptionType = {
   titleWeight: '800',
 };
 
-const channelsDefault: ChannelProps[] = [
+const channelsDefault: ChannelType[] = [
   { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
   { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
   { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
