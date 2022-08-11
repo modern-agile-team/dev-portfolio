@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useCarouselPropsType } from "../../common/types/ComponentTypes/CarouselType";
 
 const useInterval = (callback: Function, delay: number, deps?: any[]) => {
   const autoPlayRef = useRef<any>(null);
@@ -21,20 +22,13 @@ const useInterval = (callback: Function, delay: number, deps?: any[]) => {
   }, deps);
 };
 
-interface useCarouselType {
-  children: React.ReactNode;
-  slideToShow?: number;
-  transition?: number;
-  isAutoplay?: boolean;
-  autoplaySpeed?: number;
-}
 const useCarousel = ({
   children,
   slideToShow = 1,
   transition = 1000,
   autoplaySpeed = 3000,
   isAutoplay = false,
-}: useCarouselType) => {
+}: useCarouselPropsType) => {
   const childrenLength = React.Children.toArray(children).length;
   const [itemList, setItemList] = useState<any[]>([]);
   const [showIndex, setShowIndex] = useState<number>(childrenLength / slideToShow);

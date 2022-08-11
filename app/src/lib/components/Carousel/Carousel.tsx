@@ -1,25 +1,9 @@
-import React, { cloneElement, ReactElement, useMemo } from 'react';
+import React, { cloneElement, useMemo } from 'react';
 import { useCarousel } from './hooks';
 import { TbPlayerPlay, TbPlayerPause } from 'react-icons/tb';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ChildrenWrapper, Container, Player, Wrapper } from './style';
-interface Props {
-  id?: string;
-  children: React.ReactNode;
-  width?: string;
-  transition?: number;
-  autoplaySpeed?: number;
-  slideToShow?: number;
-  isArrowShow?: boolean;
-  isAutoplay?: boolean;
-  isAutoplayControl?: boolean;
-  arrowLocation?: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
-  playerLocation?: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
-  prevArrowIcon?: ReactElement;
-  nextArrowIcon?: ReactElement;
-  startAutoplayIcon?: ReactElement;
-  pauseAutoplayIcon?: ReactElement;
-}
+import { CarouselPropsType } from '../../common/types/ComponentTypes/CarouselType';
 
 const Carousel = ({
   id,
@@ -37,7 +21,7 @@ const Carousel = ({
   nextArrowIcon = <FiChevronRight />,
   startAutoplayIcon = <TbPlayerPlay />,
   pauseAutoplayIcon = <TbPlayerPause />,
-}: Props) => {
+}: CarouselPropsType) => {
   const { itemList, showIndex, transitionTime, listeners, itemLength } = useCarousel({
     children,
     slideToShow,
@@ -52,7 +36,7 @@ const Carousel = ({
   const sizedPauseAutoplayIcon = useMemo(() => cloneElement(pauseAutoplayIcon), [pauseAutoplayIcon]);
 
   return (
-    <Wrapper arrowLocation={arrowLocation} width={width} {...listeners}>
+    <Wrapper id={id} arrowLocation={arrowLocation} width={width} {...listeners}>
       {isArrowShow && (
         <div className="arrow-icon-wrapper" id="prev-button" onClick={showPrev}>
           {sizedPrevArrowIcon}
