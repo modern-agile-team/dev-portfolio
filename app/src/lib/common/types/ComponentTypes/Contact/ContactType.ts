@@ -1,4 +1,5 @@
-import { ChannelType } from './ChannelType';
+import { ChannelType } from '../ChannelType';
+import { AboutMeInfoPropsType } from './AboutMeInfoType';
 
 export interface ContactPropsType {
   id?: string;
@@ -16,10 +17,5 @@ interface ContactOptionType {
   email: string;
   buttonText?: string;
   channels?: ChannelType[];
-  aboutMeInfos?: AboutMeInfoType[];
-}
-
-interface AboutMeInfoType {
-  title: string;
-  description: string;
+  aboutMeInfos?: AboutMeInfoPropsType[];
 }
