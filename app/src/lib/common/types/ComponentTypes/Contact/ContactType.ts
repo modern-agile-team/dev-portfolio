@@ -19,3 +19,10 @@ interface ContactOptionType {
   channels?: ChannelType[];
   aboutMeInfos?: AboutMeInfoPropsType[];
 }
+
+/* For Styles */
+
+export interface ContactStyledPropsType {
+  id?: string;
+  backgroundColor?: string;
+}
