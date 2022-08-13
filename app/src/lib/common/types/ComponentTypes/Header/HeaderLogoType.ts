@@ -1,8 +1,4 @@
-export interface HeaderLogoPropsType {
-  logoOption: HeaderLogoOptionType;
-}
-
-export interface HeaderLogoOptionType extends HeaderLogoImgStyledPropsType, HeaderLogoTitleStyledPropsType {
+export interface HeaderLogoPropsType extends HeaderLogoImgStyledPropsType, HeaderLogoTitleStyledPropsType {
   redirectUrl: string;
   title: string;
   logoImg?: string;

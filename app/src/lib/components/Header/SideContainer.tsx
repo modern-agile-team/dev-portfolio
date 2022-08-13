@@ -6,7 +6,7 @@ import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
 
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
-  const { mainTitle, iconSize = '50px', iconMargin = '0px 12px 0px 24px' } = sideBarOption;
+  const { mainTitle, iconSize, iconColor, iconMargin } = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
   const [sideBarItems, setSideBarItems] = useState([{ title: 'init string' }]);
@@ -25,7 +25,12 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
   return (
     <Container>
       <Channels channels={channels} />
-      <SideBarIcon iconSize={iconSize} iconMargin={iconMargin} onClick={onClickSideBarIconHandler} />
+      <SideBarIcon
+        iconSize={iconSize}
+        iconColor={iconColor}
+        iconMargin={iconMargin}
+        onClick={onClickSideBarIconHandler}
+      />
       {isClickedSideBarIcon && (
         <SideBar
           mainTitle={mainTitle}
