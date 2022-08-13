@@ -3,7 +3,7 @@ import { AboutMeInfoPropsType } from './AboutMeInfoType';
 
 export interface ContactPropsType {
   id?: string;
-  contactOption: ContactOptionType;
+  contactOption?: ContactOptionType;
   backgroundColor?: string;
 }
 

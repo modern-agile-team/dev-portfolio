@@ -8,6 +8,6 @@ export interface TechStackPropsGapType {
 
 export interface TechStackListPropsType extends TechStackPropsGapType {
   id?: string;
-  techStackList: TechStackPropsType[];
+  techStackList?: TechStackPropsType[];
   gap?: TechStackGapType;
 }
