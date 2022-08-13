@@ -1,14 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from '../../common/types/intro';
+import { IntroTitlePropsType } from '../../common/types/ComponentTypes/IntroType';
 
-interface IntroTitleProps {
-  introOption: IntroOptionType;
-}
-
-const IntroTitle = ({ introOption }: IntroTitleProps) => {
-  const { title, shortIntro } = introOption;
-
+const IntroTitle = ({ title, shortIntro }: IntroTitlePropsType) => {
   return (
     <Wrap>
       <Title>{title}</Title>
