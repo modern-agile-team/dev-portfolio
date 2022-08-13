@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
-import { LogoOptionType } from './Header';
-
-type LogoProps = {
-  logoOption: LogoOptionType;
-};
+import {
+  HeaderLogoPropsType,
+  HeaderLogoImgStyledPropsType,
+  HeaderLogoTitleStyledPropsType,
+} from '../../common/types/ComponentTypes/Header/HeaderLogoType';
 
 const Container = styled.a`
   display: flex;
@@ -14,17 +14,11 @@ const Container = styled.a`
   text-decoration: none;
 `;
 
-const LogoImgContainer = styled.a<{
-  logoMargin: string;
-}>`
+const HeaderLogoImgContainer = styled.a<HeaderLogoImgStyledPropsType>`
   margin: ${({ logoMargin }) => logoMargin ?? '0px 16px 0px 16px'};
 `;
 
-const Title = styled.span<{
-  titleColor: string;
-  titleSize: string;
-  titleWeight: string;
-}>`
+const Title = styled.span<HeaderLogoTitleStyledPropsType>`
   color: ${({ titleColor }) => titleColor ?? 'black'};
   font-size: ${({ titleSize }) => titleSize ?? '24px'};
   font-weight: ${({ titleWeight }) => titleWeight ?? 800};
@@ -33,10 +27,10 @@ const Title = styled.span<{
   }
 `;
 
-const Logo = ({ logoOption }: LogoProps): React.ReactElement => {
+const HeaderLogo = ({ logoOption }: HeaderLogoPropsType): React.ReactElement => {
   const {
     redirectUrl = '/',
-    logoImg = "",
+    logoImg = '',
     logoHidden = false,
     title = 'dev-portfolio',
     logoMargin = '0px 16px 0px 16px',
@@ -49,9 +43,15 @@ const Logo = ({ logoOption }: LogoProps): React.ReactElement => {
 
   return (
     <Container href={redirectUrl}>
-      <LogoImgContainer logoMargin={logoMargin}>
-        {logoHidden ? "" : logoImg.length > 0 ? <img src={logoImg} width={logoWidth} height={logoHeight} /> : <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />}
-      </LogoImgContainer>
+      <HeaderLogoImgContainer logoMargin={logoMargin}>
+        {logoHidden ? (
+          ''
+        ) : logoImg.length > 0 ? (
+          <img src={logoImg} width={logoWidth} height={logoHeight} />
+        ) : (
+          <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />
+        )}
+      </HeaderLogoImgContainer>
       <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
         {title}
       </Title>
@@ -59,4 +59,4 @@ const Logo = ({ logoOption }: LogoProps): React.ReactElement => {
   );
 };
 
-export default Logo;
+export default HeaderLogo;

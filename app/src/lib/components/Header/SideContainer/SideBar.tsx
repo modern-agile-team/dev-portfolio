@@ -1,34 +1,27 @@
 import styled, { keyframes } from 'styled-components';
 import SideBarItems from './SideBarItems';
+import {
+  SideBarPropsType,
+  SideBarStyledPropsType,
+  SideBarBackgroundStyledPropsType,
+} from '../../../common/types/ComponentTypes/Header/SideBarType';
 
-interface SideBarProps {
-  mainTitle: string;
-  sideBarItems: any[];
-  isClickedSideBarIcon: boolean;
-  setIsClickedSideBarIcon: (clickedSideBarIcon: boolean) => void;
-}
+const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: SideBarPropsType) => {
+  return (
+    <>
+      <Container isClickedSideBarIcon={isClickedSideBarIcon}>
+        <MainTitle>{mainTitle}</MainTitle>
+        <Line />
+        <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
+      </Container>
+      <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
+    </>
+  );
+};
 
-const showUp = keyframes`
-  from {
-    right: -40%;
-  }
-  to {
-    right: 0%;
-  }
-`;
+export default SideBar;
 
-const showOut = keyframes`
-  from {
-    right: 0%;
-  }
-  to {
-    right: -40%;
-  }
-`;
-
-const Container = styled.div<{
-  isClickedSideBarIcon: boolean;
-}>`
+const Container = styled.div<SideBarStyledPropsType>`
   position: absolute;
   top: 0%;
   right: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? '0%' : '-40%')};
@@ -41,9 +34,7 @@ const Container = styled.div<{
   animation: 0.3s ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? showUp : showOut)};
 `;
 
-const Background = styled.div<{
-  isClickedSideBarIcon: boolean;
-}>`
+const Background = styled.div<SideBarBackgroundStyledPropsType>`
   display: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? 'block' : 'none')};
   position: fixed;
   left: 50%;
@@ -64,17 +55,20 @@ const Line = styled.hr`
   border: 0.05px solid #00000022;
 `;
 
-const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: SideBarProps) => {
-  return (
-    <>
-      <Container isClickedSideBarIcon={isClickedSideBarIcon}>
-        <MainTitle>{mainTitle}</MainTitle>
-        <Line />
-        <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
-      </Container>
-      <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
-    </>
-  );
-};
+const showUp = keyframes`
+  from {
+    right: -40%;
+  }
+  to {
+    right: 0%;
+  }
+`;
 
-export default SideBar;
+const showOut = keyframes`
+  from {
+    right: 0%;
+  }
+  to {
+    right: -40%;
+  }
+`;

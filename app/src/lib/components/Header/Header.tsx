@@ -1,35 +1,54 @@
 import styled from 'styled-components';
-import Logo from './Logo';
+import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer/SideContainer';
-import { SideBarType } from './SideContainer/SideContainer';
+import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
+import { HeaderLogoOptionType } from '../../common/types/ComponentTypes/Header/HeaderLogoType';
 import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
+import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBarType';
 
-interface HeaderProps {
-  id?: string;
-  logoOption?: LogoOptionType;
-  channels?: ChannelType[];
-  sideBarOption?: SideBarType;
-  headerHeight?: string;
-  headerWidth?: string;
-  headerBackgroundColor?: string;
-}
-
-export type LogoOptionType = {
-  redirectUrl: string;
-  title: string;
-  logoImg?: string; 
-  logoHidden?: boolean;
-  logoMargin?: string;
-  logoWidth?: string;
-  logoHeight?: string;
-  titleColor?: string;
-  titleSize?: string;
-  titleWeight?: string;
+const Header = ({
+  id,
+  logoOption = logoOptionDefault,
+  channels = channelsDefault,
+  sideBarOption = sideBarOptionDefault,
+  headerHeight,
+  headerWidth,
+  headerBackgroundColor,
+}: HeaderPropsType) => {
+  return (
+    <Container
+      id={id}
+      headerHeight={headerHeight}
+      headerWidth={headerWidth}
+      headerBackgroundColor={headerBackgroundColor}
+    >
+      <HeaderLogo logoOption={{ ...logoOptionDefault, ...logoOption }} />
+      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
+    </Container>
+  );
 };
 
-const logoOptionDefault: LogoOptionType = {
+export default Header;
+
+const Container = styled.div<HeaderStyledPropsType>`
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: ${({ headerHeight }) => headerHeight ?? '100px'};
+  width: ${({ headerWidth }) => headerWidth ?? '100%'};
+  background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'whitesmoke'};
+  @media screen and (max-width: 600px) {
+    height: 80px;
+  }
+`;
+
+const logoOptionDefault: HeaderLogoOptionType = {
   redirectUrl: '/',
-  logoImg: "",
+  logoImg: '',
   logoHidden: false,
   title: 'dev-portfolio',
   logoMargin: '0px 16px 0px 16px',
@@ -47,48 +66,8 @@ const channelsDefault: ChannelType[] = [
   { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
 ];
 
-const sideBarOptionDefault: SideBarType = {
+const sideBarOptionDefault: SideBarOptionPropsType = {
   mainTitle: 'dev-portfolio',
-  items: [],
-  size: '50px', 
-  margin: '0px 12px 0px 24px',
+  iconSize: '50px',
+  iconMargin: '0px 12px 0px 24px',
 };
-
-const Header = ({
-  id,
-  logoOption = logoOptionDefault,
-  channels = channelsDefault,
-  sideBarOption = sideBarOptionDefault,
-  headerHeight,
-  headerWidth,
-  headerBackgroundColor,
-}: HeaderProps) => {
-  return (
-    <Container id={id} headerHeight={headerHeight} headerWidth={headerWidth} headerBackgroundColor={headerBackgroundColor}>
-      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
-      <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
-    </Container>
-  );
-};
-
-export default Header;
-
-const Container = styled.div<{
-  headerHeight?: string;
-  headerWidth?: string;
-  headerBackgroundColor?: string;
-}>`
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: ${({ headerHeight }) => headerHeight ?? '100px'};
-  width: ${({ headerWidth }) => headerWidth ?? '100%'};
-  background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'whitesmoke'};
-  @media screen and (max-width: 600px) {
-    height: 80px;
-  }
-`;
