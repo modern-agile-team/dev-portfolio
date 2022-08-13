@@ -11,10 +11,15 @@ const Container = styled.div<SideBarIconStyledPropsType>`
   border: 0px;
 `;
 
-const SideBarIcon = ({ iconSize = '50px', iconMargin = '0px 12px 0px 24px', onClick }: SideBarIconPropsType) => {
+const SideBarIcon = ({
+  iconSize = '30px',
+  iconColor = '#434521',
+  iconMargin = '0px 12px 0px 24px',
+  onClick,
+}: SideBarIconPropsType) => {
   return (
     <Container iconMargin={iconMargin} onClick={onClick}>
-      <FaBars fontSize={iconSize} />
+      <FaBars fontSize={iconSize} color={iconColor} />
     </Container>
   );
 };

@@ -7,6 +7,40 @@ import {
   HeaderLogoTitleStyledPropsType,
 } from '../../common/types/ComponentTypes/Header/HeaderLogoType';
 
+const HeaderLogo = ({
+  redirectUrl = '/',
+  logoImg = '',
+  logoHidden = false,
+  title = 'dev-portfolio',
+  logoMargin = '0px 16px 0px 16px',
+  logoWidth = '50px',
+  logoHeight = '50px',
+  titleColor = 'black',
+  titleSize = '24px',
+  titleWeight = '800',
+}: HeaderLogoPropsType): React.ReactElement => {
+  console.log(redirectUrl, logoHidden, logoWidth);
+
+  return (
+    <Container href={redirectUrl}>
+      <HeaderLogoImgContainer logoMargin={logoMargin}>
+        {logoHidden ? (
+          ''
+        ) : logoImg.length > 0 ? (
+          <img src={logoImg} width={logoWidth} height={logoHeight} />
+        ) : (
+          <Icon icon="simple-icons:devdotto" color="#434521" fontSize={logoWidth} />
+        )}
+      </HeaderLogoImgContainer>
+      <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
+        {title}
+      </Title>
+    </Container>
+  );
+};
+
+export default HeaderLogo;
+
 const Container = styled.a`
   display: flex;
   flex-direction: row;
@@ -26,37 +60,3 @@ const Title = styled.span<HeaderLogoTitleStyledPropsType>`
     display: none;
   }
 `;
-
-const HeaderLogo = ({ logoOption }: HeaderLogoPropsType): React.ReactElement => {
-  const {
-    redirectUrl = '/',
-    logoImg = '',
-    logoHidden = false,
-    title = 'dev-portfolio',
-    logoMargin = '0px 16px 0px 16px',
-    logoWidth = '50px',
-    logoHeight = '50px',
-    titleColor = 'black',
-    titleSize = '32px',
-    titleWeight = '800',
-  } = logoOption;
-
-  return (
-    <Container href={redirectUrl}>
-      <HeaderLogoImgContainer logoMargin={logoMargin}>
-        {logoHidden ? (
-          ''
-        ) : logoImg.length > 0 ? (
-          <img src={logoImg} width={logoWidth} height={logoHeight} />
-        ) : (
-          <Icon icon="simple-icons:devdotto" color="#434521" fontSize="80px" />
-        )}
-      </HeaderLogoImgContainer>
-      <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
-        {title}
-      </Title>
-    </Container>
-  );
-};
-
-export default HeaderLogo;

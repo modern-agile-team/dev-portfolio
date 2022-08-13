@@ -1,5 +1,9 @@
-export interface SideBarIconPropsType extends SideBarIconStyledPropsType {
+export interface SideBarIconType extends SideBarIconStyledPropsType {
   iconSize?: string;
+  iconColor?: string;
+}
+
+export interface SideBarIconPropsType extends SideBarIconType {
   onClick: () => void;
 }
 

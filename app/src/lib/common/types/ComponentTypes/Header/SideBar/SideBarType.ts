@@ -1,9 +1,8 @@
 import { SideBarItemsPropsType } from './SideBarItemsType';
+import { SideBarIconType } from './SideBarIconType';
 
-export interface SideBarOptionPropsType {
+export interface SideBarOptionPropsType extends SideBarIconType {
   mainTitle: string;
-  iconSize?: string;
-  iconMargin?: string;
 }
 
 interface ClickValidationType {

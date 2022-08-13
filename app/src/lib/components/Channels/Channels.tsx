@@ -6,6 +6,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media screen and (max-width: 374px) {
+    display: none;
+  }
 `;
 
 const Channel = styled.a<ChannelStyledType>`
