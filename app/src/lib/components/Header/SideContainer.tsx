@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Channels from '../../Channels/Channels';
-import SideBarIcon from './SideBarIcon';
-import SideBar from './SideBar';
-import { SideContainerPropsType } from '../../../common/types/ComponentTypes/Header/SideBarType';
+import Channels from '../Channels/Channels';
+import SideBarIcon from './SideContainer/SideBarIcon';
+import SideBar from './SideContainer/SideBar';
+import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
 
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
   const { mainTitle, iconSize = '50px', iconMargin = '0px 12px 0px 24px' } = sideBarOption;

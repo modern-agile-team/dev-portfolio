@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
-import SideContainer from './SideContainer/SideContainer';
+import SideContainer from './SideContainer';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
 import { HeaderLogoOptionType } from '../../common/types/ComponentTypes/Header/HeaderLogoType';
 import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
-import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBarType';
+import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 
 const Header = ({
   id,

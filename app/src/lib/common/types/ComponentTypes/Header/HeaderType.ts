@@ -1,4 +1,4 @@
-import { SideBarOptionPropsType } from './SideBarType';
+import { SideBarOptionPropsType } from './SideBar/SideBarType';
 import { ChannelType } from '../ChannelType';
 import { HeaderLogoOptionType } from './HeaderLogoType';
 

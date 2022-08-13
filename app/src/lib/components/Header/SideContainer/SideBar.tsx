@@ -4,7 +4,7 @@ import {
   SideBarPropsType,
   SideBarStyledPropsType,
   SideBarBackgroundStyledPropsType,
-} from '../../../common/types/ComponentTypes/Header/SideBarType';
+} from '../../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 
 const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: SideBarPropsType) => {
   return (

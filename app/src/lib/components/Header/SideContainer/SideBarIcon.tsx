@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import {
   SideBarIconPropsType,
   SideBarIconStyledPropsType,
-} from '../../../common/types/ComponentTypes/Header/SideBarType';
+} from '../../../common/types/ComponentTypes/Header/SideBar/SideBarIconType';
 
 const Container = styled.div<SideBarIconStyledPropsType>`
   cursor: pointer;
