@@ -1,27 +1,26 @@
 import { forwardRef, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useInterval } from '../Carousel/hooks';
-import { 
-  ItemPropsType, 
+import {
+  ItemPropsType,
   ItemDescriptionPropsType,
-  ItemDescriptionWrapperStyledPropsType 
-} from '../../common/types/ComponentTypes/Item';
+  ItemDescriptionWrapperStyledPropsType,
+} from '../../common/types/ComponentTypes/ItemType';
 
-const Description = forwardRef<
-  HTMLDivElement,
-  ItemDescriptionPropsType
->(({ title, top, description, textRisingSpeed }, ref) => {
-  return (
-    <DescriptionContainer className="hover">
-      <HoverSection className="inner-hover">
-        <h3>{title}</h3>
-        <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
-          <text>{description}</text>
-        </DescriptionWrapper>
-      </HoverSection>
-    </DescriptionContainer>
-  );
-});
+const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
+  ({ title, top, description, textRisingSpeed }, ref) => {
+    return (
+      <DescriptionContainer className="hover">
+        <HoverSection className="inner-hover">
+          <h3>{title}</h3>
+          <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
+            <text>{description}</text>
+          </DescriptionWrapper>
+        </HoverSection>
+      </DescriptionContainer>
+    );
+  }
+);
 
 const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isTextRising }: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);

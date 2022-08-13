@@ -9,6 +9,6 @@ export { default as Gallery } from './components/Gallery/Gallery';
 export { default as Item } from './components/Item/Item';
 export { default as Card } from './components/Card/Card';
 export { default as Masonry } from './components/Masonry/Masonry';
-export { default as Image } from './components/Masonry/Image';
+export { default as Image } from './components/Image/Image';
 export { default as Carousel } from './components/Carousel/Carousel';
 export { default as Experience } from './components/Experience/Experience';

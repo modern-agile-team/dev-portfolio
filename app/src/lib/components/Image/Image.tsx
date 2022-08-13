@@ -1,18 +1,8 @@
 import styled from 'styled-components';
 import { MAIN } from '../../common/theme';
+import { ImagePropsType, ImageItemsStyledPropsType } from '../../common/types/ComponentTypes/ImageType';
 
-interface Props {
-  src: string;
-  subhead?: string;
-  head?: string;
-  redirectURL?: string;
-  noShowHead?: boolean;
-  zoomWhenHover?: boolean;
-}
-
-const Image = (props: Props) => {
-  const { src, subhead, head, redirectURL, noShowHead, zoomWhenHover } = props;
-
+const Image = ({ src, subhead, head, redirectURL, noShowHead, zoomWhenHover }: ImagePropsType) => {
   return (
     <Wrap>
       <Items noShowHead={noShowHead} zoomWhenHover={zoomWhenHover}>
@@ -44,10 +34,7 @@ const Wrap = styled.div`
   display: inline;
 `;
 
-const Items = styled.div<{
-  noShowHead?: boolean;
-  zoomWhenHover?: boolean;
-}>`
+const Items = styled.div<ImageItemsStyledPropsType>`
   display: inline-block;
   width: 100%;
   margin-bottom: ${({ noShowHead }) => (noShowHead ? 0 : '0.5em')};
