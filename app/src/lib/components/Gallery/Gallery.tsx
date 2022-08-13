@@ -1,16 +1,11 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+import { 
+  GalleryPropsType, 
+  GalleryStyledPropsType,
+  GalleryItemWrapperStyledPropsType 
+} from '../../common/types/ComponentTypes/GalleryType';
 
-interface Props {
-  id?: string;
-  padding?: string;
-  children: React.ReactNode;
-  col?: number;
-  gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
-}
-
-const Gallery = ({ id, children, col, gap, theme, padding }: Props) => {
+const Gallery = ({ id, children, col, gap, theme, padding }: GalleryPropsType) => {
   return (
     <Wrap id={id} padding={padding}>
       <Wrapper>
@@ -30,9 +25,7 @@ Gallery.defaultProps = {
   theme: 'mid-night',
 };
 
-const Wrap = styled.div<{
-  padding?: string;
-}>`
+const Wrap = styled.div<GalleryStyledPropsType>`
   padding: ${({ padding }) => padding ?? '2em 10em'};
   @media (max-width: 568px) {
     padding: 0;
@@ -48,11 +41,7 @@ const Wrapper = styled.div`
   border-radius: 6px;
 `;
 
-const ItemWrapper = styled.ul<{
-  theme?: 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate';
-  gap?: 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower';
-  col?: number;
-}>`
+const ItemWrapper = styled.ul<GalleryItemWrapperStyledPropsType>`
   display: grid;
   grid-template-columns: repeat(${(props) => props.col}, 1fr);
   padding: 0;
