@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { 
-  GalleryPropsType, 
+import {
+  GalleryPropsType,
   GalleryStyledPropsType,
-  GalleryItemWrapperStyledPropsType 
+  GalleryItemWrapperStyledPropsType,
 } from '../../common/types/ComponentTypes/GalleryType';
 
 const Gallery = ({ id, children, col, gap, theme, padding }: GalleryPropsType) => {
