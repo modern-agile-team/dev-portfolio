@@ -1,26 +1,20 @@
-import React from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import {
+  SideBarIconPropsType,
+  SideBarIconStyledPropsType,
+} from '../../../common/types/ComponentTypes/Header/SideBar/SideBarIconType';
 
-interface SideBarIconProps {
-  size?: string;
-  margin?: string;
-  onClick: () => void;
-}
-
-const Container = styled.div<{
-  margin: string;
-}>`
+const Container = styled.div<SideBarIconStyledPropsType>`
   cursor: pointer;
-  margin: ${({ margin }) => margin ?? '0px 12px 0px 24px'};
+  margin: ${({ iconMargin }) => iconMargin ?? '0px 12px 0px 24px'};
   border: 0px;
 `;
 
-const SideBarIcon = ({ size = '50px', margin = '0px 12px 0px 24px', onClick }: SideBarIconProps) => {
-
+const SideBarIcon = ({ iconSize = '50px', iconMargin = '0px 12px 0px 24px', onClick }: SideBarIconPropsType) => {
   return (
-    <Container margin={margin} onClick={onClick}>
-      <FaBars fontSize={size} />
+    <Container iconMargin={iconMargin} onClick={onClick}>
+      <FaBars fontSize={iconSize} />
     </Container>
   );
 };

@@ -1,20 +1,12 @@
 import styled, { css } from 'styled-components';
 import TechStackName from './TechStackName';
-import ProgressBarContainer, { ProgressBarType } from './ProgressBar';
-import { TechStackNameType } from './TechStackName';
+import ProgressBarContainer from './ProgressBar';
+import {
+  TechStackPropsType,
+  TechStackStyledPropsType,
+} from '../../../common/types/ComponentTypes/TechStack/TechStackType';
 
-export interface TechStackType {
-  nameOption: TechStackNameType;
-  progressBarOption: ProgressBarType;
-}
-
-interface TechStackGapType extends TechStackType {
-  gap?: 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
-}
-
-const TechStack = (props: TechStackGapType) => {
-  const { nameOption, progressBarOption, gap = 'normal' } = props;
-
+const TechStack = ({ nameOption, progressBarOption, gap }: TechStackPropsType) => {
   return (
     <Wrapper gap={gap}>
       <TechStackName {...nameOption} />
@@ -29,9 +21,7 @@ TechStack.defaultProps = {
   gap: 'normal',
 };
 
-const Wrapper = styled.div<{
-  gap?: any;
-}>`
+const Wrapper = styled.div<TechStackStyledPropsType>`
   ${({ gap }) => {
     switch (gap) {
       case 'narrower':

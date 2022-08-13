@@ -1,58 +1,10 @@
 import styled from 'styled-components';
-import Logo from './Logo';
-import SideContainer from './SideContainer/SideContainer';
-import { SideBarType } from './SideContainer/SideContainer';
-import { ChannelProps } from '../Channels/Channels';
-
-interface HeaderProps {
-  id?: string;
-  logoOption?: LogoOptionType;
-  channels?: ChannelProps[];
-  sideBarOption?: SideBarType;
-  headerHeight?: string;
-  headerWidth?: string;
-  headerBackgroundColor?: string;
-}
-
-export type LogoOptionType = {
-  redirectUrl: string;
-  title: string;
-  logoImg?: string; 
-  logoHidden?: boolean;
-  logoMargin?: string;
-  logoWidth?: string;
-  logoHeight?: string;
-  titleColor?: string;
-  titleSize?: string;
-  titleWeight?: string;
-};
-
-const logoOptionDefault: LogoOptionType = {
-  redirectUrl: '/',
-  logoImg: "",
-  logoHidden: false,
-  title: 'dev-portfolio',
-  logoMargin: '0px 16px 0px 16px',
-  logoWidth: '50px',
-  logoHeight: '50px',
-  titleColor: 'black',
-  titleSize: '32px',
-  titleWeight: '800',
-};
-
-const channelsDefault: ChannelProps[] = [
-  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
-  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
-  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
-  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
-];
-
-const sideBarOptionDefault: SideBarType = {
-  mainTitle: 'dev-portfolio',
-  items: [],
-  size: '50px', 
-  margin: '0px 12px 0px 24px',
-};
+import HeaderLogo from './HeaderLogo';
+import SideContainer from './SideContainer';
+import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
+import { HeaderLogoOptionType } from '../../common/types/ComponentTypes/Header/HeaderLogoType';
+import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
+import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 
 const Header = ({
   id,
@@ -62,10 +14,15 @@ const Header = ({
   headerHeight,
   headerWidth,
   headerBackgroundColor,
-}: HeaderProps) => {
+}: HeaderPropsType) => {
   return (
-    <Container id={id} headerHeight={headerHeight} headerWidth={headerWidth} headerBackgroundColor={headerBackgroundColor}>
-      <Logo logoOption={{ ...logoOptionDefault, ...logoOption }} />
+    <Container
+      id={id}
+      headerHeight={headerHeight}
+      headerWidth={headerWidth}
+      headerBackgroundColor={headerBackgroundColor}
+    >
+      <HeaderLogo logoOption={{ ...logoOptionDefault, ...logoOption }} />
       <SideContainer channels={channels} sideBarOption={{ ...sideBarOptionDefault, ...sideBarOption }} />
     </Container>
   );
@@ -73,11 +30,7 @@ const Header = ({
 
 export default Header;
 
-const Container = styled.div<{
-  headerHeight?: string;
-  headerWidth?: string;
-  headerBackgroundColor?: string;
-}>`
+const Container = styled.div<HeaderStyledPropsType>`
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -92,3 +45,29 @@ const Container = styled.div<{
     height: 80px;
   }
 `;
+
+const logoOptionDefault: HeaderLogoOptionType = {
+  redirectUrl: '/',
+  logoImg: '',
+  logoHidden: false,
+  title: 'dev-portfolio',
+  logoMargin: '0px 16px 0px 16px',
+  logoWidth: '50px',
+  logoHeight: '50px',
+  titleColor: 'black',
+  titleSize: '32px',
+  titleWeight: '800',
+};
+
+const channelsDefault: ChannelType[] = [
+  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '30px' },
+  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '30px' },
+  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '30px' },
+  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '30px' },
+];
+
+const sideBarOptionDefault: SideBarOptionPropsType = {
+  mainTitle: 'dev-portfolio',
+  iconSize: '50px',
+  iconMargin: '0px 12px 0px 24px',
+};

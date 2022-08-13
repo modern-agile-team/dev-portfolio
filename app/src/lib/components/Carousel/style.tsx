@@ -1,19 +1,5 @@
 import styled, { css } from 'styled-components';
-
-interface ArrowLocationType {
-  top?: string;
-  bottom?: string;
-  side?: string;
-  translateY?: string;
-}
-
-interface PlayerLocationType {
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  translateX?: string;
-}
+import { ArrowLocationType, PlayerLocationType } from '../../common/types/ComponentTypes/CarouselType';
 
 export const Wrapper = styled.div<{
   arrowLocation: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
