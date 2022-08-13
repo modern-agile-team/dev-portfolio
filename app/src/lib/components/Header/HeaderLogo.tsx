@@ -16,9 +16,11 @@ const HeaderLogo = ({
   logoWidth = '50px',
   logoHeight = '50px',
   titleColor = 'black',
-  titleSize = '32px',
+  titleSize = '24px',
   titleWeight = '800',
 }: HeaderLogoPropsType): React.ReactElement => {
+  console.log(redirectUrl, logoHidden, logoWidth);
+
   return (
     <Container href={redirectUrl}>
       <HeaderLogoImgContainer logoMargin={logoMargin}>

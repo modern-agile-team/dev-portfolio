@@ -7,7 +7,7 @@ import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header
 
 const Header = ({
   id,
-  logoOption,
+  logoOption = logoOptionDefault,
   channels = channelsDefault,
   sideBarOption = sideBarOptionDefault,
   headerHeight,
@@ -67,6 +67,19 @@ const Container = styled.div<HeaderStyledPropsType>`
   padding: '0px';
   background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'white'};
 `;
+
+const logoOptionDefault = {
+  redirectUrl: '/',
+  logoImg: '',
+  logoHidden: false,
+  title: 'dev-portfolio',
+  logoMargin: '0px 16px 0px 16px',
+  logoWidth: '50px',
+  logoHeight: '50px',
+  titleColor: 'black',
+  titleSize: '24px',
+  titleWeight: '800',
+};
 
 const channelsDefault: ChannelType[] = [
   { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
