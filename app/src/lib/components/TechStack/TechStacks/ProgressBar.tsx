@@ -1,14 +1,12 @@
 import styled, { keyframes } from 'styled-components';
+import {
+  ProgressBarPropsType,
+  ProgressBarCompleteStyledPropsType,
+  ProgreeBarColorType,
+  ProgressBarContainerStyledPropsType,
+} from '../../../common/types/ComponentTypes/TechStack/ProgressBarType';
 
-export interface ProgressBarType {
-  rate?: string;
-  colorFrom?: string;
-  colorTo?: string;
-  width?: string;
-  height?: string;
-}
-
-const ProgressBar = ({ rate, colorFrom = 'red', colorTo = 'white', width, height }: ProgressBarType) => {
+const ProgressBar = ({ rate, colorFrom, colorTo, width, height }: ProgressBarPropsType) => {
   return (
     <ProgressBarContainer width={width} height={height}>
       <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
@@ -29,7 +27,7 @@ ProgressBar.defaultProps = {
   height: '40px',
 };
 
-const g = ({ from, to }: { from?: string; to?: string }) => keyframes`
+const g = ({ from, to }: ProgreeBarColorType) => keyframes`
   0% { 
     background-color: ${to || '#434521'}; 
   }
@@ -50,10 +48,7 @@ const r = keyframes`
   }
 `;
 
-const ProgressBarContainer = styled.div<{
-  width?: string;
-  height?: string;
-}>`
+const ProgressBarContainer = styled.div<ProgressBarContainerStyledPropsType>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,26 +61,22 @@ const ProgressBarContainer = styled.div<{
   background: whitesmoke;
 `;
 
-const ProgressBarComplete = styled.div<{
-  progressColor?: { from: string; to: string };
-}>`
+const ProgressBarComplete = styled.div<ProgressBarCompleteStyledPropsType>`
   position: absolute;
   left: 0;
   top: 0px;
   height: 100%;
   background-color: #5225bd;
   border-radius: 10px;
-  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite ease-in-out;
+  animation: ${({ progressColor }) => g(progressColor)} 2500ms infinite ease-in-out;
   z-index: 2;
 `;
 
-const ProgressBarLiquid = styled.div<{
-  progressColor?: { from: string; to: string };
-}>`
+const ProgressBarLiquid = styled.div<ProgressBarCompleteStyledPropsType>`
   z-index: 1;
   width: 70px;
   height: 70px;
-  animation: ${({ progressColor }) => g(progressColor ?? {})} 2500ms infinite ease-in-out,
+  animation: ${({ progressColor }) => g(progressColor)} 2500ms infinite ease-in-out,
     ${r} 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
   position: absolute;
   right: -5px;

@@ -1,13 +1,7 @@
 import TechStack from './TechStack';
-import { TechStackType } from "./TechStack";
+import { TechStackListPropsType } from '../../../common/types/ComponentTypes/TechStack/TechStackListType';
 
-interface TechStackListType {
-  id?: string;
-  techStackList: TechStackType[];
-  gap?: 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
-}
-
-const TechStackList = ({ id, techStackList, gap = 'normal' }: TechStackListType) => {
+const TechStackList = ({ id, techStackList, gap = 'normal' }: TechStackListPropsType) => {
   return (
     <div id={id}>
       {techStackList?.map(({ nameOption, progressBarOption }, idx) => (
