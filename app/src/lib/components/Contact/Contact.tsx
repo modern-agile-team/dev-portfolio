@@ -1,15 +1,9 @@
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import AboutMe from './AboutMe';
-import { ContactOptionTypes } from '../../common/types/contact';
+import { ContactPropsType, ContactStyledPropsType } from '../../common/types/ComponentTypes/Contact/ContactType';
 
-type ContactProps = {
-  id?: string;
-  contactOption?: ContactOptionTypes;
-  backgroundColor?: string;
-}
-
-const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactProps) => {
+const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactPropsType) => {
   const { aboutMeInfos } = contactOption;
   return (
     <Container id={id} backgroundColor={backgroundColor}>
@@ -19,9 +13,7 @@ const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: 
   );
 };
 
-const Container = styled.div<{
-  backgroundColor?: string;
-}>`
+const Container = styled.div<ContactStyledPropsType>`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

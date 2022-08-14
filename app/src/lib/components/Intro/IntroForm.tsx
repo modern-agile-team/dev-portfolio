@@ -1,14 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from '../../../../src/lib/common/types/intro';
+import { IntroFormPropsType } from '../../common/types/ComponentTypes/IntroType';
 
-interface IntroDesProps {
-  introDes: IntroOptionType;
-}
-
-const IntroForm = ({ introDes }: IntroDesProps) => {
-  const { description } = introDes;
-
+const IntroForm = ({ description }: IntroFormPropsType) => {
   return (
     <Wrap>
       <IntroBox>{description}</IntroBox>

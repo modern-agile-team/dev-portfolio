@@ -1,5 +1,3 @@
-import { FaSuse } from 'react-icons/fa';
-import { FaStickerMule } from 'react-icons/fa';
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -18,38 +16,6 @@ import {
 } from './lib/index';
 
 function App() {
-  const techStacksDefault = [
-    {
-      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
-      progressBarOption: {
-        rate: '45%',
-        colorTo: '#E2D784',
-        colorFrom: 'whitesmoke',
-        width: '100%',
-        height: '40px',
-      },
-    },
-    {
-      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
-      progressBarOption: {
-        rate: '30%',
-        colorTo: '#E34F26',
-        colorFrom: 'whitesmoke',
-        width: '100%',
-        height: '40px',
-      },
-    },
-    {
-      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
-      progressBarOption: {
-        rate: '85%',
-        colorTo: '#339933',
-        colorFrom: 'whitesmoke',
-        width: '100%',
-        height: '40px',
-      },
-    },
-  ];
   return (
     <div className="App">
       <Header />
@@ -65,7 +31,7 @@ function App() {
         </Card>
       </CardWrap>
       <Intro id="인트로짱짱ㅁㄴㄴㄴㅇ" />
-      <TechStackList id="기술스택" techStackList={techStacksDefault} />
+      <TechStackList id="기술스택" />
       {/* <TechStackInput /> */}
       <Experience id="경험" />
       <Gallery id="갤러리">

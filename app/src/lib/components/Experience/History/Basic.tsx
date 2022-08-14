@@ -1,14 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
+import { ExperienceHistoryListType } from '../../../common/types/ComponentTypes/ExperienceType';
 
-interface Props {
-  startDate?: string;
-  endDate?: string;
-  title?: string;
-  des?: string;
-}
-
-const Basic = (props: Props) => {
+const Basic = (props: ExperienceHistoryListType) => {
   const { startDate, endDate, title, des } = props;
 
   return (

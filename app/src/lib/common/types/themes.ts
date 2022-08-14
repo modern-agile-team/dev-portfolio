@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface GapTypes {
   NARROWER: string;
   NARROW: string;

@@ -1,26 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 import History from './History';
+import { 
+  ExperiencePropsType, 
+  ExperienceStyledPropsType, 
+  ExperienceChildStyledPropsType 
+} from '../../common/types/ComponentTypes/ExperienceType';
 
-interface Props {
-  id?: string;
-  historyList?: {
-    startDate?: string;
-    endDate?: string;
-    title?: string;
-    des?: string;
-  }[];
-  title?: string;
-  textAlign?: string;
-  background?: string;
-  theme?: 'basic' | 'box' | 'vertical';
-  verticalOption?: {
-    titleColor?: string;
-    shape?: 'square' | 'round-square';
-  };
-}
-
-const Experience = (props: Props) => {
+const Experience = (props: ExperiencePropsType) => {
   const { id, historyList, title, textAlign, background, theme, verticalOption } = props;
 
   return (
@@ -62,10 +48,7 @@ Experience.defaultProps = {
   ],
 };
 
-const Wrap = styled.div<{
-  textAlign?: string;
-  background?: string;
-}>`
+const Wrap = styled.div<ExperienceStyledPropsType>`
   padding: 25px;
   text-align: ${({ textAlign }) => textAlign ?? 'left'};
   background: ${({ background }) => background ?? 'left'};
@@ -81,9 +64,7 @@ const Wrap = styled.div<{
   }
 `;
 
-const ChildWrap = styled.div<{
-  theme?: 'basic' | 'box' | 'vertical';
-}>`
+const ChildWrap = styled.div<ExperienceChildStyledPropsType>`
   display: flex;
   flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};

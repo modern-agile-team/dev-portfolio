@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
+import {
+  TechStackInputContainerStyledPropsType,
+  TechStackInputStyledPropsType,
+} from '../../common/types/ComponentTypes/TechStack/TechStackInputType';
 
 const TechStackInput = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [_, setInputValue] = useState('');
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const [icons, setIcons] = useState([]);
 
@@ -11,7 +15,7 @@ const TechStackInput = () => {
     const value = e.target.value;
     setInputValue(value);
     value.length >= 1 ? setIsFocus(true) : setIsFocus(false);
-    
+
     if (value.length >= 2) {
       fetch(`https://api.iconify.design/search?query=logos:${value}`)
         .then((res) => res.json())
@@ -25,12 +29,16 @@ const TechStackInput = () => {
       {isFocus && (
         <>
           <Modal onClick={() => setIsFocus(false)}>
-            {icons?.length >= 1 ? icons.map((icon, idx) => (
-              <TechStackEachBox key={idx}>
-                <Icon icon={icon} fontSize={'50px'} />
-                <TechStackName>{icon}</TechStackName>
-              </TechStackEachBox>
-            )) : "There are no icons you entered."}
+            {icons?.length >= 1
+              ? icons.map((icon, idx) => {
+                  return (
+                    <TechStackEachBox key={idx}>
+                      <Icon icon={icon} fontSize={'50px'} />
+                      <TechStackName>{icon}</TechStackName>
+                    </TechStackEachBox>
+                  );
+                })
+              : 'There are no icons you entered.'}
           </Modal>
           <ModalBackground onClick={() => setIsFocus(false)} />
         </>
@@ -41,11 +49,7 @@ const TechStackInput = () => {
 
 export default TechStackInput;
 
-const Container = styled.div<{
-  headerHeight?: string;
-  headerWidth?: string;
-  headerBackgroundColor?: string;
-}>`
+const Container = styled.div<TechStackInputContainerStyledPropsType>`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -56,9 +60,7 @@ const Container = styled.div<{
   /* background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'purple'}; */
 `;
 
-const Input = styled.input<{
-  isFocus?: boolean;
-}>`
+const Input = styled.input<TechStackInputStyledPropsType>`
   color: black;
   font-size: 24px;
   width: 50%;

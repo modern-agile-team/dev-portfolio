@@ -1,16 +1,7 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+import { VerticalPropsType, ExperienceVerticalOptionType } from '../../../common/types/ComponentTypes/ExperienceType';
 
-interface Props {
-  startDate?: string;
-  endDate?: string;
-  title?: string;
-  des?: string;
-  titleColor?: string;
-  shape?: 'square' | 'round-square';
-}
-
-const Vertical = (props: Props) => {
+const Vertical = (props: VerticalPropsType) => {
   const { startDate, endDate, title, des, shape, titleColor } = props;
 
   return (
@@ -34,10 +25,7 @@ Vertical.defaultProps = {
   titleColor: 'black',
 };
 
-const Wrap = styled.div<{
-  shape?: 'square' | 'round-square';
-  titleColor?: string;
-}>`
+const Wrap = styled.div<ExperienceVerticalOptionType>`
   width: 25em;
   padding: 10px 2em 1.2em 2em;
   margin: 1em auto;

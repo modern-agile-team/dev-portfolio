@@ -1,20 +1,9 @@
 import Basic from './Basic';
 import Box from './Box';
 import Vertical from './Vertical';
+import { IndexPropsType } from '../../../common/types/ComponentTypes/ExperienceType';
 
-interface Props {
-  startDate?: string;
-  endDate?: string;
-  title?: string;
-  des?: string;
-  theme?: 'basic' | 'box' | 'vertical';
-  verticalOption?: {
-    titleColor?: string;
-    shape?: 'square' | 'round-square';
-  };
-}
-
-const History = (props: Props) => {
+const History = (props: IndexPropsType) => {
   const { theme } = props;
 
   switch (theme) {

@@ -1,10 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-
-interface AboutProps {
-  title: string;
-  description: string;
-}
+import { AboutMeInfoPropsType } from '../../common/types/ComponentTypes/Contact/AboutMeInfoType';
 
 const Container = styled.div`
   margin: 10px 0px;
@@ -22,7 +17,7 @@ const AboutMeTitle = styled.div`
 const AboutMe = ({ aboutMeInfos }: any) => {
   return (
     <Container>
-      {aboutMeInfos.map(({ title, description }: AboutProps, idx: number) => (
+      {aboutMeInfos.map(({ title, description }: AboutMeInfoPropsType, idx: number) => (
         <AboutMeEachContainer key={idx}>
           <AboutMeTitle>{title}</AboutMeTitle>
           <div>{description}</div>

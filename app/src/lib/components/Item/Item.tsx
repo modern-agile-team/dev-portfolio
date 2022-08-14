@@ -1,33 +1,28 @@
 import { forwardRef, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useInterval } from '../Carousel/hooks';
+import {
+  ItemPropsType,
+  ItemDescriptionPropsType,
+  ItemDescriptionWrapperStyledPropsType,
+} from '../../common/types/ComponentTypes/ItemType';
 
-interface Props {
-  redirectURL?: string;
-  title?: string;
-  description?: string;
-  imgURL?: string;
-  isTextRising?: boolean;
-  textRisingSpeed?: number;
-}
+const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
+  ({ title, top, description, textRisingSpeed }, ref) => {
+    return (
+      <DescriptionContainer className="hover">
+        <HoverSection className="inner-hover">
+          <h3>{title}</h3>
+          <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
+            <text>{description}</text>
+          </DescriptionWrapper>
+        </HoverSection>
+      </DescriptionContainer>
+    );
+  }
+);
 
-const Description = forwardRef<
-  HTMLDivElement,
-  { textRisingSpeed: number; top: number; title?: string; description?: string }
->(({ title, top, description, textRisingSpeed }, ref) => {
-  return (
-    <DescriptionContainer className="hover">
-      <HoverSection className="inner-hover">
-        <h3>{title}</h3>
-        <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
-          <text>{description}</text>
-        </DescriptionWrapper>
-      </HoverSection>
-    </DescriptionContainer>
-  );
-});
-
-const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isTextRising }: Props) => {
+const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isTextRising }: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [top, setTop] = useState(0);
   const textRef = useRef<HTMLDivElement>(null);
@@ -69,7 +64,7 @@ const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isText
             description={description}
             title={title}
             top={top}
-            textRisingSpeed={textRisingSpeed || 300}
+            textRisingSpeed={textRisingSpeed}
           />
         )}
       </a>
@@ -146,10 +141,7 @@ const HoverSection = styled.section`
   }
 `;
 
-const DescriptionWrapper = styled.div<{
-  top: number;
-  textRisingSpeed: number;
-}>`
+const DescriptionWrapper = styled.div<ItemDescriptionWrapperStyledPropsType>`
   position: absolute;
   top: 20%;
   width: 90%;
@@ -163,6 +155,6 @@ const DescriptionWrapper = styled.div<{
     height: 100%;
     overflow-wrap: break-word;
     top: -${(props) => props.top}px;
-    transition: ${(props) => (props.textRisingSpeed / 1000) * 4}s;
+    transition: ${(props) => (props.textRisingSpeed ?? 300 / 1000) * 4}s;
   }
 `;

@@ -1,20 +1,14 @@
-import React from 'react';
 import styled from 'styled-components';
-import { IntroOptionType } from '../../common/types/intro';
+import { IntroPropsType, IntroOptionType } from '../../common/types/ComponentTypes/IntroType';
 import { IntroTitle, IntroForm } from './index';
 
-interface Props {
-  id?: string;
-  textAlign?: 'left' | 'center';
-  backgroundColor?: string;
-  introOption?: IntroOptionType;
-}
+const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: IntroPropsType) => {
+  const { title, shortIntro, description } = introOption;
 
-const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: Props) => {
   return (
     <Wrap id={id} textAlign={textAlign} backgroundColor={backgroundColor}>
-      <IntroTitle introOption={introOption} />
-      <IntroForm introDes={introOption} />
+      <IntroTitle title={title} shortIntro={shortIntro} />
+      <IntroForm description={description} />
     </Wrap>
   );
 };
@@ -29,12 +23,12 @@ const Wrap = styled.div<{
   flex-direction: column;
   padding: 30px;
   padding-top: 20px;
-  white-space: pre-wrap; //줄바꿈 인식
+  white-space: pre-wrap; // 줄바꿈 인식
   text-align: ${({ textAlign }) => textAlign};
   background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
 `;
 
-const IntroOptionDefault = {
+const IntroOptionDefault: IntroOptionType = {
   title: 'Intro',
   shortIntro: 'shortIntro that will captivate people',
   description:
