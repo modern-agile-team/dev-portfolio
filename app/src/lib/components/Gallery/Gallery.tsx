@@ -5,11 +5,11 @@ import {
   GalleryItemWrapperStyledPropsType,
 } from '../../common/types/ComponentTypes/GalleryType';
 
-const Gallery = ({ id, children, col, gap, theme, padding }: GalleryPropsType) => {
+const Gallery = ({ id, children, column, gap, theme, padding }: GalleryPropsType) => {
   return (
     <Wrap id={id} padding={padding}>
       <Wrapper>
-        <ItemWrapper theme={theme} col={col} gap={gap}>
+        <ItemWrapper theme={theme} column={column} gap={gap}>
           {children}
         </ItemWrapper>
       </Wrapper>
@@ -20,13 +20,16 @@ const Gallery = ({ id, children, col, gap, theme, padding }: GalleryPropsType) =
 export default Gallery;
 
 Gallery.defaultProps = {
-  col: 3,
+  column: 3,
   gap: 'normal',
   theme: 'mid-night',
 };
 
 const Wrap = styled.div<GalleryStyledPropsType>`
   padding: ${({ padding }) => padding ?? '2em 10em'};
+  @media (max-width: 1280px) {
+    padding: 10px;
+  }
   @media (max-width: 568px) {
     padding: 0;
   }
@@ -43,7 +46,7 @@ const Wrapper = styled.div`
 
 const ItemWrapper = styled.ul<GalleryItemWrapperStyledPropsType>`
   display: grid;
-  grid-template-columns: repeat(${(props) => props.col}, 1fr);
+  grid-template-columns: repeat(${(props) => props.column}, 1fr);
   padding: 0;
   margin: 0;
   ${({ gap }) => {
@@ -103,7 +106,10 @@ const ItemWrapper = styled.ul<GalleryItemWrapperStyledPropsType>`
       }}
     }
   }
-  @media (max-width: 568px) {
+  @media (max-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 568px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
