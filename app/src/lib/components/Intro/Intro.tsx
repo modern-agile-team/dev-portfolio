@@ -26,6 +26,9 @@ const Wrap = styled.div<{
   white-space: pre-wrap; // 줄바꿈 인식
   text-align: ${({ textAlign }) => textAlign};
   background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
+  @media screen and (max-width: 480px) {
+    padding: 0px;
+  }
 `;
 
 const IntroOptionDefault: IntroOptionType = {
