@@ -105,43 +105,25 @@ export const Player = styled.div<{
   playerLocation: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
 }>`
   display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 15px 0;
-  position: absolute;
   svg {
     margin: 0 10px;
     cursor: pointer;
   }
   ${({ playerLocation }) => {
-    const [heigthLocation, sideLocation] = playerLocation.split('-');
-    const location: PlayerLocationType = {
-      top: undefined,
-      bottom: undefined,
-      left: undefined,
-      right: undefined,
-      translateX: undefined,
-    };
-    if (heigthLocation === 'top') {
-      location.bottom = '100%';
-    } else {
-      location.top = '100%';
+    const sideLocation = playerLocation.split('-')[1];
+    switch (sideLocation) {
+      case 'right':
+        return css`
+          justify-content: flex-end;
+        `;
+      case 'left':
+        return css`
+          justify-content: flex-start;
+        `;
+      default:
+        return css`
+          justify-content: center;
+        `;
     }
-    if (sideLocation === 'mid') {
-      location.left = '50%';
-      location.translateX = '-50%';
-    } else if (sideLocation === 'left') {
-      location.left = '0';
-    } else {
-      location.right = '0';
-    }
-    const { top, bottom, left, right, translateX } = location;
-    return css`
-      top: ${top};
-      bottom: ${bottom};
-      left: ${left};
-      right: ${right};
-      transform: translateX(${translateX});
-    `;
   }}
 `;
