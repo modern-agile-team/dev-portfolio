@@ -42,6 +42,16 @@ const Carousel = ({
           {sizedPrevArrowIcon}
         </div>
       )}
+      {isAutoplayControl && playerLocation.split('-')[0] === 'top' && (
+        <Player playerLocation={playerLocation}>
+          <div className="icon-wrapper" id="start-button" onClick={playCarousel}>
+            {sizedStartAutoplayIcon}
+          </div>
+          <div className="icon-wrapper" id="pause-button" onClick={stopPlayCarousel}>
+            {sizedPauseAutoplayIcon}
+          </div>
+        </Player>
+      )}
       <Container len={itemLength} transition={transitionTime} showIndex={showIndex}>
         <div className="carousel-wrapper">
           <div className="carousel-container">
@@ -55,12 +65,12 @@ const Carousel = ({
           </div>
         </div>
       </Container>
-      {isArrowShow && (
+      {isArrowShow && playerLocation.split('-')[0] === 'bottom' && (
         <div className="arrow-icon-wrapper" id="next-button" onClick={showNext}>
           {sizedNextArrowIcon}
         </div>
       )}
-      {isAutoplayControl && (
+      {isAutoplayControl && playerLocation.split('-')[0] === 'bottom' && (
         <Player playerLocation={playerLocation}>
           <div className="icon-wrapper" id="start-button" onClick={playCarousel}>
             {sizedStartAutoplayIcon}
