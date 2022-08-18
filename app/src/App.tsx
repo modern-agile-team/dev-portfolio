@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <VisitorCounter theme="big-size" />
+      <VisitorCounter />
 
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">

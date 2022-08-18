@@ -17,7 +17,6 @@ export default Default;
 
 const Wrap = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   span {
     padding: 5px 10px;
