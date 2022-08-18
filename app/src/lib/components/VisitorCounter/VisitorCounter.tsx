@@ -1,8 +1,9 @@
 import React from 'react';
+import { BigSize } from './BigSize';
 import Default from './Default';
 
 interface themeProps {
-  theme?: 'default' | 'undefined';
+  theme?: 'default' | 'big-size';
 }
 
 const VisitorCounter = (props: themeProps) => {
@@ -11,6 +12,8 @@ const VisitorCounter = (props: themeProps) => {
   switch (theme) {
     case 'default':
       return <Default />;
+    case 'big-size':
+      return <BigSize />;
     default:
       return <Default />;
   }

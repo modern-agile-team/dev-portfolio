@@ -31,7 +31,7 @@ const Counter = styled.div`
   .title {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-color: #91c230c4;
+    background-color: #91c230c4; //props
   }
   .today {
     border-left: 1px solid #989898;
