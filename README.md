@@ -57,6 +57,10 @@ const sideBarOption = { ... };
 const App = () => {
   return (
     <Header 
+      id="Header Component"
+      headerHeight="80px"
+      headerWidth="100%"
+      headerBackgroundColor="whitesmoke"
       logoOption={logoOption}
       channels={channels}
       sideBarOption={sideBarOption}
@@ -67,14 +71,24 @@ const App = () => {
 export default App;
 ```
 
+| props | type | description |
+| - | - | - |
+| id | string | Name to be added to Sidebar |
+| headerHeight | string | CSS for Height of Header Component |
+| headerWidth | string | CSS for Width of Header Component |
+| headerBackgroundColor | string | CSS for Background color of Header Component |
+| logoOption | <a href="">LogoOptionPropsType</a> | Logo & Header_Title only props |
+| channels | <a href="">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc |
+| sideBarOption | <a href="">SideBarOptionPropsType</a> | Sidebar-only props such as Sidebar's Icon, etc |
+
 <details>
-<summary>Props of Header</summary>
+<summary>More about Header's props</summary>
 
   #### logoOption example
   ```js
   const logoOption = {
     redirectUrl: '/',
-    logoImg: '',
+    logoImg: 'logo.png',
     logoHidden: false,
     title: 'dev-portfolio',
     logoMargin: '0px 16px 0px 16px',
@@ -86,21 +100,23 @@ export default App;
   };
   ```
   
-  #### channels
+  #### channels example
   ```js
   const channels = [
-    { name: 'github', uriToMove: 'https://', color: '#181717BB', size: '30px' },
-    { name: 'naver', uriToMove: 'https://', color: '#47A141BB', size: '30px' },
-    { name: 'facebook', uriToMove: 'https://', color: '#1877F2BB', size: '30px' },
-    { name: 'youtube', uriToMove: 'https://', color: '#FF0000BB', size: '30px' },
+    { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
+    { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '24px' },
+    { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '24px' },
+    { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '24px' },
   ];
   ```
   
-  #### sideBarOption
+  #### sideBarOption example
   ```js
   const sideBarOption = {
     mainTitle: 'dev-portfolio',
-    styles: { size: '50px', margin: '0px 12px 0px 24px' },
+    iconSize: '28px',
+    iconColor: '#181717BB',
+    iconMargin: '0px 12px 0px 12px',
   };
   ```
   
