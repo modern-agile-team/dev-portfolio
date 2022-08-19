@@ -1,9 +1,12 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v0.1.0-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v0.3.48-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
-> This is still under development...  
 
 An open source component library for React that helps you develop your web portfolio easily and quickly.
+
+<img width="100%" src="https://user-images.githubusercontent.com/56839474/185625494-bef1d408-f0bd-4d50-8e84-02a32ed79711.gif"></img>
+
+## List
 
   * <a href="#install">Installation</a>
   * <a href="#usage">Usage</a>
@@ -18,16 +21,18 @@ An open source component library for React that helps you develop your web portf
 ## Usage
 
 ```js
-import { Header, TechStackList, Contact, ... } from 'dev-portfolio';
+import { Header, Intro, Contact, ... } from 'dev-portfolio';
 
 const App = () => {
   return (
-    <>
+    // The 'className' in the <div> tag surrounding the components of 'dev-portfolio' must be 'App'.
+    // Only then can the SideBar in the <Header> component recognize id props and automatically assign all components into the SideBar.
+    <div className="App">
       <Header />
-      <TechStackList />
+      <Intro />
       <Contact />
       ...
-    </>
+    </div>
   );
 }
 
@@ -36,10 +41,11 @@ export default App;
 
 ## Components
 
-* <a href="#header"><code>Header</code></a>
-* <a href="#techstacklist"><code>TechStackList</code></a>
-* <a href="#contact"><code>Contact</code></a>
-
+  * <a href="#header">Header</a>
+  * <a href="#intro">Intro</a>
+  * <a href="#techstacklist">TechStackList</a>
+  * <a href="#contact">Contact</a>
+  
 ### Header
 ```js
 import { Header } from 'dev-portfolio';
@@ -64,18 +70,19 @@ export default App;
 <details>
 <summary>Props of Header</summary>
 
-  #### logoOption
+  #### logoOption example
   ```js
   const logoOption = {
-    uriToMove: '/',
-    logoImg: "./asset/logo.png",
+    redirectUrl: '/',
+    logoImg: '',
+    logoHidden: false,
     title: 'dev-portfolio',
-    styles: {
-      logoMargin: '0px 16px 0px 16px',
-      titleColor: 'black',
-      titleSize: '32px',
-      titleWeight: '800',
-    },
+    logoMargin: '0px 16px 0px 16px',
+    logoWidth: '50px',
+    logoHeight: '50px',
+    titleColor: 'black',
+    titleSize: '24px',
+    titleWeight: '800',
   };
   ```
   
