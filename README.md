@@ -131,6 +131,7 @@ const techStackList = [ ... ];
 const App = () => {
   return (
     <TechStackList 
+      id="Tech Stack Component"
       gap="normal" // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'
       techStackList={techStackList}
     />
@@ -190,7 +191,7 @@ export default App;
   // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
   const gap = 'narrow';
   ```
-  
+ 
 </details>
 
 ### Contact
@@ -202,6 +203,8 @@ const contactOption = { ... };
 const App = () => {
   return (
     <Contact 
+      id="Contact Component"
+      backgroundColor="whitesmoke"
       contactOption={contactOption}
     />
   );
@@ -210,10 +213,16 @@ const App = () => {
 export default App;
 ```
 
-<details>
-<summary>Props of Contact</summary>
+| props | type | description |
+| - | - | - |
+| id | string | Name to be added to Sidebar |
+| backgroundColor | string | CSS for Background Color of Contact Component |
+| contactOption | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc |
 
-  #### contactOption
+<details>
+<summary>More about Contact's props</summary>
+
+  #### contactOption example
   ```js
   const contactOption = {
     title: 'Hello, I'm dev-portfolio.',
