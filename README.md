@@ -47,6 +47,8 @@ export default App;
   * <a href="#contact">Contact</a>
   
 ### Header
+<img width="100%" alt="스크린샷 2022-08-20 오후 12 11 39" src="https://user-images.githubusercontent.com/56839474/185726799-61f5301d-2bc5-40fe-acb3-49cce7ccd80e.png">
+
 ```js
 import { Header } from 'dev-portfolio';
 
@@ -85,6 +87,8 @@ export default App;
 <summary>More about Header's props</summary>
 
   #### logoOption example
+ <img height="50px" alt="스크린샷 2022-08-20 오후 12 12 53" src="https://user-images.githubusercontent.com/56839474/185726844-534bec07-f460-4d38-8747-8ef3b7187a86.png">
+
   ```js
   const logoOption = {
     redirectUrl: '/',
@@ -101,6 +105,8 @@ export default App;
   ```
   
   #### channels example
+ <img height="50px" alt="스크린샷 2022-08-20 오후 12 14 35" src="https://user-images.githubusercontent.com/56839474/185726889-8806c049-46b6-4aac-aff4-cf100a54364c.png">
+
   ```js
   const channels = [
     { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
@@ -111,6 +117,9 @@ export default App;
   ```
   
   #### sideBarOption example
+ <img height="50px" alt="스크린샷 2022-08-20 오후 12 15 02" src="https://user-images.githubusercontent.com/56839474/185726904-c09dc836-ddf3-4a62-afbe-54eed722d7ef.png">
+<img height="50px" alt="스크린샷 2022-08-20 오후 12 15 32" src="https://user-images.githubusercontent.com/56839474/185726921-f67e9969-8ad4-4061-a6ea-88440ad0c23c.png">
+
   ```js
   const sideBarOption = {
     mainTitle: 'dev-portfolio',
@@ -123,6 +132,8 @@ export default App;
 </details>
 
 ### Intro
+<img width="100%" alt="스크린샷 2022-08-20 오후 12 17 41" src="https://user-images.githubusercontent.com/56839474/185726977-27db5567-c20c-4eb3-94bd-5981f3a4ca7f.png">
+
 ```js
 import { Intro } from 'dev-portfolio';
 
@@ -153,6 +164,9 @@ export default App;
 <summary>More about Intro's props</summary>
 
   #### introOption example
+ 
+ <img width="100%" alt="스크린샷 2022-08-20 오후 12 17 41" src="https://user-images.githubusercontent.com/56839474/185726977-27db5567-c20c-4eb3-94bd-5981f3a4ca7f.png">
+ 
   ```js
   const IntroOption = {
     title: 'Intro',
@@ -165,6 +179,8 @@ export default App;
 </details>
 
 ### TechStackList
+<img width="100%" alt="스크린샷 2022-08-20 오후 12 20 39" src="https://user-images.githubusercontent.com/56839474/185727068-dc3e18b2-031f-40d4-b3a3-383fb964145a.png">
+
 ```js
 import { TechStackList } from 'dev-portfolio';
 
@@ -193,6 +209,9 @@ export default App;
 <summary>More about TechStackList's props</summary>
 
   #### techStackList example
+ 
+  <img width="100%" alt="스크린샷 2022-08-20 오후 12 20 39" src="https://user-images.githubusercontent.com/56839474/185727068-dc3e18b2-031f-40d4-b3a3-383fb964145a.png">
+ 
   ```js
   const techStackList = [
     {
@@ -229,6 +248,8 @@ export default App;
   ```
   
   #### gap example
+ <img width="100%" alt="스크린샷 2022-08-20 오후 12 22 27" src="https://user-images.githubusercontent.com/56839474/185727226-b401ce50-50fb-4572-b78e-692ff6cf63ef.png">
+
   ```js
   // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
   const gap = 'narrow';
@@ -237,6 +258,8 @@ export default App;
 </details>
 
 ### Contact
+<img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
+
 ```js
 import { Contact } from 'dev-portfolio';
 
@@ -265,6 +288,9 @@ export default App;
 <summary>More about Contact's props</summary>
 
   #### contactOption example
+ 
+  <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
+ 
   ```js
   const contactOption = {
     title: 'Hello, I'm dev-portfolio.',
