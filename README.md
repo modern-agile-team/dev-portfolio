@@ -122,9 +122,9 @@ export default App;
   
 </details>
 
-### TechStackList
+### Intro
 ```js
-import { TechStackList } from 'dev-portfolio';
+import { Intro } from 'dev-portfolio';
 
 const introOption = [ ... ];
 
@@ -154,7 +154,7 @@ export default App;
 
   #### introOption example
   ```js
-  const IntroOptionDefault = {
+  const IntroOption = {
     title: 'Intro',
     shortIntro: 'shortIntro that will captivate people',
     description:
