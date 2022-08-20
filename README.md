@@ -126,6 +126,48 @@ export default App;
 ```js
 import { TechStackList } from 'dev-portfolio';
 
+const introOption = [ ... ];
+
+const App = () => {
+  return (
+    <Intro 
+      id="Intro Component"
+      textAlign=""
+      backgroundColor=""
+      introOption={introOption}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description |
+| - | - | - |
+| id | string | Name to be added to Sidebar |
+| textAlign | string | CSS for Text align of Intro Component |
+| backgroundColor | string | CSS for Background color of Intro Component |
+| introOption | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts#:~:text=export%20interface-,IntroOptionType,-extends%20IntroTitlePropsType%2C">IntroOptionType</a> | Intro-only props such as title, description, etc |
+
+<details>
+<summary>More about Intro's props</summary>
+
+  #### introOption example
+  ```js
+  const IntroOptionDefault = {
+    title: 'Intro',
+    shortIntro: 'shortIntro that will captivate people',
+    description:
+      'This props name is description.\nPlease write down your brief introduction here.\nIf you want to change the line, type backslash-n between the letters.\nAlso you want to move the letters to the center, change textAlign to center.\n\nSpread your dreams!',
+  };
+  ```
+ 
+</details>
+
+### TechStackList
+```js
+import { TechStackList } from 'dev-portfolio';
+
 const techStackList = [ ... ];
 
 const App = () => {
