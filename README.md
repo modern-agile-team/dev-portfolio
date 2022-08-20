@@ -127,13 +127,12 @@ export default App;
 import { TechStackList } from 'dev-portfolio';
 
 const techStackList = [ ... ];
-const gap = " ... ";
 
 const App = () => {
   return (
     <TechStackList 
+      gap="normal" // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'
       techStackList={techStackList}
-      gap={gap}
     />
   );
 }
@@ -141,35 +140,55 @@ const App = () => {
 export default App;
 ```
 
-<details>
-<summary>Props of TechStackList</summary>
+| props | type | description |
+| - | - | - |
+| id | string | Name to be added to Sidebar |
+| gap | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between 'TechStack's |
+| techStackList | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc |
 
-  #### techStackList
+<details>
+<summary>More about TechStackList's props</summary>
+
+  #### techStackList example
   ```js
   const techStackList = [
     {
-      nameOption: { name: 'Javascript', size: '24px', iconColor: '#E2D784' },
-      progressBarOption: { rate: '45%' },
+      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
+      progressBarOption: {
+        rate: '45%',
+        colorTo: '#E2D784',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+      },
     },
     {
-      nameOption: { name: 'HTML-5', size: '24px', iconColor: '#E34F26' },
-      progressBarOption: { rate: '30%' },
+      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
+      progressBarOption: {
+        rate: '30%',
+        colorTo: '#E34F26',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+      },
     },
     {
-      nameOption: { name: 'Nodejs', size: '24px', iconColor: '#339933' },
+      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '85%',
         colorTo: '#339933',
         colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
       },
     },
   ];
   ```
   
-  #### gap
+  #### gap example
   ```js
   // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
-  const gap = 'normal';
+  const gap = 'narrow';
   ```
   
 </details>
