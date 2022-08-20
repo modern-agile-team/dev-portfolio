@@ -13,12 +13,14 @@ import {
   Image,
   Carousel,
   Experience,
+  VisitorComment,
 } from './lib/index';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <VisitorComment />
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
