@@ -132,8 +132,8 @@ const App = () => {
   return (
     <Intro 
       id="Intro Component"
-      textAlign=""
-      backgroundColor=""
+      textAlign="left"
+      backgroundColor="whitesmoke"
       introOption={introOption}
     />
   );
