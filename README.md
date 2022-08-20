@@ -231,28 +231,28 @@ export default App;
     channels: [
       {
         name: 'github',
-        uriToMove: 'https://',
+        redirectUrl: 'https://',
         color: '#181717BB',
         size: '18px',
         margin: '0px 12px 0px 0px',
       },
       {
         name: 'naver',
-        uriToMove: 'https://',
+        redirectUrl: 'https://',
         color: '#47A141BB',
         size: '18px',
         margin: '0px 12px 0px 0px',
       },
       {
         name: 'facebook',
-        uriToMove: 'https://',
+        redirectUrl: 'https://',
         color: '#1877F2BB',
         size: '18px',
         margin: '0px 12px 0px 0px',
       },
       {
         name: 'youtube',
-        uriToMove: 'https://',
+        redirectUrl: 'https://',
         color: '#FF0000BB',
         size: '18px',
         margin: '0px 12px 0px 0px',
