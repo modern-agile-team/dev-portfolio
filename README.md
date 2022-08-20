@@ -44,6 +44,13 @@ export default App;
   * <a href="#header">Header</a>
   * <a href="#intro">Intro</a>
   * <a href="#techstacklist">TechStackList</a>
+  * <a href="#experience">Experience</a>
+  * <a href="#carousel">Carousel</a>
+  * <a href="#gallery">Gallery</a>
+  * <a href="#masonry">Masonry</a>
+  * <a href="#image">Image</a>
+  * <a href="#item">Item</a>
+  * <a href="#card">Card</a>
   * <a href="#contact">Contact</a>
   
 ### Header
@@ -164,9 +171,6 @@ export default App;
 <summary>More about Intro's props</summary>
 
   #### introOption example
- 
- <img width="100%" alt="스크린샷 2022-08-20 오후 12 17 41" src="https://user-images.githubusercontent.com/56839474/185726977-27db5567-c20c-4eb3-94bd-5981f3a4ca7f.png">
- 
   ```js
   const IntroOption = {
     title: 'Intro',
@@ -209,9 +213,6 @@ export default App;
 <summary>More about TechStackList's props</summary>
 
   #### techStackList example
- 
-  <img width="100%" alt="스크린샷 2022-08-20 오후 12 20 39" src="https://user-images.githubusercontent.com/56839474/185727068-dc3e18b2-031f-40d4-b3a3-383fb964145a.png">
- 
   ```js
   const techStackList = [
     {
@@ -257,6 +258,84 @@ export default App;
  
 </details>
 
+### Experience
+
+<img width="100%" alt="스크린샷 2022-08-20 오후 3 44 56" src="https://user-images.githubusercontent.com/56839474/185732886-24c87c7f-dd2a-459e-80f9-514f3e205158.png">
+
+```js
+import { Experience } from 'dev-portfolio';
+
+const verticalOption = { ... };
+const historyList = [ ... ];
+
+const App = () => {
+  return (
+    <Experience 
+      id="Experience Component"
+      title="Experience Title"
+      textAlign="left"
+      theme="vertical" // 'basic' | 'box' | 'vertical'
+      verticalOption={verticalOption}
+      historyList={historyList}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description |
+| - | - | - |
+| ```id``` | string | Name to be added to Sidebar |
+| ```title``` | string | Main title text of Experience Component |
+| ```textAlign``` | string | CSS for Text align of Experience Component |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic' | 'box' | 'vertical' |
+| ```verticalOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B">ExperienceVerticalOptionType</a> | Special settings can be added when the theme is 'vertical' |
+| ```historyList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc |
+
+<details>
+<summary>More about Experience's props</summary>
+
+  #### theme example
+ 
+  ```js
+  const theme = "basic"; // 'basic' | 'box' | 'vertical'
+  ```
+  
+  #### verticalOption example
+  
+  ```js
+  const verticalOption = { 
+    titleColor: "#000000",
+    shape: "round-square" // 'square' | 'round-square'
+  };
+  ```
+  
+  #### historyList example
+  
+  ```js
+  const historyList = [
+    {
+      startDate: '2022.01.01',
+      endDate: '2022.03.10',
+      title: 'this is title',
+      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+    },
+    {
+      startDate: '2020.02',
+      title: 'this is title',
+      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+    },
+    {
+      startDate: '2018',
+      endDate: '2019.12',
+      title: 'this is title',
+    },
+  ];
+  ```
+ 
+</details>
+
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
 
@@ -288,9 +367,6 @@ export default App;
 <summary>More about Contact's props</summary>
 
   #### contactOption example
- 
-  <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
- 
   ```js
   const contactOption = {
     title: 'Hello, I'm dev-portfolio.',
