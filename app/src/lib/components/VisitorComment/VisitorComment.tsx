@@ -57,7 +57,7 @@ VisitorComment.defaultProps = {
 };
 
 const Wrap = styled.div<ExperienceStyledPropsType>`
-  background-color: whitesmoke; //props
+  /* background-color: whitesmoke; //props */
   padding: 1em 5em;
   padding-top: 0;
   display: flex;
@@ -65,6 +65,7 @@ const Wrap = styled.div<ExperienceStyledPropsType>`
   .comment-input {
     position: relative;
     padding: 1em;
+    /* border: 1px solid; */
     span {
       margin-right: 5px;
     }
@@ -73,18 +74,17 @@ const Wrap = styled.div<ExperienceStyledPropsType>`
       outline: none;
       margin-right: 10px;
       width: 8em;
-      height: 20px;
+      height: 25px;
       padding: 0 5px;
     }
     .des-input {
       width: 100%;
       height: 50px;
-      padding: 0 1em;
     }
     svg {
       position: absolute;
       bottom: 27px;
-      right: 0;
+      right: 15px;
       color: #3e3e3e; //props
       cursor: pointer;
     }
