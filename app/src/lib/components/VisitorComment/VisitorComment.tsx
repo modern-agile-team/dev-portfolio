@@ -5,22 +5,19 @@ import {
   ExperienceChildStyledPropsType,
 } from '../../common/types/ComponentTypes/ExperienceType';
 import CommentList from './CommentList';
-import { FiSend } from 'react-icons/fi';
 
 const VisitorComment = (props: ExperiencePropsType) => {
   const { id, historyList, title, textAlign, background, theme, verticalOption } = props;
 
   return (
     <Wrap theme={theme} id={id} textAlign={textAlign} background={background}>
-      <label className="comment-input">
-        <span>nickname :</span>
-        <input className="top-input" type="text" />
-        <span>password :</span>
-        <input className="top-input" type="password" />
-        <p>comment your message</p>
-        <input className="des-input" type="text" />
-        <FiSend size={30} />
-      </label>
+      <CommentInput>
+        <input className="des" type="text" placeholder="write your description" />
+        <div className="info">
+          <input className="nickname" type="text" placeholder="ID" />
+          <input className="date" type="password" placeholder="PW" />
+        </div>
+      </CommentInput>
       <ChildWrap>
         {historyList?.map((elements, idx) => (
           <CommentList {...verticalOption} key={idx} {...elements} theme={theme} />
@@ -57,36 +54,47 @@ VisitorComment.defaultProps = {
 };
 
 const Wrap = styled.div<ExperienceStyledPropsType>`
-  /* background-color: whitesmoke; //props */
+  background-color: whitesmoke; //props
   padding: 1em 5em;
   padding-top: 0;
   display: flex;
   flex-direction: column;
-  .comment-input {
-    position: relative;
-    padding: 1em;
-    /* border: 1px solid; */
-    span {
-      margin-right: 5px;
+`;
+
+const CommentInput = styled.div`
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  border: 0.2px solid #b4b4b4a2;
+  background-color: white;
+  padding: 1em 5em;
+  input {
+    outline: none;
+    border: none;
+    height: 25px;
+    font-size: 15px;
+    :focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+  .des {
+    flex-grow: 2;
+    max-width: 50em;
+  }
+  .info {
+    flex-grow: 1;
+    padding-left: 10em;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 10px;
+    font-size: 14px;
+    color: #959595;
+    .nickname {
+      font-weight: bold;
     }
     input {
-      border: 0.2px solid #b4b4b4a2;
-      outline: none;
-      margin-right: 10px;
-      width: 8em;
-      height: 25px;
-      padding: 0 5px;
-    }
-    .des-input {
-      width: 100%;
-      height: 50px;
-    }
-    svg {
-      position: absolute;
-      bottom: 27px;
-      right: 15px;
-      color: #3e3e3e; //props
-      cursor: pointer;
+      text-align: right;
     }
   }
 `;
