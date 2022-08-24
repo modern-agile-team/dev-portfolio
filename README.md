@@ -336,6 +336,54 @@ export default App;
  
 </details>
 
+### Carousel
+<img width="1708" alt="스크린샷 2022-08-24 오후 7 45 59" src="https://user-images.githubusercontent.com/56839474/186399666-ac19d4d5-8ae5-427c-a361-18298e931108.png">
+
+```js
+import { Carousel } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Carousel 
+      id="Carousel Component"
+      width="100%"
+      transition = 1000,
+      autoplaySpeed = 3000, // ms
+      slideToShow = 1,
+      isArrowShow = true,
+      isAutoplay = false,
+      isAutoplayControl = true,
+      arrowLocation = 'mid-side', // 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side'
+      playerLocation = 'bottom-mid', // 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right'
+      prevArrowIcon = <YOUR_COMPONENT />, // ReactElement
+      nextArrowIcon = <YOUR_COMPONENT />, // ReactElement
+      startAutoplayIcon = <YOUR_COMPONENT />, // ReactElement
+      pauseAutoplayIcon = <YOUR_COMPONENT />, // ReactElement
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - |
+| ```id``` | string | Name to be added to Sidebar | |
+| ```width``` | string | CSS for Width of Carousel Component | 100% | |
+| ```transition``` | number | Transition Speed for each Component | 1000ms | Unit : ms |
+| ```autoplaySpeed``` | number | Time to stay for each Component | 3000ms | Unit : ms |
+| ```slideToShow``` | number | Number of components to show at once | 1 |  |
+| ```isArrowShow``` | boolean | Let me know if you want to show the arrow icon | true | |
+| ```isAutoplay``` | boolean | Let me know if you want it to rotate automatically | false |
+| ```isAutoplayControl``` | boolean | Let me know if you want to show the AutoPlay icon | true |
+| ```arrowLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of Arrow icon | mid-side | |
+| ```playerLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon  | bottom-mid | |
+| ```prevArrowIcon``` | ReactElement | Icon Component for moving into previous item | ```<FiChevronLeft />``` | |
+| ```nextArrowIcon``` | ReactElement | Icon Component for moving into next item | ```<FiChevronRight />``` | |
+| ```startAutoplayIcon``` | ReactElement | Icon Component for starting autoplay | ```<TbPlayerPlay />``` | |
+| ```pauseAutoplayIcon``` | ReactElement | Icon Component for pause autoplay | ```<TbPlayerPause />``` | |
+
+
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
 
