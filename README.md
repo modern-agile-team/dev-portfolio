@@ -340,26 +340,31 @@ export default App;
 <img width="1708" alt="스크린샷 2022-08-24 오후 7 45 59" src="https://user-images.githubusercontent.com/56839474/186399666-ac19d4d5-8ae5-427c-a361-18298e931108.png">
 
 ```js
-import { Carousel } from 'dev-portfolio';
+import { Carousel, Image } from 'dev-portfolio';
 
 const App = () => {
   return (
     <Carousel 
       id="Carousel Component"
-      width="100%"
-      transition = 1000,
-      autoplaySpeed = 3000, // ms
-      slideToShow = 1,
-      isArrowShow = true,
-      isAutoplay = false,
-      isAutoplayControl = true,
-      arrowLocation = 'mid-side', // 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side'
-      playerLocation = 'bottom-mid', // 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right'
-      prevArrowIcon = <YOUR_COMPONENT />, // ReactElement
-      nextArrowIcon = <YOUR_COMPONENT />, // ReactElement
-      startAutoplayIcon = <YOUR_COMPONENT />, // ReactElement
-      pauseAutoplayIcon = <YOUR_COMPONENT />, // ReactElement
-    />
+      width="65%"
+      transition={1000} // ms
+      autoplaySpeed={3000} // ms
+      slideToShow={1}
+      isArrowShow={true}
+      isAutoplay={false}
+      isAutoplayControl={true}
+      arrowLocation="mid-side" // 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side'
+      playerLocation="bottom-mid" // 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right'
+      prevArrowIcon={<YOUR_COMPONENT />} // ReactElement
+      nextArrowIcon={<YOUR_COMPONENT />} // ReactElement
+      startAutoplayIcon={<YOUR_COMPONENT />} // ReactElement
+      pauseAutoplayIcon={<YOUR_COMPONENT />} // ReactElement
+    >
+      // Must insert components customized
+      <YOUR_COMPONENT />
+      <Image src="anything.png" /> // Component of dev-portfolio
+      ...
+    </Carousel>
   );
 }
 
@@ -367,7 +372,7 @@ export default App;
 ```
 
 | props | type | description | default | note |
-| - | - | - |
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | |
 | ```width``` | string | CSS for Width of Carousel Component | 100% | |
 | ```transition``` | number | Transition Speed for each Component | 1000ms | Unit : ms |
