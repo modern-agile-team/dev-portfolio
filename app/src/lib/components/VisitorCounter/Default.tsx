@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { VisitorCounterDefaultType } from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
-const Default = (props: VisitorCounterDefaultType) => {
+const Default = (props: VisitorCounterType) => {
   const { title, todayVisitor, totalVisitor } = props;
 
   return (

@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VisitorCounterType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
-export const BigSize = () => {
+export const BigSize = (props: VisitorCounterType) => {
+  const { title, todayTitle, totalTitle, todayVisitor, totalVisitor } = props;
+
   return (
     <Wrap>
-      <span className="title">Thank&apos;s to visit my site!</span>
+      <span className="title">{title}</span>
       <Today>
-        <span className="today">today</span>
-        <span className="today-visitor">0</span>
+        <span className="today">{todayTitle}</span>
+        <span className="today-visitor">{todayVisitor}</span>
       </Today>
       <Total>
-        <span className="total">total</span>
-        <span className="total-visitor">123</span>
+        <span className="total">{totalTitle}</span>
+        <span className="total-visitor">{totalVisitor}</span>
       </Total>
     </Wrap>
   );

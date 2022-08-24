@@ -19,7 +19,6 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header />
       <VisitorCounter />
 
       <CardWrap id="카드에연">

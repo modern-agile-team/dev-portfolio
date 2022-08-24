@@ -1,10 +1,12 @@
-export interface VisitorCounterDefaultType {
+export interface VisitorCounterType {
   title: string;
   todayVisitor: number;
   totalVisitor: number;
+  todayTitle?: string;
+  totalTitle?: string;
 }
 
-export interface IndexPropsType extends VisitorCounterDefaultType {
+export interface IndexPropsType extends VisitorCounterType {
   theme?: VisitorCounterThemeType;
 }
 

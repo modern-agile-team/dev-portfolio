@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VisitorCounterType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
-export const Simple = () => {
+export const Simple = (props: VisitorCounterType) => {
+  const { todayTitle, todayVisitor, totalTitle, totalVisitor } = props;
+
   return (
     <Wrap>
-      <span className="today">today</span>
-      <span className="today-visitor">0</span>
-      <span className="total">total</span>
-      <span className="total-visitor">123</span>
+      <span className="today">{todayTitle}</span>
+      <span className="today-visitor">{todayVisitor}</span>
+      <span className="total">{totalTitle}</span>
+      <span className="total-visitor">{totalVisitor}</span>
     </Wrap>
   );
 };

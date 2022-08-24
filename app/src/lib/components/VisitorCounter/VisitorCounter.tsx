@@ -11,9 +11,9 @@ const VisitorCounter = (props: IndexPropsType) => {
     case 'default':
       return <Default {...props} />;
     case 'big-size':
-      return <BigSize />;
+      return <BigSize {...props} />;
     case 'simple':
-      return <Simple />;
+      return <Simple {...props} />;
     default:
       return <Default {...props} />;
   }
@@ -25,4 +25,6 @@ VisitorCounter.defaultProps = {
   title: 'hits',
   todayVisitor: '0',
   totalVisitor: '123',
+  todayTitle: 'today',
+  totalTitle: 'total',
 };
