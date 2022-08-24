@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VisitorCounterDefaultType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
-const Default = () => {
+const Default = (props: VisitorCounterDefaultType) => {
+  const { title, todayVisitor, totalVisitor } = props;
+
   return (
     <Wrap>
       <Counter>
-        <span className="title">hits</span>
-        <span className="today">today</span>
-        <span className="total">total</span>
+        <span className="title">{title}</span>
+        <span className="today">{todayVisitor}</span>
+        <span className="total">{totalVisitor}</span>
       </Counter>
     </Wrap>
   );
