@@ -159,9 +159,8 @@ const App = () => {
 
 export default App;
 ```
-
-| props | type | description |
-| - | - | - |
+| props | type | description | default | note |
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar |
 | ```textAlign``` | string | CSS for Text align of Intro Component |
 | ```backgroundColor``` | string | CSS for Background color of Intro Component |
@@ -203,8 +202,8 @@ const App = () => {
 export default App;
 ```
 
-| props | type | description |
-| - | - | - |
+| props | type | description | default | note |
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar |
 | ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between 'TechStack's |
 | ```techStackList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc |
@@ -284,8 +283,8 @@ const App = () => {
 export default App;
 ```
 
-| props | type | description |
-| - | - | - |
+| props | type | description | default | note |
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar |
 | ```title``` | string | Main title text of Experience Component |
 | ```textAlign``` | string | CSS for Text align of Experience Component |
@@ -410,8 +409,8 @@ const App = () => {
 export default App;
 ```
 
-| props | type | description |
-| - | - | - |
+| props | type | description | default | note |
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar |
 | ```backgroundColor``` | string | CSS for Background Color of Contact Component |
 | ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc |
