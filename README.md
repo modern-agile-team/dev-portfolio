@@ -80,8 +80,8 @@ const App = () => {
 export default App;
 ```
 
-| props | type | description |
-| - | - | - |
+| props | type | description | default | note
+| - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar |
 | ```headerHeight``` | string | CSS for Height of Header Component |
 | ```headerWidth``` | string | CSS for Width of Header Component |
