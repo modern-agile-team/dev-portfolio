@@ -1,24 +1,20 @@
 import Basic from './Basic';
 import Box from './Box';
 import Vertical from './Vertical';
-import React from 'react';
+import { IndexPropsType } from '../../../common/types/ComponentTypes/VisitorCommentType';
 
-interface Props {
-  theme?: 'basic' | 'box' | 'vertical';
-}
-
-const CommentList = (props: Props) => {
+const CommentList = (props: IndexPropsType) => {
   const { theme } = props;
 
   switch (theme) {
     case 'basic':
-      return <Basic />;
+      return <Basic {...props} />;
     case 'box':
-      return <Box />;
+      return <Box {...props} />;
     case 'vertical':
-      return <Vertical />;
+      return <Vertical {...props} />;
     default:
-      return <Basic />;
+      return <Basic {...props} />;
   }
 };
 

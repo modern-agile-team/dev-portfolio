@@ -1,67 +1,57 @@
 import styled from 'styled-components';
+import { VisitorCommentListType } from '../../../common/types/ComponentTypes/VisitorCommentType';
 
-const Box = () => {
+const Box = (props: VisitorCommentListType) => {
+  const { des, nickname, date } = props;
+
   return (
-    <div>
-      <Wrap>
-        <div className="date">
-          <span className="start-date">startDate</span>
-          <span className="end-date">endDate</span>
-        </div>
-        <span className="child-title">title</span>
-        <span className="des">des</span>
-      </Wrap>
-    </div>
+    <Wrap>
+      <span className="des">{des}</span>
+      <div className="info">
+        <span className="nickname">{nickname}</span>
+        <span className="date">{date}</span>
+      </div>
+    </Wrap>
   );
 };
 export default Box;
 
 const Wrap = styled.div`
-  margin: 10px;
-  padding: 0em 4vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 15px;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.14);
+  background-color: white;
   border-radius: 5px;
-  .date {
-    width: 15%;
-    padding: 2em;
-    flex-grow: 1;
-    @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
-    }
-    .start-date {
-      ::after {
-        content: '-';
-        margin: 0px 7px;
-      }
-    }
-    .end-date {
-      margin-left: 5px;
-    }
-  }
-  .child-title {
-    width: 15%;
-    flex-grow: 1;
-    font-size: 22px;
-    font-weight: 600;
-    border-right: 1px solid #b4b4b4a2;
-    @media screen and (max-width: 800px) {
-      width: 100%;
-      text-align: center;
-      border: none;
-    }
-  }
+  display: flex;
+  align-items: center;
+  padding: 1em 5em;
   .des {
-    padding: 2em;
     flex-grow: 2;
-    width: 30%;
-    @media screen and (max-width: 800px) {
+    max-width: 50em;
+  }
+  .info {
+    flex-grow: 1;
+    padding-left: 10em;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 10px;
+    font-size: 14px;
+    color: #959595;
+    .nickname {
+      font-weight: bold;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1vw;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4em 5em;
+    .info {
       width: 100%;
-      text-align: center;
+      font-size: 1vw;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      padding: 0;
     }
   }
 `;

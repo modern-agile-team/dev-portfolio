@@ -1,12 +1,15 @@
 import styled from 'styled-components';
+import { VisitorCommentListType } from '../../../common/types/ComponentTypes/VisitorCommentType';
 
-const Basic = () => {
+const Basic = (props: VisitorCommentListType) => {
+  const { des, nickname, date } = props;
+
   return (
     <Wrap>
-      <span className="des">정말 멋진 라이브러리군요</span>
+      <span className="des">{des}</span>
       <div className="info">
-        <span className="nickname">nickname</span>
-        <span className="date">date</span>
+        <span className="nickname">{nickname}</span>
+        <span className="date">{date}</span>
       </div>
     </Wrap>
   );
@@ -34,6 +37,19 @@ const Wrap = styled.div`
     color: #959595;
     .nickname {
       font-weight: bold;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1vw;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4em 5em;
+    .info {
+      width: 100%;
+      font-size: 1vw;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      padding: 0;
     }
   }
 `;
