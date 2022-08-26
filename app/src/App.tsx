@@ -19,7 +19,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <VisitorComment theme="vertical" />
+      <VisitorComment />
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component

@@ -22,6 +22,7 @@ Vertical.defaultProps = {
 
 const Wrap = styled.div`
   width: 20em;
+  min-height: 10em;
   padding: 1em 2em;
   margin: 1em auto;
   display: flex;
@@ -31,8 +32,9 @@ const Wrap = styled.div`
   background-color: white;
   text-align: center;
   justify-content: center;
+  gap: 10px;
   .des {
-    padding: 1em;
+    padding-bottom: 1.5em;
     border-bottom: 1px solid #b4b4b4a2;
   }
   .nickname {

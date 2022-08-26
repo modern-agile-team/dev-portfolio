@@ -8,11 +8,11 @@ import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 
 const VisitorComment = (props: VisitorCommentPropsType) => {
-  const { id, commentList, theme, backgroundColor } = props;
+  const { id, commentList, theme, backgroundColor, buttonColor } = props;
 
   return (
     <Wrap id={id} backgroundColor={backgroundColor}>
-      <CommentInput theme={theme} />
+      <CommentInput theme={theme} buttonColor={buttonColor} />
       <ChildWrap theme={theme}>
         {commentList?.map((elements, idx) => (
           <CommentList key={idx} {...elements} theme={theme} />

@@ -3,6 +3,7 @@ export interface VisitorCommentPropsType {
   commentList?: VisitorCommentListType[];
   theme?: VisitorCommentThemeType;
   backgroundColor?: string;
+  buttonColor?: string;
 }
 
 export interface VisitorCommentListType {
@@ -19,6 +20,7 @@ type VisitorCommentThemeType = 'basic' | 'box' | 'vertical';
 
 export interface VisitorCommentStyledPropsType {
   backgroundColor?: string;
+  buttonColor?: string;
 }
 
 export interface VisitorCommentThemeStyledPropsType {

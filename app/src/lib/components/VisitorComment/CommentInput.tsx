@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
+  VisitorCommentStyledPropsType,
   VisitorCommentThemeStyledPropsType,
 } from '../../common/types/ComponentTypes/VisitorCommentType';
 
 const CommentInput = (props: VisitorCommentPropsType) => {
-  const { theme } = props;
+  const { theme, buttonColor } = props;
 
   return (
     <Wrap theme={theme}>
@@ -16,7 +17,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
           <input className="nickname" type="text" placeholder="ID" />
           <input className="date" type="password" placeholder="PW" />
         </UserInfo>
-        <SubmitBtn>
+        <SubmitBtn buttonColor={buttonColor}>
           <span>send</span>
         </SubmitBtn>
       </InfoWrap>
@@ -95,13 +96,13 @@ const UserInfo = styled.div`
   }
 `;
 
-const SubmitBtn = styled.div`
+const SubmitBtn = styled.div<VisitorCommentStyledPropsType>`
   flex-grow: 1.5;
   text-align: center;
   padding: 2vw 0;
   margin-left: 2vw;
   border-left: 0.2px solid #b4b4b4a2;
-  color: #1877f2; //props
+  color: ${({ buttonColor }) => buttonColor ?? '#1877f2'};
   span {
     cursor: pointer;
   }
