@@ -1,18 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import { VisitorCounterType } from '../../common/types/ComponentTypes/VisitorCounterType';
+import {
+  VisitorCounterPropsType,
+  VisitorCounterStylePropsType,
+} from '../../common/types/ComponentTypes/VisitorCounterType';
 
-export const BigSize = (props: VisitorCounterType) => {
-  const { title, todayTitle, totalTitle, todayVisitor, totalVisitor } = props;
+export const BigSize = (props: VisitorCounterPropsType) => {
+  const {
+    title,
+    todayTitle,
+    totalTitle,
+    todayVisitor,
+    totalVisitor,
+    backgroundColor,
+    size,
+    todayBoldColor,
+    totalBoldColor,
+  } = props;
 
   return (
-    <Wrap>
+    <Wrap backgroundColor={backgroundColor} size={size}>
       <span className="title">{title}</span>
-      <Today>
+      <Today todayBoldColor={todayBoldColor}>
         <span className="today">{todayTitle}</span>
         <span className="today-visitor">{todayVisitor}</span>
       </Today>
-      <Total>
+      <Total totalBoldColor={totalBoldColor}>
         <span className="total">{totalTitle}</span>
         <span className="total-visitor">{totalVisitor}</span>
       </Total>
@@ -20,14 +33,15 @@ export const BigSize = (props: VisitorCounterType) => {
   );
 };
 
-const Wrap = styled.div`
+const Wrap = styled.div<VisitorCounterStylePropsType>`
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
   padding: 10px;
-  background-color: whitesmoke; //props
+  background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
   min-height: 3em;
+  font-size: ${({ size }) => size ?? '14px'};
   .title {
     padding: 10px;
     flex-grow: 1;
@@ -35,28 +49,26 @@ const Wrap = styled.div`
   }
 `;
 
-const Today = styled.div`
+const Today = styled.div<VisitorCounterStylePropsType>`
   flex-grow: 1;
   padding: 10px;
   .today {
     margin-right: 5em;
   }
   .today-visitor {
-    font-size: 16px;
     font-weight: bold;
-    color: red; //props
+    color: ${({ todayBoldColor }) => todayBoldColor ?? 'red'};
   }
 `;
 
-const Total = styled.div`
+const Total = styled.div<VisitorCounterStylePropsType>`
   flex-grow: 1;
   padding: 10px;
   .total {
     margin-right: 5em;
   }
   .total-visitor {
-    font-size: 16px;
     font-weight: bold;
-    color: red; //props
+    color: ${({ totalBoldColor }) => totalBoldColor ?? 'red'};
   }
 `;
