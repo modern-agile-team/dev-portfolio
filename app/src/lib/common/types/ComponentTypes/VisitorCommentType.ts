@@ -4,6 +4,10 @@ export interface VisitorCommentPropsType {
   theme?: VisitorCommentThemeType;
   backgroundColor?: string;
   buttonColor?: string;
+  commentInputProps?: CommentInputPropsType;
+  desPlaceholder?: string;
+  nicknamePlaceholder?: string;
+  passwordPlaceholder?: string;
 }
 
 export interface VisitorCommentListType {
@@ -14,6 +18,12 @@ export interface VisitorCommentListType {
 
 export interface IndexPropsType extends VisitorCommentListType {
   theme?: VisitorCommentThemeType;
+}
+
+export interface CommentInputPropsType {
+  desPlaceholder?: string;
+  nicknamePlaceholder?: string;
+  passwordPlaceholder?: string;
 }
 
 type VisitorCommentThemeType = 'basic' | 'box' | 'vertical';

@@ -22,6 +22,7 @@ const Wrap = styled.div`
   border-bottom: 0.2px solid #b4b4b4a2;
   background-color: white;
   padding: 1em 5em;
+  height: 80px;
   .des {
     flex-grow: 2;
     max-width: 50em;

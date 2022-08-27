@@ -7,7 +7,7 @@ import {
 } from '../../common/types/ComponentTypes/VisitorCommentType';
 
 const CommentInput = (props: VisitorCommentPropsType) => {
-  const { theme, buttonColor } = props;
+  const { theme, buttonColor, desPlaceholder, nicknamePlaceholder, passwordPlaceholder } = props;
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -20,11 +20,11 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 
   return (
     <Wrap theme={theme}>
-      <textarea ref={textareaRef} onKeyDown={onKeyDown} className="des" placeholder="write your description" />
+      <textarea ref={textareaRef} onKeyDown={onKeyDown} className="des" placeholder={desPlaceholder} />
       <InfoWrap>
         <UserInfo>
-          <input className="nickname" type="text" placeholder="ID" />
-          <input className="date" type="password" placeholder="PW" />
+          <input className="nickname" type="text" placeholder={nicknamePlaceholder} />
+          <input className="date" type="password" placeholder={passwordPlaceholder} />
         </UserInfo>
         <SubmitBtn buttonColor={buttonColor}>
           <span>send</span>
@@ -36,23 +36,33 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 
 export default CommentInput;
 
+CommentInput.defaultProps = {
+  desPlaceholder: 'write your description...',
+  nicknamePlaceholder: 'ID',
+  passwordPlaceholder: 'PW',
+};
+
 const Wrap = styled.div<VisitorCommentThemeStyledPropsType>`
   margin: 1em 0;
   padding: 1.5em 3em 0em 3em;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: ${({ theme }) => (theme === 'box' ? '5px' : 'none')};
-  border: ${({ theme }) => (theme === 'box' ? 'none' : '0.2px solid #b4b4b4a2')};
+  /* border: ${({ theme }) => (theme === 'box' ? 'none' : '0.2px solid #b4b4b4a2')}; */
   box-shadow: ${({ theme }) => (theme === 'box' ? '0px 1px 3px 1px rgba(0, 0, 0, 0.14)' : 'none')};
   textarea {
+    background-color: whitesmoke;
     outline: none;
     border: none;
     resize: none;
-    padding: 0;
+    padding: 10px 0 0 0;
     width: 100%;
     height: 50px;
     align-items: center;
     font-size: 16px;
     overflow: hidden;
+    :focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
     @media screen and (max-width: 768px) {
       font-size: 1vw;
       height: 30px;
@@ -63,11 +73,14 @@ const Wrap = styled.div<VisitorCommentThemeStyledPropsType>`
     }
   }
   input {
+    background-color: whitesmoke;
+
     outline: none;
     border: none;
     padding: 0;
     width: 100%;
     height: 25px;
+    border-bottom: 1px solid #b4b4b4a2;
     :focus::-webkit-input-placeholder {
       opacity: 0;
     }
@@ -90,6 +103,8 @@ const UserInfo = styled.div`
   display: flex;
   font-size: 14px;
   color: #959595;
+  gap: 30px;
+  /* border: 1px solid; */
   @media screen and (max-width: 500px) {
     flex-direction: row;
     width: 100%;
@@ -100,7 +115,7 @@ const UserInfo = styled.div`
 `;
 
 const SubmitBtn = styled.div<VisitorCommentStyledPropsType>`
-  flex-grow: 1;
+  flex-grow: 2;
   text-align: center;
   padding: 2vw 0;
   margin-left: 2vw;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
@@ -8,11 +9,26 @@ import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 
 const VisitorComment = (props: VisitorCommentPropsType) => {
-  const { id, commentList, theme, backgroundColor, buttonColor } = props;
+  const {
+    id,
+    commentList,
+    theme,
+    backgroundColor,
+    buttonColor,
+    desPlaceholder,
+    nicknamePlaceholder,
+    passwordPlaceholder,
+  } = props;
 
   return (
     <Wrap id={id} backgroundColor={backgroundColor}>
-      <CommentInput theme={theme} buttonColor={buttonColor} />
+      <CommentInput
+        theme={theme}
+        buttonColor={buttonColor}
+        desPlaceholder={desPlaceholder}
+        nicknamePlaceholder={nicknamePlaceholder}
+        passwordPlaceholder={passwordPlaceholder}
+      />
       <ChildWrap theme={theme}>
         {commentList?.map((elements, idx) => (
           <CommentList key={idx} {...elements} theme={theme} />
@@ -44,7 +60,7 @@ VisitorComment.defaultProps = {
       date: '2022-08-26',
     },
     {
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      des: '하우ㅣ',
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
@@ -65,7 +81,7 @@ VisitorComment.defaultProps = {
       date: '2022-08-26',
     },
     {
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      des: '하위',
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
@@ -84,6 +100,8 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
 `;
 
 const ChildWrap = styled.div<VisitorCommentThemeStyledPropsType>`
+  height: ${({ theme }) => (theme === 'vertical' ? '580px' : '400px')};
+  overflow: auto;
   border-bottom: 0px;
   display: flex;
   white-space: pre-wrap;
