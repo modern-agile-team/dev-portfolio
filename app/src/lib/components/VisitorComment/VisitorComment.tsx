@@ -48,6 +48,27 @@ VisitorComment.defaultProps = {
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
+    {
+      des: '데프포폴 기가맥힌데요?',
+      nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
+    {
+      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
+
+    {
+      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+      nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
+    {
+      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
   ],
 };
 

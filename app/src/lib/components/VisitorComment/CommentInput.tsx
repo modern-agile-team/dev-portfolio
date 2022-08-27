@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
@@ -9,9 +9,18 @@ import {
 const CommentInput = (props: VisitorCommentPropsType) => {
   const { theme, buttonColor } = props;
 
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const onKeyDown = () => {
+    if (!textareaRef.current) return;
+    textareaRef.current.style.height = 'auto';
+    const height = textareaRef.current.scrollHeight;
+    textareaRef.current.style.height = `${height + 8}px`;
+  };
+
   return (
     <Wrap theme={theme}>
-      <input className="des" type="text" placeholder="write your description" />
+      <textarea ref={textareaRef} onKeyDown={onKeyDown} className="des" placeholder="write your description" />
       <InfoWrap>
         <UserInfo>
           <input className="nickname" type="text" placeholder="ID" />
@@ -28,20 +37,37 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 export default CommentInput;
 
 const Wrap = styled.div<VisitorCommentThemeStyledPropsType>`
-  margin: 1em;
-  display: flex;
-  align-items: center;
+  margin: 1em 0;
+  padding: 1.5em 3em 0em 3em;
   background-color: white;
-  padding-left: 5vw;
   border-radius: ${({ theme }) => (theme === 'box' ? '5px' : 'none')};
   border: ${({ theme }) => (theme === 'box' ? 'none' : '0.2px solid #b4b4b4a2')};
   box-shadow: ${({ theme }) => (theme === 'box' ? '0px 1px 3px 1px rgba(0, 0, 0, 0.14)' : 'none')};
+  textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    font-size: 16px;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+      font-size: 1vw;
+      height: 30px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      height: 25px;
+    }
+  }
   input {
     outline: none;
     border: none;
     padding: 0;
+    width: 100%;
     height: 25px;
-    font-size: 15px;
     :focus::-webkit-input-placeholder {
       opacity: 0;
     }
@@ -50,72 +76,47 @@ const Wrap = styled.div<VisitorCommentThemeStyledPropsType>`
       font-size: 1vw;
     }
     @media screen and (max-width: 500px) {
-      margin: 10px;
+      margin: 10px 0;
       width: 100%;
     }
   }
-  .des {
-    flex-grow: 3;
-    width: 5vw;
-    max-width: 50em;
-    @media screen and (max-width: 500px) {
-      width: 100%;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
+  @media screen and (max-width: 768px) {
     padding: 1em;
-    align-items: flex-start;
   }
 `;
 
 const UserInfo = styled.div`
   flex-grow: 1;
-  width: 5vw;
-  margin: 0 2vw;
   display: flex;
-  flex-direction: column;
-  gap: 1vw;
   font-size: 14px;
   color: #959595;
-  .nickname {
-    font-weight: bold;
-  }
-  input {
-    text-align: right;
-  }
   @media screen and (max-width: 500px) {
     flex-direction: row;
     width: 100%;
     input {
-      text-align: left;
       width: 20%;
-      margin: 2vw 0;
-      padding-right: 2vw;
     }
   }
 `;
 
 const SubmitBtn = styled.div<VisitorCommentStyledPropsType>`
-  flex-grow: 1.5;
+  flex-grow: 1;
   text-align: center;
   padding: 2vw 0;
   margin-left: 2vw;
-  border-left: 0.2px solid #b4b4b4a2;
   color: ${({ buttonColor }) => buttonColor ?? '#1877f2'};
   span {
     cursor: pointer;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 760px) {
     font-size: 1vw;
     border: none;
     margin: 0;
-    margin-right: 3em;
+    margin-right: 4em;
   }
 `;
 
 const InfoWrap = styled.div`
   display: flex;
-  flex-grow: 3;
   align-items: center;
 `;
