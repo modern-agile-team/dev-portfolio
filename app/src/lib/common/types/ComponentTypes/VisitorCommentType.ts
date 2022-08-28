@@ -8,6 +8,8 @@ export interface VisitorCommentPropsType {
   desPlaceholder?: string;
   nicknamePlaceholder?: string;
   passwordPlaceholder?: string;
+  inputBackgroundColor?: string;
+  userInputLineColor?: string;
 }
 
 export interface VisitorCommentListType {
@@ -35,4 +37,6 @@ export interface VisitorCommentStyledPropsType {
 
 export interface VisitorCommentThemeStyledPropsType {
   theme?: VisitorCommentThemeType;
+  inputBackgroundColor?: string;
+  userInputLineColor?: string;
 }

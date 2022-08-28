@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
   VisitorCommentStyledPropsType,
   VisitorCommentThemeStyledPropsType,
 } from '../../common/types/ComponentTypes/VisitorCommentType';
+import ProgressBar from '../TechStack/TechStacks/ProgressBar';
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
+import { HiChevronDoubleDown } from 'react-icons/hi';
 
 const VisitorComment = (props: VisitorCommentPropsType) => {
   const {
@@ -18,7 +20,18 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     desPlaceholder,
     nicknamePlaceholder,
     passwordPlaceholder,
+    inputBackgroundColor,
+    userInputLineColor,
   } = props;
+  const [rate, setRate] = useState<number>(0);
+
+  const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
+    const containerHeight = event.currentTarget.clientHeight;
+    const scrollHeight = event.currentTarget.scrollHeight;
+    const scrollTop = event.currentTarget.scrollTop;
+    const result = (scrollTop / (scrollHeight - containerHeight)) * 100;
+    setRate(result);
+  };
 
   return (
     <Wrap id={id} backgroundColor={backgroundColor}>
@@ -28,8 +41,11 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         desPlaceholder={desPlaceholder}
         nicknamePlaceholder={nicknamePlaceholder}
         passwordPlaceholder={passwordPlaceholder}
+        inputBackgroundColor={inputBackgroundColor}
+        userInputLineColor={userInputLineColor}
       />
-      <ChildWrap theme={theme}>
+      <ProgressBar rate={`${rate}%`} height="3px" colorFrom="#5f5f5f" colorTo="#5f5f5f" />
+      <ChildWrap onScroll={scrollHandler} theme={theme}>
         {commentList?.map((elements, idx) => (
           <CommentList key={idx} {...elements} theme={theme} />
         ))}
@@ -100,12 +116,16 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
 `;
 
 const ChildWrap = styled.div<VisitorCommentThemeStyledPropsType>`
+  margin-top: 3px;
   height: ${({ theme }) => (theme === 'vertical' ? '580px' : '400px')};
-  overflow: auto;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   border-bottom: 0px;
   display: flex;
   white-space: pre-wrap;
-  border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a2' : 'none')};
+  border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a0' : 'none')};
   flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
 `;
