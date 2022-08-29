@@ -82,11 +82,11 @@ export default App;
 
 | props | type | description | default | note
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```headerHeight``` | string | CSS for Height of Header Component |
-| ```headerWidth``` | string | CSS for Width of Header Component |
-| ```headerBackgroundColor``` | string | CSS for Background color of Header Component |
-| ```logoOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```headerHeight``` | string | CSS for Height of Header Component | 80px | |
+| ```headerWidth``` | string | CSS for Width of Header Component | 100% | |
+| ```headerBackgroundColor``` | string | CSS for Background color of Header Component | white | |
+| ```logoOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props | <a href="#logooption-example">logoOption example</a> | |
 | ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc |
 | ```sideBarOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a> | Sidebar-only props such as Sidebar's Icon, etc |
 
