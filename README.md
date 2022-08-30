@@ -218,6 +218,7 @@ export default App;
       nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '45%',
+        isHiddenRateText: false,
         colorTo: '#E2D784',
         colorFrom: 'whitesmoke',
         width: '100%',
@@ -228,6 +229,7 @@ export default App;
       nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '30%',
+        isHiddenRateText: false,
         colorTo: '#E34F26',
         colorFrom: 'whitesmoke',
         width: '100%',
@@ -238,6 +240,7 @@ export default App;
       nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rate: '85%',
+        isHiddenRateText: true,
         colorTo: '#339933',
         colorFrom: 'whitesmoke',
         width: '100%',
