@@ -1,14 +1,14 @@
-export interface ProgressBarPropsType {
+export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsType {
   rate?: string;
+  isHiddenRateText?: boolean;
   colorFrom?: string;
   colorTo?: string;
-  width?: string;
-  height?: string;
 }
 
 export interface ProgressBarContainerStyledPropsType {
   width?: string;
   height?: string;
+  border?: string;
 }
 
 export interface ProgreeBarColorType {
