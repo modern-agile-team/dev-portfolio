@@ -1,5 +1,8 @@
 import React, { ReactElement } from 'react';
 
+export type ArrowLocationType = 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
+export type PlayerLocationType = 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
+
 export interface CarouselPropsType {
   id?: string;
   children: React.ReactNode;
@@ -10,8 +13,8 @@ export interface CarouselPropsType {
   isArrowShow?: boolean;
   isAutoplay?: boolean;
   isAutoplayControl?: boolean;
-  arrowLocation?: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
-  playerLocation?: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
+  arrowLocation?: ArrowLocationType;
+  playerLocation?: PlayerLocationType;
   prevArrowIcon?: ReactElement;
   nextArrowIcon?: ReactElement;
   startAutoplayIcon?: ReactElement;
@@ -28,17 +31,9 @@ export interface useCarouselPropsType {
 
 /* For Styles */
 
-export interface ArrowLocationType {
+export interface ArrowLocationStyledType {
   top?: string;
   bottom?: string;
   side?: string;
   translateY?: string;
-}
-
-export interface PlayerLocationType {
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  translateX?: string;
 }
