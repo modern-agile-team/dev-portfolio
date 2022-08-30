@@ -10,6 +10,9 @@ export interface VisitorCommentPropsType {
   passwordPlaceholder?: string;
   inputBackgroundColor?: string;
   userInputLineColor?: string;
+  progressbarColor?: string;
+  isShowScrollDownIcon?: boolean;
+  scrollDownIconColor?: string;
 }
 
 export interface VisitorCommentListType {
@@ -31,12 +34,11 @@ export interface CommentInputPropsType {
 type VisitorCommentThemeType = 'basic' | 'box' | 'vertical';
 
 export interface VisitorCommentStyledPropsType {
+  theme?: VisitorCommentThemeType;
   backgroundColor?: string;
   buttonColor?: string;
-}
-
-export interface VisitorCommentThemeStyledPropsType {
-  theme?: VisitorCommentThemeType;
   inputBackgroundColor?: string;
   userInputLineColor?: string;
+  scrollDownIconColor?: string;
+  isOverflow?: boolean;
 }

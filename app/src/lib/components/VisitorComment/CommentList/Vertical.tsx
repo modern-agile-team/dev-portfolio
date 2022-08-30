@@ -23,6 +23,7 @@ Vertical.defaultProps = {
 const Wrap = styled.div`
   width: 20em;
   min-height: 10em;
+  max-height: 50%;
   padding: 1em 2em;
   margin: 1em auto;
   display: flex;

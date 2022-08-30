@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
   VisitorCommentStyledPropsType,
-  VisitorCommentThemeStyledPropsType,
 } from '../../common/types/ComponentTypes/VisitorCommentType';
 import ProgressBar from '../TechStack/TechStacks/ProgressBar';
 import CommentInput from './CommentInput';
@@ -22,8 +21,24 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     passwordPlaceholder,
     inputBackgroundColor,
     userInputLineColor,
+    progressbarColor,
+    isShowScrollDownIcon,
+    scrollDownIconColor,
   } = props;
+
+  //make progressbar in commentList scroll-y
   const [rate, setRate] = useState<number>(0);
+  const [isOverflow, setIsOverflow] = useState<boolean>(false);
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    if (element) {
+      const isOverflow = element.scrollHeight > element.clientHeight;
+      setIsOverflow(isOverflow);
+    }
+  }, []);
 
   const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
     const containerHeight = event.currentTarget.clientHeight;
@@ -34,7 +49,8 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
   };
 
   return (
-    <Wrap id={id} backgroundColor={backgroundColor}>
+    <Wrap id={id} backgroundColor={backgroundColor} scrollDownIconColor={scrollDownIconColor}>
+      {isShowScrollDownIcon && isOverflow && <HiChevronDoubleDown />}
       <CommentInput
         theme={theme}
         buttonColor={buttonColor}
@@ -44,8 +60,10 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         inputBackgroundColor={inputBackgroundColor}
         userInputLineColor={userInputLineColor}
       />
-      <ProgressBar rate={`${rate}%`} height="3px" colorFrom="#5f5f5f" colorTo="#5f5f5f" />
-      <ChildWrap onScroll={scrollHandler} theme={theme}>
+      {isOverflow && (
+        <ProgressBar rate={`${rate}%`} height="3px" colorFrom={progressbarColor} colorTo={progressbarColor} />
+      )}
+      <ChildWrap ref={ref} onScroll={scrollHandler} theme={theme}>
         {commentList?.map((elements, idx) => (
           <CommentList key={idx} {...elements} theme={theme} />
         ))}
@@ -58,6 +76,8 @@ export default VisitorComment;
 
 VisitorComment.defaultProps = {
   theme: 'basic',
+  progressbarColor: '#5f5f5f',
+  isShowScrollDownIcon: true,
   commentList: [
     {
       des: '데프포폴 기가맥힌데요?',
@@ -65,39 +85,7 @@ VisitorComment.defaultProps = {
       date: '2022-08-26',
     },
     {
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-
-    {
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      des: '하우ㅣ',
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      des: '데프포폴 기가맥힌데요?',
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-
-    {
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      des: '하위',
+      des: `어우 qa가 계속나오네`,
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
@@ -105,6 +93,7 @@ VisitorComment.defaultProps = {
 };
 
 const Wrap = styled.div<VisitorCommentStyledPropsType>`
+  position: relative;
   background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
   padding: 1em 5em;
   padding-top: 0;
@@ -113,12 +102,20 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
   @media screen and (max-width: 500px) {
     padding: 1em 5vw;
   }
+  svg {
+    position: absolute;
+    bottom: 1.7em;
+    left: 49.5%;
+    color: ${({ scrollDownIconColor }) => scrollDownIconColor ?? 'black'};
+    font-size: 1.1vw;
+  }
 `;
 
-const ChildWrap = styled.div<VisitorCommentThemeStyledPropsType>`
+const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
   margin-top: 3px;
   height: ${({ theme }) => (theme === 'vertical' ? '580px' : '400px')};
   overflow-y: scroll;
+  background-color: ${({ theme }) => (theme === 'basic' ? 'white' : 'none')};
   ::-webkit-scrollbar {
     display: none;
   }

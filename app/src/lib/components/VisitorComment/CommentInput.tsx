@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {
   VisitorCommentPropsType,
   VisitorCommentStyledPropsType,
-  VisitorCommentThemeStyledPropsType,
 } from '../../common/types/ComponentTypes/VisitorCommentType';
 
 const CommentInput = (props: VisitorCommentPropsType) => {
@@ -32,7 +31,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
       <InfoWrap>
         <UserInfo>
           <input className="nickname" type="text" placeholder={nicknamePlaceholder} />
-          <input className="date" type="password" placeholder={passwordPlaceholder} />
+          <input className="password" type="password" placeholder={passwordPlaceholder} />
         </UserInfo>
         <SubmitBtn buttonColor={buttonColor}>
           <span>send</span>
@@ -50,7 +49,7 @@ CommentInput.defaultProps = {
   passwordPlaceholder: 'PW',
 };
 
-const Wrap = styled.div<VisitorCommentThemeStyledPropsType>`
+const Wrap = styled.div<VisitorCommentStyledPropsType>`
   margin: 1em 0;
   padding: 1.5em 3em 0em 3em;
   background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
