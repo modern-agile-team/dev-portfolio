@@ -49,8 +49,6 @@ const techStacksDefault = [
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
-      border: '0px',
-      borderRadius: '0px',
     },
   },
 ];

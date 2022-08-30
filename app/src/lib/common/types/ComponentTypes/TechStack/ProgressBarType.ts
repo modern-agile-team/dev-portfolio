@@ -8,7 +8,6 @@ export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsTyp
 export interface ProgressBarContainerStyledPropsType {
   width?: string;
   height?: string;
-  border?: string;
 }
 
 export interface ProgreeBarColorType {
