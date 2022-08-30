@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components';
-import { ArrowLocationType, PlayerLocationType } from '../../common/types/ComponentTypes/CarouselType';
+import {
+  ArrowLocationType,
+  PlayerLocationType,
+  ArrowLocationStyledType,
+} from '../../common/types/ComponentTypes/CarouselType';
 
 export const Wrapper = styled.div<{
-  arrowLocation: 'bottom' | 'mid-side' | 'top' | 'bottom-side' | 'top-side';
+  arrowLocation: ArrowLocationType;
   width?: string;
 }>`
   width: ${(props) => props.width || '100%'};
   position: relative;
   margin: 0 auto;
   ${({ arrowLocation }) => {
-    const location: ArrowLocationType = {
+    const location: ArrowLocationStyledType = {
       top: undefined,
       bottom: undefined,
       side: undefined,
@@ -102,7 +106,7 @@ export const ChildrenWrapper = styled.div<{
 `;
 
 export const Player = styled.div<{
-  playerLocation: 'bottom-mid' | 'bottom-left' | 'bottom-right' | 'top-mid' | 'top-left' | 'top-right';
+  playerLocation: PlayerLocationType;
 }>`
   display: flex;
   svg {
