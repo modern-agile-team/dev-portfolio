@@ -161,8 +161,8 @@ export default App;
 ```
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```textAlign``` | string | CSS for Text align of Intro Component |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```textAlign``` | string | CSS for Text align of Intro Component | center | |
 | ```backgroundColor``` | string | CSS for Background color of Intro Component |
 | ```introOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts#:~:text=export%20interface-,IntroOptionType,-extends%20IntroTitlePropsType%2C">IntroOptionType</a> | Intro-only props such as title, description, etc |
 
