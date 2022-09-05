@@ -377,8 +377,8 @@ export default App;
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | |
 | ```width``` | string | Carousel width | 100% | |
-| ```transition``` | number | Transition animation speed | 1000ms | Unit : ms |
-| ```autoplaySpeed``` | number | Time to stay in a item | 3000ms | Unit : ms |
+| ```transition``` | number | Transition animation speed | 1000 | Unit : ms |
+| ```autoplaySpeed``` | number | Time to stay in a item | 3000 | Unit : ms |
 | ```slideToShow``` | number | Number of item to show at once | 1 |  |
 | ```isArrowShow``` | boolean | Flag for whether to show buttons | true | |
 | ```isAutoplay``` | boolean | Flag for play carousel automatically | false |
