@@ -474,6 +474,36 @@ export default App;
 | ```padding``` | string | Masonry padding | 2em 4em | |
 
 
+### Image
+
+```js
+import { Image } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Image 
+      src="https://picsum.photos/500/600/?random"
+      head="Write your head"
+      subhead="Write your subhead"
+      redirectURL="/"
+      noShowHead={false}
+      zoomWhenHover={false}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```src``` | string | Image source url |  | |
+| ```head``` | string | Main Title Text | Write your head | |
+| ```subhead``` | string | Sub Title Text | Write your subhead | |
+| ```redirectURL``` | string | URL to redirect | / | |
+| ```noShowHead``` | boolean | Flag for whether to hide texts | false | |
+| ```zoomWhenHover``` | boolean | Flag for whether to zoom image when hovered on item | false | |
+
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
 
