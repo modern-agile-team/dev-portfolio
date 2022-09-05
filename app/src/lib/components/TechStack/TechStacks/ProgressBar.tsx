@@ -6,13 +6,13 @@ import {
   ProgressBarContainerStyledPropsType,
 } from '../../../common/types/ComponentTypes/TechStack/ProgressBarType';
 
-const ProgressBar = ({ rate, colorFrom, colorTo, width, height }: ProgressBarPropsType) => {
+const ProgressBar = ({ rate, isHiddenRateText, colorFrom, colorTo, width, height }: ProgressBarPropsType) => {
   return (
     <ProgressBarContainer width={width} height={height}>
       <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} style={{ width: rate }}>
         <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} />
       </ProgressBarComplete>
-      <ProgressBarInnerText>{rate}</ProgressBarInnerText>
+      <ProgressBarInnerText>{isHiddenRateText && rate}</ProgressBarInnerText>
     </ProgressBarContainer>
   );
 };
@@ -21,6 +21,7 @@ export default ProgressBar;
 
 ProgressBar.defaultProps = {
   rate: '100%',
+  isHiddenRateText: true,
   colorFrom: 'red',
   colorTo: 'white',
   width: '100%',
@@ -55,7 +56,6 @@ const ProgressBarContainer = styled.div<ProgressBarContainerStyledPropsType>`
   position: relative;
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  border: 1px solid #fff;
   border-radius: 10px;
   overflow: hidden;
   background: whitesmoke;

@@ -13,3 +13,4 @@ export { default as Image } from './components/Image/Image';
 export { default as Carousel } from './components/Carousel/Carousel';
 export { default as Experience } from './components/Experience/Experience';
 export { default as VisitorCounter } from './components/VisitorCounter/VisitorCounter';
+export { default as VisitorComment } from './components/VisitorComment/VisitorComment';
