@@ -562,7 +562,24 @@ export default App;
 | ```shape``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square | |
 | ```hover``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a> | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'. | none | |
 
+<details>
+<summary>More about Card's props</summary>
 
+  #### shape example
+ 
+  ```js
+  // 'square' | 'round-square' | 'round'
+  const shape = "square"
+  ```
+ 
+  #### hover example
+ 
+  ```js
+  // 'up' | 'down' | 'zoom'
+  const shape = "zoom"
+  ```
+ 
+</details>
 
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
