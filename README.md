@@ -451,7 +451,7 @@ import { Masonry, Image } from 'dev-portfolio';
 const App = () => {
   return (
     <Masonry 
-      id="Gallery Component"
+      id="Masonry Component"
       column={4}
       padding="2em 4em"
     >
@@ -503,6 +503,36 @@ export default App;
 | ```redirectURL``` | string | URL to redirect | / | |
 | ```noShowHead``` | boolean | Flag for whether to hide texts | false | |
 | ```zoomWhenHover``` | boolean | Flag for whether to zoom image when hovered on item | false | |
+
+### Item
+
+```js
+import { Item } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Item 
+      src="https://picsum.photos/600/600/?random"
+      title="This is title"
+      description="description"
+      redirectURL="/"
+      textRisingSpeed={300}
+      isTextRising={false}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```src``` | string | Image source url | https://picsum.photos/600/600/?random | |
+| ```title``` | string | Main Title Text | This is title | |
+| ```description``` | string | Description Text | description | |
+| ```redirectURL``` | string | URL to redirect | / | |
+| ```textRisingSpeed``` | number |  | 300 | |
+| ```isTextRising``` | boolean |  | false | |
 
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
