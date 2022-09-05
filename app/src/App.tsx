@@ -13,12 +13,14 @@ import {
   Image,
   Carousel,
   Experience,
+  VisitorCounter,
   VisitorComment,
 } from './lib/index';
 
 function App() {
   return (
     <div className="App">
+      <VisitorCounter size="30px" />
       <VisitorComment />
       <CardWrap id="카드에연">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
@@ -27,6 +29,7 @@ function App() {
         <Card width="20vw" height="20vw" shape="round-square" hover="zoom" redirectURL="/2">
           You can use this components anyware
         </Card>
+
         <Card width="20vw" height="20vw" shape="round" hover="up" redirectURL="/3">
           See official documentation for details
         </Card>
