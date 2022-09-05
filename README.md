@@ -419,7 +419,7 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```column``` | number | Number of items to be displayed at once | 3 |  |
+| ```column``` | number | Number of vertical lines | 3 |  |
 | ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal |  |
 | ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
 | ```padding``` | string | Gallery padding | 2em 10em | |
@@ -470,7 +470,7 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```column``` | number | Number of items to be displayed at once | 4 |  |
+| ```column``` | number | Number of vertical lines | 4 |  |
 | ```padding``` | string | Masonry padding | 2em 4em | |
 
 
