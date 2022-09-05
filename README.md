@@ -408,7 +408,7 @@ const App = () => {
       <YOUR_COMPONENT />
       <Item /> // Component of dev-portfolio
       ...
-    </Carousel>
+    </Gallery>
   );
 }
 
@@ -423,6 +423,24 @@ export default App;
 | ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
 | ```padding``` | string | Gallery padding | 2em 10em | |
 
+<details>
+<summary>More about Gallery's props</summary>
+  
+  #### gap example
+  
+  ```js
+  // 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower'
+  const gap = 'normal';
+  ```
+ 
+  #### theme example
+  
+  ```js
+  // 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate'
+  const theme = 'mid-night';
+  ```
+ 
+</details>
 
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
