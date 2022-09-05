@@ -376,14 +376,14 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | |
-| ```width``` | string | CSS for Width of Carousel Component | 100% | |
-| ```transition``` | number | Transition Speed for each Component | 1000ms | Unit : ms |
-| ```autoplaySpeed``` | number | Time to stay for each Component | 3000ms | Unit : ms |
-| ```slideToShow``` | number | Number of components to show at once | 1 |  |
-| ```isArrowShow``` | boolean | Let me know if you want to show the arrow icon | true | |
-| ```isAutoplay``` | boolean | Let me know if you want it to rotate automatically | false |
-| ```isAutoplayControl``` | boolean | Let me know if you want to show the AutoPlay icon | true |
-| ```arrowLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of Arrow icon | mid-side | |
+| ```width``` | string | Carousel width | 100% | |
+| ```transition``` | number | Transition animation speed | 1000ms | Unit : ms |
+| ```autoplaySpeed``` | number | Time to stay in a item | 3000ms | Unit : ms |
+| ```slideToShow``` | number | Number of item to show at once | 1 |  |
+| ```isArrowShow``` | boolean | Flag for whether to show buttons | true | |
+| ```isAutoplay``` | boolean | Flag for play carousel automatically | false |
+| ```isAutoplayControl``` | boolean | Flag for whether to show carousel player | true |
+| ```arrowPosition``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of arrow icon | mid-side | |
 | ```playerLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon  | bottom-mid | |
 | ```prevArrowIcon``` | ReactElement | Icon Component for moving into previous item | ```<FiChevronLeft />``` | |
 | ```nextArrowIcon``` | ReactElement | Icon Component for moving into next item | ```<FiChevronRight />``` | |
