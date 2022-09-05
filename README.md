@@ -414,9 +414,9 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```backgroundColor``` | string | CSS for Background Color of Contact Component |
-| ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```backgroundColor``` | string | CSS for Background Color of Contact Component | whitesmoke | |
+| ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc | See "More about Contact's Props" | |
 
 <details>
 <summary>More about Contact's props</summary>
