@@ -83,8 +83,8 @@ export default App;
 | props | type | description | default | note
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```headerHeight``` | string | CSS for Height of Header Component | 80px | |
-| ```headerWidth``` | string | CSS for Width of Header Component | 100% | |
+| ```headerHeight``` | string | Header Height | 80px | |
+| ```headerWidth``` | string | Header Width | 100% | |
 | ```headerBackgroundColor``` | string | CSS for Background color of Header Component | white | |
 | ```logoOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props | See "More about Header's Props" |  |
 | ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc | See "More about Header's Props" |  |
@@ -162,8 +162,8 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```textAlign``` | string | CSS for Text align of Intro Component | center | |
-| ```backgroundColor``` | string | CSS for Background color of Intro Component | whitesmoke | |
+| ```textAlign``` | string | Intro Text align | center | |
+| ```backgroundColor``` | string | Intro Background color | whitesmoke | |
 | ```introOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts#:~:text=export%20interface-,IntroOptionType,-extends%20IntroTitlePropsType%2C">IntroOptionType</a> | Intro-only props such as title, description, etc | See "More about Intro's Props" | |
 
 <details>
@@ -290,7 +290,7 @@ export default App;
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
 | ```title``` | string | Main title text of Experience Component | Experience | |
-| ```textAlign``` | string | CSS for Text align of Experience Component | left | |
+| ```textAlign``` | string | Experience Text align | left | |
 | ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic | |
 | ```verticalOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B">ExperienceVerticalOptionType</a> | Special settings can be added when the theme is 'vertical'. | See "More about Experience's Props" | |
 | ```historyList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. | See "More about Experience's Props" | |
@@ -375,7 +375,7 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar | |
+| ```id``` | string | Name to be added to Sidebar | | |
 | ```width``` | string | Carousel width | 100% | |
 | ```transition``` | number | Transition animation speed | 1000 | Unit : ms |
 | ```autoplaySpeed``` | number | Time to stay in a item | 3000 | Unit : ms |
@@ -389,6 +389,39 @@ export default App;
 | ```nextArrowIcon``` | ReactElement | Icon Component for moving into next item | ```<FiChevronRight />``` | |
 | ```startAutoplayIcon``` | ReactElement | Icon Component for starting autoplay | ```<TbPlayerPlay />``` | |
 | ```pauseAutoplayIcon``` | ReactElement | Icon Component for pause autoplay | ```<TbPlayerPause />``` | |
+
+
+### Gallery
+```js
+import { Gallery, Item } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Gallery 
+      id="Gallery Component"
+      column={3}
+      gap="normal" // 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower'
+      theme="mid-night" // 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate'
+      padding="2em 10em"
+    >
+      // Must insert components customized
+      <YOUR_COMPONENT />
+      <Item /> // Component of dev-portfolio
+      ...
+    </Carousel>
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```column``` | number | Number of items to be displayed at once | 3 |  |
+| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> |  | normal |  |
+| ```theme``` | string | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | mid-night |  |
+| ```padding``` | string | Gallery padding | 2em 10em |  |
 
 
 ### Contact
@@ -415,7 +448,7 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```backgroundColor``` | string | CSS for Background Color of Contact Component | whitesmoke | |
+| ```backgroundColor``` | string | Contact Background Color | whitesmoke | |
 | ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc | See "More about Contact's Props" | |
 
 <details>
