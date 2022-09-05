@@ -576,7 +576,7 @@ export default App;
  
   ```js
   // 'up' | 'down' | 'zoom'
-  const shape = "zoom"
+  const hover = "zoom"
   ```
  
 </details>
