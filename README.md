@@ -205,7 +205,7 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between 'TechStack's | normal | |
+| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | normal | |
 | ```techStackList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" | |
 
 <details>
@@ -419,7 +419,7 @@ export default App;
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
 | ```column``` | number | Number of items to be displayed at once | 3 |  |
-| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> |  | normal |  |
+| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal |  |
 | ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
 | ```padding``` | string | Gallery padding | 2em 10em | |
 
