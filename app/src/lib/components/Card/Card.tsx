@@ -2,6 +2,14 @@ import styled, { css } from 'styled-components';
 import { MAIN } from '../../common/theme';
 import { CardPropsType, CardStyledPropsType } from '../../common/types/ComponentTypes/CardType';
 
+/**
+ *
+ * @props width: Card width	(default: 10em)
+ * @props height: Card height	(default: 10em)
+ * @props redirectURL: URL to redirect (default: /)
+ * @props shape: You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'.	(default: square)
+ * @props hover: You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'.	(default: none)
+ */
 const Card = ({ children, width, height, shape, hover, redirectURL }: CardPropsType) => {
   return (
     <CardWrap width={width} height={height} shape={shape} hover={hover}>

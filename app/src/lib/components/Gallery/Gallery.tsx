@@ -5,6 +5,13 @@ import {
   GalleryItemWrapperStyledPropsType,
 } from '../../common/types/ComponentTypes/GalleryType';
 
+/**
+ * @props id: Name to be added to Sidebar
+ * @props column: Number of vertical lines (default: 3)
+ * @props gap: Spacing between items in Gallery	(default: normal)
+ * @props theme: You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'.	(default: mid-night)
+ * @props padding: Gallery padding	(default: 2em 10em)
+ */
 const Gallery = ({ id, children, column, gap, theme, padding }: GalleryPropsType) => {
   return (
     <Wrap id={id} padding={padding}>
