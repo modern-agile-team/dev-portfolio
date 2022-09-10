@@ -3,7 +3,6 @@ export interface ExperiencePropsType {
   historyList?: ExperienceHistoryListType[];
   title?: string;
   textAlign?: string;
-  background?: string;
   theme?: ExperienceThemeType;
   verticalOption?: ExperienceVerticalOptionType;
 }
@@ -33,7 +32,6 @@ type ExperienceShapeType = 'square' | 'round-square';
 
 export interface ExperienceStyledPropsType {
   textAlign?: string;
-  background?: string;
 }
 
 export interface ExperienceChildStyledPropsType {
