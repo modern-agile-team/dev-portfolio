@@ -22,6 +22,15 @@ const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
   }
 );
 
+/**
+ *
+ * @props src: Image source url	(default: {@link https://picsum.photos/600/600/?random "image"})
+ * @props title: Main Title Text (default: This is title )
+ * @props description: Description Text	(default: description)
+ * @props redirectURL: URL to redirect (default: /)
+ * @props textRisingSpeed: (default: 300)
+ * @props isTextRising: (default: false)
+ */
 const Item = ({ redirectURL, title, description, src, textRisingSpeed, isTextRising }: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [top, setTop] = useState(0);

@@ -5,6 +5,23 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ChildrenWrapper, Container, Player, Wrapper } from './style';
 import { CarouselPropsType } from '../../common/types/ComponentTypes/CarouselType';
 
+/**
+ * @props id: unique id of carousel
+ * @props children: carousel react component children
+ * @props width: carousel width (default: 100%)
+ * @props transition: transition animation speed (default: 1000) (unit: ms)
+ * @props autoplaySpeed: time to stay in a item (default: 3000) (unit: ms)
+ * @props slideToShow: number of item to show at once (default: 1)
+ * @props isArrowShow: flag for whether to show buttons (default: true)
+ * @props prevArrowIcon: previous arrow button icon (default: <FiChevronLeft />)
+ * @props nextArrowIcon: next arrow button icon (default: <FiChevronRight />)
+ * @props arrowLocation: position of arrows (default: 'mid-side')
+ * @props isAutoplay: flag for play carousel automatically (default: false)
+ * @props isAutoplayControl: flag for whether to show carousel player (default: true)
+ * @props startAutoplayIcon: start play carousel icon (default: <TbPlayerPlay />)
+ * @props pauseAutoplayIcon: pause carousel icon (default: <TbPlayerPause />)
+ * @props playerLocation: position of player (default: 'bottom-mid')
+ */
 const Carousel = ({
   id,
   children,
@@ -84,7 +101,7 @@ const Carousel = ({
   );
 };
 
-export default React.memo(Carousel);
+export default Carousel;
 
 Carousel.defaultProps = {
   transition: 1000,

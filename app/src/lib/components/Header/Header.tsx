@@ -5,6 +5,16 @@ import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/Compo
 import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 
+/**
+ *
+ * @props id: Name to be added to Sidebar
+ * @props logoOption: Logo & Header_Title only props (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts "See More about Header's Props"})
+ * @props channels: Channel-only props such as Github and LinkedIn, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts "See More about Header's Props"})
+ * @props sideBarOption: Sidebar-only props such as Sidebar's Icon, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1 "See More about Header's Props"})
+ * @props headerHeight: Header Height (default: 80px)
+ * @props headerWidth: Header Width (default: 100%)
+ * @props headerBackgroundColor: CSS for Background color of Header Component (default: white)
+ */
 const Header = ({
   id,
   logoOption = logoOptionDefault,

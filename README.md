@@ -83,12 +83,12 @@ export default App;
 | props | type | description | default | note
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
-| ```headerHeight``` | string | CSS for Height of Header Component | 80px | |
-| ```headerWidth``` | string | CSS for Width of Header Component | 100% | |
+| ```headerHeight``` | string | Header Height | 80px | |
+| ```headerWidth``` | string | Header Width | 100% | |
 | ```headerBackgroundColor``` | string | CSS for Background color of Header Component | white | |
-| ```logoOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props | <a href="#logooption-example">logoOption example</a> | See "More about Header's Props" |
-| ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc | <a href="#channels-example">channels example</a> | See "More about Header's Props" |
-| ```sideBarOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a> | Sidebar-only props such as Sidebar's Icon, etc | <a href="#sidebaroption-example">sideBarOption example</a> | See "More about Header's Props" |
+| ```logoOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props | See "More about Header's Props" |  |
+| ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc | See "More about Header's Props" |  |
+| ```sideBarOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a> | Sidebar-only props such as Sidebar's Icon, etc | See "More about Header's Props" |  |
 
 <details>
 <summary>More about Header's props</summary>
@@ -161,10 +161,10 @@ export default App;
 ```
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```textAlign``` | string | CSS for Text align of Intro Component |
-| ```backgroundColor``` | string | CSS for Background color of Intro Component |
-| ```introOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts#:~:text=export%20interface-,IntroOptionType,-extends%20IntroTitlePropsType%2C">IntroOptionType</a> | Intro-only props such as title, description, etc |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```textAlign``` | string | Intro Text align | center | |
+| ```backgroundColor``` | string | Intro Background color | whitesmoke | |
+| ```introOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts#:~:text=export%20interface-,IntroOptionType,-extends%20IntroTitlePropsType%2C">IntroOptionType</a> | Intro-only props such as title, description, etc | See "More about Intro's Props" | |
 
 <details>
 <summary>More about Intro's props</summary>
@@ -204,9 +204,9 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between 'TechStack's |
-| ```techStackList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | normal | |
+| ```techStackList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" | |
 
 <details>
 <summary>More about TechStackList's props</summary>
@@ -255,7 +255,7 @@ export default App;
 
   ```js
   // 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
-  const gap = 'narrow';
+  const gap = 'normal';
   ```
  
 </details>
@@ -288,12 +288,12 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```title``` | string | Main title text of Experience Component |
-| ```textAlign``` | string | CSS for Text align of Experience Component |
-| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. |
-| ```verticalOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B">ExperienceVerticalOptionType</a> | Special settings can be added when the theme is 'vertical'. |
-| ```historyList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```title``` | string | Main title text of Experience Component | Experience | |
+| ```textAlign``` | string | Experience Text align | left | |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic | |
+| ```verticalOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B">ExperienceVerticalOptionType</a> | Special settings can be added when the theme is 'vertical'. | See "More about Experience's Props" | |
+| ```historyList``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. | See "More about Experience's Props" | |
 
 <details>
 <summary>More about Experience's props</summary>
@@ -375,21 +375,211 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar | |
-| ```width``` | string | CSS for Width of Carousel Component | 100% | |
-| ```transition``` | number | Transition Speed for each Component | 1000ms | Unit : ms |
-| ```autoplaySpeed``` | number | Time to stay for each Component | 3000ms | Unit : ms |
-| ```slideToShow``` | number | Number of components to show at once | 1 |  |
-| ```isArrowShow``` | boolean | Let me know if you want to show the arrow icon | true | |
-| ```isAutoplay``` | boolean | Let me know if you want it to rotate automatically | false |
-| ```isAutoplayControl``` | boolean | Let me know if you want to show the AutoPlay icon | true |
-| ```arrowLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of Arrow icon | mid-side | |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```width``` | string | Carousel width | 100% | |
+| ```transition``` | number | Transition animation speed | 1000 | Unit : ms |
+| ```autoplaySpeed``` | number | Time to stay in a item | 3000 | Unit : ms |
+| ```slideToShow``` | number | Number of item to show at once | 1 |  |
+| ```isArrowShow``` | boolean | Flag for whether to show buttons | true | |
+| ```isAutoplay``` | boolean | Flag for play carousel automatically | false |
+| ```isAutoplayControl``` | boolean | Flag for whether to show carousel player | true |
+| ```arrowPosition``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of arrow icon | mid-side | |
 | ```playerLocation``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon  | bottom-mid | |
 | ```prevArrowIcon``` | ReactElement | Icon Component for moving into previous item | ```<FiChevronLeft />``` | |
 | ```nextArrowIcon``` | ReactElement | Icon Component for moving into next item | ```<FiChevronRight />``` | |
 | ```startAutoplayIcon``` | ReactElement | Icon Component for starting autoplay | ```<TbPlayerPlay />``` | |
 | ```pauseAutoplayIcon``` | ReactElement | Icon Component for pause autoplay | ```<TbPlayerPause />``` | |
 
+
+### Gallery
+
+```js
+import { Gallery, Item } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Gallery 
+      id="Gallery Component"
+      column={3}
+      gap="normal" // 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower'
+      theme="mid-night" // 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate'
+      padding="2em 10em"
+    >
+      // Must insert components customized
+      <YOUR_COMPONENT />
+      <Item /> // Component of dev-portfolio
+      ...
+    </Gallery>
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```column``` | number | Number of vertical lines | 3 |  |
+| ```gap``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal |  |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
+| ```padding``` | string | Gallery padding | 2em 10em | |
+
+<details>
+<summary>More about Gallery's props</summary>
+  
+  #### gap example
+  
+  ```js
+  // 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower'
+  const gap = 'normal';
+  ```
+ 
+  #### theme example
+  
+  ```js
+  // 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate'
+  const theme = 'mid-night';
+  ```
+ 
+</details>
+
+### Masonry
+
+```js
+import { Masonry, Image } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Masonry 
+      id="Masonry Component"
+      column={4}
+      padding="2em 4em"
+    >
+      // Must insert components customized
+      <YOUR_COMPONENT />
+      <Image src="anything.png" redirectURL="/" /> // Component of dev-portfolio
+      <Image src="https://picsum.photos/900/1100/?random" redirectURL="/" /> // Component of dev-portfolio
+      ...
+    </Masonry>
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```column``` | number | Number of vertical lines | 4 |  |
+| ```padding``` | string | Masonry padding | 2em 4em | |
+
+
+### Image
+
+```js
+import { Image } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Image 
+      src="https://picsum.photos/500/600/?random"
+      head="Write your head"
+      subhead="Write your subhead"
+      redirectURL="/"
+      noShowHead={false}
+      zoomWhenHover={false}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```src``` | string | Image source url |  | |
+| ```head``` | string | Main Title Text | Write your head | |
+| ```subhead``` | string | Sub Title Text | Write your subhead | |
+| ```redirectURL``` | string | URL to redirect | / | |
+| ```noShowHead``` | boolean | Flag for whether to hide texts | false | |
+| ```zoomWhenHover``` | boolean | Flag for whether to zoom image when hovered on item | false | |
+
+### Item
+
+```js
+import { Item } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Item 
+      src="https://picsum.photos/600/600/?random"
+      title="This is title"
+      description="description"
+      redirectURL="/"
+      textRisingSpeed={300}
+      isTextRising={false}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```src``` | string | Image source url | https://picsum.photos/600/600/?random | |
+| ```title``` | string | Main Title Text | This is title | |
+| ```description``` | string | Description Text | description | |
+| ```redirectURL``` | string | URL to redirect | / | |
+| ```textRisingSpeed``` | number |  | 300 | |
+| ```isTextRising``` | boolean |  | false | |
+
+### Card
+
+```js
+import { Card } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Card 
+      width="10em"
+      height="10em"
+      redirectURL="/"
+      shape="square" // 'square' | 'round-square' | 'round'
+      hover="none" // 'up' | 'down' | 'zoom'
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```width``` | string | Card width | 10em | |
+| ```height``` | string | Card height | 10em | |
+| ```redirectURL``` | string | URL to redirect | / | |
+| ```shape``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square | |
+| ```hover``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a> | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'. | none | |
+
+<details>
+<summary>More about Card's props</summary>
+
+  #### shape example
+ 
+  ```js
+  // 'square' | 'round-square' | 'round'
+  const shape = "square"
+  ```
+ 
+  #### hover example
+ 
+  ```js
+  // 'up' | 'down' | 'zoom'
+  const hover = "zoom"
+  ```
+ 
+</details>
 
 ### Contact
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
@@ -414,9 +604,9 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```id``` | string | Name to be added to Sidebar |
-| ```backgroundColor``` | string | CSS for Background Color of Contact Component |
-| ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```backgroundColor``` | string | Contact Background Color | whitesmoke | |
+| ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc | See "More about Contact's Props" | |
 
 <details>
 <summary>More about Contact's props</summary>
