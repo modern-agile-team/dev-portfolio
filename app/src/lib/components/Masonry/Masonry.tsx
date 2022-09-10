@@ -2,6 +2,12 @@ import { Children } from 'react';
 import styled from 'styled-components';
 import { MasonryPropsType, MasonryStyledPropsType } from '../../common/types/ComponentTypes/MasonryType';
 
+/**
+ *
+ * @props id: Name to be added to Sidebar
+ * @props column: Number of vertical lines (default: 4)
+ * @props padding: Masonry padding (default: 2em 4em)
+ */
 const Masonry = ({ id, children, padding, column }: MasonryPropsType) => {
   const count = Children.count(children);
 
