@@ -2,6 +2,15 @@ import styled from 'styled-components';
 import { MAIN } from '../../common/theme';
 import { ImagePropsType, ImageItemsStyledPropsType } from '../../common/types/ComponentTypes/ImageType';
 
+/**
+ *
+ * @props src: Image source url
+ * @props head: Main Title Text	(default: Write your head)
+ * @props subhead: Sub Title Text	(default: Write your subhead)
+ * @props redirectURL: URL to redirect	(default: /)
+ * @props noShowHead: Flag for whether to hide texts (default: false)
+ * @props zoomWhenHover: Flag for whether to zoom image when hovered on item (default: false)
+ */
 const Image = ({ src, subhead, head, redirectURL, noShowHead, zoomWhenHover }: ImagePropsType) => {
   return (
     <Wrap>
