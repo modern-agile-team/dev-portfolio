@@ -16,10 +16,6 @@ export interface ExperiencePropsType {
    */
   textAlign?: string;
   /**
-   * background: 서현아 이건 너가 넣어줘라 뭔지 몰겠어
-   */
-  background?: string;
-  /**
    * You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
    */
   theme?: ExperienceThemeType;
@@ -78,10 +74,6 @@ export interface ExperienceStyledPropsType {
    * Experience Text align (default: left)
    */
   textAlign?: string;
-  /**
-   * 서현아 이건 너가 넣어줘라 뭔지 몰겠어
-   */
-  background?: string;
 }
 
 export interface ExperienceChildStyledPropsType {

@@ -75,7 +75,7 @@ const Container = styled.div<HeaderStyledPropsType>`
   width: ${({ headerWidth }) => headerWidth ?? '100%'};
   margin: '0px';
   padding: '0px';
-  background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'white'};
+  background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'whitesmoke'};
 `;
 
 const logoOptionDefault = {
@@ -92,8 +92,34 @@ const logoOptionDefault = {
 };
 
 const channelsDefault: ChannelType[] = [
-  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
-  { name: 'linkedin', redirectUrl: 'https://', color: '#1877F2BB', size: '24px' },
+  {
+    name: 'github',
+    redirectUrl: 'https://',
+    color: '#181717BB',
+    size: '18px',
+    margin: '0px 12px 0px 0px',
+  },
+  {
+    name: 'naver',
+    redirectUrl: 'https://',
+    color: '#47A141BB',
+    size: '18px',
+    margin: '0px 12px 0px 0px',
+  },
+  {
+    name: 'facebook',
+    redirectUrl: 'https://',
+    color: '#1877F2BB',
+    size: '18px',
+    margin: '0px 12px 0px 0px',
+  },
+  {
+    name: 'youtube',
+    redirectUrl: 'https://',
+    color: '#FF0000BB',
+    size: '18px',
+    margin: '0px 12px 0px 0px',
+  },
 ];
 
 const sideBarOptionDefault: SideBarOptionPropsType = {

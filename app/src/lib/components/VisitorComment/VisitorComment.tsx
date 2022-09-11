@@ -61,7 +61,13 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         userInputLineColor={userInputLineColor}
       />
       {isOverflow && (
-        <ProgressBar rate={`${rate}%`} height="3px" colorFrom={progressbarColor} colorTo={progressbarColor} />
+        <ProgressBar
+          isHiddenRateText={false}
+          rate={`${rate}%`}
+          height="3px"
+          colorFrom={progressbarColor}
+          colorTo={progressbarColor}
+        />
       )}
       <ChildWrap ref={ref} onScroll={scrollHandler} theme={theme}>
         {commentList?.map((elements, idx) => (
@@ -80,13 +86,33 @@ VisitorComment.defaultProps = {
   isShowScrollDownIcon: true,
   commentList: [
     {
-      des: '데프포폴 기가맥힌데요?',
+      des: 'By looking at your portfolio, visitors can leave a guest book.',
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
     {
-      des: `어우 qa가 계속나오네`,
+      des: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
+      nickname: 'woorim960',
+      date: '2022-08-26',
+    },
+    {
+      des: 'Users can delete it after creating it.',
+      nickname: 'soonki-98',
+      date: '2022-08-26',
+    },
+    {
+      des: `Refer to dev-portfolio README.md for instructions on building a personal server.`,
+      nickname: 'jisu3817',
+      date: '2022-08-26',
+    },
+    {
+      des: `Likewise, there are three themes for guest book design, and progress bar customization is also possible when creating a scroll.`,
       nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
+    {
+      des: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+      nickname: 'woorim960',
       date: '2022-08-26',
     },
   ],
