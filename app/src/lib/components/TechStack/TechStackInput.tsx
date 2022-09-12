@@ -24,7 +24,7 @@ const TechStackInput = () => {
   };
 
   return (
-    <Container id="TechStackInput">
+    <Container>
       <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
       {isFocus && (
         <>
