@@ -57,12 +57,33 @@ export interface VisitorCommentPropsType {
    * Color of scroll down icon (default: black)
    */
   scrollDownIconColor?: string;
+  /**
+   * Event handler function creates comment
+   */
   handleCreateComment?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * Event handler function changes comment description
+   */
   handleChangeDescription?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Event handler function changes nickname
+   */
   handleChangeNickname?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Event handler function changes password
+   */
   handleChangePassword?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Actual value of comment description
+   */
   comment?: string;
+  /**
+   * Actual value of nickname
+   */
   nickname?: string;
+  /**
+   * Actual value of password
+   */
   password?: string;
 }
 
