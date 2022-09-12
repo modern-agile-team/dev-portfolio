@@ -81,7 +81,7 @@ const contactOptionDefault = {
   aboutMeInfos: [
     {
       title: 'Where I live',
-      description: 'Gangdong-gu, Seoul, Republic of Korea',
+      description: 'Seoul, Republic of Korea',
     },
     {
       title: 'Give me a call',

@@ -5,16 +5,6 @@ import {
   SideBarItemsStyledPropsType,
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarItemsType';
 
-const ItemContainer = styled.div`
-  color: ${({ color }) => color ?? 'black'};
-  text-decoration: none;
-`;
-
-const Item = styled.div<SideBarItemsStyledPropsType>`
-  cursor: pointer;
-  margin: ${({ margin }) => margin ?? '10px 0px'};
-`;
-
 const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPropsType) => {
   return (
     <>
@@ -34,3 +24,13 @@ const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPro
 };
 
 export default SideBarItems;
+
+const ItemContainer = styled.div`
+  color: ${({ color }) => color ?? 'black'};
+  text-decoration: none;
+`;
+
+const Item = styled.div<SideBarItemsStyledPropsType>`
+  cursor: pointer;
+  margin: ${({ margin }) => margin ?? '10px 0px'};
+`;

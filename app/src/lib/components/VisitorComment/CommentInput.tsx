@@ -55,7 +55,7 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
   background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
   border-radius: ${({ theme }) => (theme === 'box' ? '5px' : 'none')};
   border: ${({ inputBackgroundColor }) => inputBackgroundColor ?? '0.2px solid #b4b4b4a2'};
-  box-shadow: ${({ theme }) => (theme === 'box' ? '0px 1px 3px 1px rgba(0, 0, 0, 0.14)' : 'none')};
+  box-shadow: ${({ theme }) => (theme === 'box' ? '0px 0px 5px 0px rgba(83, 83, 83, 0.14)' : 'none')};
   textarea {
     background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
     outline: none;
@@ -71,7 +71,6 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
       opacity: 0;
     }
     @media screen and (max-width: 768px) {
-      font-size: 1vw;
       height: 30px;
     }
     @media screen and (max-width: 500px) {
@@ -92,7 +91,6 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
     }
     @media screen and (max-width: 768px) {
       height: 15px;
-      font-size: 1vw;
       width: 10vw;
     }
     @media screen and (max-width: 500px) {
@@ -100,7 +98,7 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
     }
   }
   @media screen and (max-width: 768px) {
-    padding: 1em;
+    padding: 10px 2em;
   }
 `;
 
@@ -115,6 +113,7 @@ const UserInfo = styled.div`
     width: 100%;
     input {
       width: 20%;
+      font-size: 12px;
     }
   }
 `;
@@ -129,10 +128,10 @@ const SubmitBtn = styled.div<VisitorCommentStyledPropsType>`
     cursor: pointer;
   }
   @media screen and (max-width: 760px) {
-    font-size: 1vw;
     border: none;
     margin: 0;
-    margin-right: 4em;
+    text-align: right;
+    padding-right: 5px;
   }
 `;
 

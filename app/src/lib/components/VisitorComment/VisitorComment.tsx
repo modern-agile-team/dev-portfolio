@@ -101,7 +101,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
 export default VisitorComment;
 
 VisitorComment.defaultProps = {
-  theme: 'basic',
+  theme: 'vertical',
   progressbarColor: '#5f5f5f',
   isShowScrollDownIcon: true,
   commentList: [
@@ -153,7 +153,6 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
     bottom: 1.7em;
     left: 49.5%;
     color: ${({ scrollDownIconColor }) => scrollDownIconColor ?? 'black'};
-    font-size: 1.1vw;
   }
 `;
 
@@ -171,4 +170,5 @@ const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
   border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a0' : 'none')};
   flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
+  justify-content: ${({ theme }) => (theme === 'vertical' ? 'space-around' : 'none')};
 `;
