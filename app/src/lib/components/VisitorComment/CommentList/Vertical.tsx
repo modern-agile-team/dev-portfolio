@@ -21,11 +21,11 @@ Vertical.defaultProps = {
 };
 
 const Wrap = styled.div`
-  width: 20em;
+  width: 20vw;
   min-height: 10em;
   max-height: 50%;
   padding: 1em 2em;
-  margin: 1em auto;
+  margin: 1em 0;
   display: flex;
   flex-direction: column;
   border: 1px solid #b4b4b4a2;
@@ -48,15 +48,7 @@ const Wrap = styled.div`
     font-size: 14px;
     color: #959595;
   }
-  @media screen and (max-width: 768px) {
-    font-size: 1vw;
-    width: 40%;
-    margin: 3em auto;
-    .nickname {
-      font-size: 1vw;
-    }
-    .date {
-      font-size: 1vw;
-    }
+  @media screen and (max-width: 550px) {
+    width: 50vw;
   }
 `;
