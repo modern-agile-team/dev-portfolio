@@ -1,5 +1,5 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v0.3.*-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v0.4.*-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 
 An open source component library for React that helps you develop your web portfolio easily and quickly.
@@ -53,6 +53,8 @@ export default App;
   * <a href="#item">Item</a>
   * <a href="#card">Card</a>
   * <a href="#contact">Contact</a>
+  * <a href="#visitorcounter">VisitorCounter</a>
+  * <a href="#visitorcomment">VisitorComment</a>
   
 ### Header
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 11 39" src="https://user-images.githubusercontent.com/56839474/185726799-61f5301d-2bc5-40fe-acb3-49cce7ccd80e.png">
@@ -664,6 +666,94 @@ export default App;
     ],
   };  
   ```
+</details>
+
+### VisitorCounter
+
+```js
+import { VisitorCounter } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <VisitorCounter 
+      // title="hits"
+      theme="big-size" // 'default' | 'big-size' | 'simple'
+      todayVisitor={0} // Your fetched variable
+      totalVisitor={123} // Your fetched variable
+      todayTitle="today"
+      totalTitle="total"
+      backgroundColor="#91c230c4"
+      size="14" // unit: px
+      todayBoldColor="red"
+      totalBoldColor="red"
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
+| ```theme``` | string | Visitor Counter theme 'default' | 'big-size' | 'simple' | big-size | |
+| ```todayVisitor``` | number | Number of today's visitors | 0 | |
+| ```totalVisitor``` | number | Title of today's visit count used in 'big-size' and 'simple' | 123 | |
+| ```todayTitle``` | string | Title of totla visit count used in 'big-size' and 'simple' | today | |
+| ```totalTitle``` | string | Background color of todayTitle | total | |
+| ```backgroundColor``` | string | #91c230c4 |  | |
+| ```size``` | string | Font size of all text used in VisitorCounter Component | 14 | unit: px |
+| ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
+| ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
+
+<details>
+<summary>More about VisitorCounter's props</summary>
+
+  #### theme example
+ 
+  ```js
+  // 'default' | 'big-size' | 'simple'
+  const theme = "simple";
+  ```
+ 
+</details>
+
+### VisitorComment
+
+```js
+import { VisitorComment } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <VisitorComment 
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```width``` | string | Card width | 10em | |
+
+<details>
+<summary>More about VisitorComment's props</summary>
+
+  #### shape example
+ 
+  ```js
+  // 'square' | 'round-square' | 'round'
+  const shape = "square"
+  ```
+ 
+  #### hover example
+ 
+  ```js
+  // 'up' | 'down' | 'zoom'
+  const hover = "zoom"
+  ```
+ 
 </details>
 
 # Example
