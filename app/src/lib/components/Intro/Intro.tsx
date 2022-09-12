@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import { IntroPropsType, IntroOptionType } from '../../common/types/ComponentTypes/IntroType';
 import { IntroTitle, IntroForm } from './index';
 
+/**
+ *
+ * @props id:	Name to be added to Sidebar
+ * @props textAlign: Intro Text align	center (default: center)
+ * @props backgroundColor: Intro Background color	whitesmoke (default: whitesmoke)
+ * @props introOption: Intro-only props (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts "See More about Intro's Props"}) @introOption title: Core of your introduction, @introOption description: Introduce yourself, @introOption shortIntro: a brief introduction
+ */
 const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: IntroPropsType) => {
   const { title, shortIntro, description } = introOption;
 

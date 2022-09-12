@@ -22,7 +22,16 @@ const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
   }
 );
 
-const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isTextRising }: ItemPropsType) => {
+/**
+ *
+ * @props src: Image source url	(default: {@link https://picsum.photos/600/600/?random "image"})
+ * @props title: Main Title Text (default: This is title )
+ * @props description: Description Text	(default: description)
+ * @props redirectURL: URL to redirect (default: /)
+ * @props textRisingSpeed: (default: 300)
+ * @props isTextRising: (default: false)
+ */
+const Item = ({ redirectURL, title, description, src, textRisingSpeed, isTextRising }: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [top, setTop] = useState(0);
   const textRef = useRef<HTMLDivElement>(null);
@@ -57,7 +66,7 @@ const Item = ({ redirectURL, title, description, imgURL, textRisingSpeed, isText
   return (
     <StyledItem ref={itemRef} className="gallery-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <a href={redirectURL}>
-        <img src={imgURL} alt={title} />
+        <img src={src} alt={title} />
         {isHover && (
           <Description
             ref={textRef}
@@ -76,7 +85,7 @@ export default Item;
 
 Item.defaultProps = {
   isTextRising: false,
-  redirectURL: '',
+  redirectURL: '/',
   title: 'This is title',
   description: 'description',
   imgURL: 'https://picsum.photos/500/300/?random',

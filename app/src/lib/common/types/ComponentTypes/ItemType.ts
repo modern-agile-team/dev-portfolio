@@ -1,6 +1,6 @@
 export interface ItemPropsType extends Description, TextRisingSpeed {
   redirectURL?: string;
-  imgURL?: string;
+  src?: string;
   isTextRising?: boolean;
 }
 
