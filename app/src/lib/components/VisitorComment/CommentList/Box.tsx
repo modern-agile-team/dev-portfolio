@@ -42,16 +42,14 @@ const Wrap = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    font-size: 1vw;
     flex-direction: column;
     align-items: flex-start;
-    padding: 4em 5em;
+    padding: 1em;
     .info {
       width: 100%;
-      font-size: 1vw;
       flex-direction: row-reverse;
       justify-content: flex-start;
-      padding: 0;
+      padding: 10px 0;
     }
   }
 `;
