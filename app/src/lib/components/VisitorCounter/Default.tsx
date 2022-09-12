@@ -34,9 +34,8 @@ const Counter = styled.div<VisitorCounterStylePropsType>`
   padding: 5px 0px;
   border: 1px solid #989898;
   border-radius: 5px;
+  overflow: hidden;
   .title {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
     background-color: ${({ backgroundColor }) => backgroundColor ?? '#91c230c4'};
   }
   .today {
