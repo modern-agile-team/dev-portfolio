@@ -121,8 +121,23 @@ VisitorComment.defaultProps = {
   isShowScrollDownIcon: true,
   commentList: [
     {
-      description: 'By looking at your portfolio, visitors can leave a guest book.',
+      description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+      nickname: 'woorim960',
+      date: '2022-08-26',
+    },
+    {
+      description: `Progress bar customization is also possible when creating a scroll.`,
       nickname: 'seohyunsim',
+      date: '2022-08-26',
+    },
+    {
+      description: `Likewise, there are three types of themes: basic, box, and vertical.`,
+      nickname: 'jisu3817',
+      date: '2022-08-26',
+    },
+    {
+      description: 'Refer to dev-portfolio README.md for instructions on building a personal server.',
+      nickname: 'soonki-98',
       date: '2022-08-26',
     },
     {
@@ -131,23 +146,8 @@ VisitorComment.defaultProps = {
       date: '2022-08-26',
     },
     {
-      description: 'Users can delete it after creating it.',
-      nickname: 'soonki-98',
-      date: '2022-08-26',
-    },
-    {
-      description: `Refer to dev-portfolio README.md for instructions on building a personal server.`,
-      nickname: 'jisu3817',
-      date: '2022-08-26',
-    },
-    {
-      description: `Likewise, there are three themes for guest book descriptionign, and progress bar customization is also possible when creating a scroll.`,
+      description: 'By looking at your portfolio, visitors can leave a guest book.',
       nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
-      nickname: 'woorim960',
       date: '2022-08-26',
     },
   ],
@@ -183,7 +183,7 @@ const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
   display: flex;
   white-space: pre-wrap;
   border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a0' : 'none')};
-  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
+  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column-reverse')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
   justify-content: ${({ theme }) => (theme === 'vertical' ? 'space-around' : 'none')};
 `;
