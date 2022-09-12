@@ -523,6 +523,8 @@ export default App;
 
 ### Item
 
+<img width="433" alt="스크린샷 2022-09-13 오전 2 09 39" src="https://user-images.githubusercontent.com/56839474/189715382-e78c2ece-27f9-4db3-996a-b76f1934837b.png">
+
 ```js
 import { Item } from 'dev-portfolio';
 
@@ -553,7 +555,7 @@ export default App;
 
 ### Card
 
-<img width="433" alt="스크린샷 2022-09-13 오전 2 09 39" src="https://user-images.githubusercontent.com/56839474/189715382-e78c2ece-27f9-4db3-996a-b76f1934837b.png">
+<img width="1716" alt="스크린샷 2022-09-13 오전 2 09 54" src="https://user-images.githubusercontent.com/56839474/189715442-c5e8b36c-b602-46e3-89f8-5c30836a60fc.png">
 
 ```js
 import { Card } from 'dev-portfolio';
@@ -686,7 +688,7 @@ export default App;
 
 ### VisitorCounter
 
-<img width="1716" alt="스크린샷 2022-09-13 오전 2 09 54" src="https://user-images.githubusercontent.com/56839474/189715442-c5e8b36c-b602-46e3-89f8-5c30836a60fc.png">
+<img width="1711" alt="스크린샷 2022-09-13 오전 2 10 16" src="https://user-images.githubusercontent.com/56839474/189715478-9ca0be05-3941-4119-84fe-ba1a6b3b22d1.png">
 
 ```js
 import { VisitorCounter } from 'dev-portfolio';
@@ -738,7 +740,7 @@ export default App;
 
 ### VisitorComment
 
-<img width="1711" alt="스크린샷 2022-09-13 오전 2 10 16" src="https://user-images.githubusercontent.com/56839474/189715478-9ca0be05-3941-4119-84fe-ba1a6b3b22d1.png">
+
 
 ```js
 import { VisitorComment } from 'dev-portfolio';
