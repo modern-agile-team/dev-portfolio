@@ -9,7 +9,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
   const {
     theme,
     buttonColor,
-    desPlaceholder,
+    descriptionPlaceholder,
     nicknamePlaceholder,
     passwordPlaceholder,
     inputBackgroundColor,
@@ -39,7 +39,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
         onKeyDown={onKeyDown}
         onChange={handleChangeDescription}
         className="des"
-        placeholder={desPlaceholder}
+        placeholder={descriptionPlaceholder}
         value={comment}
       />
       <InfoWrap>
@@ -70,7 +70,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 export default CommentInput;
 
 CommentInput.defaultProps = {
-  desPlaceholder: 'write your description...',
+  descriptionPlaceholder: 'write your description...',
   nicknamePlaceholder: 'ID',
   passwordPlaceholder: 'PW',
 };

@@ -28,7 +28,7 @@ export interface VisitorCommentPropsType {
   /**
    * Placeholder of description area (default: 'write your description...')
    */
-  desPlaceholder?: string;
+  descriptionPlaceholder?: string;
   /**
    * Placeholder of nickname area (default: 'ID')
    */
@@ -70,7 +70,7 @@ export interface VisitorCommentListType {
   /**
    * Description of your comment
    */
-  des?: string;
+  description?: string;
   /**
    * Nickname to display
    */
@@ -89,7 +89,7 @@ export interface CommentInputPropsType {
   /**
    * Placeholder of description area (default: 'write your description...')
    */
-  desPlaceholder?: string;
+  descriptionPlaceholder?: string;
   /**
    * Placeholder of nickname area (default: 'ID')
    */

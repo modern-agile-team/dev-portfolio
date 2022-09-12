@@ -29,6 +29,7 @@ import { HiChevronDoubleDown } from 'react-icons/hi';
  * @commentInputProps nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
  * @commentInputProps passwordPlaceholder: Placeholder of password area (default: 'PW')
  */
+
 const VisitorComment = (props: VisitorCommentPropsType) => {
   const {
     id,
@@ -36,7 +37,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     theme,
     backgroundColor,
     buttonColor,
-    desPlaceholder,
+    descriptionPlaceholder,
     nicknamePlaceholder,
     passwordPlaceholder,
     inputBackgroundColor,
@@ -81,7 +82,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
       <CommentInput
         theme={theme}
         buttonColor={buttonColor}
-        desPlaceholder={desPlaceholder}
+        descriptionPlaceholder={descriptionPlaceholder}
         nicknamePlaceholder={nicknamePlaceholder}
         passwordPlaceholder={passwordPlaceholder}
         inputBackgroundColor={inputBackgroundColor}
@@ -120,32 +121,32 @@ VisitorComment.defaultProps = {
   isShowScrollDownIcon: true,
   commentList: [
     {
-      des: 'By looking at your portfolio, visitors can leave a guest book.',
+      description: 'By looking at your portfolio, visitors can leave a guest book.',
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
     {
-      des: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
+      description: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
       nickname: 'woorim960',
       date: '2022-08-26',
     },
     {
-      des: 'Users can delete it after creating it.',
+      description: 'Users can delete it after creating it.',
       nickname: 'soonki-98',
       date: '2022-08-26',
     },
     {
-      des: `Refer to dev-portfolio README.md for instructions on building a personal server.`,
+      description: `Refer to dev-portfolio README.md for instructions on building a personal server.`,
       nickname: 'jisu3817',
       date: '2022-08-26',
     },
     {
-      des: `Likewise, there are three themes for guest book design, and progress bar customization is also possible when creating a scroll.`,
+      description: `Likewise, there are three themes for guest book descriptionign, and progress bar customization is also possible when creating a scroll.`,
       nickname: 'seohyunsim',
       date: '2022-08-26',
     },
     {
-      des: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+      description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
       nickname: 'woorim960',
       date: '2022-08-26',
     },
