@@ -115,7 +115,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
 export default VisitorComment;
 
 VisitorComment.defaultProps = {
-  theme: 'vertical',
+  theme: 'basic',
   progressbarColor: '#5f5f5f',
   isShowScrollDownIcon: true,
   commentList: [

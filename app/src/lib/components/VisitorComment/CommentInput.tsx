@@ -59,7 +59,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
             value={password}
           />
         </UserInfo>
-        <SubmitBtn buttonColor={buttonColor} onClick={handleCreateComment}>
+        <SubmitBtn inputBackgroundColor={inputBackgroundColor} buttonColor={buttonColor} onClick={handleCreateComment}>
           <span>send</span>
         </SubmitBtn>
       </InfoWrap>
@@ -145,6 +145,8 @@ const UserInfo = styled.div`
 `;
 
 const SubmitBtn = styled.button<VisitorCommentStyledPropsType>`
+  border: none;
+  background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
   flex-grow: 1;
   text-align: center;
   padding: 2vw 0;
