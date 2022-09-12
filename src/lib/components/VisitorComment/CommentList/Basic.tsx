@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { VisitorCommentListType } from '../../../common/types/ComponentTypes/VisitorCommentType';
 
-const Box = (props: VisitorCommentListType) => {
-  const { description, nickname, date } = props;
+const Basic = (props: VisitorCommentListType) => {
+  const { des, nickname, date } = props;
 
   return (
     <Wrap>
-      <span className="des">{description}</span>
+      <span className="des">{des}</span>
       <div className="info">
         <span className="nickname">{nickname}</span>
         <span className="date">{date}</span>
@@ -14,16 +14,15 @@ const Box = (props: VisitorCommentListType) => {
     </Wrap>
   );
 };
-export default Box;
+export default Basic;
 
 const Wrap = styled.div`
-  margin: 15px 5px;
-  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.14);
-  background-color: white;
-  border-radius: 5px;
   display: flex;
   align-items: center;
+  border-bottom: 0.2px solid #b4b4b4a2;
+  background-color: white;
   padding: 1em 5em;
+  height: 80px;
   .des {
     flex-grow: 2;
     max-width: 50em;
