@@ -3,7 +3,8 @@ import { MainTypes } from './types/main';
 
 export const MAIN: MainTypes = {
   MAIN_COLOR: '#434521',
-}
+  MAIN_COLOR_TRANSPARENT: '#43452155',
+};
 
 export const GAPS: GapTypes = {
   NARROWER: '10px',

@@ -5,6 +5,7 @@ import {
   TechStackInputContainerStyledPropsType,
   TechStackInputStyledPropsType,
 } from '../../common/types/ComponentTypes/TechStack/TechStackInputType';
+import { MAIN } from '../../common/theme';
 
 const TechStackInput = () => {
   const [_, setInputValue] = useState('');
@@ -32,10 +33,12 @@ const TechStackInput = () => {
             {icons?.length >= 1
               ? icons.map((icon, idx) => {
                   return (
-                    <TechStackEachBox key={idx}>
-                      <Icon icon={icon} fontSize={'50px'} />
-                      <TechStackName>{icon}</TechStackName>
-                    </TechStackEachBox>
+                    <TechStackEachBoxContainer key={idx}>
+                      <TechStackEachBox>
+                        <Icon icon={icon} fontSize={'50px'} />
+                        <TechStackName>{(icon as string).replace('logos:', '')}</TechStackName>
+                      </TechStackEachBox>
+                    </TechStackEachBoxContainer>
                   );
                 })
               : 'There are no icons you entered.'}
@@ -94,14 +97,23 @@ const ModalBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.65);
 `;
 
-const TechStackEachBox = styled.div`
-  cursor: pointer;
+const TechStackEachBoxContainer = styled.div`
   display: inline-block;
   margin: 16px 16px 16px 0px;
   border-radius: 4px;
 `;
 
+const TechStackEachBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 4px 0px 4px;
+  padding: 8px;
+  border: 1px solid ${MAIN.MAIN_COLOR_TRANSPARENT};
+  border-radius: 4px;
+`;
+
 const TechStackName = styled.span`
-  margin: 8px 0px;
+  margin-top: 8px;
   font-weight: bold;
 `;
