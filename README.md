@@ -57,7 +57,9 @@ export default App;
   * <a href="#visitorcomment">VisitorComment</a>
   
 ### Header
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 11 39" src="https://user-images.githubusercontent.com/56839474/185726799-61f5301d-2bc5-40fe-acb3-49cce7ccd80e.png">
+
+<img width="1724" alt="스크린샷 2022-09-13 오전 2 05 09" src="https://user-images.githubusercontent.com/56839474/189714124-370954bf-e995-4c85-9246-36fb12732a34.png">
+
 
 ```js
 import { Header } from 'dev-portfolio';
@@ -142,7 +144,9 @@ export default App;
 </details>
 
 ### Intro
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 17 41" src="https://user-images.githubusercontent.com/56839474/185726977-27db5567-c20c-4eb3-94bd-5981f3a4ca7f.png">
+
+<img width="1718" alt="스크린샷 2022-09-13 오전 2 06 20" src="https://user-images.githubusercontent.com/56839474/189714308-db45a17e-02e5-4575-a616-64c2fb31cae5.png">
+
 
 ```js
 import { Intro } from 'dev-portfolio';
@@ -185,7 +189,8 @@ export default App;
 </details>
 
 ### TechStackList
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 20 39" src="https://user-images.githubusercontent.com/56839474/185727068-dc3e18b2-031f-40d4-b3a3-383fb964145a.png">
+
+![techStackList](https://user-images.githubusercontent.com/56839474/189713771-ee5de07c-0256-464f-aa61-e5e133dda548.gif)
 
 ```js
 import { TechStackList } from 'dev-portfolio';
@@ -342,7 +347,8 @@ export default App;
 </details>
 
 ### Carousel
-<img width="1708" alt="스크린샷 2022-08-24 오후 7 45 59" src="https://user-images.githubusercontent.com/56839474/186399666-ac19d4d5-8ae5-427c-a361-18298e931108.png">
+
+
 
 ```js
 import { Carousel, Image } from 'dev-portfolio';
@@ -396,6 +402,9 @@ export default App;
 
 ### Gallery
 
+<img width="1714" alt="스크린샷 2022-09-13 오전 2 08 28" src="https://user-images.githubusercontent.com/56839474/189715251-5145031f-d602-414b-8cd7-ede5bd78c5ab.png">
+
+
 ```js
 import { Gallery, Item } from 'dev-portfolio';
 
@@ -448,6 +457,9 @@ export default App;
 
 ### Masonry
 
+<img width="1674" alt="스크린샷 2022-09-13 오전 2 08 45" src="https://user-images.githubusercontent.com/56839474/189715278-2e74562d-7d46-482b-8222-01251d538f1e.png">
+
+
 ```js
 import { Masonry, Image } from 'dev-portfolio';
 
@@ -478,6 +490,8 @@ export default App;
 
 
 ### Image
+
+<img width="411" alt="스크린샷 2022-09-13 오전 2 09 07" src="https://user-images.githubusercontent.com/56839474/189715305-4746bd80-6883-4b35-8523-59b1b93771d5.png">
 
 ```js
 import { Image } from 'dev-portfolio';
@@ -538,6 +552,8 @@ export default App;
 | ```isTextRising``` | boolean |  | false | |
 
 ### Card
+
+<img width="433" alt="스크린샷 2022-09-13 오전 2 09 39" src="https://user-images.githubusercontent.com/56839474/189715382-e78c2ece-27f9-4db3-996a-b76f1934837b.png">
 
 ```js
 import { Card } from 'dev-portfolio';
@@ -670,6 +686,8 @@ export default App;
 
 ### VisitorCounter
 
+<img width="1716" alt="스크린샷 2022-09-13 오전 2 09 54" src="https://user-images.githubusercontent.com/56839474/189715442-c5e8b36c-b602-46e3-89f8-5c30836a60fc.png">
+
 ```js
 import { VisitorCounter } from 'dev-portfolio';
 
@@ -719,6 +737,8 @@ export default App;
 </details>
 
 ### VisitorComment
+
+<img width="1711" alt="스크린샷 2022-09-13 오전 2 10 16" src="https://user-images.githubusercontent.com/56839474/189715478-9ca0be05-3941-4119-84fe-ba1a6b3b22d1.png">
 
 ```js
 import { VisitorComment } from 'dev-portfolio';
