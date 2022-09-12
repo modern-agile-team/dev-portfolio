@@ -9,6 +9,26 @@ import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 import { HiChevronDoubleDown } from 'react-icons/hi';
 
+/**
+ *
+ * @props id: Name to be added to Sidebar
+ * @props commentList: List of Comment
+ * @commentList des: Description of your comment
+ * @commentList nickname: Nickname to display
+ * @commentList date: Day when comment written
+ * @props theme: Theme of Visitor Comment Component (default: basic) "basic" | "box" | "vertical"
+ * @props backgroundColor: Background color of area that out of comment list component (default: whitesmoke)
+ * @props buttonColor: Text color of Send Button (default: #1877f2)
+ * @props commentInputProps: Placeholder of inputs description, nickname and password
+ * @props inputBackgroundColor: Background color of input area (default: white)
+ * @props userInputLineColor: Color of bottom border used in nickname and password area (defualt: #b4b4b4a2)
+ * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
+ * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
+ * @props scrollDownIconColor: Color of scroll down icon (default: black)
+ * @commentInputProps desPlaceholder: Placeholder of description area (default: 'write your description...')
+ * @commentInputProps nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
+ * @commentInputProps passwordPlaceholder: Placeholder of password area (default: 'PW')
+ */
 const VisitorComment = (props: VisitorCommentPropsType) => {
   const {
     id,

@@ -15,6 +15,13 @@ const Channel = styled.a<ChannelStyledType>`
   margin: ${({ margin }) => margin ?? '0px 6px 0px 6px'};
 `;
 
+/**
+ *
+ * @props redirectUrl: link to channel
+ * @props name: Channel name
+ * @props color: Color of Channel Icon
+ * @props size: Size of Channel Icon
+ */
 const Channels = ({ channels }: ChannelPropsType) => {
   return (
     <Container>
