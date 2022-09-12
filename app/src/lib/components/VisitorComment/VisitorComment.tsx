@@ -25,6 +25,13 @@ import { HiChevronDoubleDown } from 'react-icons/hi';
  * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
  * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
  * @props scrollDownIconColor: Color of scroll down icon (default: black)
+ * @props comment:
+ * @props nickname:
+ * @props password:
+ * @props handleCreateComment: Event handler creates comment
+ * @props handleChangeDescription: Event handler changes comment description
+ * @props handleChangeNickname: Event handler changes nickname
+ * @props handleChangePassword: Event handler changes password
  * @commentInputProps desPlaceholder: Placeholder of description area (default: 'write your description...')
  * @commentInputProps nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
  * @commentInputProps passwordPlaceholder: Placeholder of password area (default: 'PW')
