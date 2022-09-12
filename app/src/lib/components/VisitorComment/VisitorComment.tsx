@@ -24,7 +24,13 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     progressbarColor,
     isShowScrollDownIcon,
     scrollDownIconColor,
+    comment,
+    nickname,
+    password,
     handleCreateComment,
+    handleChangeDescription,
+    handleChangeNickname,
+    handleChangePassword,
   } = props;
 
   //make progressbar in commentList scroll-y
@@ -61,6 +67,12 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         inputBackgroundColor={inputBackgroundColor}
         userInputLineColor={userInputLineColor}
         handleCreateComment={handleCreateComment}
+        handleChangeDescription={handleChangeDescription}
+        handleChangeNickname={handleChangeNickname}
+        handleChangePassword={handleChangePassword}
+        comment={comment}
+        nickname={nickname}
+        password={password}
       />
       {isOverflow && (
         <ProgressBar
