@@ -15,6 +15,12 @@ const CommentInput = (props: VisitorCommentPropsType) => {
     inputBackgroundColor,
     userInputLineColor,
     handleCreateComment,
+    handleChangeDescription,
+    handleChangeNickname,
+    handleChangePassword,
+    comment,
+    nickname,
+    password,
   } = props;
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -28,11 +34,30 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 
   return (
     <Wrap theme={theme} inputBackgroundColor={inputBackgroundColor} userInputLineColor={userInputLineColor}>
-      <textarea ref={textareaRef} onKeyDown={onKeyDown} className="des" placeholder={desPlaceholder} />
+      <textarea
+        ref={textareaRef}
+        onKeyDown={onKeyDown}
+        onChange={handleChangeDescription}
+        className="des"
+        placeholder={desPlaceholder}
+        value={comment}
+      />
       <InfoWrap>
         <UserInfo>
-          <input className="nickname" type="text" placeholder={nicknamePlaceholder} />
-          <input className="password" type="password" placeholder={passwordPlaceholder} />
+          <input
+            className="nickname"
+            type="text"
+            onChange={handleChangeNickname}
+            placeholder={nicknamePlaceholder}
+            value={nickname}
+          />
+          <input
+            className="password"
+            type="password"
+            onChange={handleChangePassword}
+            placeholder={passwordPlaceholder}
+            value={password}
+          />
         </UserInfo>
         <SubmitBtn buttonColor={buttonColor} onClick={handleCreateComment}>
           <span>send</span>

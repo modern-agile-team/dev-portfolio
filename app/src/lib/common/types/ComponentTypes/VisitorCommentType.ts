@@ -58,6 +58,12 @@ export interface VisitorCommentPropsType {
    */
   scrollDownIconColor?: string;
   handleCreateComment?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+  handleChangeDescription?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  handleChangeNickname?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  handleChangePassword?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  comment?: string;
+  nickname?: string;
+  password?: string;
 }
 
 export interface VisitorCommentListType {
