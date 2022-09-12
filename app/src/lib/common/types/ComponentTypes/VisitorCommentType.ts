@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface VisitorCommentPropsType {
   id?: string;
   commentList?: VisitorCommentListType[];
@@ -13,6 +15,7 @@ export interface VisitorCommentPropsType {
   progressbarColor?: string;
   isShowScrollDownIcon?: boolean;
   scrollDownIconColor?: string;
+  handleCreateComment?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface VisitorCommentListType {
