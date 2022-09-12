@@ -1,5 +1,5 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v0.3.*-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v0.4.*-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 
 An open source component library for React that helps you develop your web portfolio easily and quickly.
@@ -11,6 +11,7 @@ An open source component library for React that helps you develop your web portf
   * <a href="#install">Installation</a>
   * <a href="#usage">Usage</a>
   * <a href="#components">Components</a>
+  * <a href="#example">Example</a>
   * <a href="#license">Licence</a>
   * <a href="#contributor">Contributor</a>
 
@@ -52,6 +53,8 @@ export default App;
   * <a href="#item">Item</a>
   * <a href="#card">Card</a>
   * <a href="#contact">Contact</a>
+  * <a href="#visitorcounter">VisitorCounter</a>
+  * <a href="#visitorcomment">VisitorComment</a>
   
 ### Header
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 11 39" src="https://user-images.githubusercontent.com/56839474/185726799-61f5301d-2bc5-40fe-acb3-49cce7ccd80e.png">
@@ -569,14 +572,14 @@ export default App;
  
   ```js
   // 'square' | 'round-square' | 'round'
-  const shape = "square"
+  const shape = "square";
   ```
  
   #### hover example
  
   ```js
   // 'up' | 'down' | 'zoom'
-  const hover = "zoom"
+  const hover = "zoom";
   ```
  
 </details>
@@ -665,6 +668,110 @@ export default App;
   ```
 </details>
 
+### VisitorCounter
+
+```js
+import { VisitorCounter } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <VisitorCounter 
+      title="hits"
+      theme="big-size" // 'default' | 'big-size' | 'simple'
+      todayVisitor={0} // Your fetched variable
+      totalVisitor={123} // Your fetched variable
+      todayTitle="today"
+      totalTitle="total"
+      backgroundColor="#91c230c4"
+      size="14" // unit: px
+      todayBoldColor="red"
+      totalBoldColor="red"
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
+| ```theme``` | string | Visitor Counter theme 'default' | 'big-size' | 'simple' | big-size | |
+| ```todayVisitor``` | number | Number of today's visitors | 0 | |
+| ```totalVisitor``` | number | Title of today's visit count used in 'big-size' and 'simple' | 123 | |
+| ```todayTitle``` | string | Title of totla visit count used in 'big-size' and 'simple' | today | |
+| ```totalTitle``` | string | Background color of todayTitle | total | |
+| ```backgroundColor``` | string | #91c230c4 |  | |
+| ```size``` | string | Font size of all text used in VisitorCounter Component | 14 | unit: px |
+| ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
+| ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
+
+<details>
+<summary>More about VisitorCounter's props</summary>
+
+  #### theme example
+ 
+  ```js
+  // 'default' | 'big-size' | 'simple'
+  const theme = "default";
+  ```
+ 
+</details>
+
+### VisitorComment
+
+```js
+import { VisitorComment } from 'dev-portfolio';
+
+const commentList = [ ... ];
+
+const App = () => {
+  return (
+    <VisitorComment 
+      id="VisitorComment Component"
+      theme="basic"
+      backgroundColor="whitesmoke"
+      buttonColor="#1877f2"
+      commentInputProps=
+      commentList={commentList}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```width``` | string | Card width | 10em | |
+
+<details>
+<summary>More about VisitorComment's props</summary>
+
+  #### shape example
+ 
+  ```js
+  // 'square' | 'round-square' | 'round'
+  const shape = "square"
+  ```
+ 
+  #### hover example
+ 
+  ```js
+  // 'up' | 'down' | 'zoom'
+  const hover = "zoom"
+  ```
+ 
+</details>
+
+# Example
+1. [dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app) : https://dev-portfolio-app.vercel.app/
+<img width="1000" alt="스크린샷 2022-09-12 오후 8 53 37" src="https://user-images.githubusercontent.com/56839474/189646788-5c28a9f6-ab65-4471-83e7-04bf2cf8368f.png">
+
+<br>
+
+2. [seohyunsim](https://github.com/seohyunsim/seohyunsim-portfolio) : https://seohyunsim-portfolio.vercel.app/
+<img width="1000" alt="스크린샷 2022-09-12 오후 8 52 52" src="https://user-images.githubusercontent.com/56839474/189646646-7faf4842-e881-42bc-bcb9-422975adac95.png">
 
 ## License
 MIT

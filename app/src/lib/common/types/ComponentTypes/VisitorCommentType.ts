@@ -28,7 +28,7 @@ export interface VisitorCommentPropsType {
   /**
    * Placeholder of description area (default: 'write your description...')
    */
-  desPlaceholder?: string;
+  descriptionPlaceholder?: string;
   /**
    * Placeholder of nickname area (default: 'ID')
    */
@@ -57,12 +57,33 @@ export interface VisitorCommentPropsType {
    * Color of scroll down icon (default: black)
    */
   scrollDownIconColor?: string;
+  /**
+   * Event handler creates comment
+   */
   handleCreateComment?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * Event handler changes comment description
+   */
   handleChangeDescription?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Event handler changes nickname
+   */
   handleChangeNickname?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Event handler changes password
+   */
   handleChangePassword?: (e?: React.ChangeEvent<HTMLElement>) => void;
+  /**
+   * Actual value of comment description
+   */
   comment?: string;
+  /**
+   * Actual value of nickname
+   */
   nickname?: string;
+  /**
+   * Actual value of password
+   */
   password?: string;
 }
 
@@ -70,7 +91,7 @@ export interface VisitorCommentListType {
   /**
    * Description of your comment
    */
-  des?: string;
+  description?: string;
   /**
    * Nickname to display
    */
@@ -89,7 +110,7 @@ export interface CommentInputPropsType {
   /**
    * Placeholder of description area (default: 'write your description...')
    */
-  desPlaceholder?: string;
+  descriptionPlaceholder?: string;
   /**
    * Placeholder of nickname area (default: 'ID')
    */

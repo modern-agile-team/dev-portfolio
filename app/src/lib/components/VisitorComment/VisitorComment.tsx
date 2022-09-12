@@ -25,10 +25,18 @@ import { HiChevronDoubleDown } from 'react-icons/hi';
  * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
  * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
  * @props scrollDownIconColor: Color of scroll down icon (default: black)
+ * @props comment:
+ * @props nickname:
+ * @props password:
+ * @props handleCreateComment: Event handler creates comment
+ * @props handleChangeDescription: Event handler changes comment description
+ * @props handleChangeNickname: Event handler changes nickname
+ * @props handleChangePassword: Event handler changes password
  * @commentInputProps desPlaceholder: Placeholder of description area (default: 'write your description...')
  * @commentInputProps nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
  * @commentInputProps passwordPlaceholder: Placeholder of password area (default: 'PW')
  */
+
 const VisitorComment = (props: VisitorCommentPropsType) => {
   const {
     id,
@@ -36,7 +44,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     theme,
     backgroundColor,
     buttonColor,
-    desPlaceholder,
+    descriptionPlaceholder,
     nicknamePlaceholder,
     passwordPlaceholder,
     inputBackgroundColor,
@@ -81,7 +89,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
       <CommentInput
         theme={theme}
         buttonColor={buttonColor}
-        desPlaceholder={desPlaceholder}
+        descriptionPlaceholder={descriptionPlaceholder}
         nicknamePlaceholder={nicknamePlaceholder}
         passwordPlaceholder={passwordPlaceholder}
         inputBackgroundColor={inputBackgroundColor}
@@ -115,38 +123,38 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
 export default VisitorComment;
 
 VisitorComment.defaultProps = {
-  theme: 'vertical',
+  theme: 'basic',
   progressbarColor: '#5f5f5f',
   isShowScrollDownIcon: true,
   commentList: [
     {
-      des: 'By looking at your portfolio, visitors can leave a guest book.',
-      nickname: 'seohyunsim',
-      date: '2022-08-26',
-    },
-    {
-      des: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
+      description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
       nickname: 'woorim960',
       date: '2022-08-26',
     },
     {
-      des: 'Users can delete it after creating it.',
-      nickname: 'soonki-98',
+      description: `Progress bar customization is also possible when creating a scroll.`,
+      nickname: 'seohyunsim',
       date: '2022-08-26',
     },
     {
-      des: `Refer to dev-portfolio README.md for instructions on building a personal server.`,
+      description: `Likewise, there are three types of themes: basic, box, and vertical.`,
       nickname: 'jisu3817',
       date: '2022-08-26',
     },
     {
-      des: `Likewise, there are three themes for guest book design, and progress bar customization is also possible when creating a scroll.`,
-      nickname: 'seohyunsim',
+      description: 'Refer to dev-portfolio README.md for instructions on building a personal server.',
+      nickname: 'soonki-98',
       date: '2022-08-26',
     },
     {
-      des: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+      description: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
       nickname: 'woorim960',
+      date: '2022-08-26',
+    },
+    {
+      description: 'By looking at your portfolio, visitors can leave a guest book.',
+      nickname: 'seohyunsim',
       date: '2022-08-26',
     },
   ],
@@ -182,7 +190,7 @@ const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
   display: flex;
   white-space: pre-wrap;
   border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a0' : 'none')};
-  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
+  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column-reverse')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
   justify-content: ${({ theme }) => (theme === 'vertical' ? 'space-around' : 'none')};
 `;

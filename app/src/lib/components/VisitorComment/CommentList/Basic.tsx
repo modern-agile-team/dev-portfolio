@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { VisitorCommentListType } from '../../../common/types/ComponentTypes/VisitorCommentType';
 
 const Basic = (props: VisitorCommentListType) => {
-  const { des, nickname, date } = props;
+  const { description, nickname, date } = props;
 
   return (
     <Wrap>
-      <span className="des">{des}</span>
+      <span className="des">{description}</span>
       <div className="info">
         <span className="nickname">{nickname}</span>
         <span className="date">{date}</span>
