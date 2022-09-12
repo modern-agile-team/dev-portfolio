@@ -1,6 +1,6 @@
 {
   "name": "dev-portfolio",
-  "version": "v0.4.41",
+  "version": "v0.4.47",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,6 +14,7 @@
   "bugs": {
     "url": "https://github.com/modern-agile-team/dev-portfolio"
   },
+  "homepage": "https://github.com/modern-agile-team/dev-portfolio",
   "license": "MIT",
   "keywords": [
     "portfolio",

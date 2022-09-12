@@ -9,7 +9,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
   const {
     theme,
     buttonColor,
-    descriptionPlaceholder,
+    desPlaceholder,
     nicknamePlaceholder,
     passwordPlaceholder,
     inputBackgroundColor,
@@ -39,7 +39,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
         onKeyDown={onKeyDown}
         onChange={handleChangeDescription}
         className="des"
-        placeholder={descriptionPlaceholder}
+        placeholder={desPlaceholder}
         value={comment}
       />
       <InfoWrap>
@@ -59,7 +59,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
             value={password}
           />
         </UserInfo>
-        <SubmitBtn inputBackgroundColor={inputBackgroundColor} buttonColor={buttonColor} onClick={handleCreateComment}>
+        <SubmitBtn buttonColor={buttonColor} onClick={handleCreateComment}>
           <span>send</span>
         </SubmitBtn>
       </InfoWrap>
@@ -70,7 +70,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
 export default CommentInput;
 
 CommentInput.defaultProps = {
-  descriptionPlaceholder: 'write your description...',
+  desPlaceholder: 'write your description...',
   nicknamePlaceholder: 'ID',
   passwordPlaceholder: 'PW',
 };
@@ -145,8 +145,6 @@ const UserInfo = styled.div`
 `;
 
 const SubmitBtn = styled.button<VisitorCommentStyledPropsType>`
-  border: none;
-  background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
   flex-grow: 1;
   text-align: center;
   padding: 2vw 0;
