@@ -572,14 +572,14 @@ export default App;
  
   ```js
   // 'square' | 'round-square' | 'round'
-  const shape = "square"
+  const shape = "square";
   ```
  
   #### hover example
  
   ```js
   // 'up' | 'down' | 'zoom'
-  const hover = "zoom"
+  const hover = "zoom";
   ```
  
 </details>
@@ -676,7 +676,7 @@ import { VisitorCounter } from 'dev-portfolio';
 const App = () => {
   return (
     <VisitorCounter 
-      // title="hits"
+      title="hits"
       theme="big-size" // 'default' | 'big-size' | 'simple'
       todayVisitor={0} // Your fetched variable
       totalVisitor={123} // Your fetched variable
@@ -713,7 +713,7 @@ export default App;
  
   ```js
   // 'default' | 'big-size' | 'simple'
-  const theme = "simple";
+  const theme = "default";
   ```
  
 </details>
@@ -723,9 +723,17 @@ export default App;
 ```js
 import { VisitorComment } from 'dev-portfolio';
 
+const commentList = [ ... ];
+
 const App = () => {
   return (
     <VisitorComment 
+      id="VisitorComment Component"
+      theme="basic"
+      backgroundColor="whitesmoke"
+      buttonColor="#1877f2"
+      commentInputProps=
+      commentList={commentList}
     />
   );
 }
