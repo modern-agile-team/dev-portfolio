@@ -20,7 +20,7 @@ export interface VisitorCounterPropsType {
    */
   totalTitle?: string;
   /**
-   * Background color of todayTitle (default: #91c230c4)
+   * Background color (default: #91c230c4)
    */
   backgroundColor?: string;
   /**

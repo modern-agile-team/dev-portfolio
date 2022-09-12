@@ -132,7 +132,7 @@ VisitorComment.defaultProps = {
     },
     {
       des: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
-      nickname: 'woorim960,
+      nickname: 'woorim960',
       date: '2022-08-26',
     },
   ],
