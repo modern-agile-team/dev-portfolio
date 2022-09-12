@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface VisitorCommentPropsType {
   /**
    * Name to be added to Sidebar
@@ -55,6 +57,7 @@ export interface VisitorCommentPropsType {
    * Color of scroll down icon (default: black)
    */
   scrollDownIconColor?: string;
+  handleCreateComment?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface VisitorCommentListType {

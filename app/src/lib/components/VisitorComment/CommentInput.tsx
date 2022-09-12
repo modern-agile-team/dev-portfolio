@@ -14,6 +14,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
     passwordPlaceholder,
     inputBackgroundColor,
     userInputLineColor,
+    handleCreateComment,
   } = props;
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -33,7 +34,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
           <input className="nickname" type="text" placeholder={nicknamePlaceholder} />
           <input className="password" type="password" placeholder={passwordPlaceholder} />
         </UserInfo>
-        <SubmitBtn buttonColor={buttonColor}>
+        <SubmitBtn buttonColor={buttonColor} onClick={handleCreateComment}>
           <span>send</span>
         </SubmitBtn>
       </InfoWrap>
@@ -118,7 +119,7 @@ const UserInfo = styled.div`
   }
 `;
 
-const SubmitBtn = styled.div<VisitorCommentStyledPropsType>`
+const SubmitBtn = styled.button<VisitorCommentStyledPropsType>`
   flex-grow: 1;
   text-align: center;
   padding: 2vw 0;
