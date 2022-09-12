@@ -42,5 +42,5 @@ const IntroOptionDefault: IntroOptionType = {
   title: 'Intro',
   shortIntro: 'shortIntro that will captivate people',
   description:
-    'This props name is description.\nPlease write down your brief introduction here.\nIf you want to change the line, type backslash-n between the letters.\nAlso you want to move the letters to the center, change textAlign to center.\n\nSpread your dreams!',
+    'This props name is description.\nPlease write down your brief introduction here.\nIf you want to change the line, type backslash-n between the letters.\nAlso you want to move the letters to the center, change textAlign to center.\n\ncode your dreams!',
 };

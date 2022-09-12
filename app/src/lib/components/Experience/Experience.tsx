@@ -23,10 +23,10 @@ import {
  * @historyList des: Describe about your experience
  */
 const Experience = (props: ExperiencePropsType) => {
-  const { id, historyList, title, textAlign, background, theme, verticalOption } = props;
+  const { id, historyList, title, textAlign, theme, verticalOption } = props;
 
   return (
-    <Wrap id={id} textAlign={textAlign} background={background}>
+    <Wrap id={id} textAlign={textAlign}>
       <div className="title">{title}</div>
       <hr />
       <ChildWrap theme={theme}>
@@ -67,7 +67,6 @@ Experience.defaultProps = {
 const Wrap = styled.div<ExperienceStyledPropsType>`
   padding: 25px;
   text-align: ${({ textAlign }) => textAlign ?? 'left'};
-  background: ${({ background }) => background ?? 'left'};
   .title {
     padding: 10px 10px 20px 10px;
     font-size: 33px;
