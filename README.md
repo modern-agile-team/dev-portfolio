@@ -716,9 +716,9 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
-| ```theme``` | string | Visitor Counter theme: 'default',  'big-size', 'simple' | default | |
-| ```todayVisitor``` | number | Number of today's visitors | 0 | |
-| ```totalVisitor``` | number | Number of total's visitors | 123 | |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | default | |
+| ```todayVisitor``` | number | Number of today's visitors | 0 | fetched variable |
+| ```totalVisitor``` | number | Number of total's visitors | 123 | fetched variable |
 | ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | today | |
 | ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | total | |
 | ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 |  | |
@@ -736,8 +736,10 @@ export default App;
   const theme = "default";
   ```
 
+  #### VisitorCounter example
+
   ```js
-  const visitorCounterOption = {
+  const visitorCounter = {
      title: 'hits',
      todayTitle: 'today',
      totalTitle: 'total',
@@ -759,11 +761,23 @@ const App = () => {
   return (
     <VisitorComment 
       id="VisitorComment Component"
-      theme="basic"
+      theme="basic" // 'basic' | 'box' | 'vertical'
       backgroundColor="whitesmoke"
+      inputBackgroundColor="White"
+      userInputLineColor="#b4b4b4a2"
       buttonColor="#1877f2"
-      commentInputProps=
-      commentList={commentList}
+      progressbarColor="#5f5f5f"
+      isShowScrollDownIcon={true}
+      scrollDownIconColor='black'
+      commentInputPlacehoder={commentInputPlacehoder}
+      comment='this portfolio is very nice' // Your fetched variable
+      nickname='dev-portfolio' // Your fetched variable
+      password='1234' // Your fetched variable
+      commentList={commentList} // Your fetched variable
+      handleCreateComment={handleCreateComment} // Event handling variable
+      handleChangeDescription={handleChangeDescription} // Event handling variable
+      handleChangeNickname={handleChangeNickname} // Event handling variable
+      handleChangePassword={handleChangePassword} // Event handling variable
     />
   );
 }
@@ -773,23 +787,69 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```width``` | string | Card width | 10em | |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```theme``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a> | Visitor Comment theme: 'basic', 'box', 'vertical' | basic | |
+| ```backgroundColor``` | string | VisitorComment background-color | whitesmoke | |
+| ```inputBackgroundColor``` | string | Background color of guest book preparation column | White | |
+| ```userInputLineColor``` | string | Underline color in the User Information field | #b4b4b4a2 | |
+| ```buttonColor``` | string | Font color of send button | #1877f | |
+| ```progressbarColor``` | string | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f | |
+| ```isShowScrollDownIcon``` | boolean | Whether to display icons that are generated when a scroll event occurs | true | |
+| ```scrollDownIconColor``` | string | Color in ScrollDown Icon | black | Only works when isShowScrollDownIcon is true |
+| ```comment``` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
+| ```nickname``` | string | the nickname of visitor comment | dev-portfolio | fetched variable |
+| ```password``` | string | the password of visitor comment | 1234 | fetched variable |
+| ```commentInputPlacehoder``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
+| ```commentList``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list | See "More about VisitorComment's Props" | fetched variable |
+| ```handleCreateComment``` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
+| ```handleChangeDescription``` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
+| ```handleChangeNickname``` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
+| ```handleChangePassword``` | (e?: React.ChangeEvent<HTMLElement>) => void | Password Props for event handling | | |
+
 
 <details>
 <summary>More about VisitorComment's props</summary>
 
-  #### shape example
+  #### VisitorComment example
  
   ```js
-  // 'square' | 'round-square' | 'round'
-  const shape = "square"
-  ```
- 
-  #### hover example
- 
-  ```js
-  // 'up' | 'down' | 'zoom'
-  const hover = "zoom"
+  const visitorComment = {
+    theme: 'basic',
+    progressbarColor: '#5f5f5f',
+    isShowScrollDownIcon: true,
+    commentList: [
+      {
+        description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+        nickname: 'woorim960',
+        date: '2022-08-26',
+      },
+      {
+        description: `Progress bar customization is also possible when creating a scroll.`,
+        nickname: 'seohyunsim',
+        date: '2022-08-26',
+      },
+      {
+        description: `Likewise, there are three types of themes: basic, box, and vertical.`,
+        nickname: 'jisu3817',
+        date: '2022-08-26',
+      },
+      {
+        description: 'Refer to dev-portfolio README.md for instructions on building a personal server.',
+        nickname: 'soonki-98',
+        date: '2022-08-26',
+      },
+      {
+        description: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
+        nickname: 'woorim960',
+        date: '2022-08-26',
+      },
+      {
+        description: 'By looking at your portfolio, visitors can leave a guest book.',
+        nickname: 'seohyunsim',
+        date: '2022-08-26',
+      },
+    ],
+  }
   ```
  
 </details>
