@@ -28,7 +28,6 @@ dev-portfolio is React library that helps you develop your web portfolio easily 
    
    ```npx create-dev-portfolio <YOUR_CUSTOMIZED_REPOSITORY_NAME>```
 
-
 ## Usage
 
 ```js
