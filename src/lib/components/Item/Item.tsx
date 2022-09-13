@@ -88,7 +88,7 @@ Item.defaultProps = {
   redirectURL: '/',
   title: 'This is title',
   description: 'description',
-  imgURL: 'https://picsum.photos/500/300/?random',
+  src: 'https://picsum.photos/500/300/?random',
   textRisingSpeed: 300,
 };
 
