@@ -703,7 +703,7 @@ const App = () => {
       todayTitle="today"
       totalTitle="total"
       backgroundColor="#91c230c4"
-      size="14" // unit: px
+      size="14px" // include: px
       todayBoldColor="red"
       totalBoldColor="red"
     />
@@ -716,13 +716,13 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
-| ```theme``` | string | Visitor Counter theme 'default' | 'big-size' | 'simple' | big-size | |
+| ```theme``` | string | Visitor Counter theme: 'default',  'big-size', 'simple' | default | |
 | ```todayVisitor``` | number | Number of today's visitors | 0 | |
-| ```totalVisitor``` | number | Title of today's visit count used in 'big-size' and 'simple' | 123 | |
-| ```todayTitle``` | string | Title of totla visit count used in 'big-size' and 'simple' | today | |
-| ```totalTitle``` | string | Background color of todayTitle | total | |
-| ```backgroundColor``` | string | #91c230c4 |  | |
-| ```size``` | string | Font size of all text used in VisitorCounter Component | 14 | unit: px |
+| ```totalVisitor``` | number | Number of total's visitors | 123 | |
+| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | today | |
+| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | total | |
+| ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 |  | |
+| ```size``` | string | Font size and component size in the visitor counter component | 14px | Make sure to include 'px' |
 | ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
 | ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
 
@@ -734,6 +734,14 @@ export default App;
   ```js
   // 'default' | 'big-size' | 'simple'
   const theme = "default";
+  ```
+
+  ```js
+  const visitorCounterOption = {
+     title: 'hits',
+     todayTitle: 'today',
+     totalTitle: 'total',
+  }
   ```
  
 </details>
