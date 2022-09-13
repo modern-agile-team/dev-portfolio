@@ -1,5 +1,5 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v1.1.0-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v1.1.1-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 
 dev-portfolio is React library that helps you develop your web portfolio easily and quickly.
