@@ -1,10 +1,10 @@
 {
   "name": "dev-portfolio",
-  "version": "v0.4.42",
+  "version": "v1.0.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "Open source library to help you develop your web portfolio easily and quickly",
+  "description": "dev-portfolio is React library that helps you develop your web portfolio easily and quickly.",
   "author": "modern.agile.team <modern.agile.team@gmail.com> (https://github.com/modern-agile-team)",
   "contributors": [],
   "repository": {
@@ -14,11 +14,12 @@
   "bugs": {
     "url": "https://github.com/modern-agile-team/dev-portfolio"
   },
+  "homepage": "https://github.com/modern-agile-team/dev-portfolio",
   "license": "MIT",
   "keywords": [
     "portfolio",
     "dev",
-    "dev-fortfolio"
+    "dev-portfolio"
   ],
   "dependencies": {
     "@iconify/react": "^3.2.2",
