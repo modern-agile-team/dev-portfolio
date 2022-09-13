@@ -348,11 +348,11 @@ export default App;
 
 ### Carousel
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189904601-e113242c-f104-48a9-9111-18167f2e1b87.gif)
-
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/56839474/189905929-3732d317-a545-42e4-87ff-f3bb085e4063.gif)
 
 ```js
 import { Carousel, Image } from 'dev-portfolio';
+
 
 const App = () => {
   return (
@@ -525,8 +525,7 @@ export default App;
 
 ### Item
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189904427-02dbdc99-5ff8-4522-8c8a-373dbf0b0035.gif)
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189906937-e0645174-5473-4a70-b373-c05eefd4ac38.gif)
 
 ```js
 import { Item } from 'dev-portfolio';
