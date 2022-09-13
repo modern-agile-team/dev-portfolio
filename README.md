@@ -688,7 +688,9 @@ export default App;
 
 ### VisitorCounter
 
-<img width="1711" alt="스크린샷 2022-09-13 오전 2 10 16" src="https://user-images.githubusercontent.com/56839474/189715478-9ca0be05-3941-4119-84fe-ba1a6b3b22d1.png">
+<img width="200" alt="visitor-counter" src="https://user-images.githubusercontent.com/83394348/189859070-d9230ec1-4750-4e7b-870c-e21e306c1c65.png">
+
+
 
 ```js
 import { VisitorCounter } from 'dev-portfolio';
@@ -749,6 +751,9 @@ export default App;
 </details>
 
 ### VisitorComment
+
+
+![visitor-comment](https://user-images.githubusercontent.com/83394348/189853162-d52851eb-bfbe-4bc7-9024-e592c4057cbb.gif)
 
 
 
