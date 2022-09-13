@@ -4,7 +4,7 @@
 
 An open source component library for React that helps you develop your web portfolio easily and quickly.
 
-<img width="100%" src="https://user-images.githubusercontent.com/56839474/185625494-bef1d408-f0bd-4d50-8e84-02a32ed79711.gif"></img>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189902674-bb3593a2-b388-42ab-98fa-6acb65f04588.gif)
 
 ## List
 
@@ -348,6 +348,7 @@ export default App;
 
 ### Carousel
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189904601-e113242c-f104-48a9-9111-18167f2e1b87.gif)
 
 
 ```js
@@ -491,7 +492,8 @@ export default App;
 
 ### Image
 
-<img width="411" alt="스크린샷 2022-09-13 오전 2 09 07" src="https://user-images.githubusercontent.com/56839474/189715305-4746bd80-6883-4b35-8523-59b1b93771d5.png">
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/56839474/189905432-400ef4b5-6f6f-4237-a146-d1376a3a389e.gif)
+
 
 ```js
 import { Image } from 'dev-portfolio';
@@ -523,7 +525,8 @@ export default App;
 
 ### Item
 
-<img width="433" alt="스크린샷 2022-09-13 오전 2 09 39" src="https://user-images.githubusercontent.com/56839474/189715382-e78c2ece-27f9-4db3-996a-b76f1934837b.png">
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189904427-02dbdc99-5ff8-4522-8c8a-373dbf0b0035.gif)
+
 
 ```js
 import { Item } from 'dev-portfolio';
