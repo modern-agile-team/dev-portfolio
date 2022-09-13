@@ -24,7 +24,7 @@ export interface VisitorCommentPropsType {
   /**
    * Placeholder of inputs description, nickname and password
    */
-  commentInputProps?: CommentInputPropsType;
+  commentInputPlacehoder?: CommentInputPlaceholderType;
   /**
    * Placeholder of description area (default: 'write your description...')
    */
@@ -106,7 +106,7 @@ export interface IndexPropsType extends VisitorCommentListType {
   theme?: VisitorCommentThemeType;
 }
 
-export interface CommentInputPropsType {
+export interface CommentInputPlaceholderType {
   /**
    * Placeholder of description area (default: 'write your description...')
    */

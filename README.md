@@ -1,10 +1,10 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v0.4.*-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v1.0.0-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 
-An open source component library for React that helps you develop your web portfolio easily and quickly.
+dev-portfolio is React library that helps you develop your web portfolio easily and quickly.
 
-<img width="100%" src="https://user-images.githubusercontent.com/56839474/185625494-bef1d408-f0bd-4d50-8e84-02a32ed79711.gif"></img>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189902674-bb3593a2-b388-42ab-98fa-6acb65f04588.gif)
 
 ## List
 
@@ -57,7 +57,9 @@ export default App;
   * <a href="#visitorcomment">VisitorComment</a>
   
 ### Header
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 11 39" src="https://user-images.githubusercontent.com/56839474/185726799-61f5301d-2bc5-40fe-acb3-49cce7ccd80e.png">
+
+<img width="1724" alt="스크린샷 2022-09-13 오전 2 05 09" src="https://user-images.githubusercontent.com/56839474/189714124-370954bf-e995-4c85-9246-36fb12732a34.png">
+
 
 ```js
 import { Header } from 'dev-portfolio';
@@ -142,7 +144,9 @@ export default App;
 </details>
 
 ### Intro
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 17 41" src="https://user-images.githubusercontent.com/56839474/185726977-27db5567-c20c-4eb3-94bd-5981f3a4ca7f.png">
+
+<img width="1718" alt="스크린샷 2022-09-13 오전 2 06 20" src="https://user-images.githubusercontent.com/56839474/189714308-db45a17e-02e5-4575-a616-64c2fb31cae5.png">
+
 
 ```js
 import { Intro } from 'dev-portfolio';
@@ -185,7 +189,8 @@ export default App;
 </details>
 
 ### TechStackList
-<img width="100%" alt="스크린샷 2022-08-20 오후 12 20 39" src="https://user-images.githubusercontent.com/56839474/185727068-dc3e18b2-031f-40d4-b3a3-383fb964145a.png">
+
+![techStackList](https://user-images.githubusercontent.com/56839474/189713771-ee5de07c-0256-464f-aa61-e5e133dda548.gif)
 
 ```js
 import { TechStackList } from 'dev-portfolio';
@@ -342,10 +347,12 @@ export default App;
 </details>
 
 ### Carousel
-<img width="1708" alt="스크린샷 2022-08-24 오후 7 45 59" src="https://user-images.githubusercontent.com/56839474/186399666-ac19d4d5-8ae5-427c-a361-18298e931108.png">
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/56839474/189905929-3732d317-a545-42e4-87ff-f3bb085e4063.gif)
 
 ```js
 import { Carousel, Image } from 'dev-portfolio';
+
 
 const App = () => {
   return (
@@ -395,6 +402,9 @@ export default App;
 
 
 ### Gallery
+
+<img width="1714" alt="스크린샷 2022-09-13 오전 2 08 28" src="https://user-images.githubusercontent.com/56839474/189715251-5145031f-d602-414b-8cd7-ede5bd78c5ab.png">
+
 
 ```js
 import { Gallery, Item } from 'dev-portfolio';
@@ -448,6 +458,9 @@ export default App;
 
 ### Masonry
 
+<img width="1674" alt="스크린샷 2022-09-13 오전 2 08 45" src="https://user-images.githubusercontent.com/56839474/189715278-2e74562d-7d46-482b-8222-01251d538f1e.png">
+
+
 ```js
 import { Masonry, Image } from 'dev-portfolio';
 
@@ -479,6 +492,9 @@ export default App;
 
 ### Image
 
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/56839474/189905432-400ef4b5-6f6f-4237-a146-d1376a3a389e.gif)
+
+
 ```js
 import { Image } from 'dev-portfolio';
 
@@ -509,6 +525,8 @@ export default App;
 
 ### Item
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189906937-e0645174-5473-4a70-b373-c05eefd4ac38.gif)
+
 ```js
 import { Item } from 'dev-portfolio';
 
@@ -538,6 +556,8 @@ export default App;
 | ```isTextRising``` | boolean |  | false | |
 
 ### Card
+
+<img width="1716" alt="스크린샷 2022-09-13 오전 2 09 54" src="https://user-images.githubusercontent.com/56839474/189715442-c5e8b36c-b602-46e3-89f8-5c30836a60fc.png">
 
 ```js
 import { Card } from 'dev-portfolio';
@@ -670,6 +690,10 @@ export default App;
 
 ### VisitorCounter
 
+<img width="200" alt="visitor-counter" src="https://user-images.githubusercontent.com/83394348/189859070-d9230ec1-4750-4e7b-870c-e21e306c1c65.png">
+
+
+
 ```js
 import { VisitorCounter } from 'dev-portfolio';
 
@@ -683,7 +707,7 @@ const App = () => {
       todayTitle="today"
       totalTitle="total"
       backgroundColor="#91c230c4"
-      size="14" // unit: px
+      size="14px" // include: px
       todayBoldColor="red"
       totalBoldColor="red"
     />
@@ -696,13 +720,13 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
-| ```theme``` | string | Visitor Counter theme 'default' | 'big-size' | 'simple' | big-size | |
-| ```todayVisitor``` | number | Number of today's visitors | 0 | |
-| ```totalVisitor``` | number | Title of today's visit count used in 'big-size' and 'simple' | 123 | |
-| ```todayTitle``` | string | Title of totla visit count used in 'big-size' and 'simple' | today | |
-| ```totalTitle``` | string | Background color of todayTitle | total | |
-| ```backgroundColor``` | string | #91c230c4 |  | |
-| ```size``` | string | Font size of all text used in VisitorCounter Component | 14 | unit: px |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | default | |
+| ```todayVisitor``` | number | Number of today's visitors | 0 | fetched variable |
+| ```totalVisitor``` | number | Number of total's visitors | 123 | fetched variable |
+| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | today | |
+| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | total | |
+| ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 |  | |
+| ```size``` | string | Font size and component size in the visitor counter component | 14px | Make sure to include 'px' |
 | ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
 | ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
 
@@ -715,10 +739,25 @@ export default App;
   // 'default' | 'big-size' | 'simple'
   const theme = "default";
   ```
+
+  #### VisitorCounter example
+
+  ```js
+  const visitorCounter = {
+     title: 'hits',
+     todayTitle: 'today',
+     totalTitle: 'total',
+  }
+  ```
  
 </details>
 
 ### VisitorComment
+
+
+![visitor-comment](https://user-images.githubusercontent.com/83394348/189853162-d52851eb-bfbe-4bc7-9024-e592c4057cbb.gif)
+
+
 
 ```js
 import { VisitorComment } from 'dev-portfolio';
@@ -729,11 +768,23 @@ const App = () => {
   return (
     <VisitorComment 
       id="VisitorComment Component"
-      theme="basic"
+      theme="basic" // 'basic' | 'box' | 'vertical'
       backgroundColor="whitesmoke"
+      inputBackgroundColor="White"
+      userInputLineColor="#b4b4b4a2"
       buttonColor="#1877f2"
-      commentInputProps=
-      commentList={commentList}
+      progressbarColor="#5f5f5f"
+      isShowScrollDownIcon={true}
+      scrollDownIconColor='black'
+      commentInputPlacehoder={commentInputPlacehoder}
+      comment='this portfolio is very nice' // Your fetched variable
+      nickname='dev-portfolio' // Your fetched variable
+      password='1234' // Your fetched variable
+      commentList={commentList} // Your fetched variable
+      handleCreateComment={handleCreateComment} // Event handling variable
+      handleChangeDescription={handleChangeDescription} // Event handling variable
+      handleChangeNickname={handleChangeNickname} // Event handling variable
+      handleChangePassword={handleChangePassword} // Event handling variable
     />
   );
 }
@@ -743,23 +794,69 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```width``` | string | Card width | 10em | |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```theme``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a> | Visitor Comment theme: 'basic', 'box', 'vertical' | basic | |
+| ```backgroundColor``` | string | VisitorComment background-color | whitesmoke | |
+| ```inputBackgroundColor``` | string | Background color of guest book preparation column | White | |
+| ```userInputLineColor``` | string | Underline color in the User Information field | #b4b4b4a2 | |
+| ```buttonColor``` | string | Font color of send button | #1877f | |
+| ```progressbarColor``` | string | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f | |
+| ```isShowScrollDownIcon``` | boolean | Whether to display icons that are generated when a scroll event occurs | true | |
+| ```scrollDownIconColor``` | string | Color in ScrollDown Icon | black | Only works when isShowScrollDownIcon is true |
+| ```comment``` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
+| ```nickname``` | string | the nickname of visitor comment | dev-portfolio | fetched variable |
+| ```password``` | string | the password of visitor comment | 1234 | fetched variable |
+| ```commentInputPlacehoder``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
+| ```commentList``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list | See "More about VisitorComment's Props" | fetched variable |
+| ```handleCreateComment``` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
+| ```handleChangeDescription``` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
+| ```handleChangeNickname``` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
+| ```handleChangePassword``` | (e?: React.ChangeEvent<HTMLElement>) => void | Password Props for event handling | | |
+
 
 <details>
 <summary>More about VisitorComment's props</summary>
 
-  #### shape example
+  #### VisitorComment example
  
   ```js
-  // 'square' | 'round-square' | 'round'
-  const shape = "square"
-  ```
- 
-  #### hover example
- 
-  ```js
-  // 'up' | 'down' | 'zoom'
-  const hover = "zoom"
+  const visitorComment = {
+    theme: 'basic',
+    progressbarColor: '#5f5f5f',
+    isShowScrollDownIcon: true,
+    commentList: [
+      {
+        description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
+        nickname: 'woorim960',
+        date: '2022-08-26',
+      },
+      {
+        description: `Progress bar customization is also possible when creating a scroll.`,
+        nickname: 'seohyunsim',
+        date: '2022-08-26',
+      },
+      {
+        description: `Likewise, there are three types of themes: basic, box, and vertical.`,
+        nickname: 'jisu3817',
+        date: '2022-08-26',
+      },
+      {
+        description: 'Refer to dev-portfolio README.md for instructions on building a personal server.',
+        nickname: 'soonki-98',
+        date: '2022-08-26',
+      },
+      {
+        description: `A personal server can be built through environmental variables, and visitors can write their text and nicknames.`,
+        nickname: 'woorim960',
+        date: '2022-08-26',
+      },
+      {
+        description: 'By looking at your portfolio, visitors can leave a guest book.',
+        nickname: 'seohyunsim',
+        date: '2022-08-26',
+      },
+    ],
+  }
   ```
  
 </details>

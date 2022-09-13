@@ -19,22 +19,15 @@ import { HiChevronDoubleDown } from 'react-icons/hi';
  * @props theme: Theme of Visitor Comment Component (default: basic) "basic" | "box" | "vertical"
  * @props backgroundColor: Background color of area that out of comment list component (default: whitesmoke)
  * @props buttonColor: Text color of Send Button (default: #1877f2)
- * @props commentInputProps: Placeholder of inputs description, nickname and password
+ * @props commentInputPlacehoder: Placeholder of inputs description, nickname and password
  * @props inputBackgroundColor: Background color of input area (default: white)
  * @props userInputLineColor: Color of bottom border used in nickname and password area (defualt: #b4b4b4a2)
  * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
  * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
  * @props scrollDownIconColor: Color of scroll down icon (default: black)
- * @props comment:
- * @props nickname:
- * @props password:
- * @props handleCreateComment: Event handler creates comment
- * @props handleChangeDescription: Event handler changes comment description
- * @props handleChangeNickname: Event handler changes nickname
- * @props handleChangePassword: Event handler changes password
- * @commentInputProps desPlaceholder: Placeholder of description area (default: 'write your description...')
- * @commentInputProps nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
- * @commentInputProps passwordPlaceholder: Placeholder of password area (default: 'PW')
+ * @commentInputPlacehoder desPlaceholder: Placeholder of description area (default: 'write your description...')
+ * @commentInputPlacehoder nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
+ * @commentInputPlacehoder passwordPlaceholder: Placeholder of password area (default: 'PW')
  */
 
 const VisitorComment = (props: VisitorCommentPropsType) => {
@@ -79,7 +72,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     const containerHeight = event.currentTarget.clientHeight;
     const scrollHeight = event.currentTarget.scrollHeight;
     const scrollTop = event.currentTarget.scrollTop;
-    const result = (scrollTop / (scrollHeight - containerHeight)) * 100;
+    const result = (scrollTop / (containerHeight - scrollHeight)) * -100;
     setRate(result);
   };
 
@@ -112,9 +105,12 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         />
       )}
       <ChildWrap ref={ref} onScroll={scrollHandler} theme={theme}>
-        {commentList?.map((elements, idx) => (
-          <CommentList key={idx} {...elements} theme={theme} />
-        ))}
+        {commentList
+          ?.slice(0)
+          .reverse()
+          .map((elements, idx) => (
+            <CommentList key={idx} {...elements} theme={theme} />
+          ))}
       </ChildWrap>
     </Wrap>
   );
@@ -190,7 +186,7 @@ const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
   display: flex;
   white-space: pre-wrap;
   border: ${({ theme }) => (theme === 'basic' ? '0.2px solid #b4b4b4a0' : 'none')};
-  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column-reverse')};
+  flex-direction: ${({ theme }) => (theme === 'vertical' ? 'row' : 'column')};
   flex-wrap: ${({ theme }) => (theme === 'vertical' ? 'wrap' : 'nowrap')};
   justify-content: ${({ theme }) => (theme === 'vertical' ? 'space-around' : 'none')};
 `;
