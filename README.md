@@ -17,13 +17,17 @@ dev-portfolio is React library that helps you develop your web portfolio easily 
 
 ## Install
 
-**Install only dev-portfolio library**  
-```npm i dev-portfolio --save```
+1. Install only dev-portfolio library. 
 
-**Install boiler-plate code by using ```npx```**  
-If you want to see README.md of boiler-plate, go to the [create-dev-portfolio](https://github.com/modern-agile-team/create-dev-portfolio).  
-```npx create-dev-portfolio <YOUR_CUSTOMIZED_REPOSITORY_NAME>```
+   ```npm i dev-portfolio --save```
+   
 
+2. Install boiler-plate code by using ```npx```.   
+   If you want to see README.md of boiler-plate, go to the [create-dev-portfolio](https://github.com/modern-agile-team/create-dev-portfolio).  
+   
+   ```npx create-dev-portfolio <YOUR_CUSTOMIZED_REPOSITORY_NAME>```
+
+<br>
 
 ## Usage
 
