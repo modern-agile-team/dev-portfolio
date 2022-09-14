@@ -11,8 +11,7 @@ Thank you for contributing to our project! 👏
 
 
  ## How to contribute our project
- ---
-
+ Now, let me explain how to contribute to our project.
  ## Issues
  If you find a problem when the using project, please create an issue.
 
@@ -65,7 +64,6 @@ When you're finished with the changes, create a pull request, also known as a PR
 
 
 ## Congratulations! 🎉
----
 Your PR is merged.
 
 Thank you for contributing to the improvement of dev-portfolio.
