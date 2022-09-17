@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { useCarouselPropsType } from "../../common/types/ComponentTypes/CarouselType";
+import { useCarouselPropsType } from '../../common/types/ComponentTypes/CarouselType';
 
 const useInterval = (callback: Function, delay: number, deps?: any[]) => {
   const autoPlayRef = useRef<any>(null);
@@ -31,32 +31,37 @@ const useCarousel = ({
 }: useCarouselPropsType) => {
   const childrenLength = React.Children.toArray(children).length;
   const [itemList, setItemList] = useState<any[]>([]);
-  const [showIndex, setShowIndex] = useState<number>(childrenLength / slideToShow);
   const [coordinateX, setCoordinateX] = useState(0);
   const [autoPlayStatus, setAutoPlayStatus] = useState<boolean>(isAutoplay);
   const [transitionTime, setTransitionTime] = useState(0);
   const [disable, setDisable] = useState(false);
   const itemLength = useMemo(() => itemList.length, [itemList]);
-  const lastChildIndex = useMemo(
-    () => childrenLength / slideToShow + childrenLength - slideToShow,
-    [itemLength, slideToShow]
-  );
+  const [forwardItemLength, setForwardItemLength] = useState(0);
+  const [showIndex, setShowIndex] = useState(0);
 
   const showPrev = () => {
     if (disable) return;
     setDisable(true);
     setTransitionTime(transition);
-    setShowIndex(showIndex - 1);
+    setShowIndex(showIndex - slideToShow);
 
-    if (showIndex <= lastChildIndex) {
-      setTimeout(() => {
-        setTransitionTime(0);
+    setTimeout(() => {
+      setTransitionTime(0);
+      setItemList((prev) => {
         setShowIndex(showIndex + childrenLength / slideToShow - 1);
-      }, transition);
-    }
+        const temp = [...prev];
+        const result = [];
+        for (let i = 0; i < slideToShow; i++) {
+          result.unshift(temp.pop());
+        }
+        temp.unshift(...result);
+        return temp;
+      });
+    }, transition);
 
     setTimeout(() => {
       setDisable(false);
+      setShowIndex(forwardItemLength);
     }, transition);
   };
 
@@ -64,16 +69,24 @@ const useCarousel = ({
     if (disable) return;
     setDisable(true);
     setTransitionTime(transition);
-    setShowIndex(showIndex + 1);
+    setShowIndex(showIndex + slideToShow);
 
-    if (showIndex >= lastChildIndex) {
-      setTimeout(() => {
-        setTransitionTime(0);
+    setTimeout(() => {
+      setTransitionTime(0);
+      setItemList((prev) => {
         setShowIndex(showIndex - childrenLength / slideToShow + 1);
-      }, transition);
-    }
+        const temp = [...prev];
+        const result = [];
+        for (let i = 0; i < slideToShow; i++) {
+          result.push(temp.shift());
+        }
+        temp.push(...result);
+        return temp;
+      });
+    }, transition);
     setTimeout(() => {
       setDisable(false);
+      setShowIndex(forwardItemLength);
     }, transition);
   };
 
@@ -116,16 +129,36 @@ const useCarousel = ({
 
   useEffect(() => {
     const list = React.Children.toArray(children);
-    const clonedList = [...list];
-    list.push(...clonedList);
-    list.push(...clonedList);
-    list.unshift(...clonedList);
-    list.unshift(...clonedList);
-    setItemList(list);
+    if (list.length === slideToShow) {
+      setItemList(list);
+    } else {
+      const showItems = list.slice(0, slideToShow); // 처음에 보여줘야할 아이템들
+      const restItems = list.slice(slideToShow); // 나머지 아이템들
+
+      // 나머이 아이템 중에서 showItems 뒤에 붙을 애들
+      const backwardItems = restItems.slice(0, Math.floor(restItems.length / 2));
+
+      // 나머지 아이템 중에서 showItems 앞에 붙을 애들
+      const forwardItems = restItems.slice(Math.floor(restItems.length / 2));
+      setShowIndex(forwardItems.length);
+      setForwardItemLength(forwardItems.length);
+      const result = [...forwardItems, ...showItems, ...backwardItems];
+      setItemList(result);
+    }
   }, []);
 
   useEffect(() => {
-    setTransitionTime(transition);
+    setTransitionTime(0);
+    setTimeout(() => {
+      setTransitionTime(transition);
+    }, transition);
+  }, []);
+
+  useEffect(() => {
+    const childrenLength = React.Children.toArray(children).length;
+    if (childrenLength / slideToShow < slideToShow) {
+      alert('빈 공간이 보일수 있음');
+    }
   }, []);
 
   return {

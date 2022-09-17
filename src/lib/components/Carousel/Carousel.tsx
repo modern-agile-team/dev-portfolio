@@ -69,7 +69,7 @@ const Carousel = ({
           </div>
         </Player>
       )}
-      <Container len={itemLength} transition={transitionTime} showIndex={showIndex}>
+      <Container len={itemLength} transition={transitionTime} showIndex={showIndex} slideToShow={slideToShow}>
         <div className="carousel-wrapper">
           <div className="carousel-container">
             {itemList.map((child, index) => {
