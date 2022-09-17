@@ -47,6 +47,13 @@ export const Wrapper = styled.div<{
         bottom: ${bottom};
         transform: translateY(${translateY});
         z-index: 3;
+        transition: 0.3s scale;
+        &:hover {
+          scale: 1.1;
+        }
+        &:active {
+          scale: 1;
+        }
         cursor: pointer;
       }
       #next-button {
@@ -131,4 +138,13 @@ export const Player = styled.div<{
         `;
     }
   }}
+  .icon-wrapper {
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1);
+    }
+    transition: 0.3s;
+  }
 `;
