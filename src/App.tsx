@@ -65,10 +65,17 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel>
-        <Item title="1" />
-        <Item title="2" />
-        <Item title="3" />
+      <Carousel slideToShow={6}>
+        <Card>0</Card>
+        <Card>1</Card>
+        <Card>2</Card>
+        <Card>3</Card>
+        <Card>4</Card>
+        <Card>5</Card>
+        <Card>6</Card>
+        <Card>7</Card>
+        <Card>8</Card>
+        <Card>9</Card>
       </Carousel>
       <Contact />
     </div>
