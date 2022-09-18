@@ -48,14 +48,28 @@ const useCarousel = ({
     setTimeout(() => {
       setTransitionTime(0);
       setItemList((prev) => {
-        setShowIndex(showIndex + childrenLength / slideToShow - 1);
         const temp = [...prev];
         const result = [];
-        for (let i = 0; i < slideToShow; i++) {
-          result.unshift(temp.pop());
+        setShowIndex(showIndex + childrenLength / slideToShow - 1);
+
+        if (childrenLength / slideToShow < slideToShow) {
+          const origin = temp.splice(slideToShow, childrenLength);
+          for (let i = 0; i < slideToShow; i++) {
+            result.unshift(origin.pop());
+          }
+          origin.unshift(...result);
+          const f = origin.slice(0, slideToShow);
+          const b = origin.slice(-slideToShow);
+          origin.push(...f);
+          origin.unshift(...b);
+          return origin;
+        } else {
+          for (let i = 0; i < slideToShow; i++) {
+            result.unshift(temp.pop());
+          }
+          temp.unshift(...result);
+          return temp;
         }
-        temp.unshift(...result);
-        return temp;
       });
     }, transition);
 
@@ -74,16 +88,31 @@ const useCarousel = ({
     setTimeout(() => {
       setTransitionTime(0);
       setItemList((prev) => {
-        setShowIndex(showIndex - childrenLength / slideToShow + 1);
         const temp = [...prev];
         const result = [];
-        for (let i = 0; i < slideToShow; i++) {
-          result.push(temp.shift());
+        setShowIndex(showIndex - childrenLength / slideToShow + 1);
+
+        if (childrenLength / slideToShow < slideToShow) {
+          const origin = temp.splice(slideToShow, childrenLength);
+          for (let i = 0; i < slideToShow; i++) {
+            result.push(origin.shift());
+          }
+          origin.push(...result);
+          const f = origin.slice(0, slideToShow);
+          const b = origin.slice(-slideToShow);
+          origin.push(...f);
+          origin.unshift(...b);
+          return origin;
+        } else {
+          for (let i = 0; i < slideToShow; i++) {
+            result.push(temp.shift());
+          }
+          temp.push(...result);
+          return temp;
         }
-        temp.push(...result);
-        return temp;
       });
     }, transition);
+
     setTimeout(() => {
       setDisable(false);
       setShowIndex(forwardItemLength);
@@ -129,22 +158,27 @@ const useCarousel = ({
 
   useEffect(() => {
     const list = React.Children.toArray(children);
-    if (list.length === slideToShow) {
-      setItemList(list);
+    const showItems = list.slice(0, slideToShow);
+    const restItems = list.slice(slideToShow);
+
+    const backwardItems = restItems.slice(0, Math.floor(restItems.length / 2));
+
+    const forwardItems = restItems.slice(Math.floor(restItems.length / 2));
+    const result = [...forwardItems, ...showItems, ...backwardItems];
+
+    if (childrenLength / slideToShow < slideToShow) {
+      const f = result.slice(0, slideToShow);
+      const b = result.slice(-slideToShow);
+      result.push(...f);
+      result.unshift(...b);
+      setShowIndex(forwardItems.length + slideToShow);
+      setForwardItemLength(forwardItems.length + slideToShow);
     } else {
-      const showItems = list.slice(0, slideToShow); // 처음에 보여줘야할 아이템들
-      const restItems = list.slice(slideToShow); // 나머지 아이템들
-
-      // 나머이 아이템 중에서 showItems 뒤에 붙을 애들
-      const backwardItems = restItems.slice(0, Math.floor(restItems.length / 2));
-
-      // 나머지 아이템 중에서 showItems 앞에 붙을 애들
-      const forwardItems = restItems.slice(Math.floor(restItems.length / 2));
       setShowIndex(forwardItems.length);
       setForwardItemLength(forwardItems.length);
-      const result = [...forwardItems, ...showItems, ...backwardItems];
-      setItemList(result);
     }
+
+    setItemList(result);
   }, []);
 
   useEffect(() => {
@@ -152,13 +186,6 @@ const useCarousel = ({
     setTimeout(() => {
       setTransitionTime(transition);
     }, transition);
-  }, []);
-
-  useEffect(() => {
-    const childrenLength = React.Children.toArray(children).length;
-    if (childrenLength / slideToShow < slideToShow) {
-      alert('빈 공간이 보일수 있음');
-    }
   }, []);
 
   return {
