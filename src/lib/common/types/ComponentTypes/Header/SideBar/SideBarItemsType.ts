@@ -5,6 +5,15 @@ export interface SideBarItemsPropsType {
 
 export interface SideBarItemsElementType {
   title: string;
+  itemTextColor?: string;
+  itemBackgroundColor?: string;
+  itemHoverdBackgroundColor?: string;
+}
+
+export interface SideBarItemsElementStyledType {
+  itemTextColor?: string;
+  itemBackgroundColor?: string;
+  itemHoverdBackgroundColor?: string;
 }
 
 export interface SideBarItemsStyledPropsType {

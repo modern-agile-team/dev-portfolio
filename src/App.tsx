@@ -20,7 +20,15 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header id="Header" />
+      <Header
+        id="Header"
+        sideBarOption={{
+          mainTitle: 'dev-portfolio',
+          itemTextColor: 'red',
+          itemBackgroundColor: 'white',
+          itemHoverdBackgroundColor: 'whitesmoke',
+        }}
+      />
       <VisitorCounter />
       <VisitorComment id="VisitorComment" />
       <CardWrap id="CardWrap">

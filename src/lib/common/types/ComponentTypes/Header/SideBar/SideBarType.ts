@@ -3,6 +3,9 @@ import { SideBarIconType } from './SideBarIconType';
 
 export interface SideBarOptionPropsType extends SideBarIconType {
   mainTitle: string;
+  itemTextColor?: string;
+  itemBackgroundColor?: string;
+  itemHoverdBackgroundColor?: string;
 }
 
 interface ClickValidationType {
