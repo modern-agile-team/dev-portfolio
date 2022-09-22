@@ -62,7 +62,7 @@ const Background = styled.div<SideBarBackgroundStyledPropsType>`
 const MainTitle = styled.div<SideBarStyledPropsType>`
   padding: 0.2em 1em;
   font-size: ${({ mainTitleSize }) => mainTitleSize ?? '20px'};
-  text-align: ${({ mainTitleAlign }) => mainTitleAlign ?? 'center'};
+  text-align: ${({ mainTitleAlign }) => mainTitleAlign ?? 'left'};
   color: ${({ mainTitleColor }) => mainTitleColor ?? 'white'};
 `;
 

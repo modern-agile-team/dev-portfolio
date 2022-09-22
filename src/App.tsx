@@ -21,20 +21,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header
-        id="['Header', 'bxs:dock-top']"
-        sideBarOption={{
-          mainTitle: 'dev-portfolio',
-          mainTitleSize: '20px',
-          mainTitleColor: 'white',
-          mainTitleAlign: 'left',
-          mainTitleBorderColor: MAIN.MAIN_COLOR,
-          itemTextColor: 'white',
-          itemTextAlign: 'left',
-          itemBackgroundColor: MAIN.MAIN_COLOR,
-          itemHoverdBackgroundColor: 'black',
-        }}
-      />
+      <Header id="['Header', 'bxs:dock-top']" />
       <VisitorCounter />
       <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
       <CardWrap id="['CardWrap','bi:card-list']">
