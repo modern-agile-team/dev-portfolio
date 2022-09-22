@@ -9,6 +9,7 @@ import { MAIN } from '../../../common/theme';
 
 const SideBar = ({
   mainTitle,
+  mainTitleSize,
   mainTitleColor,
   mainTitleAlign,
   sideBarItems,
@@ -20,7 +21,7 @@ const SideBar = ({
   return (
     <>
       <Container isClickedSideBarIcon={isClickedSideBarIcon} backgroundColor={backgroundColor}>
-        <MainTitle mainTitleColor={mainTitleColor} mainTitleAlign={mainTitleAlign}>
+        <MainTitle mainTitleSize={mainTitleSize} mainTitleColor={mainTitleColor} mainTitleAlign={mainTitleAlign}>
           {mainTitle}
         </MainTitle>
         <Line mainTitleBorderColor={mainTitleBorderColor} />

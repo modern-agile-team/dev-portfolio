@@ -8,6 +8,7 @@ import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
   const {
     mainTitle,
+    mainTitleSize,
     mainTitleColor,
     mainTitleAlign,
     mainTitleBorderColor,
@@ -29,10 +30,26 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
 
     setSideBarItems(
       Array.from($tags).reduce((result: any[], $tag: any) => {
+        const tagId = $tag.id;
+        let [title, itemLogoName] = [undefined, undefined];
+        try {
+          [title, itemLogoName] = eval(tagId);
+        } catch (err) {
+          [title, itemLogoName] = [tagId, undefined];
+        }
+
         if (!$tag.id) return result;
         return [
           ...result,
-          { title: $tag.id, itemTextColor, itemTextAlign, itemBackgroundColor, itemHoverdBackgroundColor },
+          {
+            tagId,
+            title,
+            itemLogoName,
+            itemTextColor,
+            itemTextAlign,
+            itemBackgroundColor,
+            itemHoverdBackgroundColor,
+          },
         ];
       }, [])
     );
@@ -51,6 +68,7 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
       {isClickedSideBarIcon && (
         <SideBar
           mainTitle={mainTitle}
+          mainTitleSize={mainTitleSize}
           mainTitleColor={mainTitleColor}
           mainTitleAlign={mainTitleAlign}
           mainTitleBorderColor={mainTitleBorderColor}

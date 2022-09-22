@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import { MAIN } from '../../../common/theme';
 import {
   SideBarItemsPropsType,
@@ -13,26 +14,32 @@ const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPro
       {sideBarItems.map(
         (
           {
+            tagId,
             title,
             itemTextColor,
             itemTextAlign,
             itemBackgroundColor,
             itemHoverdBackgroundColor,
+            itemLogoName,
           }: SideBarItemsElementType,
           idx
         ) => (
           <ItemContainer
             key={idx}
             itemTextColor={itemTextColor}
-            itemTextAlign={itemTextAlign}
             itemBackgroundColor={itemBackgroundColor}
             itemHoverdBackgroundColor={itemHoverdBackgroundColor}
             onClick={() => {
               setIsClickedSideBarIcon(false);
-              document.getElementById(title)?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById(tagId as string)?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <Item>{title}</Item>
+            <Item itemTextAlign={itemTextAlign}>
+              <IconContainer>
+                <Icon icon={itemLogoName ?? ''} />
+              </IconContainer>
+              {title}
+            </Item>
           </ItemContainer>
         )
       )}
@@ -49,7 +56,6 @@ const ItemContainer = styled.div<SideBarItemsElementStyledType>`
   padding: 0.2em 1em;
   margin: 1px;
   text-decoration: none;
-  text-align: ${({ itemTextAlign }) => itemTextAlign ?? 'center'};
   border-radius: 4px;
   &:hover {
     background-color: ${({ itemHoverdBackgroundColor }) => itemHoverdBackgroundColor ?? 'whitesmoke'};
@@ -57,5 +63,12 @@ const ItemContainer = styled.div<SideBarItemsElementStyledType>`
 `;
 
 const Item = styled.div<SideBarItemsStyledPropsType>`
+  display: flex;
+  align-items: center;
+  justify-content: ${({ itemTextAlign }) => itemTextAlign ?? 'center'};
   margin: ${({ margin }) => margin ?? '10px 0px'};
+`;
+
+const IconContainer = styled.div`
+  margin-right: 10px;
 `;

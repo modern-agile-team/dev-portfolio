@@ -22,12 +22,13 @@ function App() {
   return (
     <div className="App">
       <Header
-        id="Header"
+        id="['Header', 'bxs:dock-top']"
         sideBarOption={{
           mainTitle: 'dev-portfolio',
+          mainTitleSize: '20px',
           mainTitleColor: 'white',
-          mainTitleAlign: 'center',
-          mainTitleBorderColor: 'white',
+          mainTitleAlign: 'left',
+          mainTitleBorderColor: MAIN.MAIN_COLOR,
           itemTextColor: 'white',
           itemTextAlign: 'left',
           itemBackgroundColor: MAIN.MAIN_COLOR,
@@ -35,8 +36,8 @@ function App() {
         }}
       />
       <VisitorCounter />
-      <VisitorComment id="VisitorComment" />
-      <CardWrap id="CardWrap">
+      <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
+      <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
         </Card>
@@ -47,11 +48,11 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro id="Intro " />
-      <TechStackList id="TechStackList" />
+      <Intro id="['Intro', 'icon-park-outline:hi']" />
+      <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
       <TechStackInput />
-      <Experience id="Experience" />
-      <Gallery>
+      <Experience id="['Experience', 'ic:outline-work-history']" />
+      <Gallery id="['Gallery', 'clarity:image-gallery-line']">
         <Item />
         <Item />
         <Item />
@@ -62,7 +63,7 @@ function App() {
         <Item />
         <Item />
       </Gallery>
-      <Masonry id="Masonry">
+      <Masonry id="['Masonry', 'ri:layout-masonry-line']">
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/1100/?random" />
         <Image src="https://picsum.photos/300/400/?random" />
@@ -78,31 +79,12 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel id="Carousel">
+      <Carousel id="['Carousel', 'material-symbols:view-carousel-outline-rounded']">
         <Item title="1" />
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="Contact1" />
-      <Contact id="Contact2" />
-      <Contact id="Contact3" />
-      <Contact id="Contact4" />
-      <Contact id="Contact5" />
-      <Contact id="Contact6" />
-      <Contact id="Contact7" />
-      <Contact id="Contact8" />
-      <Contact id="Contact9" />
-      <Contact id="Contact10" />
-      <Contact id="Contact11" />
-      <Contact id="Contact12" />
-      <Contact id="Contact13" />
-      <Contact id="Contact14" />
-      <Contact id="Contact15" />
-      <Contact id="Contact16" />
-      <Contact id="Contact17" />
-      <Contact id="Contact18" />
-      <Contact id="Contact19" />
-      <Contact id="Contact20" />
+      <Contact id="['Contact', 'fluent:contact-card-16-regular']" />
     </div>
   );
 }
