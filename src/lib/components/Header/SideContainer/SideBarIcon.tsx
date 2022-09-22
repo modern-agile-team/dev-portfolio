@@ -7,7 +7,7 @@ import {
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarIconType';
 
 const SideBarIcon = ({
-  logoName = 'ant-design:menu-fold-outlined',
+  iconName = 'ant-design:menu-fold-outlined',
   iconSize = '30px',
   iconColor = '#434521',
   iconMargin = '0px 12px 0px 12px',
@@ -16,7 +16,7 @@ const SideBarIcon = ({
   return (
     <Container iconMargin={iconMargin} onClick={onClick}>
       {/* <FaBars fontSize={iconSize} color={iconColor} /> */}
-      <Icon icon={logoName} fontSize={iconSize} color={iconColor} />
+      <Icon icon={iconName} fontSize={iconSize} color={iconColor} />
     </Container>
   );
 };

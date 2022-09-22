@@ -8,6 +8,6 @@ export interface SideBarIconPropsType extends SideBarIconType {
 }
 
 export interface SideBarIconStyledPropsType {
-  logoName?: string;
+  iconName?: string;
   iconMargin?: string;
 }

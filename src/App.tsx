@@ -21,7 +21,10 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header id="['Header', 'bxs:dock-top']" />
+      <Header
+        id="['Header', 'bxs:dock-top']"
+        sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }}
+      />
       <VisitorCounter />
       <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
       <CardWrap id="['CardWrap','bi:card-list']">

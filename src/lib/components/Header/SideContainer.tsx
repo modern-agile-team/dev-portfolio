@@ -13,6 +13,7 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     mainTitleAlign,
     mainTitleBorderColor,
     backgroundColor,
+    iconName,
     iconSize,
     iconColor,
     iconMargin,
@@ -60,6 +61,7 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     <Container>
       <Channels channels={channels} />
       <SideBarIcon
+        iconName={iconName}
         iconSize={iconSize}
         iconColor={iconColor}
         iconMargin={iconMargin}
