@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer';
+import { MAIN } from '../../common/theme';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
 import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
@@ -125,6 +126,7 @@ const channelsDefault: ChannelType[] = [
 const sideBarOptionDefault: SideBarOptionPropsType = {
   mainTitle: 'dev-portfolio',
   iconSize: '28px',
-  iconColor: '#181717BB',
+  iconColor: MAIN.MAIN_COLOR,
   iconMargin: '0px 12px 0px 12px',
+  backgroundColor: MAIN.MAIN_COLOR,
 };

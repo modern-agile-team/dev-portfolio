@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MAIN } from './lib/common/theme';
 import {
   Header,
   TechStackInput,
@@ -24,9 +25,13 @@ function App() {
         id="Header"
         sideBarOption={{
           mainTitle: 'dev-portfolio',
-          itemTextColor: 'red',
-          itemBackgroundColor: 'white',
-          itemHoverdBackgroundColor: 'whitesmoke',
+          mainTitleColor: 'white',
+          mainTitleAlign: 'center',
+          mainTitleBorderColor: 'white',
+          itemTextColor: 'white',
+          itemTextAlign: 'left',
+          itemBackgroundColor: MAIN.MAIN_COLOR,
+          itemHoverdBackgroundColor: 'black',
         }}
       />
       <VisitorCounter />
@@ -78,7 +83,26 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="Contact" />
+      <Contact id="Contact1" />
+      <Contact id="Contact2" />
+      <Contact id="Contact3" />
+      <Contact id="Contact4" />
+      <Contact id="Contact5" />
+      <Contact id="Contact6" />
+      <Contact id="Contact7" />
+      <Contact id="Contact8" />
+      <Contact id="Contact9" />
+      <Contact id="Contact10" />
+      <Contact id="Contact11" />
+      <Contact id="Contact12" />
+      <Contact id="Contact13" />
+      <Contact id="Contact14" />
+      <Contact id="Contact15" />
+      <Contact id="Contact16" />
+      <Contact id="Contact17" />
+      <Contact id="Contact18" />
+      <Contact id="Contact19" />
+      <Contact id="Contact20" />
     </div>
   );
 }

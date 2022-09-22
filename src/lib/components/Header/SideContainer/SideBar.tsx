@@ -5,13 +5,25 @@ import {
   SideBarStyledPropsType,
   SideBarBackgroundStyledPropsType,
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarType';
+import { MAIN } from '../../../common/theme';
 
-const SideBar = ({ mainTitle, sideBarItems, isClickedSideBarIcon, setIsClickedSideBarIcon }: SideBarPropsType) => {
+const SideBar = ({
+  mainTitle,
+  mainTitleColor,
+  mainTitleAlign,
+  sideBarItems,
+  isClickedSideBarIcon,
+  backgroundColor,
+  mainTitleBorderColor,
+  setIsClickedSideBarIcon,
+}: SideBarPropsType) => {
   return (
     <>
-      <Container isClickedSideBarIcon={isClickedSideBarIcon}>
-        <MainTitle>{mainTitle}</MainTitle>
-        <Line />
+      <Container isClickedSideBarIcon={isClickedSideBarIcon} backgroundColor={backgroundColor}>
+        <MainTitle mainTitleColor={mainTitleColor} mainTitleAlign={mainTitleAlign}>
+          {mainTitle}
+        </MainTitle>
+        <Line mainTitleBorderColor={mainTitleBorderColor} />
         <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
       </Container>
       <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
@@ -29,7 +41,7 @@ const Container = styled.div<SideBarStyledPropsType>`
   width: 30%;
   max-width: 280px;
   padding: 16px;
-  background-color: white;
+  background-color: ${({ backgroundColor }) => (backgroundColor ? backgroundColor : MAIN.MAIN_COLOR)};
   border-radius: 10px 0px 10px 10px;
   animation: 0.3s ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? showUp : showOut)};
 `;
@@ -46,13 +58,15 @@ const Background = styled.div<SideBarBackgroundStyledPropsType>`
   background-color: rgba(0, 0, 0, 0.65);
 `;
 
-const MainTitle = styled.div`
-  font-weight: bold;
-  font-size: 20px;
+const MainTitle = styled.div<SideBarStyledPropsType>`
+  padding: 0.2em 1em;
+  font-size: ${({ mainTitleSize }) => mainTitleSize ?? '20px'};
+  text-align: ${({ mainTitleAlign }) => mainTitleAlign ?? 'center'};
+  color: ${({ mainTitleColor }) => mainTitleColor ?? 'white'};
 `;
 
-const Line = styled.hr`
-  border: 0.05px solid #00000022;
+const Line = styled.hr<SideBarStyledPropsType>`
+  border: 0.05px solid ${({ mainTitleBorderColor }) => mainTitleBorderColor ?? 'white'};
 `;
 
 const showUp = keyframes`

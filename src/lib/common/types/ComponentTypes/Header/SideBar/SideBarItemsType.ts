@@ -3,15 +3,13 @@ export interface SideBarItemsPropsType {
   setIsClickedSideBarIcon: (isClickedSideBarIcon: boolean) => void;
 }
 
-export interface SideBarItemsElementType {
+export interface SideBarItemsElementType extends SideBarItemsElementStyledType {
   title: string;
-  itemTextColor?: string;
-  itemBackgroundColor?: string;
-  itemHoverdBackgroundColor?: string;
 }
 
 export interface SideBarItemsElementStyledType {
   itemTextColor?: string;
+  itemTextAlign?: string;
   itemBackgroundColor?: string;
   itemHoverdBackgroundColor?: string;
 }

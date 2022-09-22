@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MAIN } from '../../../common/theme';
 import {
   SideBarItemsPropsType,
   SideBarItemsElementType,
@@ -10,10 +11,20 @@ const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPro
   return (
     <>
       {sideBarItems.map(
-        ({ title, itemTextColor, itemBackgroundColor, itemHoverdBackgroundColor }: SideBarItemsElementType, idx) => (
+        (
+          {
+            title,
+            itemTextColor,
+            itemTextAlign,
+            itemBackgroundColor,
+            itemHoverdBackgroundColor,
+          }: SideBarItemsElementType,
+          idx
+        ) => (
           <ItemContainer
             key={idx}
             itemTextColor={itemTextColor}
+            itemTextAlign={itemTextAlign}
             itemBackgroundColor={itemBackgroundColor}
             itemHoverdBackgroundColor={itemHoverdBackgroundColor}
             onClick={() => {
@@ -34,10 +45,11 @@ export default SideBarItems;
 const ItemContainer = styled.div<SideBarItemsElementStyledType>`
   cursor: pointer;
   color: ${({ itemTextColor }) => itemTextColor ?? 'black'};
-  background-color: ${({ itemBackgroundColor }) => itemBackgroundColor ?? 'white'};
+  background-color: ${({ itemBackgroundColor }) => itemBackgroundColor ?? MAIN.MAIN_COLOR};
   padding: 0.2em 1em;
   margin: 1px;
   text-decoration: none;
+  text-align: ${({ itemTextAlign }) => itemTextAlign ?? 'center'};
   border-radius: 4px;
   &:hover {
     background-color: ${({ itemHoverdBackgroundColor }) => itemHoverdBackgroundColor ?? 'whitesmoke'};

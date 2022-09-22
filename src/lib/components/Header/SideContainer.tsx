@@ -6,8 +6,20 @@ import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
 
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
-  const { mainTitle, iconSize, iconColor, iconMargin, itemTextColor, itemBackgroundColor, itemHoverdBackgroundColor } =
-    sideBarOption;
+  const {
+    mainTitle,
+    mainTitleColor,
+    mainTitleAlign,
+    mainTitleBorderColor,
+    backgroundColor,
+    iconSize,
+    iconColor,
+    iconMargin,
+    itemTextColor,
+    itemTextAlign,
+    itemBackgroundColor,
+    itemHoverdBackgroundColor,
+  } = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
   const [sideBarItems, setSideBarItems] = useState([{}]);
@@ -18,7 +30,10 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     setSideBarItems(
       Array.from($tags).reduce((result: any[], $tag: any) => {
         if (!$tag.id) return result;
-        return [...result, { title: $tag.id, itemTextColor, itemBackgroundColor, itemHoverdBackgroundColor }];
+        return [
+          ...result,
+          { title: $tag.id, itemTextColor, itemTextAlign, itemBackgroundColor, itemHoverdBackgroundColor },
+        ];
       }, [])
     );
     setIsClickedSideBarIcon(true);
@@ -36,8 +51,12 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
       {isClickedSideBarIcon && (
         <SideBar
           mainTitle={mainTitle}
+          mainTitleColor={mainTitleColor}
+          mainTitleAlign={mainTitleAlign}
+          mainTitleBorderColor={mainTitleBorderColor}
           sideBarItems={sideBarItems}
           isClickedSideBarIcon={isClickedSideBarIcon}
+          backgroundColor={backgroundColor}
           setIsClickedSideBarIcon={setIsClickedSideBarIcon}
         />
       )}
