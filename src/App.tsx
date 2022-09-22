@@ -20,10 +20,10 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header />
-      <VisitorCounter />
-      <VisitorComment />
-      <CardWrap>
+      <Header id="Header " />
+      <VisitorCounter id="VisitorCounter " />
+      <VisitorComment id="VisitorComment " />
+      <CardWrap id="CardWrap">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
         </Card>
@@ -34,10 +34,10 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro />
-      <TechStackList />
-      <TechStackInput />
-      <Experience />
+      <Intro id="Intro " />
+      <TechStackList id="TechStackList " />
+      <TechStackInput id="TechStackInput " />
+      <Experience id="Experience " />
       <Gallery>
         <Item />
         <Item />
@@ -49,7 +49,7 @@ function App() {
         <Item />
         <Item />
       </Gallery>
-      <Masonry>
+      <Masonry id="Masonry">
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/1100/?random" />
         <Image src="https://picsum.photos/300/400/?random" />
@@ -65,12 +65,12 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel>
+      <Carousel id="Carousel">
         <Item title="1" />
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact />
+      <Contact id="Contact " />
     </div>
   );
 }
