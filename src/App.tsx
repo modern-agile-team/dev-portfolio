@@ -20,9 +20,9 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header id="Header " />
-      <VisitorCounter id="VisitorCounter " />
-      <VisitorComment id="VisitorComment " />
+      <Header id="Header" />
+      <VisitorCounter />
+      <VisitorComment id="VisitorComment" />
       <CardWrap id="CardWrap">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -35,9 +35,9 @@ function App() {
         </Card>
       </CardWrap>
       <Intro id="Intro " />
-      <TechStackList id="TechStackList " />
-      <TechStackInput id="TechStackInput " />
-      <Experience id="Experience " />
+      <TechStackList id="TechStackList" />
+      <TechStackInput />
+      <Experience id="Experience" />
       <Gallery>
         <Item />
         <Item />
@@ -70,7 +70,7 @@ function App() {
         <Item title="2" />
         <Item title="3" />
       </Carousel>
-      <Contact id="Contact " />
+      <Contact id="Contact" />
     </div>
   );
 }
