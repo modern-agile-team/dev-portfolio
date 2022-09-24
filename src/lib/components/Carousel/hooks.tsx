@@ -186,10 +186,10 @@ const setNextItem = ({
       result.push(list.shift());
     }
     list.push(...result);
-    const f = list.slice(0, slideToShow);
-    const b = list.slice(-slideToShow);
-    list.push(...f);
-    list.unshift(...b);
+    const forward = list.slice(0, slideToShow);
+    const backward = list.slice(-slideToShow);
+    list.push(...forward);
+    list.unshift(...backward);
   } else {
     for (let i = 0; i < slideToShow; i++) {
       result.push(list.shift());
@@ -222,10 +222,10 @@ const setPreviousItem = ({
       result.unshift(list.pop());
     }
     list.unshift(...result);
-    const f = list.slice(0, slideToShow);
-    const b = list.slice(-slideToShow);
-    list.push(...f);
-    list.unshift(...b);
+    const forward = list.slice(0, slideToShow);
+    const backward = list.slice(-slideToShow);
+    list.push(...forward);
+    list.unshift(...backward);
   } else {
     for (let i = 0; i < slideToShow; i++) {
       result.unshift(list.pop());
