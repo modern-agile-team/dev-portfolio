@@ -1,5 +1,5 @@
 # dev-porfolio
-![npm_package_badge](https://img.shields.io/badge/npm-v1.2.0-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v1.2.1-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 ![react-iconify](https://img.shields.io/badge/iconify-react-red)
 
@@ -144,9 +144,19 @@ export default App;
   ```js
   const sideBarOption = {
     mainTitle: 'dev-portfolio',
+    mainTitleSize: '24px',
+    mainTitleColor: 'white',
+    mainTitleAlign: 'left',
+    mainTitleBorderColor: 'white',
+    iconName: 'ant-design:menu-fold-outlined',
     iconSize: '28px',
-    iconColor: '#181717BB',
+    iconColor: '#434521',
     iconMargin: '0px 12px 0px 12px',
+    itemTextColor: 'white',
+    itemTextAlign: 'left',
+    itemBackgroundColor: '#434521',
+    itemHoverdBackgroundColor: 'black',
+    backgroundColor: '#434521',
   };
   ```
   
