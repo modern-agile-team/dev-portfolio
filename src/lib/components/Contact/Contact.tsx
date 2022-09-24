@@ -4,15 +4,18 @@ import AboutMe from './AboutMe';
 import { ContactPropsType, ContactStyledPropsType } from '../../common/types/ComponentTypes/Contact/ContactType';
 
 /**
+ * This Component is for your contacts like email and P.H.
+ * You can also appeal your channels like github and youtube.
+ * Let's use this component to promote all your channels!
+ *
  * @props id: Name to be added to Sidebar
  * @props backgroundColor: Contact Background Color	(default: whitesmoke)
- * @props contactOption: Contact-only props such as title, email button, channels and my personal info, etc	(default: {@link  https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts "See More about Contact's Props"})
- * @contactOption title: Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
- * @contactOption subTitle: Sub title text (default: 'If you're interested in me, please press the button below :D')
- * @contactOption email: Your Email (default: 'abc@dev-portfolio.com')
- * @contactOption buttonText: Text of button that function as a link to your email (default: 'Want to work with me?')
- * @contactOption channels: Array of your channels like github and blogs (default: an array of 4 in length)
- * @contactOption aboutMeInfos: Your personal information like TEL, Home etc
+ * @props title: Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
+ * @props subTitle: Sub title text (default: 'If you're interested in me, please press the button below :D')
+ * @props email: Your Email (default: 'abc@dev-portfolio.com')
+ * @props buttonText: Text of button that function as a link to your email (default: 'Want to work with me?')
+ * @props channels: Array of your channels like github and blogs (default: an array of 4 in length)
+ * @props aboutMeInfos: Your personal information like TEL, Home etc
  * @channels name: Channel name
  * @channels redirectUrl: link to channel
  * @channels color: Color of Channel Icon
@@ -21,11 +24,19 @@ import { ContactPropsType, ContactStyledPropsType } from '../../common/types/Com
  * @aboutMeInfos title: Kind of personal information
  * @aboutMeInfos description: Description for title
  */
-const Contact = ({ id, contactOption = contactOptionDefault, backgroundColor }: ContactPropsType) => {
-  const { aboutMeInfos } = contactOption;
+const Contact = ({
+  id,
+  backgroundColor,
+  title,
+  subTitle,
+  email,
+  buttonText,
+  channels,
+  aboutMeInfos,
+}: ContactPropsType) => {
   return (
     <Container id={id} backgroundColor={backgroundColor}>
-      <ContactForm contactOption={contactOption} />
+      <ContactForm title={title} subTitle={subTitle} email={email} buttonText={buttonText} channels={channels} />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>
   );
@@ -43,7 +54,7 @@ const Container = styled.div<ContactStyledPropsType>`
   }
 `;
 
-const contactOptionDefault = {
+Contact.defaultProps = {
   title: 'Hello, my name is DEV_PORTFOLIO',
   subTitle: `If you're interested in me, please press the button below :D`,
   buttonText: 'Want to work with me?',
