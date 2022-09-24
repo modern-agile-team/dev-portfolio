@@ -2,19 +2,6 @@ import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 import { ChannelPropsType, ChannelType, ChannelStyledType } from '../../common/types/ComponentTypes/ChannelType';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  @media screen and (max-width: 374px) {
-    display: none;
-  }
-`;
-
-const Channel = styled.a<ChannelStyledType>`
-  margin: ${({ margin }) => margin ?? '0px 6px 0px 6px'};
-`;
-
 /**
  *
  * @props redirectUrl: link to channel
@@ -35,3 +22,19 @@ const Channels = ({ channels }: ChannelPropsType) => {
 };
 
 export default Channels;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (max-width: 374px) {
+    display: none;
+  }
+`;
+
+const Channel = styled.a<ChannelStyledType>`
+  margin: ${({ margin }) => margin ?? '0px 6px 0px 6px'};
+  &:hover {
+    scale: calc(1.05);
+  }
+`;
