@@ -47,6 +47,13 @@ export const Wrapper = styled.div<{
         bottom: ${bottom};
         transform: translateY(${translateY});
         z-index: 3;
+        transition: 0.3s scale;
+        &:hover {
+          scale: 1.1;
+        }
+        &:active {
+          scale: 1;
+        }
         cursor: pointer;
       }
       #next-button {
@@ -66,6 +73,7 @@ export const Container = styled.div<{
   len: number;
   transition: number;
   showIndex: number;
+  slideToShow: number;
 }>`
   overflow: hidden;
   .carousel-wrapper {
@@ -74,11 +82,11 @@ export const Container = styled.div<{
   .carousel-container {
     display: flex;
     position: relative;
-    ${({ transition, len, showIndex }) => {
+    ${({ transition, len, showIndex, slideToShow }) => {
       return css`
         transition: ${transition / 1000}s;
         width: calc(${len} * 100%);
-        transform: translateX(${(-showIndex * 100) / len}%);
+        transform: translateX(${(-showIndex * 100) / len / slideToShow}%);
       `;
     }}
   }
@@ -130,4 +138,13 @@ export const Player = styled.div<{
         `;
     }
   }}
+  .icon-wrapper {
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1);
+    }
+    transition: 0.3s;
+  }
 `;

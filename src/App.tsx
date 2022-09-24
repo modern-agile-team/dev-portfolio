@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MAIN } from './lib/common/theme';
 import {
   Header,
   TechStackInput,
@@ -20,10 +21,15 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header
+        id="['Header', 'bxs:dock-top']"
+        sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }}
+      />
+      
       <VisitorCounter />
-      <VisitorComment />
-      <CardWrap>
+      <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
+      
+      <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
         </Card>
@@ -34,11 +40,15 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      <Intro />
-      <TechStackList />
+      
+      <Intro id="['Intro', 'icon-park-outline:hi']" />
+      
+      <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
       <TechStackInput />
-      <Experience />
-      <Gallery>
+      
+      <Experience id="['Experience', 'ic:outline-work-history']" />
+      
+      <Gallery id="['Gallery', 'clarity:image-gallery-line']">
         <Item />
         <Item />
         <Item />
@@ -49,7 +59,8 @@ function App() {
         <Item />
         <Item />
       </Gallery>
-      <Masonry>
+      
+      <Masonry id="['Masonry', 'ri:layout-masonry-line']">
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/1100/?random" />
         <Image src="https://picsum.photos/300/400/?random" />
@@ -65,12 +76,20 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
 
-      <Carousel>
-        <Item title="1" />
-        <Item title="2" />
-        <Item title="3" />
+      <Carousel id="['Carousel', 'material-symbols:view-carousel-outline-rounded']" slideToShow={6}>
+        <Card>0</Card>
+        <Card>1</Card>
+        <Card>2</Card>
+        <Card>3</Card>
+        <Card>4</Card>
+        <Card>5</Card>
+        <Card>6</Card>
+        <Card>7</Card>
+        <Card>8</Card>
+        <Card>9</Card>
       </Carousel>
-      <Contact />
+      
+      <Contact id="['Contact', 'fluent:contact-card-16-regular']" />
     </div>
   );
 }

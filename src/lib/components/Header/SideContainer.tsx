@@ -6,18 +6,53 @@ import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
 
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
-  const { mainTitle, iconSize, iconColor, iconMargin } = sideBarOption;
+  const {
+    mainTitle,
+    mainTitleSize,
+    mainTitleColor,
+    mainTitleAlign,
+    mainTitleBorderColor,
+    backgroundColor,
+    iconName,
+    iconSize,
+    iconColor,
+    iconMargin,
+    itemTextColor,
+    itemTextAlign,
+    itemBackgroundColor,
+    itemHoverdBackgroundColor,
+  } = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
-  const [sideBarItems, setSideBarItems] = useState([{ title: 'init string' }]);
+  const [sideBarItems, setSideBarItems] = useState([{}]);
 
   const onClickSideBarIconHandler = () => {
     const $tags: any = document.querySelector('.App')?.childNodes;
 
     setSideBarItems(
-      Array.from($tags).map(($tag: any) => {
-        return { title: $tag.id };
-      })
+      Array.from($tags).reduce((result: any[], $tag: any) => {
+        const tagId = $tag.id;
+        let [title, itemLogoName] = [undefined, undefined];
+        try {
+          [title, itemLogoName] = eval(tagId);
+        } catch (err) {
+          [title, itemLogoName] = [tagId, undefined];
+        }
+
+        if (!$tag.id) return result;
+        return [
+          ...result,
+          {
+            tagId,
+            title,
+            itemLogoName,
+            itemTextColor,
+            itemTextAlign,
+            itemBackgroundColor,
+            itemHoverdBackgroundColor,
+          },
+        ];
+      }, [])
     );
     setIsClickedSideBarIcon(true);
   };
@@ -26,6 +61,7 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     <Container>
       <Channels channels={channels} />
       <SideBarIcon
+        iconName={iconName}
         iconSize={iconSize}
         iconColor={iconColor}
         iconMargin={iconMargin}
@@ -34,8 +70,13 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
       {isClickedSideBarIcon && (
         <SideBar
           mainTitle={mainTitle}
+          mainTitleSize={mainTitleSize}
+          mainTitleColor={mainTitleColor}
+          mainTitleAlign={mainTitleAlign}
+          mainTitleBorderColor={mainTitleBorderColor}
           sideBarItems={sideBarItems}
           isClickedSideBarIcon={isClickedSideBarIcon}
+          backgroundColor={backgroundColor}
           setIsClickedSideBarIcon={setIsClickedSideBarIcon}
         />
       )}

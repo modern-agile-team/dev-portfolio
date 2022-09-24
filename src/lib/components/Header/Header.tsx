@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer';
+import { MAIN } from '../../common/theme';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
 import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
@@ -96,28 +97,28 @@ const channelsDefault: ChannelType[] = [
     name: 'github',
     redirectUrl: 'https://',
     color: '#181717BB',
-    size: '18px',
+    size: '24px',
     margin: '0px 12px 0px 0px',
   },
   {
     name: 'naver',
     redirectUrl: 'https://',
     color: '#47A141BB',
-    size: '18px',
+    size: '24px',
     margin: '0px 12px 0px 0px',
   },
   {
     name: 'facebook',
     redirectUrl: 'https://',
     color: '#1877F2BB',
-    size: '18px',
+    size: '24px',
     margin: '0px 12px 0px 0px',
   },
   {
     name: 'youtube',
     redirectUrl: 'https://',
     color: '#FF0000BB',
-    size: '18px',
+    size: '24px',
     margin: '0px 12px 0px 0px',
   },
 ];
@@ -125,6 +126,7 @@ const channelsDefault: ChannelType[] = [
 const sideBarOptionDefault: SideBarOptionPropsType = {
   mainTitle: 'dev-portfolio',
   iconSize: '28px',
-  iconColor: '#181717BB',
+  iconColor: MAIN.MAIN_COLOR,
   iconMargin: '0px 12px 0px 12px',
+  backgroundColor: MAIN.MAIN_COLOR,
 };
