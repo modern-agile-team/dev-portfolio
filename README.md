@@ -655,7 +655,7 @@ export default App;
 | `subTitle`        | string                                   | Sub title text                                       | 'If you're interested in me, please press the button below :D'                                                                               |      |
 | `email`           | string                                   | Your Email                                           | 'abc@dev-portfolio.com'                                                                                                                      |      |
 | `buttonText`      | string                                   | Text of button that function as a link to your email | 'Want to work with me?'                                                                                                                      |      |
-| `channels`        | string[]                                 | Array of your channels like github and blogs         | an array of 4 in length                                                                                                                      |      |
+| `channels`        | [Type of Channel props](https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#L35)                                 | Array of your channels like github and blogs         | an array of 4 in length                                                                                                                      |      |
 | `aboutMeInfos`    | {title?: string, description?: string}[] | Your personal information like TEL, Home etc         | [you can see default props here!](https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/components/Contact/Contact.tsx#L81) |
 
 <details>
@@ -743,19 +743,26 @@ const App = () => {
 
 export default App;
 ```
-
-| props             | type                                                                                                                                                                                                                          | description                                                   | default   | note                      |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | --------- | ------------------------- | --- |
-| `title`           | string                                                                                                                                                                                                                        | Hit title used in 'default' and 'big-size'                    | hits      |                           |
-| `theme`           | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default', 'big-size', 'simple'        | default   |                           |
-| `todayVisitor`    | number                                                                                                                                                                                                                        | Number of today's visitors                                    | 0         | fetched variable          |
-| `totalVisitor`    | number                                                                                                                                                                                                                        | Number of total's visitors                                    | 123       | fetched variable          |
-| `todayTitle`      | string                                                                                                                                                                                                                        | Title of today visit count used in 'big-size' and 'simple'    | today     |                           |
-| `totalTitle`      | string                                                                                                                                                                                                                        | Title of total visit count used in 'big-size' and 'simple'    | total     |                           |
-| `backgroundColor` | string                                                                                                                                                                                                                        | Background color of todayTitle                                | #91c230c4 |                           |     |
-| `size`            | string                                                                                                                                                                                                                        | Font size and component size in the visitor counter component | 14px      | Make sure to include 'px' |
-| `todayBoldColor`  | string                                                                                                                                                                                                                        | Color of today's visit count used in 'big-size' and 'simple'  | red       |                           |
-| `totalBoldColor`  | string                                                                                                                                                                                                                        | Color of total visit count used in 'big-size' and 'simple'    | red       |                           |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| ```id``` | string | Name to be added to Sidebar | | |
+| ```theme``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a> | Visitor Comment theme: 'basic', 'box', 'vertical' | basic | |
+| ```backgroundColor``` | string | VisitorComment background-color | whitesmoke | |
+| ```inputBackgroundColor``` | string | Background color of guest book preparation column | White | |
+| ```userInputLineColor``` | string | Underline color in the User Information field | #b4b4b4a2 | |
+| ```buttonColor``` | string | Font color of send button | #1877f | |
+| ```progressbarColor``` | string | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f | |
+| ```isShowScrollDownIcon``` | boolean | Whether to display icons that are generated when a scroll event occurs | true | |
+| ```scrollDownIconColor``` | string | Color in ScrollDown Icon | black | Only works when isShowScrollDownIcon is true |
+| ```comment``` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
+| ```nickname``` | string | the nickname of visitor comment | dev-portfolio | fetched variable |
+| ```password``` | string | the password of visitor comment | 1234 | fetched variable |
+| ```commentInputPlacehoder``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
+| ```commentList``` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list | See "More about VisitorComment's Props" | fetched variable |
+| ```handleCreateComment``` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
+| ```handleChangeDescription``` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
+| ```handleChangeNickname``` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
+| ```handleChangePassword``` | (e?: React.ChangeEvent<HTMLElement>) => void | Password Props for event handling | | |
 
 <details>
 <summary>More about VisitorCounter's props</summary>
