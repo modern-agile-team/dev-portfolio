@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IntroPropsType, IntroOptionType } from '../../common/types/ComponentTypes/IntroType';
+import { IntroPropsType } from '../../common/types/ComponentTypes/IntroType';
 import { IntroTitle, IntroForm } from './index';
 
 /**
@@ -7,11 +7,11 @@ import { IntroTitle, IntroForm } from './index';
  * @props id:	Name to be added to Sidebar
  * @props textAlign: Intro Text align	center (default: center)
  * @props backgroundColor: Intro Background color	whitesmoke (default: whitesmoke)
- * @props introOption: Intro-only props (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts "See More about Intro's Props"}) @introOption title: Core of your introduction, @introOption description: Introduce yourself, @introOption shortIntro: a brief introduction
+ * @props title: Core of your introduction (default: 'Intro')
+ * @props shortIntro: a brief introduction ('shortIntro that will captivate people')
+ * @props description: Introduce yourself ('This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams!')
  */
-const Intro = ({ id, introOption = IntroOptionDefault, textAlign, backgroundColor }: IntroPropsType) => {
-  const { title, shortIntro, description } = introOption;
-
+const Intro = ({ id, textAlign, backgroundColor, title, shortIntro, description }: IntroPropsType) => {
   return (
     <Wrap id={id} textAlign={textAlign} backgroundColor={backgroundColor}>
       <IntroTitle title={title} shortIntro={shortIntro} />
@@ -38,7 +38,7 @@ const Wrap = styled.div<{
   }
 `;
 
-const IntroOptionDefault: IntroOptionType = {
+Intro.defaultProps = {
   title: 'Intro',
   shortIntro: 'shortIntro that will captivate people',
   description:
