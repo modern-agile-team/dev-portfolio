@@ -648,7 +648,12 @@ export default App;
 | - | - | - | - | - |
 | ```id``` | string | Name to be added to Sidebar | | |
 | ```backgroundColor``` | string | Contact Background Color | whitesmoke | |
-| ```contactOption``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#:~:text=interface-,ContactOptionType,-%7B">ContactOptionType</a> | Contact-only props such as title, email button, channels and my personal info, etc | See "More about Contact's Props" | |
+| ```title```| string | Core of your contacts | 'Hello, my name is DEV_PORTFOLIO' | |
+| ```subTitle```| string | Sub title text | 'If you're interested in me, please press the button below :D' | |
+| ```email``` | string | Your Email | 'abc@dev-portfolio.com' | |
+| ```buttonText``` | string | Text of button that function as a link to your email |'Want to work with me?' | |
+| ```channels``` | string[] | Array of your channels like github and blogs | an array of 4 in length | |
+| ```aboutMeInfos``` | {title?: string, description?: string}[] | Your personal information like TEL, Home etc | [you can see default props here!](https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/components/Contact/Contact.tsx#L81)
 
 <details>
 <summary>More about Contact's props</summary>
