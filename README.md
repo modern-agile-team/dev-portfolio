@@ -626,17 +626,23 @@ const hover = 'zoom';
 ```js
 import { Contact } from 'dev-portfolio';
 
-const contactOption = { ... };
+const channels = [{...}, {...}];
+const aboutMeInfos = [{...}, {...}];
 
 const App = () => {
   return (
     <Contact
       id="Contact Component"
       backgroundColor="whitesmoke"
-      contactOption={contactOption}
+      title="Hello My name is OOO"
+      subTitle="If you're interested in me, please press the button below :D"
+      buttonText="Want to work with me?"
+      email="abc@dev-portfolio.com"
+      channels={channels}
+      aboutMeInfos={aboutMeInfos}
     />
   );
-}
+};
 
 export default App;
 ```
