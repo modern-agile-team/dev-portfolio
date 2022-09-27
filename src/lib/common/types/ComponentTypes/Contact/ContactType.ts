@@ -1,41 +1,30 @@
 import { ChannelType } from '../ChannelType';
 import { AboutMeInfoPropsType } from './AboutMeInfoType';
 
-export interface ContactPropsType {
+export interface ContactPropsType extends ContactOptionType {
   /**
    * Name to be added to Sidebar
    */
   id?: string;
-  /**
-   * Contact-only props such as title, email button, channels and my personal info, etc	(default: {@link  https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts "See More about Contact's Props"})
-   */
-  contactOption?: ContactOptionType;
   /**
    * Contact Background Color	(default: whitesmoke)
    */
   backgroundColor?: string;
 }
 
-export interface ContactOptionPropsType {
-  /**
-   * Contact-only props such as title, email button, channels and my personal info, etc	(default: {@link  https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Contact/ContactType.ts "See More about Contact's Props"})
-   */
-  contactOption: ContactOptionType;
-}
-
-interface ContactOptionType {
+export interface ContactOptionType {
   /**
    * Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
    */
-  title: string;
+  title?: string;
   /**
    * Sub title text (default: 'If you're interested in me, please press the button below :D')
    */
-  subTitle: string;
+  subTitle?: string;
   /**
    * Your Email (default: 'abc@dev-portfolio.com')
    */
-  email: string;
+  email?: string;
   /**
    * Text of button that function as a link to your email (default: 'Want to work with me?')
    */
