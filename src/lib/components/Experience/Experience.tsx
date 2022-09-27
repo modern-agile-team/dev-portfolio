@@ -10,7 +10,6 @@ import {
  *
  * @props id: Name to be added to Sidebar
  * @props title: Main title text of Experience Component	(default: Experience)
- * @props background: 서현아 이건 너가 넣어줘라 뭔지 몰겠어
  * @props textAlign: Experience Text align (default: left)
  * @props theme: You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
  * @props titleColor: color of title specially used in 'vertical' theme
