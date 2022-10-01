@@ -38,7 +38,19 @@ const Header = ({
     titleSize,
     titleWeight,
   } = logoOption;
-  const { pageY } = useTopBar();
+  const [pageY, setPageY] = useState<ScrollType>({ value: 0, direction: 'down', scrollUpTimes: 0 });
+
+  const detectScroll = useCallback(() => {
+    setPageY(({ value, scrollUpTimes }) => {
+      if (value > window.scrollY) return { value: window.scrollY, direction: 'up', scrollUpTimes: scrollUpTimes + 1 };
+      else return { value: window.scrollY, direction: 'down', scrollUpTimes: scrollUpTimes - 1 };
+    });
+  }, [pageY]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', detectScroll);
+    return () => window.removeEventListener('scroll', detectScroll);
+  }, []);
   return (
     <Container
       id={id}
@@ -162,22 +174,4 @@ const sideBarOptionDefault: SideBarOptionPropsType = {
   iconColor: MAIN.MAIN_COLOR,
   iconMargin: '0px 12px 0px 12px',
   backgroundColor: MAIN.MAIN_COLOR,
-};
-
-const useTopBar = () => {
-  const [pageY, setPageY] = useState<ScrollType>({ value: 0, direction: 'down', scrollUpTimes: 0 });
-
-  const detectScroll = useCallback(() => {
-    setPageY(({ value, scrollUpTimes }) => {
-      if (value > window.scrollY) return { value: window.scrollY, direction: 'up', scrollUpTimes: scrollUpTimes + 1 };
-      else return { value: window.scrollY, direction: 'down', scrollUpTimes: scrollUpTimes - 1 };
-    });
-  }, [pageY]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', detectScroll);
-    return () => window.removeEventListener('scroll', detectScroll);
-  }, []);
-
-  return { pageY };
 };
