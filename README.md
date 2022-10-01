@@ -52,7 +52,10 @@ export default App;
 ## Components
 
 - <a href="#header">Header</a>
+- <a href="#channel">Channel</a>
+- <a href="#channels">Channels</a>
 - <a href="#intro">Intro</a>
+- <a href="#skill">skill</a>
 - <a href="#techstacklist">TechStackList</a>
 - <a href="#experience">Experience</a>
 - <a href="#carousel">Carousel</a>
@@ -64,9 +67,6 @@ export default App;
 - <a href="#contact">Contact</a>
 - <a href="#visitorcounter">VisitorCounter</a>
 - <a href="#visitorcomment">VisitorComment</a>
-
-## Guidelines to input icons
-
 
 ### Header
 
@@ -130,22 +130,19 @@ const logoOption = {
 
 - channels example
 
- <img width="140" alt="channels" src="https://user-images.githubusercontent.com/83394348/193384430-55a671a8-0a97-45b5-8590-f12de4526057.png">
+<img width="140" alt="스크린샷 2022-10-01 오후 1 55 33" src="https://user-images.githubusercontent.com/56839474/193393251-a182a876-956d-4ccf-a18d-b0f4a713ad3e.png">
 
-```js
-const channels = [
-  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
-  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '24px' },
-  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '24px' },
-  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '24px' },
-];
-```
+Examples are separate. See the corresponding <a href="#channels">Link</a>
 
 - sideBarOption example
 
 <img width="45" alt="image" src="https://user-images.githubusercontent.com/83394348/193385692-028f193d-a82a-4a19-87cf-74bebfdd3cd7.png">
 <img height="200px" alt="image" src="https://user-images.githubusercontent.com/83394348/193385720-7c68dc98-3264-4ea9-ba5c-1b0876347a91.png"
 >
+
+Way to change the sidebar icon, use iconName props.
+
+Refer to the <a href="https://github.com/modern-agile-team/dev-portfolio/tree/feature/ssh/%23152#contributor:~:text=%2C%0A%7D%3B-,Guidelines%20to%20input%20icons,-Enter%20the%20name">guidelines.</a>
 
 ```js
 const sideBarOption = {
@@ -154,7 +151,7 @@ const sideBarOption = {
   mainTitleColor: 'white',
   mainTitleAlign: 'left',
   mainTitleBorderColor: 'white',
-  iconName: 'ant-design:menu-fold-outlined',
+  iconName: 'ant-design:menu-fold-outlined', //Refer to the guidelines.
   iconSize: '28px',
   iconColor: '#434521',
   iconMargin: '0px 12px 0px 12px',
@@ -165,22 +162,94 @@ const sideBarOption = {
   backgroundColor: '#434521',
 };
 ```
-## Guidelines to input icons
-Enter the name of the icon you searched on the following site.
 
-<a href='https://icon-sets.iconify.design/'>Follow this site</a>
+### Channel
 
-(default: 'simple-icons:devdotto')
+<img width="50" alt="스크린샷 2022-10-01 오후 1 55 20" src="https://user-images.githubusercontent.com/56839474/193393242-0aa4dabb-3de0-436d-89af-4729d9b5c36d.png">
 
-- id example
 ```js
-const id = "['ID_NAME', 'ICON_NAME']"
+import { Channel } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Channel
+      redirectUrl="/"
+      name="github"
+      color="black"
+      size="24px"
+      margin="0px 6px"
+      padding="0px"
+    />
+  );
+}
+
+export default App;
 ```
 
-- iconName example
+| props | type | description | default | note
+| - | - | - | - | - |
+| ```redirectUrl``` | string | URL you want to redirect when clicked | / | |
+| ```name``` | string | Channel name | github | |
+| ```color``` | string | Channel icon color style | black | |
+| ```size``` | string | Channel icon size style | 24px | |
+| ```margin``` | string | Channel margin style | 0px 6px |  |
+| ```padding``` | string | Channel padding style | 0px |  |
+
+### Channels
+
+<img width="140" alt="스크린샷 2022-10-01 오후 1 55 33" src="https://user-images.githubusercontent.com/56839474/193393251-a182a876-956d-4ccf-a18d-b0f4a713ad3e.png">
+
 ```js
-const iconName =  'ICON_NAME',
+import { Channels } from 'dev-portfolio';
+
+const channels = [ ... ];
+
+const App = () => {
+  return (
+    <Channels
+      channels={channels}
+    />
+  );
+}
+
+export default App;
 ```
+
+| props | type | description | default | note
+| - | - | - | - | - |
+| ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc | See "More about Channels's Props" | |
+
+### More about Channels's Props
+- channels example
+```js
+const channels = [
+    {
+      redirectUrl: '/',
+      name: 'github',
+      color: 'black',
+      size: '24px',
+      margin: '0px 6px',
+      padding: '0px',
+    },
+    {
+      redirectUrl: '/',
+      name: 'youtube',
+      color: '#e03b35',
+      size: '24px',
+      margin: '0px 6px',
+      padding: '0px',
+    },
+    {
+      redirectUrl: '/',
+      name: 'linkedin',
+      color: '#1295cd',
+      size: '24px',
+      margin: '0px 6px',
+      padding: '0px',
+    },
+  ];
+```
+
 
 ### Intro
 
@@ -215,6 +284,42 @@ export default App;
 | `title`           | string | Core of your introduction   | Intro                                                                                                                                                                                                                                                   |      |
 | `shortIntro`      | string | a brief introduction        | shortIntro that will captivate people                                                                                                                                                                                                                  |      |
 | `description`     | string | Introduce yourself          | This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! |      |
+
+### Skill
+
+<img width="200" alt="스크린샷 2022-10-01 오후 2 56 52" src="https://user-images.githubusercontent.com/56839474/193394980-6fc37f61-64f3-47b0-a2dd-be9394772de8.png">
+
+```js
+import { Skill } from 'dev-portfolio';
+
+const App = () => {
+  return (
+    <Skill
+      title="Javascript"
+      titleSize="24px"
+      isHiddenTitle={false}
+      iconName="ion:logo-javascript"
+      iconSize="40px"
+      iconColor="#F0DB4F"
+      margin="0px"
+      padding="0px"
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note
+| - | - | - | - | - |
+| ```title``` | string | Main text that expresses the skill | javascript | |
+| ```titleSize``` | string | Title size style | 24px | |
+| ```isHiddenTitle``` | boolean | If this value is set to True, you can hide the title. | false | |
+| ```iconName``` | string | Enter the name of the icon you searched on the following site. | ion:logo-javascript | See <a href="https://github.com/modern-agile-team/dev-portfolio/tree/feature/ssh/%23152#contributor:~:text=%2C%0A%7D%3B-,Guidelines%20to%20input%20icons,-Enter%20the%20name">Guideline</a> to add icon |
+| ```iconSize``` | string | Icon size style | 40px |  |
+| ```iconColor``` | string | Icon color style | #F0DB4F |
+| ```margin``` | string | Skill margin style | 0px |  |
+| ```padding``` | string | Skill padding style | 0px |  |
 
 ### TechStackList
 
@@ -804,7 +909,22 @@ const visitorComment = {
 };
 ```
 
-</details>
+## Guidelines to input icons
+Enter the name of the icon you searched on the following <a href='https://icon-sets.iconify.design/'>site.</a>
+
+(example: 'simple-icons:devdotto')
+
+### More about used props 
+
+- id example
+```js
+const id = "['ID_NAME', 'ICON_NAME']"
+```
+
+- iconName example
+```js
+const iconName =  'ICON_NAME',
+```
 
 # Example
 
