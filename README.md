@@ -1,6 +1,7 @@
 # dev-porfolio
 
-![npm_package_badge](https://img.shields.io/badge/npm-v2.0.0--beta--0.2-brightgreen)
+[![npm version](https://badge.fury.io/js/dev-portfolio.svg)](https://badge.fury.io/js/dev-portfolio)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 ![react-iconify](https://img.shields.io/badge/iconify-react-red)
 
