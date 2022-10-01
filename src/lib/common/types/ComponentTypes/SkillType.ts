@@ -1,6 +1,6 @@
 export interface SkillPropsType {
   /**
-   * Main text that expresses the skill (default: 'dev-portfolio')
+   * Main text that expresses the skill (default: 'Javascript')
    */
   title?: string;
   /**
@@ -12,13 +12,17 @@ export interface SkillPropsType {
    */
   isHiddenTitle?: string;
   /**
-   * Enter the name of the icon you searched on the following site. (default: 'simple-icons:devdotto') {@link https://icon-sets.iconify.design/}
+   * Enter the name of the icon you searched on the following site. (default: 'ion:logo-javascript') {@link https://icon-sets.iconify.design/}
    */
   iconName?: string;
   /**
-   * Icon size style (defualt: '50px')
+   * Icon size style (defualt: '40px')
    */
   iconSize?: string;
+  /**
+   * Icon color style (default: '#434521')
+   */
+  iconColor?: string;
   /**
    * Skill margin style (defualt: '0px')
    */
