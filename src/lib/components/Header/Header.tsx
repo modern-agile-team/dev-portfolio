@@ -119,7 +119,7 @@ const Container = styled.div<HeaderStyledPropsType & { pageY: ScrollType }>`
     }
     return css`
       transition: 0.3s;
-      transform: translateY(${top > 0 ? 0 : top}px);
+      top: ${top > 0 ? 0 : top}px;
     `;
   }};
 `;
