@@ -587,50 +587,30 @@ export default App;
 | `subTitle`        | string                                   | Sub title text                                       | 'If you're interested in me, please press the button below :D'                                                                               |      |
 | `email`           | string                                   | Your Email                                           | 'abc@dev-portfolio.com'                                                                                                                      |      |
 | `buttonText`      | string                                   | Text of button that function as a link to your email | 'Want to work with me?'                                                                                                                      |      |
-| `channels`        | [Type of Channel props](https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Contact/ContactType.ts#L35)                                 | Array of your channels like github and blogs         | an array of 4 in length                                                                                                                      |      |
-| `aboutMeInfos`    | {title?: string, description?: string}[] | Your personal information like TEL, Home etc         | [you can see default props here!](https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/components/Contact/Contact.tsx#L81) |
+| `channels`        | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Channel-only props such as Github and LinkedIn, etc         | See "More about Contact's Props"                                                                                                                      |      |
+| `aboutMeInfos`    | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Contact/AboutMeInfoType.ts#:~:text=AboutMeInfoPropsType">AboutMeInfoPropsType[]</a> | Your personal information like TEL, Home etc         | See "More about Contact's Props" |
 
-<details>
-<summary>More about Contact's props</summary>
+### More about Contact's props
 
-#### contactOption example
+- channels example
+
+ <img width="200" alt="channels" src="https://user-images.githubusercontent.com/83394348/193384430-55a671a8-0a97-45b5-8590-f12de4526057.png">
 
 ```js
-const contactOption = {
-  title: 'Hello, I'm dev-portfolio.',
-  subTitle: 'If you're interested in me, please press the button below :D',
-  buttonText: 'Want to work with me?',
-  channels: [
-    {
-      name: 'github',
-      redirectUrl: 'https://',
-      color: '#181717BB',
-      size: '18px',
-      margin: '0px 12px 0px 0px',
-    },
-    {
-      name: 'naver',
-      redirectUrl: 'https://',
-      color: '#47A141BB',
-      size: '18px',
-      margin: '0px 12px 0px 0px',
-    },
-    {
-      name: 'facebook',
-      redirectUrl: 'https://',
-      color: '#1877F2BB',
-      size: '18px',
-      margin: '0px 12px 0px 0px',
-    },
-    {
-      name: 'youtube',
-      redirectUrl: 'https://',
-      color: '#FF0000BB',
-      size: '18px',
-      margin: '0px 12px 0px 0px',
-    },
-  ],
-  aboutMeInfos: [
+const channels = [
+  { name: 'github', redirectUrl: 'https://', color: '#181717BB', size: '24px' },
+  { name: 'naver', redirectUrl: 'https://', color: '#47A141BB', size: '24px' },
+  { name: 'facebook', redirectUrl: 'https://', color: '#1877F2BB', size: '24px' },
+  { name: 'youtube', redirectUrl: 'https://', color: '#FF0000BB', size: '24px' },
+];
+```
+
+- aboutMeInfos example
+
+ <img width="200" alt="aboutMeInfos" src="https://user-images.githubusercontent.com/83394348/193386818-ea657a2c-0544-4eca-9225-688ce0a58958.png">
+
+```js
+const aboutMeInfos = [
     {
       title: 'Where I live',
       description: 'Gangdong-gu, Seoul, Republic of Korea',
@@ -644,10 +624,7 @@ const contactOption = {
       description: 'dev-portfolio@gmail.com',
     },
   ],
-};
 ```
-
-</details>
 
 ### VisitorCounter
 
@@ -688,17 +665,16 @@ export default App;
 | ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
 | ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
 
-<details>
-<summary>More about VisitorCounter's props</summary>
+### More about VisitorCounter's props
 
-#### theme example
+- theme example
 
 ```js
 // 'default' | 'big-size' | 'simple'
 const theme = 'default';
 ```
 
-#### VisitorCounter example
+- VisitorCounter example
 
 ```js
 const visitorCounter = {
@@ -707,8 +683,6 @@ const visitorCounter = {
   totalTitle: 'total',
 };
 ```
-
-</details>
 
 ### VisitorComment
 
@@ -768,10 +742,9 @@ export default App;
 | `handleChangeNickname`    | (e?: React.ChangeEvent<HTMLElement>) => void                                                                                                                                                                                        | Nickname Props for event handling                                          |                                         |                                              |
 | `handleChangePassword`    | (e?: React.ChangeEvent<HTMLElement>) => void                                                                                                                                                                                        | Password Props for event handling                                          |                                         |                                              |
 
-<details>
-<summary>More about VisitorComment's props</summary>
+### More about VisitorComment's props
 
-#### VisitorComment example
+- VisitorComment example
 
 ```js
 const visitorComment = {
