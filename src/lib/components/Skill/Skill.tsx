@@ -5,7 +5,6 @@ import { SkillPropsType } from '../../common/types/ComponentTypes/SkillType';
 /**
  * Express your skills using the Skill component.
  *
- * @props id: Name to be added to Sidebar (default: 'Skill')
  * @props title: Main text that expresses the skill (default: 'dev-portfolio')
  * @props titleSize: Title size style (default: '24px')
  * @props isHiddenTitle: If this value is set to True, you can hide the title. (default: false)
@@ -14,9 +13,9 @@ import { SkillPropsType } from '../../common/types/ComponentTypes/SkillType';
  * @props margin: Skill margin style (defualt: '0px')
  * @props padding: Skill padding style (defualt: '0px')
  */
-const Skill = ({ id, title, titleSize, isHiddenTitle, iconName, iconSize, margin, padding }: SkillPropsType) => {
+const Skill = ({ title, titleSize, isHiddenTitle, iconName, iconSize, margin, padding }: SkillPropsType) => {
   return (
-    <Container id={id} margin={margin} padding={padding}>
+    <Container margin={margin} padding={padding}>
       <Icon icon={`${iconName?.toLowerCase()}`} fontSize={iconSize} />
       <Name titleSize={titleSize} isHiddenTitle={isHiddenTitle}>
         {title}
@@ -28,7 +27,6 @@ const Skill = ({ id, title, titleSize, isHiddenTitle, iconName, iconSize, margin
 export default Skill;
 
 Skill.defaultProps = {
-  id: 'Skill',
   title: 'dev-portfolio',
   titleSize: '24px',
   isHiddenTitle: false,

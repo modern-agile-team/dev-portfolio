@@ -1,9 +1,5 @@
 export interface SkillPropsType {
   /**
-   * Name to be added to Sidebar (default: 'Skill')
-   */
-  id?: string;
-  /**
    * Main text that expresses the skill (default: 'dev-portfolio')
    */
   title?: string;
