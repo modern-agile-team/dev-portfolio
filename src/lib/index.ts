@@ -15,3 +15,4 @@ export { default as Experience } from './components/Experience/Experience';
 export { default as VisitorCounter } from './components/VisitorCounter/VisitorCounter';
 export { default as VisitorComment } from './components/VisitorComment/VisitorComment';
 export { default as Skill } from './components/Skill/Skill';
+export { default as Channel } from './components/Channels/Channel';

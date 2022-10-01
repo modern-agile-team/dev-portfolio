@@ -17,6 +17,8 @@ import {
   VisitorCounter,
   VisitorComment,
   Skill,
+  Channel,
+  Channels,
 } from './lib/index';
 
 function App() {
@@ -27,6 +29,9 @@ function App() {
         sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }}
       />
       <Skill />
+
+      <Channel />
+      <Channels />
 
       <VisitorCounter />
       <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
