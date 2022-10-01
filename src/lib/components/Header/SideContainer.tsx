@@ -6,23 +6,25 @@ import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 import { createPortal } from 'react-dom';
+import { MAIN } from '../../common/theme';
 
 const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType) => {
+  // Default value of sideBarOption
   const {
-    mainTitle,
-    mainTitleSize,
-    mainTitleColor,
-    mainTitleAlign,
-    mainTitleBorderColor,
-    backgroundColor,
-    iconName,
-    iconSize,
-    iconColor,
-    iconMargin,
-    itemTextColor,
-    itemTextAlign,
-    itemBackgroundColor,
-    itemHoverdBackgroundColor,
+    mainTitle = 'Wellcome to dev-portfolio',
+    mainTitleSize = '20px',
+    mainTitleColor = 'white',
+    mainTitleAlign = 'left',
+    mainTitleBorderColor = 'white',
+    backgroundColor = MAIN.MAIN_COLOR,
+    iconName = 'ant-design:menu-fold-outlined',
+    iconSize = '30px',
+    iconColor = '#434521',
+    iconMargin = '0px 12px',
+    itemTextColor = 'white',
+    itemTextAlign = 'left',
+    itemBackgroundColor = MAIN.MAIN_COLOR,
+    itemHoverdBackgroundColor = 'black',
   }: SideBarOptionPropsType = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
@@ -33,12 +35,13 @@ const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType)
 
     setSideBarItems(
       Array.from($tags).reduce((result: any[], $tag: any) => {
-        const tagId = $tag.id;
-        let [title, itemLogoName] = [undefined, undefined];
+        const tagId: string = $tag.id;
+
+        let title: string | undefined;
+        let itemLogoName: string | undefined;
         try {
-          const evaledTagId = eval(tagId);
-          if (typeof evaledTagId === 'string') [title, itemLogoName] = [tagId, undefined];
-          else [title, itemLogoName] = evaledTagId;
+          if (eval(tagId)[0] === undefined) throw new Error('eval(tagId) is not array');
+          [title, itemLogoName] = eval(tagId);
         } catch (err) {
           [title, itemLogoName] = [tagId, undefined];
         }

@@ -1,6 +1,6 @@
 export interface HeaderLogoPropsType extends HeaderLogoImgStyledPropsType, HeaderLogoTitleStyledPropsType {
-  redirectUrl: string;
-  title: string;
+  redirectUrl?: string;
+  title?: string;
   logoImg?: string;
   logoHidden?: boolean;
   logoWidth?: string;

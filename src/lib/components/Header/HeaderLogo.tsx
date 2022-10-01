@@ -6,18 +6,19 @@ import {
   HeaderLogoImgStyledPropsType,
   HeaderLogoTitleStyledPropsType,
 } from '../../common/types/ComponentTypes/Header/HeaderLogoType';
+import { MAIN } from '../../common/theme';
 
 const HeaderLogo = ({
-  redirectUrl = '/',
+  redirectUrl,
   logoImg = '',
-  logoHidden = false,
-  title = 'dev-portfolio',
-  logoMargin = '0px 16px 0px 16px',
-  logoWidth = '50px',
-  logoHeight = '50px',
-  titleColor = 'black',
-  titleSize = '24px',
-  titleWeight = '800',
+  logoHidden,
+  title,
+  logoMargin,
+  logoWidth,
+  logoHeight,
+  titleColor,
+  titleSize,
+  titleWeight,
 }: HeaderLogoPropsType): React.ReactElement => {
   return (
     <Container href={redirectUrl}>
@@ -27,7 +28,7 @@ const HeaderLogo = ({
         ) : logoImg.length > 0 ? (
           <img src={logoImg} width={logoWidth} height={logoHeight} />
         ) : (
-          <Icon icon="simple-icons:devdotto" color="#434521" fontSize={logoWidth} />
+          <Icon icon="simple-icons:devdotto" color={MAIN.MAIN_COLOR} fontSize={logoWidth} />
         )}
       </HeaderLogoImgContainer>
       <Title titleColor={titleColor} titleSize={titleSize} titleWeight={titleWeight}>
@@ -38,6 +39,19 @@ const HeaderLogo = ({
 };
 
 export default HeaderLogo;
+
+HeaderLogo.defaultProps = {
+  redirectUrl: '/',
+  logoImg: '',
+  logoHidden: false,
+  title: 'dev-portfolio',
+  logoMargin: '0px 16px',
+  logoWidth: '50px',
+  logoHeight: '50px',
+  titleColor: 'black',
+  titleSize: '24px',
+  titleWeight: '800',
+};
 
 const Container = styled.a`
   display: flex;

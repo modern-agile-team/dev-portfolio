@@ -51,21 +51,21 @@ export default SideBarItems;
 
 const ItemContainer = styled.div<SideBarItemsElementStyledType>`
   cursor: pointer;
-  color: ${({ itemTextColor }) => itemTextColor ?? 'white'};
-  background-color: ${({ itemBackgroundColor }) => itemBackgroundColor ?? MAIN.MAIN_COLOR};
+  color: ${({ itemTextColor }) => itemTextColor};
+  background-color: ${({ itemBackgroundColor }) => itemBackgroundColor};
   padding: 0.2em 1em;
   margin: 1px;
   text-decoration: none;
   border-radius: 4px;
   &:hover {
-    background-color: ${({ itemHoverdBackgroundColor }) => itemHoverdBackgroundColor ?? 'black'};
+    background-color: ${({ itemHoverdBackgroundColor }) => itemHoverdBackgroundColor};
   }
 `;
 
 const Item = styled.div<SideBarItemsStyledPropsType>`
   display: flex;
   align-items: center;
-  justify-content: ${({ itemTextAlign }) => itemTextAlign ?? 'left'};
+  justify-content: ${({ itemTextAlign }) => itemTextAlign};
   margin: ${({ margin }) => margin ?? '10px 0px'};
 `;
 

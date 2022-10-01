@@ -4,34 +4,64 @@ import { HeaderLogoPropsType } from './HeaderLogoType';
 
 export interface HeaderPropsType extends HeaderStyledPropsType {
   /**
-   * Name to be added to Sidebar
-   */
-  id?: string;
-    /**
-   * Logo & Header_Title only props (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts "See More about Header's Props"})
+   * You can customize the attrs such as logo and title by using logoOption props.
+   *
+   * @props redirectUrl: URL you want to redirect when clicked (default: '/')
+   * @props logoImg: Logo Image URL (default: DEV icon)
+   * @props logoHidden: If this value is set to True, you can hide the logo image. (default: false)
+   * @props logoMargin: Logo margin style (defualt: '0px 16px')
+   * @props logoWidth: Logo width style (default: '50px)
+   * @props logoHeight: Logo height style (default: '50px)
+   * @props title: Main text that expresses your site (default: 'dev-portfolio')
+   * @props titleColor: Title color style (default: 'black')
+   * @props titleSize:  Title size style (default: '24px')
+   * @props titleWeight: Title weight style (default: '800')
    */
   logoOption?: HeaderLogoPropsType;
   /**
-   * Channel-only props such as Github and LinkedIn, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts "See More about Header's Props"})
+   * Enter the props of the channel components as an array of objects.
+   * Enter channel to express yourself, such as personal blog, linked-in, etc.
+   * Please check to the following.
+   * {@link https://github.com/modern-agile-team/dev-portfolio#channel}
+   * 
+   * @default channels
+   * ```js
+        const channels = [{ redirectUrl: '/', name: 'github', color: 'black', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'youtube', color: '#e03b35', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'linkedin', color: '#1295cd', size: '24px', margin: '0px 6px', padding: '0px' }];
+     ```
    */
   channels?: ChannelType[];
   /**
-   * Sidebar-only props such as Sidebar's Icon, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1 "See More about Header's Props"})
+   * You can customize the attrs such as title and icon, item in sidebar by using sideBarOption props.
+   *
+   * @props mainTitle: Main text that expresses your site (default: 'Wellcome to dev-portfolio')
+   * @props mainTitleSize: mainTitle size style (default: '20px')
+   * @props mainTitleColor: mainTitle color style (default: 'white')
+   * @props mainTitleAlign: mainTitle align style (default: 'left')
+   * @props mainTitleBorderColor: mainTitle border color style (default: 'white')
+   * @props backgroundColor: Header's sidebar background color style (default: #434521)
+   * @props iconName: Enter the name of the icon you searched on the following site. (default: 'ant-design:menu-fold-outlined') {@link https://icon-sets.iconify.design/}
+   * @props iconSize: Icon size style (default: '30px')
+   * @props iconColor: Icon color style (default: '#434521')
+   * @props iconMargin: Icon margin style (default: '0px 12px')
+   * @props itemTextColor: Item text color style (default: 'white')
+   * @props itemTextAlign: Item text align style (default: 'left')
+   * @props itemBackgroundColor: Item background color style (default: #434521)
+   * @props itemHoverdBackgroundColor: Item background color style when hoverd (default: 'black')
    */
   sideBarOption?: SideBarOptionPropsType;
 }
 
 export interface HeaderStyledPropsType {
   /**
-   * Header Height (default: 80px)
+   * Header height style (default: '80px')
    */
   headerHeight?: string;
   /**
-   * Header Width (default: 100%)
+   * Header Width style (default: '100%')
    */
   headerWidth?: string;
   /**
-   * CSS for Background color of Header Component (default: white)
+   * Header background color style (default: 'white')
    */
   headerBackgroundColor?: string;
 }
