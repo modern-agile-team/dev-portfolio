@@ -7,10 +7,10 @@ import { SkillPropsType } from '../../common/types/ComponentTypes/SkillType';
  *
  * @props id: Name to be added to Sidebar (default: 'Skill')
  * @props title: Main text that expresses the skill (default: 'dev-portfolio')
- * @props titleSize: title size style (default: '24px')
+ * @props titleSize: Title size style (default: '24px')
  * @props isHiddenTitle: If this value is set to True, you can hide the title. (default: false)
  * @props iconName: Enter the name of the icon you searched on the following site. (default: 'simple-icons:devdotto') {@link https://icon-sets.iconify.design/}
- * @props iconSize: icon size style (defualt: '50px')
+ * @props iconSize: Icon size style (defualt: '50px')
  * @props margin: Skill margin style (defualt: '0px')
  * @props padding: Skill padding style (defualt: '0px')
  */
