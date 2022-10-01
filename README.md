@@ -134,7 +134,7 @@ const logoOption = {
 
 <img width="140" alt="스크린샷 2022-10-01 오후 1 55 33" src="https://user-images.githubusercontent.com/56839474/193393251-a182a876-956d-4ccf-a18d-b0f4a713ad3e.png">
 
-Examples are separate. See the corresponding <a href="#more-about-channels-props">Link.</a>
+For an example of channels, see: <a href="#more-about-channels-props">channels example</a>
 
 - sideBarOption example
 
