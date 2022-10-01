@@ -20,7 +20,7 @@ export interface SkillPropsType {
    */
   iconSize?: string;
   /**
-   * Icon color style (default: '#434521')
+   * Icon color style (default: '#F0DB4F')
    */
   iconColor?: string;
   /**
