@@ -4,10 +4,10 @@ import {
   VisitorCommentPropsType,
   VisitorCommentStyledPropsType,
 } from '../../common/types/ComponentTypes/VisitorCommentType';
-import ProgressBar from '../TechStack/TechStacks/ProgressBar';
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 import { HiChevronDoubleDown } from 'react-icons/hi';
+import { ProgressBar } from '../ProgressBar';
 
 /**
  *

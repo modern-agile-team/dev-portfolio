@@ -15,6 +15,14 @@ export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsTyp
    * Start color of wave animation of progressbar
    */
   colorTo?: string;
+  /**
+   *
+   */
+  animationType?: 'wave' | 'none';
+  /**
+   *
+   */
+  isBlinking?: boolean;
 }
 
 export interface ProgressBarContainerStyledPropsType {

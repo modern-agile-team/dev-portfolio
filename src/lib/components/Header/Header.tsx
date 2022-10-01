@@ -3,7 +3,6 @@ import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer';
 import { MAIN } from '../../common/theme';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
-import { ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -20,7 +19,7 @@ import { useCallback, useEffect, useState } from 'react';
 const Header = ({
   id,
   logoOption = logoOptionDefault,
-  channels = channelsDefault,
+  channels,
   sideBarOption = sideBarOptionDefault,
   headerHeight,
   headerWidth,
@@ -136,37 +135,6 @@ const logoOptionDefault = {
   titleSize: '24px',
   titleWeight: '800',
 };
-
-const channelsDefault: ChannelType[] = [
-  {
-    name: 'github',
-    redirectUrl: 'https://',
-    color: '#181717BB',
-    size: '24px',
-    margin: '0px 12px 0px 0px',
-  },
-  {
-    name: 'naver',
-    redirectUrl: 'https://',
-    color: '#47A141BB',
-    size: '24px',
-    margin: '0px 12px 0px 0px',
-  },
-  {
-    name: 'facebook',
-    redirectUrl: 'https://',
-    color: '#1877F2BB',
-    size: '24px',
-    margin: '0px 12px 0px 0px',
-  },
-  {
-    name: 'youtube',
-    redirectUrl: 'https://',
-    color: '#FF0000BB',
-    size: '24px',
-    margin: '0px 12px 0px 0px',
-  },
-];
 
 const sideBarOptionDefault: SideBarOptionPropsType = {
   mainTitle: 'dev-portfolio',
