@@ -55,7 +55,7 @@ export default App;
 - <a href="#channel">Channel</a>
 - <a href="#channels">Channels</a>
 - <a href="#intro">Intro</a>
-- <a href="#skill">skill</a>
+- <a href="#skill">Skill</a>
 - <a href="#techstacklist">TechStackList</a>
 - <a href="#experience">Experience</a>
 - <a href="#carousel">Carousel</a>
@@ -132,7 +132,7 @@ const logoOption = {
 
 <img width="140" alt="스크린샷 2022-10-01 오후 1 55 33" src="https://user-images.githubusercontent.com/56839474/193393251-a182a876-956d-4ccf-a18d-b0f4a713ad3e.png">
 
-Examples are separate. See the corresponding <a href="#channels">Link</a>
+Examples are separate. See the corresponding <a href="#channels">Link.</a>
 
 - sideBarOption example
 
@@ -405,7 +405,7 @@ const gap = 'normal';
 
 ### Experience
 
-<img width="100%" alt="스크린샷 2022-08-20 오후 3 44 56" src="https://user-images.githubusercontent.com/56839474/185732886-24c87c7f-dd2a-459e-80f9-514f3e205158.png">
+<img width="940" alt="image" src="https://user-images.githubusercontent.com/83394348/193396422-4c5ad8f8-d679-4575-8a78-b016cf5aee83.png">
 
 ```js
 import { Experience } from 'dev-portfolio';
