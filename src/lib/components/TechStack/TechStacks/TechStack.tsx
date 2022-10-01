@@ -1,16 +1,16 @@
 import styled, { css } from 'styled-components';
 import TechStackName from './TechStackName';
-import ProgressBarContainer from './ProgressBar';
 import {
   TechStackPropsType,
   TechStackStyledPropsType,
 } from '../../../common/types/ComponentTypes/TechStack/TechStackType';
+import { ProgressBar } from '../../ProgressBar';
 
 const TechStack = ({ nameOption, progressBarOption, gap }: TechStackPropsType) => {
   return (
     <Wrapper gap={gap}>
       <TechStackName {...nameOption} />
-      <ProgressBarContainer {...progressBarOption} />
+      <ProgressBar {...progressBarOption} />
     </Wrapper>
   );
 };
