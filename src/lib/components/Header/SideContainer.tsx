@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Channels from '../Channels/Channels';
 import SideBarIcon from './SideContainer/SideBarIcon';
 import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
+import { createPortal } from 'react-dom';
 
 const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
   const {
@@ -57,6 +58,14 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     setIsClickedSideBarIcon(true);
   };
 
+  useEffect(() => {
+    if (isClickedSideBarIcon) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isClickedSideBarIcon]);
+
   return (
     <Container>
       <Channels channels={channels} />
@@ -67,19 +76,21 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
         iconMargin={iconMargin}
         onClick={onClickSideBarIconHandler}
       />
-      {isClickedSideBarIcon && (
-        <SideBar
-          mainTitle={mainTitle}
-          mainTitleSize={mainTitleSize}
-          mainTitleColor={mainTitleColor}
-          mainTitleAlign={mainTitleAlign}
-          mainTitleBorderColor={mainTitleBorderColor}
-          sideBarItems={sideBarItems}
-          isClickedSideBarIcon={isClickedSideBarIcon}
-          backgroundColor={backgroundColor}
-          setIsClickedSideBarIcon={setIsClickedSideBarIcon}
-        />
-      )}
+      {isClickedSideBarIcon &&
+        createPortal(
+          <SideBar
+            mainTitle={mainTitle}
+            mainTitleSize={mainTitleSize}
+            mainTitleColor={mainTitleColor}
+            mainTitleAlign={mainTitleAlign}
+            mainTitleBorderColor={mainTitleBorderColor}
+            sideBarItems={sideBarItems}
+            isClickedSideBarIcon={isClickedSideBarIcon}
+            backgroundColor={backgroundColor}
+            setIsClickedSideBarIcon={setIsClickedSideBarIcon}
+          />,
+          document.body
+        )}
     </Container>
   );
 };
