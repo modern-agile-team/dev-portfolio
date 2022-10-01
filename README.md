@@ -65,6 +65,9 @@ export default App;
 - <a href="#visitorcounter">VisitorCounter</a>
 - <a href="#visitorcomment">VisitorComment</a>
 
+## Guidelines to input icons
+
+
 ### Header
 
 <img width="1724" alt="스크린샷 2022-09-13 오전 2 05 09" src="https://user-images.githubusercontent.com/56839474/189714124-370954bf-e995-4c85-9246-36fb12732a34.png">
@@ -95,7 +98,7 @@ export default App;
 
 | props                   | type                                                                                                                                                                                                                                                                                           | description                                         | default                         | note |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------- | ---- |
-| `id`                    | string                                                                                                                                                                                                                                                                                         | Name to be added to Sidebar                         |                                 |      |
+| `id`                    | string                                                                                                                                                                                                                                                                                         | Name to be added to Sidebar                         |                                 |  See <a href="/">Guideline</a> to add icon in sidebar    |
 | `headerHeight`          | string                                                                                                                                                                                                                                                                                         | Header Height                                       | 80px                            |      |
 | `headerWidth`           | string                                                                                                                                                                                                                                                                                         | Header Width                                        | 100%                            |      |
 | `headerBackgroundColor` | string                                                                                                                                                                                                                                                                                         | CSS for Background color of Header Component        | white                           |      |
@@ -162,7 +165,22 @@ const sideBarOption = {
   backgroundColor: '#434521',
 };
 ```
+## Guidelines to input icons
+Enter the name of the icon you searched on the following site.
 
+<a href='https://icon-sets.iconify.design/'>Follow this site</a>
+
+(default: 'simple-icons:devdotto')
+
+- id example
+```js
+const id = "['ID_NAME', 'ICON_NAME']"
+```
+
+- iconName example
+```js
+const iconName =  'ICON_NAME',
+```
 
 ### Intro
 
