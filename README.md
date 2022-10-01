@@ -1,6 +1,6 @@
 # dev-porfolio
 
-![npm_package_badge](https://img.shields.io/badge/npm-v2.0.0--beta-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v2.0.0--beta--0.1-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 ![react-iconify](https://img.shields.io/badge/iconify-react-red)
 
