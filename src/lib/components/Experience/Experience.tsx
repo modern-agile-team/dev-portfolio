@@ -10,20 +10,18 @@ import {
  *
  * @props id: Name to be added to Sidebar
  * @props title: Main title text of Experience Component	(default: Experience)
- * @props background: 서현아 이건 너가 넣어줘라 뭔지 몰겠어
  * @props textAlign: Experience Text align (default: left)
  * @props theme: You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
- * @props verticalOption: Special settings can be added when the theme is 'vertical'.	({@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B "See More about Experience's Props"})
+ * @props titleColor: color of title specially used in 'vertical' theme
+ * @props shape: shape of card specially used in 'vertical' theme ('square' | 'round-square')
  * @props historyList: You can add your history data such as date, title, description, etc.	({@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B "See More about Experience's Props"})
- * @verticalOption titleColor: color of title
- * @verticalOption shape: 'square' | 'round-square'
  * @historyList startData: Date when you started that kind experience
  * @historyList endDate: Date when you finished that kind experience
  * @historyList title: Title of experience
  * @historyList des: Describe about your experience
  */
 const Experience = (props: ExperiencePropsType) => {
-  const { id, historyList, title, textAlign, theme, verticalOption } = props;
+  const { id, historyList, title, textAlign, theme, titleColor, shape } = props;
 
   return (
     <Wrap id={id} textAlign={textAlign}>
@@ -31,7 +29,7 @@ const Experience = (props: ExperiencePropsType) => {
       <hr />
       <ChildWrap theme={theme}>
         {historyList?.map((elements, idx) => (
-          <History {...verticalOption} key={idx} {...elements} theme={theme} />
+          <History key={idx} {...elements} theme={theme} titleColor={titleColor} shape={shape} />
         ))}
       </ChildWrap>
     </Wrap>

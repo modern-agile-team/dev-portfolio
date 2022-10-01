@@ -1,4 +1,4 @@
-export interface ExperiencePropsType {
+export interface ExperiencePropsType extends ExperienceVerticalOptionType {
   /**
    * Name to be added to Sidebar
    */
@@ -19,10 +19,6 @@ export interface ExperiencePropsType {
    * You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
    */
   theme?: ExperienceThemeType;
-  /**
-   * Special settings can be added when the theme is 'vertical'.	({@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B "See More about Experience's Props"})
-   */
-  verticalOption?: ExperienceVerticalOptionType;
 }
 
 export interface ExperienceHistoryListType {
@@ -46,11 +42,11 @@ export interface ExperienceHistoryListType {
 
 export interface ExperienceVerticalOptionType {
   /**
-   * color of title
+   * color of title specially used in 'vertical' theme
    */
   titleColor?: string;
   /**
-   * 'square' | 'round-square'
+   * shape of card specially used in 'vertical' theme ('square' | 'round-square')
    */
   shape?: ExperienceShapeType;
 }

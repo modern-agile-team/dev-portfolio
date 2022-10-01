@@ -16,6 +16,9 @@ import {
   Experience,
   VisitorCounter,
   VisitorComment,
+  Skill,
+  Channel,
+  Channels,
 } from './lib/index';
 
 function App() {
@@ -25,10 +28,14 @@ function App() {
         id="['Header', 'bxs:dock-top']"
         sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }}
       />
-      
+      <Skill />
+
+      <Channel />
+      <Channels />
+
       <VisitorCounter />
       <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
-      
+
       <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -40,14 +47,14 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-      
+
       <Intro id="['Intro', 'icon-park-outline:hi']" />
-      
+
       <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
       <TechStackInput />
-      
+
       <Experience id="['Experience', 'ic:outline-work-history']" />
-      
+
       <Gallery id="['Gallery', 'clarity:image-gallery-line']">
         <Item />
         <Item />
@@ -59,7 +66,7 @@ function App() {
         <Item />
         <Item />
       </Gallery>
-      
+
       <Masonry id="['Masonry', 'ri:layout-masonry-line']">
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/1100/?random" />
@@ -88,7 +95,7 @@ function App() {
         <Card>8</Card>
         <Card>9</Card>
       </Carousel>
-      
+
       <Contact id="['Contact', 'fluent:contact-card-16-regular']" />
     </div>
   );

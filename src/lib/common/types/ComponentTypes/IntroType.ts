@@ -20,7 +20,7 @@ type IntroTextAlignType = 'left' | 'center';
 
 export interface IntroOptionType extends IntroTitlePropsType, IntroFormPropsType {}
 
-export interface IntroPropsType {
+export interface IntroPropsType extends IntroOptionType {
   /**
    * Name to be added to Sidebar
    */
@@ -33,8 +33,4 @@ export interface IntroPropsType {
    * Intro Background color	whitesmoke (default: whitesmoke)
    */
   backgroundColor?: string;
-  /**
-   * Intro-only props such as title, description, etc	(default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/IntroType.ts "See More about Intro's Props"})
-   */
-  introOption?: IntroOptionType;
 }

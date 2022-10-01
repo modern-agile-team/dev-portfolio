@@ -19,7 +19,7 @@ const SideBar = ({
   setIsClickedSideBarIcon,
 }: SideBarPropsType) => {
   return (
-    <>
+    <Wrapper>
       <Container isClickedSideBarIcon={isClickedSideBarIcon} backgroundColor={backgroundColor}>
         <MainTitle mainTitleSize={mainTitleSize} mainTitleColor={mainTitleColor} mainTitleAlign={mainTitleAlign}>
           {mainTitle}
@@ -27,17 +27,32 @@ const SideBar = ({
         <Line mainTitleBorderColor={mainTitleBorderColor} />
         <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
       </Container>
-      <Background isClickedSideBarIcon={isClickedSideBarIcon} onClick={() => setIsClickedSideBarIcon(false)} />
-    </>
+      <Background
+        isClickedSideBarIcon={isClickedSideBarIcon}
+        onClick={() => {
+          setIsClickedSideBarIcon(false);
+        }}
+      />
+    </Wrapper>
   );
 };
 
 export default SideBar;
 
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #6b6b6b55;
+  z-index: 99999999;
+`;
+
 const Container = styled.div<SideBarStyledPropsType>`
-  position: absolute;
-  top: 0%;
-  right: ${({ isClickedSideBarIcon }) => (isClickedSideBarIcon ? '0%' : '-40%')};
+  position: fixed;
+  top: 0;
+  right: 0;
   z-index: 1011;
   width: 30%;
   max-width: 280px;
