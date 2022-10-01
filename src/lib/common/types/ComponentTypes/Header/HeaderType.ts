@@ -53,15 +53,15 @@ export interface HeaderPropsType extends HeaderStyledPropsType {
 
 export interface HeaderStyledPropsType {
   /**
-   * Header Height (default: 80px)
+   * Header height style (default: '80px')
    */
   headerHeight?: string;
   /**
-   * Header Width (default: 100%)
+   * Header Width style (default: '100%')
    */
   headerWidth?: string;
   /**
-   * CSS for Background color of Header Component (default: white)
+   * Header background color style (default: 'white')
    */
   headerBackgroundColor?: string;
 }
