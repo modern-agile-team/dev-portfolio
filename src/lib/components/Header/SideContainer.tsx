@@ -4,8 +4,9 @@ import Channels from '../Channels/Channels';
 import SideBarIcon from './SideContainer/SideBarIcon';
 import SideBar from './SideContainer/SideBar';
 import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header/SideContainerType';
+import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 
-const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
+const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType) => {
   const {
     mainTitle,
     mainTitleSize,
@@ -21,7 +22,7 @@ const SideContainer = ({ channels, sideBarOption }: SideContainerPropsType) => {
     itemTextAlign,
     itemBackgroundColor,
     itemHoverdBackgroundColor,
-  } = sideBarOption;
+  }: SideBarOptionPropsType = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
   const [sideBarItems, setSideBarItems] = useState([{}]);
