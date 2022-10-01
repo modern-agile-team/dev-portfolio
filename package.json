@@ -1,6 +1,6 @@
 {
   "name": "dev-portfolio",
-  "version": "0.0.0-development",
+  "version": "v2.0.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
