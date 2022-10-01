@@ -24,10 +24,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header
-        id="['Header', 'bxs:dock-top']"
-        sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }}
-      />
+      <Header id="Header" sideBarOption={{ mainTitle: 'Wellcome to my world!', iconName: 'ep:menu' }} />
       <Skill />
 
       <Channel />

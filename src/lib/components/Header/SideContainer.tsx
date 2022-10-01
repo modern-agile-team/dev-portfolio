@@ -36,7 +36,9 @@ const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType)
         const tagId = $tag.id;
         let [title, itemLogoName] = [undefined, undefined];
         try {
-          [title, itemLogoName] = eval(tagId);
+          const evaledTagId = eval(tagId);
+          if (typeof evaledTagId === 'string') [title, itemLogoName] = [tagId, undefined];
+          else [title, itemLogoName] = evaledTagId;
         } catch (err) {
           [title, itemLogoName] = [tagId, undefined];
         }
