@@ -6,6 +6,17 @@ import {
   ProgressBarContainerStyledPropsType,
 } from '../../common/types/ComponentTypes/TechStack/ProgressBarType';
 
+/**
+ *
+ * @props rate: progress rate (default: 100%) (unit: %)
+ * @props isHiddenRateText: boolean whether show text of rate (default: false)
+ * @props colorFrom: animation start color if isBlinking true (default: white);
+ * @props colorTo: animation finished color if isBlinking true (default: red);
+ * @props width: progressbar css width (default: 100%);
+ * @props height: progressbar css height (default: 40px);
+ * @props animationType: progressbar animation <"wave" | "none"> (default: "wave");
+ * @props isBlinking: progressbar blinking state (default: false);
+ */
 const ProgressBar = ({
   rate,
   isHiddenRateText,
@@ -13,8 +24,8 @@ const ProgressBar = ({
   colorTo,
   width,
   height,
-  animationType = 'wave',
-  isBlinking = false,
+  animationType,
+  isBlinking,
 }: ProgressBarPropsType) => {
   return (
     <ProgressBarContainer width={width} height={height}>
@@ -33,10 +44,12 @@ export default ProgressBar;
 ProgressBar.defaultProps = {
   rate: '100%',
   isHiddenRateText: true,
-  colorFrom: 'red',
-  colorTo: 'white',
+  colorFrom: 'white',
+  colorTo: 'red',
   width: '100%',
   height: '40px',
+  animationType: 'wave',
+  isBlinking: false,
 };
 
 const g = ({ from, to }: ProgreeBarColorType) => keyframes`
@@ -90,7 +103,7 @@ const ProgressBarComplete = styled.div<ProgressBarCompleteStyledPropsType & { is
   border-radius: 10px;
   ${({ progressColor, isBlinking, rate }) => {
     return css`
-      background-color: ${progressColor.to};
+      background-color: ${progressColor.to || '#5225bd'};
       animation: ${isBlinking && g(progressColor)} 2500ms infinite ease-in-out, ${fillUp(rate)} 1.5s ease-in-out;
       transform: translateX(calc(-100% + ${rate}));
     `;
