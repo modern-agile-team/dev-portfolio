@@ -1,6 +1,6 @@
 # dev-porfolio
 
-![npm_package_badge](https://img.shields.io/badge/npm-v2.0.0--beta--0.1-brightgreen)
+![npm_package_badge](https://img.shields.io/badge/npm-v2.0.0--beta--0.2-brightgreen)
 ![license_badge](https://img.shields.io/badge/license-MIT-lightgrey)
 ![react-iconify](https://img.shields.io/badge/iconify-react-red)
 
@@ -84,7 +84,6 @@ const sideBarOption = { ... };
 const App = () => {
   return (
     <Header
-      id="Header Component"
       headerHeight="80px"
       headerWidth="100%"
       headerBackgroundColor="whitesmoke"
@@ -100,13 +99,12 @@ export default App;
 
 | props                   | type                                                                                                                                                                                                                                                                                           | description                                         | default                         | note |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------- | ---- |
-| `id`                    | string                                                                                                                                                                                                                                                                                         | Name to be added to Sidebar                         |                                 |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon    |
-| `headerHeight`          | string                                                                                                                                                                                                                                                                                         | Header Height                                       | 80px                            |      |
-| `headerWidth`           | string                                                                                                                                                                                                                                                                                         | Header Width                                        | 100%                            |      |
-| `headerBackgroundColor` | string                                                                                                                                                                                                                                                                                         | CSS for Background color of Header Component        | white                           |      |
-| `logoOption`            | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | Logo & Header_Title only props                      | See "More about Header's Props" |      |
-| `channels`              | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Channel-only props such as Github and LinkedIn, etc | See "More about Header's Props" |      |
-| `sideBarOption`         | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a>                                                                                      | Sidebar-only props such as Sidebar's Icon, etc      | See "More about Header's Props" |      |
+| `headerHeight`          | string                                                                                                                                                                                                                                                                                         | Header height style                                       | 80px                            |      |
+| `headerWidth`           | string                                                                                                                                                                                                                                                                                         | Header width style                                        | 100%                            |      |
+| `headerBackgroundColor` | string                                                                                                                                                                                                                                                                                         | Header background color style        | white                           |      |
+| `logoOption`            | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | You can customize the attrs such as logo and title by using logoOption props.                      | See "More about Header's Props" |      |
+| `channels`              | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Enter the props of the channel components as an array of objects. Enter channel to express yourself, such as personal blog, linked-in, etc. | See "More about Header's Props" |      |
+| `sideBarOption`         | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a>                                                                                      | You can customize the attrs such as title and icon, item in sidebar by using sideBarOption props.      | See "More about Header's Props" |      |
 
 
 ### More about Header's props

@@ -6,13 +6,7 @@ import {
   SideBarIconStyledPropsType,
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarIconType';
 
-const SideBarIcon = ({
-  iconName = 'ant-design:menu-fold-outlined',
-  iconSize = '30px',
-  iconColor = '#434521',
-  iconMargin = '0px 12px 0px 12px',
-  onClick,
-}: SideBarIconPropsType) => {
+const SideBarIcon = ({ iconName = '', iconSize, iconColor, iconMargin, onClick }: SideBarIconPropsType) => {
   return (
     <Container iconMargin={iconMargin} onClick={onClick}>
       {/* <FaBars fontSize={iconSize} color={iconColor} /> */}
