@@ -1,26 +1,29 @@
 import styled, { css } from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer';
-import { MAIN } from '../../common/theme';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
-import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 import { useCallback, useEffect, useState } from 'react';
 
 /**
+ * This makes it easy to create headers with sidebar
+ * and easily customize channels that express yourself,
+ * such as personal blog, linked-in, etc.
  *
- * @props id: Name to be added to Sidebar
- * @props logoOption: Logo & Header_Title only props (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts "See More about Header's Props"})
- * @props channels: Channel-only props such as Github and LinkedIn, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts "See More about Header's Props"})
- * @props sideBarOption: Sidebar-only props such as Sidebar's Icon, etc (default: {@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1 "See More about Header's Props"})
- * @props headerHeight: Header Height (default: 80px)
- * @props headerWidth: Header Width (default: 100%)
- * @props headerBackgroundColor: CSS for Background color of Header Component (default: white)
+ * @props headerHeight: Header height style (default: '80px')
+ * @props headerWidth: Header Width style (default: '100%')
+ * @props headerBackgroundColor: Header background color style (default: 'white')
+ *
+ * @props logoOption: You can customize the attrs such as logo and title by using logoOption props.
+ * @props channels: Enter channels to express yourself, such as personal blog, linked-in, etc.
+ * @props sideBarOption: You can customize the attrs such as title and item in sidebar by using sideBarOption props.
+ *
+ * @refer
+ * If you want to check the value of logoOption, channels, sideBarOption, please check the following link. {@link https://github.com/modern-agile-team/dev-portfolio#more-about-headers-props}
  */
 const Header = ({
-  id,
-  logoOption = logoOptionDefault,
+  logoOption = {},
   channels,
-  sideBarOption = sideBarOptionDefault,
+  sideBarOption,
   headerHeight,
   headerWidth,
   headerBackgroundColor,
@@ -52,7 +55,6 @@ const Header = ({
   }, []);
   return (
     <Container
-      id={id}
       headerHeight={headerHeight}
       headerWidth={headerWidth}
       headerBackgroundColor={headerBackgroundColor}
@@ -62,10 +64,10 @@ const Header = ({
         redirectUrl={redirectUrl}
         logoImg={logoImg}
         logoHidden={logoHidden}
-        title={title}
         logoMargin={logoMargin}
         logoWidth={logoWidth}
         logoHeight={logoHeight}
+        title={title}
         titleColor={titleColor}
         titleSize={titleSize}
         titleWeight={titleWeight}
@@ -122,24 +124,3 @@ const Container = styled.div<HeaderStyledPropsType & { pageY: ScrollType }>`
     `;
   }};
 `;
-
-const logoOptionDefault = {
-  redirectUrl: '/',
-  logoImg: '',
-  logoHidden: false,
-  title: 'dev-portfolio',
-  logoMargin: '0px 16px 0px 16px',
-  logoWidth: '50px',
-  logoHeight: '50px',
-  titleColor: 'black',
-  titleSize: '24px',
-  titleWeight: '800',
-};
-
-const sideBarOptionDefault: SideBarOptionPropsType = {
-  mainTitle: 'dev-portfolio',
-  iconSize: '28px',
-  iconColor: MAIN.MAIN_COLOR,
-  iconMargin: '0px 12px 0px 12px',
-  backgroundColor: MAIN.MAIN_COLOR,
-};
