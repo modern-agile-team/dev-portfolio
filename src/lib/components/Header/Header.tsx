@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import SideContainer from './SideContainer';
 import { MAIN } from '../../common/theme';
 import { HeaderPropsType, HeaderStyledPropsType } from '../../common/types/ComponentTypes/Header/HeaderType';
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
+import { useCallback, useEffect, useState } from 'react';
 
 /**
  *
@@ -36,13 +37,26 @@ const Header = ({
     titleSize,
     titleWeight,
   } = logoOption;
+  const [pageY, setPageY] = useState<ScrollType>({ value: 0, direction: 'down', scrollUpTimes: 0 });
 
+  const detectScroll = useCallback(() => {
+    setPageY(({ value, scrollUpTimes }) => {
+      if (value > window.scrollY) return { value: window.scrollY, direction: 'up', scrollUpTimes: scrollUpTimes + 1 };
+      else return { value: window.scrollY, direction: 'down', scrollUpTimes: scrollUpTimes - 1 };
+    });
+  }, [pageY]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', detectScroll);
+    return () => window.removeEventListener('scroll', detectScroll);
+  }, []);
   return (
     <Container
       id={id}
       headerHeight={headerHeight}
       headerWidth={headerWidth}
       headerBackgroundColor={headerBackgroundColor}
+      pageY={pageY}
     >
       <HeaderLogo
         redirectUrl={redirectUrl}
@@ -63,7 +77,13 @@ const Header = ({
 
 export default Header;
 
-const Container = styled.div<HeaderStyledPropsType>`
+type ScrollType = {
+  value: number;
+  direction: 'down' | 'up';
+  scrollUpTimes: number;
+};
+
+const Container = styled.div<HeaderStyledPropsType & { pageY: ScrollType }>`
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -76,6 +96,31 @@ const Container = styled.div<HeaderStyledPropsType>`
   margin: '0px';
   padding: '0px';
   background-color: ${({ headerBackgroundColor }) => headerBackgroundColor ?? 'whitesmoke'};
+  top: 0;
+  ${(props) => {
+    const MAX_SCROLL_COUNT = 10;
+    const MAX_HIDE = 250;
+
+    let top = -MAX_HIDE;
+    if (top < 0) {
+      top += (-top / MAX_SCROLL_COUNT) * props.pageY.scrollUpTimes;
+      if (top < -MAX_HIDE) {
+        props.pageY.scrollUpTimes = 0;
+        top = -MAX_HIDE;
+      } else if (top >= 0) {
+        props.pageY.scrollUpTimes = MAX_SCROLL_COUNT;
+        top = 0;
+      }
+    }
+    if (props.pageY.value <= 0) {
+      top = 0;
+      props.pageY.scrollUpTimes = 0;
+    }
+    return css`
+      transition: 0.3s;
+      top: ${top > 0 ? 0 : top}px;
+    `;
+  }};
 `;
 
 const logoOptionDefault = {
