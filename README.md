@@ -103,12 +103,12 @@ export default App;
 | `channels`              | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Channel-only props such as Github and LinkedIn, etc | See "More about Header's Props" |      |
 | `sideBarOption`         | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a>                                                                                      | Sidebar-only props such as Sidebar's Icon, etc      | See "More about Header's Props" |      |
 
-<details>
-<summary>More about Header's props</summary>
 
-#### logoOption example
+### More about Header's props
 
- <img height="50px" alt="스크린샷 2022-08-20 오후 12 12 53" src="https://user-images.githubusercontent.com/56839474/185726844-534bec07-f460-4d38-8747-8ef3b7187a86.png">
+- logoOption example
+
+<img width="220" alt="image" src="https://user-images.githubusercontent.com/83394348/193384391-ff363c34-9a28-40b1-b462-9d16a624799b.png">
 
 ```js
 const logoOption = {
@@ -125,9 +125,9 @@ const logoOption = {
 };
 ```
 
-#### channels example
+- channels example
 
- <img height="50px" alt="스크린샷 2022-08-20 오후 12 14 35" src="https://user-images.githubusercontent.com/56839474/185726889-8806c049-46b6-4aac-aff4-cf100a54364c.png">
+ <img width="200" alt="channels" src="https://user-images.githubusercontent.com/83394348/193384430-55a671a8-0a97-45b5-8590-f12de4526057.png">
 
 ```js
 const channels = [
@@ -138,10 +138,11 @@ const channels = [
 ];
 ```
 
-#### sideBarOption example
+- sideBarOption example
 
- <img height="50px" alt="스크린샷 2022-08-20 오후 12 15 02" src="https://user-images.githubusercontent.com/56839474/185726904-c09dc836-ddf3-4a62-afbe-54eed722d7ef.png">
-<img height="50px" alt="스크린샷 2022-08-20 오후 12 15 32" src="https://user-images.githubusercontent.com/56839474/185726921-f67e9969-8ad4-4061-a6ea-88440ad0c23c.png">
+<img width="45" alt="image" src="https://user-images.githubusercontent.com/83394348/193385692-028f193d-a82a-4a19-87cf-74bebfdd3cd7.png">
+<img height="200px" alt="image" src="https://user-images.githubusercontent.com/83394348/193385720-7c68dc98-3264-4ea9-ba5c-1b0876347a91.png"
+>
 
 ```js
 const sideBarOption = {
@@ -162,7 +163,6 @@ const sideBarOption = {
 };
 ```
 
-</details>
 
 ### Intro
 
@@ -198,22 +198,6 @@ export default App;
 | `shortIntro`      | string | a brief introduction        | 'shortIntro that will captivate people'                                                                                                                                                                                                                  |      |
 | `description`     | string | Introduce yourself          | 'This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! ' |      |
 
-<details>
-<summary>More about Intro's props</summary>
-
-#### introOption example
-
-```js
-const IntroOption = {
-  title: 'Intro',
-  shortIntro: 'shortIntro that will captivate people',
-  description:
-    'This props name is description.\nPlease write down your brief introduction here.\nIf you want to change the line, type backslash-n between the letters.\nAlso you want to move the letters to the center, change textAlign to center.\n\nSpread your dreams!',
-};
-```
-
-</details>
-
 ### TechStackList
 
 ![techStackList](https://user-images.githubusercontent.com/56839474/189713771-ee5de07c-0256-464f-aa61-e5e133dda548.gif)
@@ -242,10 +226,10 @@ export default App;
 | `gap`           | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a>                                  | Spacing between TechStacks in TechStackList                             | normal                                 |      |
 | `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts#:~:text=export%20interface-,TechStackPropsType,-extends%20TechStackPropsGapType%20%7B">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" |      |
 
-<details>
-<summary>More about TechStackList's props</summary>
 
-#### techStackList example
+### More about TechStackList's props
+
+- techStackList example
 
 ```js
 const techStackList = [
@@ -285,7 +269,7 @@ const techStackList = [
 ];
 ```
 
-#### gap example
+- gap example
 
  <img width="100%" alt="스크린샷 2022-08-20 오후 12 22 27" src="https://user-images.githubusercontent.com/56839474/185727226-b401ce50-50fb-4572-b78e-692ff6cf63ef.png">
 
@@ -294,7 +278,7 @@ const techStackList = [
 const gap = 'normal';
 ```
 
-</details>
+
 
 ### Experience
 
@@ -303,7 +287,6 @@ const gap = 'normal';
 ```js
 import { Experience } from 'dev-portfolio';
 
-const verticalOption = { ... };
 const historyList = [ ... ];
 
 const App = () => {
@@ -313,7 +296,8 @@ const App = () => {
       title="Experience Title"
       textAlign="left"
       theme="vertical" // 'basic' | 'box' | 'vertical'
-      verticalOption={verticalOption}
+      titleColor="black"
+      shape="square" // 'square' | 'round-square'
       historyList={historyList}
     />
   );
@@ -328,28 +312,14 @@ export default App;
 | `title`          | string                                                                                                                                                                                                                            | Main title text of Experience Component                                                      | Experience                          |      |
 | `textAlign`      | string                                                                                                                                                                                                                            | Experience Text align                                                                        | left                                |      |
 | `theme`          | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a>                   | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic                               |      |
-| `verticalOption` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceVerticalOptionType,-%7B">ExperienceVerticalOptionType</a> | Special settings can be added when the theme is 'vertical'.                                  | See "More about Experience's Props" |      |
+| `titleColor` | string | Color of title specially used in 'vertical' theme                                  | black |      |
+| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=*/-,shape,-%3F%3A%20ExperienceShapeType%3B">ExperienceVerticalOptionType</a> | shape of card specially used in 'vertical' theme such as 'square', 'round-square'.                                 | square |      |
 | `historyList`    | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a>     | You can add your history data such as date, title, description, etc.                         | See "More about Experience's Props" |      |
 
-<details>
-<summary>More about Experience's props</summary>
 
-#### theme example
+### More about Experience's props
 
-```js
-const theme = 'basic'; // 'basic' | 'box' | 'vertical'
-```
-
-#### verticalOption example
-
-```js
-const verticalOption = {
-  titleColor: '#000000',
-  shape: 'round-square', // 'square' | 'round-square'
-};
-```
-
-#### historyList example
+- historyList example
 
 ```js
 const historyList = [
@@ -371,8 +341,6 @@ const historyList = [
   },
 ];
 ```
-
-</details>
 
 ### Carousel
 
@@ -460,25 +428,6 @@ export default App;
 | `theme`   | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night |      |
 | `padding` | string                                                                                                                                                                                                    | Gallery padding                                                                                                                | 2em 10em  |      |
 
-<details>
-<summary>More about Gallery's props</summary>
-  
-  #### gap example
-  
-  ```js
-  // 'wider' | 'wide' | 'normal' | 'narrow' | 'narrower'
-  const gap = 'normal';
-  ```
- 
-  #### theme example
-  
-  ```js
-  // 'mid-night' | 'blossom' | 'fruits' | 'bare-bare' | 'mint-chocolate'
-  const theme = 'mid-night';
-  ```
- 
-</details>
-
 ### Masonry
 
 <img width="1674" alt="스크린샷 2022-09-13 오전 2 08 45" src="https://user-images.githubusercontent.com/56839474/189715278-2e74562d-7d46-482b-8222-01251d538f1e.png">
@@ -489,10 +438,12 @@ import { Masonry, Image } from 'dev-portfolio';
 const App = () => {
   return (
     <Masonry id="Masonry Component" column={4} padding="2em 4em">
-      // Must insert components customized
+      /* Must insert components customized */
       <YOUR_COMPONENT />
-      <Image src="anything.png" redirectURL="/" /> // Component of dev-portfolio
-      <Image src="https://picsum.photos/900/1100/?random" redirectURL="/" /> // Component of dev-portfolio ...
+      <Image src="anything.png" redirectURL="/" /> 
+      /* Component of dev-portfolio */
+      <Image src="https://picsum.photos/900/1100/?random" redirectURL="/" /> 
+      /* Component of dev-portfolio ... */
     </Masonry>
   );
 };
@@ -600,25 +551,6 @@ export default App;
 | `shape`       | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square  |      |
 | `hover`       | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a>     | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'.              | none    |      |
 
-<details>
-<summary>More about Card's props</summary>
-
-#### shape example
-
-```js
-// 'square' | 'round-square' | 'round'
-const shape = 'square';
-```
-
-#### hover example
-
-```js
-// 'up' | 'down' | 'zoom'
-const hover = 'zoom';
-```
-
-</details>
-
 ### Contact
 
 <img width="100%" alt="스크린샷 2022-08-20 오후 12 32 19" src="https://user-images.githubusercontent.com/56839474/185727384-1b024c72-83e3-4ef9-84ac-68f832d8df3e.png">
@@ -626,8 +558,8 @@ const hover = 'zoom';
 ```js
 import { Contact } from 'dev-portfolio';
 
-const channels = [{...}, {...}];
-const aboutMeInfos = [{...}, {...}];
+const channels = [ ... ];
+const aboutMeInfos = [ ... ];
 
 const App = () => {
   return (
