@@ -31,6 +31,11 @@ export interface ContactOptionType extends ChannelsPropsType {
   buttonText?: string;
   /**
    * Enter your personal informations such as TEL, home address, etc.
+   *
+   * @example aboutMeInfos
+   * ```ts
+   * [{ title: 'Where I live', description: 'Seoul, Republic of Korea' }, { title: 'Give me a call', description: 'T. +82 (0)10 1234 5678' }, { title: 'Or, why don’t you email me?', description: 'dev-portfolio@gmail.com' }]
+   * ```
    */
   aboutMeInfos?: AboutMeInfoPropsType[];
 }

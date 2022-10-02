@@ -4,9 +4,9 @@ export interface ChannelsPropsType {
    * Please check to the following.
    * {@link https://github.com/modern-agile-team/dev-portfolio#channel}
    * 
-   * @default channels
-   * ```js
-        const channels = [{ redirectUrl: '/', name: 'github', color: 'black', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'youtube', color: '#e03b35', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'linkedin', color: '#1295cd', size: '24px', margin: '0px 6px', padding: '0px' }];
+   * @example channels
+   * ```ts
+        [{ redirectUrl: '/', name: 'github', color: 'black', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'youtube', color: '#e03b35', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'linkedin', color: '#1295cd', size: '24px', margin: '0px 6px', padding: '0px' }]
      ```
    */
   channels?: ChannelType[];
