@@ -1,6 +1,6 @@
 import { forwardRef, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useInterval } from '../Carousel/hooks';
+import { useInterval } from '../../common/hooks';
 import {
   ItemPropsType,
   ItemDescriptionPropsType,

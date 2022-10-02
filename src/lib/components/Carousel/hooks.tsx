@@ -20,9 +20,10 @@ const useCarousel = ({
   const childrenLength = React.Children.toArray(children).length;
   const itemLength = useMemo(() => itemList.length, [itemList]);
 
-  const startTransition = () => {
+  const startTransition = (index: number) => {
     setDisable(true);
     setTransitionTime(transition);
+    setShowIndex(index);
   };
 
   const endTransition = () => {
@@ -32,37 +33,34 @@ const useCarousel = ({
     }, transition);
   };
 
-  const showPrev = () => {
-    if (disable) return;
-    startTransition();
-    setShowIndex(showIndex - slideToShow);
-
+  const duringTransition = (direction: 'prev' | 'next') => {
     setTimeout(() => {
       setTransitionTime(0);
-      setItemList((prev) => {
-        const { list: result, index } = setPreviousItem({ prevList: prev, showIndex, slideToShow, childrenLength });
-        setShowIndex(index);
-        return result;
-      });
+      if (direction === 'next') {
+        setItemList((prev) => {
+          const { list: result } = setNextItem({ prevList: prev, showIndex, slideToShow, childrenLength });
+          return result;
+        });
+      } else {
+        setItemList((prev) => {
+          const { list: result } = setPreviousItem({ prevList: prev, showIndex, slideToShow, childrenLength });
+          return result;
+        });
+      }
     }, transition);
+  };
 
+  const showPrev = () => {
+    if (disable) return;
+    startTransition(showIndex - slideToShow);
+    duringTransition('prev');
     endTransition();
   };
 
   const showNext = () => {
     if (disable) return;
-    startTransition();
-    setShowIndex(showIndex + slideToShow);
-
-    setTimeout(() => {
-      setTransitionTime(0);
-      setItemList((prev) => {
-        const { list: result, index } = setNextItem({ prevList: prev, showIndex, slideToShow, childrenLength });
-        setShowIndex(index);
-        return result;
-      });
-    }, transition);
-
+    startTransition(showIndex + slideToShow);
+    duringTransition('next');
     endTransition();
   };
 
@@ -133,7 +131,7 @@ const useCarousel = ({
   };
 };
 
-export { useInterval, useCarousel };
+export { useCarousel };
 
 const init = ({ children, slideToShow }: { children: React.ReactNode; slideToShow: number }) => {
   const list = React.Children.toArray(children);
