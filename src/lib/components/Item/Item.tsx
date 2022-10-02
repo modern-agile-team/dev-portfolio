@@ -1,20 +1,16 @@
 import { forwardRef, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useInterval } from '../../common/hooks';
-import {
-  ItemPropsType,
-  ItemDescriptionPropsType,
-  ItemDescriptionWrapperStyledPropsType,
-} from '../../common/types/ComponentTypes/ItemType';
+import { ItemPropsType, topType } from '../../common/types/ComponentTypes/ItemType';
 
-const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
-  ({ title, top, description, textRisingSpeed }, ref) => {
+const Description = forwardRef<HTMLDivElement, ItemPropsType & topType>(
+  ({ title, top, description, textRisingSpeed, titleColor, descriptionColor, hoverdInnerBorderColor }, ref) => {
     return (
       <DescriptionContainer className="hover">
-        <HoverSection className="inner-hover">
-          <h3>{title}</h3>
+        <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
+          <h3 style={{ color: `${titleColor}` }}>{title}</h3>
           <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
-            <text>{description}</text>
+            <text style={{ color: `${descriptionColor}` }}>{description}</text>
           </DescriptionWrapper>
         </HoverSection>
       </DescriptionContainer>
@@ -23,15 +19,29 @@ const Description = forwardRef<HTMLDivElement, ItemDescriptionPropsType>(
 );
 
 /**
+ * Express the section you want to brag about using item component.
  *
- * @props src: Image source url	(default: {@link https://picsum.photos/600/600/?random "image"})
- * @props title: Main Title Text (default: This is title )
- * @props description: Description Text	(default: description)
- * @props redirectURL: URL to redirect (default: /)
+ * @props src: Image source url	(default: {@link https://picsum.photos/500/300/?random image})
+ * @props title: Main Title Text (default: 'This is title')
+ * @props description: Description Text	(default: 'description')
+ * @props titleColor: title text color style (default: 'white')
+ * @props descriptionColor: description text color style (default: 'white')
+ * @props redirectURL: URL you want to redirect when clicked (default: '/')
  * @props textRisingSpeed: (default: 300)
  * @props isTextRising: (default: false)
+ * @props hoverdInnerBorderColor: Inner border color of item when hoverd (default: 'white')
  */
-const Item = ({ redirectURL, title, description, src, textRisingSpeed, isTextRising }: ItemPropsType) => {
+const Item = ({
+  src,
+  title,
+  description,
+  titleColor,
+  descriptionColor,
+  redirectURL,
+  textRisingSpeed,
+  isTextRising,
+  hoverdInnerBorderColor,
+}: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [top, setTop] = useState(0);
   const textRef = useRef<HTMLDivElement>(null);
@@ -70,10 +80,13 @@ const Item = ({ redirectURL, title, description, src, textRisingSpeed, isTextRis
         {isHover && (
           <Description
             ref={textRef}
-            description={description}
             title={title}
+            description={description}
+            titleColor={titleColor}
+            descriptionColor={descriptionColor}
             top={top}
             textRisingSpeed={textRisingSpeed}
+            hoverdInnerBorderColor={hoverdInnerBorderColor}
           />
         )}
       </a>
@@ -84,12 +97,15 @@ const Item = ({ redirectURL, title, description, src, textRisingSpeed, isTextRis
 export default Item;
 
 Item.defaultProps = {
-  isTextRising: false,
-  redirectURL: '/',
+  src: 'https://picsum.photos/500/300/?random',
   title: 'This is title',
   description: 'description',
-  src: 'https://picsum.photos/500/300/?random',
+  titleColor: 'white',
+  descriptionColor: 'white',
+  redirectURL: '/',
   textRisingSpeed: 300,
+  isTextRising: false,
+  hoverdInnerBorderColor: 'white',
 };
 
 const StyledItem = styled.li`
@@ -131,7 +147,7 @@ const DescriptionContainer = styled.div`
   padding: 16px;
 `;
 
-const HoverSection = styled.section`
+const HoverSection = styled.section<ItemPropsType>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -139,7 +155,7 @@ const HoverSection = styled.section`
   align-items: center;
   width: 100%;
   height: 100%;
-  border: 1px solid #fff;
+  border: 1px solid ${({ hoverdInnerBorderColor }) => hoverdInnerBorderColor};
   h3 {
     position: absolute;
     text-align: center;
@@ -149,7 +165,7 @@ const HoverSection = styled.section`
   }
 `;
 
-const DescriptionWrapper = styled.div<ItemDescriptionWrapperStyledPropsType>`
+const DescriptionWrapper = styled.div<ItemPropsType & topType>`
   position: absolute;
   top: 20%;
   width: 90%;

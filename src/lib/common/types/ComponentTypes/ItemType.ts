@@ -1,20 +1,42 @@
-export interface ItemPropsType extends Description, TextRisingSpeed {
-  redirectURL?: string;
+export interface ItemPropsType {
+  /**
+   * Image source url	(default: {@link https://picsum.photos/600/600/?random image})
+   */
   src?: string;
-  isTextRising?: boolean;
-}
-
-interface Description {
+  /**
+   * Main Title Text (default: 'This is title')
+   */
   title?: string;
+  /**
+   * Description Text	(default: 'description')
+   */
   description?: string;
-}
-
-interface TextRisingSpeed {
+  /**
+   * title text color style (default: 'white')
+   */
+  titleColor?: string;
+  /**
+   * description text color style (default: 'white')
+   */
+  descriptionColor?: string;
+  /**
+   * URL you want to redirect when clicked (default: '/')
+   */
+  redirectURL?: string;
+  /**
+   * (default: 300)
+   */
   textRisingSpeed?: number;
+  /**
+   * (default: false)
+   */
+  isTextRising?: boolean;
+  /**
+   * Inner border color of item when hoverd (default: 'white')
+   */
+  hoverdInnerBorderColor?: string;
 }
 
-export interface ItemDescriptionWrapperStyledPropsType extends TextRisingSpeed {
+export interface topType {
   top: number;
 }
-
-export interface ItemDescriptionPropsType extends Description, ItemDescriptionWrapperStyledPropsType {}
