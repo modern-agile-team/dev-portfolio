@@ -51,7 +51,7 @@ export interface ContactPropsType extends ChannelsPropsType {
    *
    * @example aboutMeInfos
    * ```ts
-   * [{ title: 'Where I live', description: 'Seoul, Republic of Korea' }, { title: 'Give me a call', description: 'T. +82 (0)10 1234 5678' }, { title: 'Or, why don’t you email me?', description: 'dev-portfolio@gmail.com' }]
+   * [{ title: 'Where I live', titleColor: 'black', description: 'Seoul, Republic of Korea', desciptionColor: 'black' }, { title: 'Give me a call', titleColor: 'black', description: 'T. +82 (0)10 1234 5678', desciptionColor: 'black' }, { title: 'Or, why don’t you email me?', titleColor: 'black', description: 'dev-portfolio@gmail.com', desciptionColor: 'black' }]
    * ```
    */
   aboutMeInfos?: AboutMeInfoPropsType[];

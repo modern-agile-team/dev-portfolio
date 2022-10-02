@@ -116,15 +116,21 @@ Contact.defaultProps = {
   aboutMeInfos: [
     {
       title: 'Where I live',
+      titleColor: 'black',
       description: 'Seoul, Republic of Korea',
+      descriptionColor: 'black',
     },
     {
       title: 'Give me a call',
+      titleColor: 'black',
       description: 'T. +82 (0)10 1234 5678',
+      descriptionColor: 'black',
     },
     {
       title: 'Or, why don’t you email me?',
+      titleColor: 'black',
       description: 'dev-portfolio@gmail.com',
+      descriptionColor: 'black',
     },
   ],
 };
