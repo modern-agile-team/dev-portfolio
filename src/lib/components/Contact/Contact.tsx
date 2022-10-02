@@ -9,20 +9,17 @@ import { ContactPropsType, ContactStyledPropsType } from '../../common/types/Com
  * Let's use this component to promote all your channels!
  *
  * @props id: Name to be added to Sidebar
- * @props backgroundColor: Contact Background Color	(default: whitesmoke)
- * @props title: Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
+ * @props backgroundColor: Contact background color	style (default: 'whitesmoke')
+ * @props title: Main title text of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
  * @props subTitle: Sub title text (default: 'If you're interested in me, please press the button below :D')
  * @props email: Your Email (default: 'abc@dev-portfolio.com')
  * @props buttonText: Text of button that function as a link to your email (default: 'Want to work with me?')
- * @props channels: Array of your channels like github and blogs (default: an array of 4 in length)
- * @props aboutMeInfos: Your personal information like TEL, Home etc
- * @channels name: Channel name
- * @channels redirectUrl: link to channel
- * @channels color: Color of Channel Icon
- * @channels size: Size of Channel Icon (unit: px)
- * @channels margin: Css margin of each Icons
- * @aboutMeInfos title: Kind of personal information
- * @aboutMeInfos description: Description for title
+ *
+ * @props channels: Enter channels to express yourself, such as personal blog, linked-in, etc.
+ * @props aboutMeInfos: Enter your personal informations such as TEL, home address, etc.
+ *
+ * @refer
+ * If you want to check the value of channels, aboutMeInfos, please check the following link. {@link https://github.com/modern-agile-team/dev-portfolio#more-about-contacts-props}
  */
 const Contact = ({
   id,
@@ -48,6 +45,7 @@ const Container = styled.div<ContactStyledPropsType>`
   justify-content: space-evenly;
   background-color: ${({ backgroundColor }) => backgroundColor ?? 'whitesmoke'};
   padding: 10px 10px;
+
   @media screen and (max-width: 500px) {
     flex-direction: column;
     padding: 1em;

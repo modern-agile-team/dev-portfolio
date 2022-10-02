@@ -1,4 +1,4 @@
-export interface ChannelPropsType {
+export interface ChannelsPropsType {
   /**
    * Enter the props of the channel components as an array of objects.
    * Please check to the following.

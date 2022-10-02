@@ -1,4 +1,4 @@
-import { ChannelType } from '../ChannelType';
+import { ChannelsPropsType } from '../ChannelType';
 import { AboutMeInfoPropsType } from './AboutMeInfoType';
 
 export interface ContactPropsType extends ContactOptionType {
@@ -7,14 +7,14 @@ export interface ContactPropsType extends ContactOptionType {
    */
   id?: string;
   /**
-   * Contact Background Color	(default: whitesmoke)
+   * Contact background color	style (default: 'whitesmoke')
    */
   backgroundColor?: string;
 }
 
-export interface ContactOptionType {
+export interface ContactOptionType extends ChannelsPropsType {
   /**
-   * Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
+   * Main title text of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
    */
   title?: string;
   /**
@@ -30,11 +30,7 @@ export interface ContactOptionType {
    */
   buttonText?: string;
   /**
-   * Array of your channels like github and blogs (default: an array of 4 in length)
-   */
-  channels?: ChannelType[];
-  /**
-   * Your personal information like TEL, Home etc
+   * Enter your personal informations such as TEL, home address, etc.
    */
   aboutMeInfos?: AboutMeInfoPropsType[];
 }
