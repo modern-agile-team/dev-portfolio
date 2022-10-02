@@ -1,4 +1,4 @@
-export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsType {
+export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsType, ProgressBarAnimationType {
   /**
    * How well you handle the skill (unit: %)
    */
@@ -16,14 +16,17 @@ export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsTyp
    */
   colorTo?: string;
   /**
-   *
-   */
-  animationType?: 'wave' | 'none';
-  /**
-   *
+   * progressbar blinking state (default: false);
    */
   isBlinking?: boolean;
 }
+
+export type ProgressBarAnimationType = {
+  /**
+   * progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave");
+   */
+  animationType?: 'wave' | 'fill-up' | 'fill-up-wave' | 'none';
+};
 
 export interface ProgressBarContainerStyledPropsType {
   /**

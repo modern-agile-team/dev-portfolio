@@ -4,6 +4,7 @@ import {
   ProgressBarCompleteStyledPropsType,
   ProgreeBarColorType,
   ProgressBarContainerStyledPropsType,
+  ProgressBarAnimationType,
 } from '../../common/types/ComponentTypes/TechStack/ProgressBarType';
 
 /**
@@ -14,7 +15,7 @@ import {
  * @props colorTo: animation finished color if isBlinking true (default: red);
  * @props width: progressbar css width (default: 100%);
  * @props height: progressbar css height (default: 40px);
- * @props animationType: progressbar animation <"wave" | "none"> (default: "wave");
+ * @props animationType: progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave");
  * @props isBlinking: progressbar blinking state (default: false);
  */
 const ProgressBar = ({
@@ -29,8 +30,13 @@ const ProgressBar = ({
 }: ProgressBarPropsType) => {
   return (
     <ProgressBarContainer width={width} height={height}>
-      <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} rate={rate || '0'} isBlinking={isBlinking}>
-        {animationType === 'wave' && (
+      <ProgressBarComplete
+        animationType={animationType}
+        progressColor={{ from: colorFrom, to: colorTo }}
+        rate={rate || '0'}
+        isBlinking={isBlinking}
+      >
+        {animationType?.includes('wave') && (
           <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} isBlinking={isBlinking} />
         )}
       </ProgressBarComplete>
@@ -94,17 +100,20 @@ const ProgressBarContainer = styled.div<ProgressBarContainerStyledPropsType>`
   background: whitesmoke;
 `;
 
-const ProgressBarComplete = styled.div<ProgressBarCompleteStyledPropsType & { isBlinking?: boolean; rate: string }>`
+const ProgressBarComplete = styled.div<
+  ProgressBarCompleteStyledPropsType & ProgressBarAnimationType & { isBlinking?: boolean; rate: string }
+>`
   position: absolute;
   width: 100%;
   left: 0;
   top: 0px;
   height: 100%;
   border-radius: 10px;
-  ${({ progressColor, isBlinking, rate }) => {
+  ${({ progressColor, isBlinking, rate, animationType }) => {
     return css`
       background-color: ${progressColor.to || '#5225bd'};
-      animation: ${isBlinking && g(progressColor)} 2500ms infinite ease-in-out, ${fillUp(rate)} 1.5s ease-in-out;
+      animation: ${isBlinking && g(progressColor)} 2500ms infinite ease-in-out,
+        ${animationType?.includes('fill-up') && fillUp(rate)} 1.5s ease-in-out;
       transform: translateX(calc(-100% + ${rate}));
     `;
   }}
