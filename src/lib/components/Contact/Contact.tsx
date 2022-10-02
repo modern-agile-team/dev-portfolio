@@ -11,9 +11,14 @@ import { ContactPropsType, ContactStyledPropsType } from '../../common/types/Com
  * @props id: Name to be added to Sidebar
  * @props backgroundColor: Contact background color	style (default: 'whitesmoke')
  * @props title: Main title text of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
+ * @props titleColor: Title color style (defualt: 'black')
  * @props subTitle: Sub title text (default: 'If you're interested in me, please press the button below :D')
+ * @props subTitleColor: Sub title text color style (defualt: 'black')
  * @props email: Your Email (default: 'abc@dev-portfolio.com')
  * @props buttonText: Text of button that function as a link to your email (default: 'Want to work with me?')
+ * @props buttonTextColor: Button text color style (defualt: 'black')
+ * @props buttonColor: Button background color style (default: 'white')
+ * @props buttonBorderColor: Button border color sylte (default: 'black')
  *
  * @props channels: Enter channels to express yourself, such as personal blog, linked-in, etc.
  * @props aboutMeInfos: Enter your personal informations such as TEL, home address, etc.
@@ -23,17 +28,33 @@ import { ContactPropsType, ContactStyledPropsType } from '../../common/types/Com
  */
 const Contact = ({
   id,
-  backgroundColor,
   title,
+  titleColor,
   subTitle,
+  subTitleColor,
   email,
   buttonText,
+  buttonTextColor,
+  buttonColor,
+  buttonBorderColor,
+  backgroundColor,
   channels,
   aboutMeInfos,
 }: ContactPropsType) => {
   return (
     <Container id={id} backgroundColor={backgroundColor}>
-      <ContactForm title={title} subTitle={subTitle} email={email} buttonText={buttonText} channels={channels} />
+      <ContactForm
+        title={title}
+        titleColor={titleColor}
+        subTitle={subTitle}
+        subTitleColor={subTitleColor}
+        email={email}
+        buttonText={buttonText}
+        buttonTextColor={buttonTextColor}
+        buttonColor={buttonColor}
+        buttonBorderColor={buttonBorderColor}
+        channels={channels}
+      />
       <AboutMe aboutMeInfos={aboutMeInfos} />
     </Container>
   );
@@ -54,8 +75,13 @@ const Container = styled.div<ContactStyledPropsType>`
 
 Contact.defaultProps = {
   title: 'Hello, my name is DEV_PORTFOLIO',
+  titleColor: 'black',
   subTitle: `If you're interested in me, please press the button below :D`,
+  subTitleColor: 'black',
   buttonText: 'Want to work with me?',
+  buttonTextColor: 'black',
+  buttonColor: 'white',
+  buttonBorderColor: 'black',
   email: 'abc@dev-portfolio.com',
   channels: [
     {
