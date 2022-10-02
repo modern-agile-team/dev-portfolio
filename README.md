@@ -941,8 +941,14 @@ export default App;
 | `colorTo` | string | End color of blinking animation of progressbar | red | 
 | `width` | string | Progressbar css width | 100% | |
 | `height` | string | Progressbar css width | 40px | | 
-| `animationType` | ```'wave' | 'fill-up' | 'fill-up-wave' | 'none'``` | Progressbar animation | 'wave' | | 
+| `animationType` | <a href="https://github.com/modern-agile-team/dev-portfolio/edit/feature/msk/%23152/README.md?pr=%2Fmodern-agile-team%2Fdev-portfolio%2Fpull%2F174#more-about-progressbars-props">animationType</a> | Progressbar animation | 'wave' | | 
 | `isBlinking` | boolean | Progressbar blinking state | false | | 
+
+### More about ProgressBar's props
+- animationType 
+```ts
+type amimationType = "wave" | "fill-up" | "fill-up-wave" | "none"
+```
 
 # Example
 
