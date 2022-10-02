@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ChannelPropsType, ChannelType, ChannelStyledType } from '../../common/types/ComponentTypes/ChannelType';
+import { ChannelsPropsType, ChannelType, ChannelStyledType } from '../../common/types/ComponentTypes/ChannelType';
 import Channel from './Channel';
 
 /**
@@ -11,7 +11,7 @@ import Channel from './Channel';
   const channels = [{ redirectUrl: '/', name: 'github', color: 'black', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'youtube', color: '#e03b35', size: '24px', margin: '0px 6px', padding: '0px' }, { redirectUrl: '/', name: 'linkedin', color: '#1295cd', size: '24px', margin: '0px 6px', padding: '0px' }];
  ```
  */
-const Channels = ({ channels }: ChannelPropsType) => {
+const Channels = ({ channels }: ChannelsPropsType) => {
   return (
     <Container>
       {channels?.map(({ redirectUrl, name, color, size, margin }: ChannelType, idx: number) => (
