@@ -70,7 +70,7 @@ export default App;
 - <a href="#contact">Contact</a>
 - <a href="#visitorcounter">VisitorCounter</a>
 - <a href="#visitorcomment">VisitorComment</a>
-
+- <a href="#progressbar">ProgressBar</a>
 ### Header
 
 <img width="1724" alt="스크린샷 2022-09-13 오전 2 05 09" src="https://user-images.githubusercontent.com/56839474/189714124-370954bf-e995-4c85-9246-36fb12732a34.png">
@@ -909,6 +909,40 @@ const visitorComment = {
   ],
 };
 ```
+
+### ProgressBar
+
+```js
+import { ProgressBar } from 'dev-portfolio';
+ 
+const App = () => {
+  return (
+    <ProgressBar
+      rate={"100%"}
+      isHiddenRateText={true}
+      colorFrom={"red"}
+      colorTo={"blue"}
+      width={"100%"}
+      height={"30px"}
+      animationType={"fill-up-wav"}
+      isBlinking={true}
+    />
+  );
+}
+
+export default App;
+```
+
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `rate` | string | How well you handle the skill (unit: %) | 100% | |
+| `isHiddenRateText` | boolean | Whether show rate in progressbar | true | |
+| `colorFrom` | string | Start color of blinking animation of progressbar | red | |
+| `colorTo` | string | End color of blinking animation of progressbar | white | 
+| `width` | string | Progressbar css width | 100% | |
+| `height` | string | Progressbar css width | 40px | | 
+| `animationType` | ```'wave' | 'fill-up' | 'fill-up-wave' | 'none'``` | Progressbar animation | 'wave' | | 
+| `isBlinking` | boolean | Progressbar blinking state | true | | 
 
 # Example
 
