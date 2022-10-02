@@ -8,6 +8,10 @@ export interface SkillPropsType {
    */
   titleSize?: string;
   /**
+   * Title color style (default: 'black')
+   */
+  titleColor?: string;
+  /**
    * If this value is set to True, you can hide the title. (default: false)
    */
   isHiddenTitle?: string;
