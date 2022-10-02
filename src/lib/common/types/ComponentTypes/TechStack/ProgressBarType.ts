@@ -1,40 +1,40 @@
 export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsType, ProgressBarAnimationType {
   /**
-   * How well you handle the skill (unit: %)
+   * How well you handle the skill (default: 100%) (unit: %)
    */
   rate?: string;
   /**
-   * boolean whether show text of rate (default: false)
+   * Whether show text of rate (default: false)
    */
   isHiddenRateText?: boolean;
   /**
-   * animation start color if isBlinking true (default: white)
+   * Start color of blinking animation of progressbar (default: white)
    */
   colorFrom?: string;
   /**
-   * animation finished color if isBlinking true (default: red)
+   * End color of blinking animation of progressbar (default: red)
    */
   colorTo?: string;
   /**
-   * progressbar blinking state (default: false);
+   * Progressbar blinking state (default: false)
    */
   isBlinking?: boolean;
 }
 
 export type ProgressBarAnimationType = {
   /**
-   * progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave")
+   * Progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: 'wave')
    */
   animationType?: 'wave' | 'fill-up' | 'fill-up-wave' | 'none';
 };
 
 export interface ProgressBarContainerStyledPropsType {
   /**
-   * progressbar css width (default: 100%)
+   * Progressbar css width (default: 100%)
    */
   width?: string;
   /**
-   * progressbar css height (default: 40px)
+   * Progressbar css height (default: 40px)
    */
   height?: string;
 }

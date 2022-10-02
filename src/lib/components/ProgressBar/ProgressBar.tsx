@@ -9,14 +9,14 @@ import {
 
 /**
  * This is ProgressBar component that shows rate
- * @props rate: progress rate (default: 100%) (unit: %)
- * @props isHiddenRateText: boolean whether show text of rate (default: false)
- * @props colorFrom: animation start color if isBlinking true (default: white)
- * @props colorTo: animation finished color if isBlinking true (default: red)
- * @props width: progressbar css width (default: 100%)
- * @props height: progressbar css height (default: 40px)
- * @props animationType: progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave")
- * @props isBlinking: progressbar blinking state (default: false)
+ * @props rate: How well you handle the skill (default: 100%) (unit: %) 
+ * @props isHiddenRateText: Whether show text of rate (default: false)
+ * @props colorFrom: Start color of blinking animation of progressbar (default: white)
+ * @props colorTo: End color of blinking animation of progressbar (default: red)
+ * @props width: Progressbar css width (default: 100%)
+ * @props height: Progressbar css height (default: 40px)
+ * @props animationType: Progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: 'wave')
+ * @props isBlinking: Progressbar blinking state (default: false)
  */
 const ProgressBar = ({
   rate,
