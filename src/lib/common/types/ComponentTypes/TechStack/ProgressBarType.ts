@@ -4,15 +4,15 @@ export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsTyp
    */
   rate?: string;
   /**
-   * Whether show rate in progressbar
+   * boolean whether show text of rate (default: false)
    */
   isHiddenRateText?: boolean;
   /**
-   * End color of wave animation of progressbar
+   * animation start color if isBlinking true (default: white)
    */
   colorFrom?: string;
   /**
-   * Start color of wave animation of progressbar
+   * animation finished color if isBlinking true (default: red)
    */
   colorTo?: string;
   /**
@@ -23,18 +23,18 @@ export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsTyp
 
 export type ProgressBarAnimationType = {
   /**
-   * progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave");
+   * progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: "wave")
    */
   animationType?: 'wave' | 'fill-up' | 'fill-up-wave' | 'none';
 };
 
 export interface ProgressBarContainerStyledPropsType {
   /**
-   * Width of progressbar
+   * progressbar css width (default: 100%)
    */
   width?: string;
   /**
-   * Height of progressbar
+   * progressbar css height (default: 40px)
    */
   height?: string;
 }
