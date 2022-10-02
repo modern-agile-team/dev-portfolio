@@ -14,7 +14,7 @@ export interface SkillPropsType {
   /**
    * If this value is set to True, you can hide the title. (default: false)
    */
-  isHiddenTitle?: string;
+  isHiddenTitle?: boolean;
   /**
    * Enter the name of the icon you searched on the following site. (default: 'ion:logo-javascript') {@link https://icon-sets.iconify.design/}
    */
@@ -35,4 +35,16 @@ export interface SkillPropsType {
    * Skill padding style (defualt: '0px')
    */
   padding?: string;
+  /**
+   * Skill background color style (default: 'white')
+   */
+  backgroundColor?: string;
+  /**
+   * Skill border color style (default: 'white')
+   */
+  borderColor?: string;
+  /**
+   * Skill border-radius style (default: '12px')
+   */
+  borderRadius?: string;
 }
