@@ -937,12 +937,12 @@ export default App;
 | - | - | - | - | - |
 | `rate` | string | How well you handle the skill (unit: %) | 100% | |
 | `isHiddenRateText` | boolean | Whether show rate in progressbar | true | |
-| `colorFrom` | string | Start color of blinking animation of progressbar | red | |
-| `colorTo` | string | End color of blinking animation of progressbar | white | 
+| `colorFrom` | string | Start color of blinking animation of progressbar | white | |
+| `colorTo` | string | End color of blinking animation of progressbar | red | 
 | `width` | string | Progressbar css width | 100% | |
 | `height` | string | Progressbar css width | 40px | | 
 | `animationType` | ```'wave' | 'fill-up' | 'fill-up-wave' | 'none'``` | Progressbar animation | 'wave' | | 
-| `isBlinking` | boolean | Progressbar blinking state | true | | 
+| `isBlinking` | boolean | Progressbar blinking state | false | | 
 
 # Example
 
