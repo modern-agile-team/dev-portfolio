@@ -98,14 +98,14 @@ const App = () => {
 export default App;
 ```
 
-| props                   | type                                                                                                                                                                                                                                                                                           | description                                         | default                         | note |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------- | ---- |
-| `headerHeight`          | string                                                                                                                                                                                                                                                                                         | Header height style                                       | 80px                            |      |
-| `headerWidth`           | string                                                                                                                                                                                                                                                                                         | Header width style                                        | 100%                            |      |
-| `headerBackgroundColor` | string                                                                                                                                                                                                                                                                                         | Header background color style        | white                           |      |
-| `logoOption`            | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | You can customize the attrs such as logo and title by using logoOption props.                      | See "More about Header's Props" |      |
-| `channels`              | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Enter the props of the channel components as an array of objects. Enter channel to express yourself, such as personal blog, linked-in, etc. | See "More about Header's Props" |      |
-| `sideBarOption`         | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a>                                                                                      | You can customize the attrs such as title and icon, item in sidebar by using sideBarOption props.      | See "More about Header's Props" |      |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `headerHeight` | string | Header height style | 80px | |
+| `headerWidth` | string | Header width style | 100% | |
+| `headerBackgroundColor` | string | Header background color style | white| |
+| `logoOption` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | You can customize the attrs such as logo and title by using logoOption props. | See "More about Header's Props" | |
+| `channels` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Enter the props of the channel components as an array of objects. Enter channel to express yourself, such as personal blog, linked-in, etc. | See "More about Header's Props" | |
+| `sideBarOption`| <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a> | You can customize the attrs such as title and icon, item in sidebar by using sideBarOption props.| See "More about Header's Props" | | 
 
 
 ### More about Header's props
@@ -193,8 +193,8 @@ export default App;
 | ```name``` | string | Channel name | github | |
 | ```color``` | string | Channel icon color style | black | |
 | ```size``` | string | Channel icon size style | 24px | |
-| ```margin``` | string | Channel margin style | 0px 6px |  |
-| ```padding``` | string | Channel padding style | 0px |  |
+| ```margin``` | string | Channel margin style | 0px 6px | |
+| ```padding``` | string | Channel padding style | 0px | |
 
 ### Channels
 
@@ -277,14 +277,14 @@ const App = () => {
 export default App;
 ```
 
-| props             | type   | description                 | default                                                                                                                                                                                                                                                  | note |
-| ----------------- | ------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| `id`              | string | Name to be added to Sidebar |   | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon                                                                                                                                                                                                                                                        |      |
-| `textAlign`       | string | Intro Text align            | center                                                                                                                                                                                                                                                   |      |
-| `backgroundColor` | string | Intro Background color      | whitesmoke                                                                                                                                                                                                                                               |      |
-| `title`           | string | Core of your introduction   | Intro                                                                                                                                                                                                                                                   |      |
-| `shortIntro`      | string | a brief introduction        | shortIntro that will captivate people                                                                                                                                                                                                                  |      |
-| `description`     | string | Introduce yourself          | This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! |      |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `textAlign` | string | Intro Text align | center | |
+| `backgroundColor` | string | Intro Background color| whitesmoke |
+| `title` | string | Core of your introduction | Intro | |
+| `shortIntro`| string | a brief introduction | shortIntro that will captivate people |
+| `description` | string | Introduce yourself | This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! | |
 
 ### Skill
 
@@ -317,10 +317,10 @@ export default App;
 | ```titleSize``` | string | Title size style | 24px | |
 | ```isHiddenTitle``` | boolean | If this value is set to True, you can hide the title. | false | |
 | ```iconName``` | string | Enter the name of the icon you searched on the following site. | ion:logo-javascript | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| ```iconSize``` | string | Icon size style | 40px |  |
+| ```iconSize``` | string | Icon size style | 40px | |
 | ```iconColor``` | string | Icon color style | #F0DB4F |
-| ```margin``` | string | Skill margin style | 0px |  |
-| ```padding``` | string | Skill padding style | 0px |  |
+| ```margin``` | string | Skill margin style | 0px | |
+| ```padding``` | string | Skill padding style | 0px | |
 
 ### TechStackList
 
@@ -344,11 +344,11 @@ const App = () => {
 export default App;
 ```
 
-| props           | type                                                                                                                                                                                                                                                       | description                                                             | default                                | note |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------- | ---- |
-| `id`            | string                                                                                                                                                                                                                                                     | Name to be added to Sidebar                                             |                                        |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon   |
-| `gap`           | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a>                                  | Spacing between TechStacks in TechStackList                             | normal                                 |      |
-| `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackNameType.ts#:~:text=TechStackNamePropsType">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" |      |
+| props | type| description | default | note |
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | normal |
+| `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackNameType.ts#:~:text=TechStackNamePropsType">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" | |
 
 
 ### More about TechStackList's props
@@ -430,15 +430,15 @@ const App = () => {
 export default App;
 ```
 
-| props            | type                                                                                                                                                                                                                              | description                                                                                  | default                             | note |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------- | ---- |
-| `id`             | string                                                                                                                                                                                                                            | Name to be added to Sidebar                                                                  |                                     |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon   |
-| `title`          | string                                                                                                                                                                                                                            | Main title text of Experience Component                                                      | Experience                          |      |
-| `textAlign`      | string                                                                                                                                                                                                                            | Experience Text align                                                                        | left                                |      |
-| `theme`          | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a>                   | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic                               |      |
-| `titleColor` | string | Color of title specially used in 'vertical' theme                                  | black |      |
-| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.                                 | square |      |
-| `historyList`    | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a>     | You can add your history data such as date, title, description, etc.                         | See "More about Experience's Props" |      |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar| |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `title` | string | Main title text of Experience Component | Experience |
+| `textAlign`| string | Experience Text align| left | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic | |
+| `titleColor` | string | Color of title specially used in 'vertical' theme | black | |
+| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.| square | |
+| `historyList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. | See "More about Experience's Props" | |
 
 
 ### More about Experience's props
@@ -501,22 +501,22 @@ const App = () => {
 export default App;
 ```
 
-| props               | type                                                                                                                                                                                                                                                                                                                   | description                                  | default              | note      |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | -------------------- | --------- |
-| `id`                | string                                                                                                                                                                                                                                                                                                                 | Name to be added to Sidebar                  |                      |      See <a href="#guidelines-to-input-icons">Guideline</a> to add icon    |
-| `width`             | string                                                                                                                                                                                                                                                                                                                 | Carousel width                               | 100%                 |           |
-| `transition`        | number                                                                                                                                                                                                                                                                                                                 | Transition animation speed                   | 1000                 | Unit : ms |
-| `autoplaySpeed`     | number                                                                                                                                                                                                                                                                                                                 | Time to stay in a item                       | 3000                 | Unit : ms |
-| `slideToShow`       | number                                                                                                                                                                                                                                                                                                                 | Number of item to show at once               | 1                    |           |
-| `isArrowShow`       | boolean                                                                                                                                                                                                                                                                                                                | Flag for whether to show buttons             | true                 |           |
-| `isAutoplay`        | boolean                                                                                                                                                                                                                                                                                                                | Flag for play carousel automatically         | false                |
-| `isAutoplayControl` | boolean                                                                                                                                                                                                                                                                                                                | Flag for whether to show carousel player     | true                 |
-| `arrowPosition`     | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a>                                            | Position of arrow icon                       | mid-side             |           |
-| `playerLocation`    | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon                        | bottom-mid           |           |
-| `prevArrowIcon`     | ReactElement                                                                                                                                                                                                                                                                                                           | Icon Component for moving into previous item | `<FiChevronLeft />`  |           |
-| `nextArrowIcon`     | ReactElement                                                                                                                                                                                                                                                                                                           | Icon Component for moving into next item     | `<FiChevronRight />` |           |
-| `startAutoplayIcon` | ReactElement                                                                                                                                                                                                                                                                                                           | Icon Component for starting autoplay         | `<TbPlayerPlay />`   |           |
-| `pauseAutoplayIcon` | ReactElement                                                                                                                                                                                                                                                                                                           | Icon Component for pause autoplay            | `<TbPlayerPause />`  |           |
+| props| type  | description | default | note|
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar| |      See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `width` | string | Carousel width | 100% | |
+| `transition` | number | Transition animation speed | 1000 | Unit : ms |
+| `autoplaySpeed` | number | Time to stay in a item | 3000 | Unit : ms |
+| `slideToShow` | number | Number of item to show at once| 1 | |
+| `isArrowShow` | boolean | Flag for whether to show buttons | true | |
+| `isAutoplay` | boolean | Flag for play carousel automatically| false |
+| `isAutoplayControl` | boolean | Flag for whether to show carousel player | true |
+| `arrowPosition` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of arrow icon | mid-side | |
+| `playerLocation` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon| bottom-mid | |
+| `prevArrowIcon` | ReactElement | Icon Component for moving into previous item | `<FiChevronLeft />` | |
+| `nextArrowIcon` | ReactElement | Icon Component for moving into next item | `<FiChevronRight />` | |
+| `startAutoplayIcon` | ReactElement | Icon Component for starting autoplay| `<TbPlayerPlay />` | |
+| `pauseAutoplayIcon` | ReactElement | Icon Component for pause autoplay | `<TbPlayerPause />` | |
 
 ### Gallery
 
@@ -544,13 +544,13 @@ const App = () => {
 export default App;
 ```
 
-| props     | type                                                                                                                                                                                                      | description                                                                                                                    | default   | note |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------- | ---- |
-| `id`      | string                                                                                                                                                                                                    | Name to be added to Sidebar                                                                                                    |           |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon   |
-| `column`  | number                                                                                                                                                                                                    | Number of vertical lines                                                                                                       | 3         |      |
-| `gap`     | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a>        | Spacing between items in Gallery                                                                                               | normal    |      |
-| `theme`   | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night |      |
-| `padding` | string                                                                                                                                                                                                    | Gallery padding                                                                                                                | 2em 10em  |      |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `id`| string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `column` | number | Number of vertical lines | 3| |
+| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
+| `padding` | string | Gallery padding| 2em 10em | |
 
 ### Masonry
 
@@ -575,11 +575,11 @@ const App = () => {
 export default App;
 ```
 
-| props     | type   | description                 | default | note |
-| --------- | ------ | --------------------------- | ------- | ---- |
-| `id`      | string | Name to be added to Sidebar |         |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon   |
-| `column`  | number | Number of vertical lines    | 4       |      |
-| `padding` | string | Masonry padding             | 2em 4em |      |
+| props | type | description | default | note |
+| - | -- | - | - | - |
+| `id`| string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `column` | number | Number of vertical lines | 4 |
+| `padding` | string | Masonry padding | 2em 4em | |
 
 ### Image
 
@@ -604,14 +604,14 @@ const App = () => {
 export default App;
 ```
 
-| props           | type    | description                                         | default            | note |
-| --------------- | ------- | --------------------------------------------------- | ------------------ | ---- |
-| `src`           | string  | Image source url                                    |                    |      |
-| `head`          | string  | Main Title Text                                     | Write your head    |      |
-| `subhead`       | string  | Sub Title Text                                      | Write your subhead |      |
-| `redirectURL`   | string  | URL to redirect                                     | /                  |      |
-| `noShowHead`    | boolean | Flag for whether to hide texts                      | false              |      |
-| `zoomWhenHover` | boolean | Flag for whether to zoom image when hovered on item | false              |      |
+| props | type | description | default | note |
+| - | - | - | - | - |
+| `src` | string | Image source url | | |
+| `head` | string | Main Title Text| Write your head | |
+| `subhead` | string | Sub Title Text | Write your subhead | |
+| `redirectURL` | string | URL to redirect| /| |
+| `noShowHead` | boolean | Flag for whether to hide texts | false | |
+| `zoomWhenHover` | boolean | Flag for whether to zoom image when hovered on item | false | |
 
 ### Item
 
@@ -636,14 +636,14 @@ const App = () => {
 export default App;
 ```
 
-| props             | type    | description      | default                               | note |
-| ----------------- | ------- | ---------------- | ------------------------------------- | ---- |
-| `src`             | string  | Image source url | https://picsum.photos/600/600/?random |      |
-| `title`           | string  | Main Title Text  | This is title                         |      |
-| `description`     | string  | Description Text | description                           |      |
-| `redirectURL`     | string  | URL to redirect  | /                                     |      |
-| `textRisingSpeed` | number  |                  | 300                                   |      |
-| `isTextRising`    | boolean |                  | false                                 |      |
+| props | type | description| default | note |
+| - | - | - | - | - |
+| `src` | string | Image source url | https://picsum.photos/600/600/?random | |
+| `title` | string | Main Title Text | This is title |
+| `description` | string | Description Text | description| |
+| `redirectURL` | string | URL to redirect | /| |
+| `textRisingSpeed` | number | | 300 |
+| `isTextRising` | boolean | | false|
 
 ### Card
 
@@ -667,13 +667,13 @@ const App = () => {
 export default App;
 ```
 
-| props         | type                                                                                                                                                                                           | description                                                                                  | default | note |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------- | ---- |
-| `width`       | string                                                                                                                                                                                         | Card width                                                                                   | 10em    |      |
-| `height`      | string                                                                                                                                                                                         | Card height                                                                                  | 10em    |      |
-| `redirectURL` | string                                                                                                                                                                                         | URL to redirect                                                                              | /       |      |
-| `shape`       | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square  |      |
-| `hover`       | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a>     | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'.              | none    |      |
+| props| type | description | default | note |
+| - | - | - | - | - |
+| `width` | string | Card width| 10em | |
+| `height`| string | Card height | 10em | |
+| `redirectURL` | string | URL to redirect  | / |
+| `shape` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square | |
+| `hover` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a> | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'. | none | |
 
 ### Contact
 
@@ -703,16 +703,16 @@ const App = () => {
 export default App;
 ```
 
-| props             | type                                     | description                                          | default                                                                                                                                      | note |
-| ----------------- | ---------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| `id`              | string                                   | Name to be added to Sidebar                          |                                                                                                                                              |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon    |
-| `backgroundColor` | string                                   | Contact Background Color                             | whitesmoke                                                                                                                                   |      |
-| `title`           | string                                   | Core of your contacts                                | Hello, my name is DEV_PORTFOLIO                                                                                                          |      |
-| `subTitle`        | string                                   | Sub title text                                       | If you're interested in me, please press the button below :D                                                                               |      |
-| `email`           | string                                   | Your Email                                           | abc@dev-portfolio.com                                                                                                                      |      |
-| `buttonText`      | string                                   | Text of button that function as a link to your email | Want to work with me?                                                                                                                      |      |
-| `channels`        | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>                                 | Channel-only props such as Github and LinkedIn, etc         | See "More about Contact's Props"                                                                                                                      |      |
-| `aboutMeInfos`    | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Contact/AboutMeInfoType.ts#:~:text=AboutMeInfoPropsType">AboutMeInfoPropsType[]</a> | Your personal information like TEL, Home etc         | See "More about Contact's Props" |
+| props | type| description | default | note |
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar | |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| `backgroundColor` | string | Contact Background Color | whitesmoke|
+| `title` | string | Core of your contacts | Hello, my name is DEV_PORTFOLIO    |
+| `subTitle` | string | Sub title text | If you're interested in me, please press the button below :D   |
+| `email` | string | Your Email| abc@dev-portfolio.com |
+| `buttonText`| string | Text of button that function as a link to your email | Want to work with me? |
+| `channels` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>| Channel-only props such as Github and LinkedIn, etc| See "More about Contact's Props" |
+| `aboutMeInfos` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Contact/AboutMeInfoType.ts#:~:text=AboutMeInfoPropsType">AboutMeInfoPropsType[]</a> | Your personal information like TEL, Home etc| See "More about Contact's Props" |
 
 ### More about Contact's props
 
@@ -784,7 +784,7 @@ export default App;
 | ```totalVisitor``` | number | Number of total's visitors | 123 | fetched variable |
 | ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | today | |
 | ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | total | |
-| ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 |  | |
+| ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 | | |
 | ```size``` | string | Font size and component size in the visitor counter component | 14px | Make sure to include 'px' |
 | ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
 | ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
@@ -845,26 +845,26 @@ const App = () => {
 export default App;
 ```
 
-| props                     | type                                                                                                                                                                                                                                | description                                                                | default                                 | note                                         |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------- |
-| `id`  | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon | 
-| `theme`                   | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>         | Visitor Comment theme: 'basic', 'box', 'vertical'                          | basic                                   |                                              |
-| `backgroundColor`         | string                                                                                                                                                                                                                              | VisitorComment background-color                                            | whitesmoke                              |                                              |
-| `inputBackgroundColor`    | string                                                                                                                                                                                                                              | Background color of guest book preparation column                          | White                                   |                                              |
-| `userInputLineColor`      | string                                                                                                                                                                                                                              | Underline color in the User Information field                              | #b4b4b4a2                               |                                              |
-| `buttonColor`             | string                                                                                                                                                                                                                              | Font color of send button                                                  | #1877f                                  |                                              |
-| `progressbarColor`        | string                                                                                                                                                                                                                              | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f                                 |                                              |
-| `isShowScrollDownIcon`    | boolean                                                                                                                                                                                                                             | Whether to display icons that are generated when a scroll event occurs     | true                                    |                                              |
-| `scrollDownIconColor`     | string                                                                                                                                                                                                                              | Color in ScrollDown Icon                                                   | black                                   | Only works when isShowScrollDownIcon is true |
-| `comment`                 | string                                                                                                                                                                                                                              | the text of visitor comment                                                | this portfolio is very nice             | fetched variable                             |
-| `nickname`                | string                                                                                                                                                                                                                              | the nickname of visitor comment                                            | dev-portfolio                           | fetched variable                             |
-| `password`                | string                                                                                                                                                                                                                              | the password of visitor comment                                            | 1234                                    | fetched variable                             |
-| `commentInputPlacehoder`  | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment             | See "More about VisitorComment's Props" |                                              |
-| `commentList`             | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a>           | Description, nickname, and date displayed in comment list                  | See "More about VisitorComment's Props" | fetched variable                             |
-| `handleCreateComment`     | (e?: React.MouseEvent<HTMLButtonElement>) => void                                                                                                                                                                                   | Comments Props for event handling                                          |                                         |                                              |
-| `handleChangeDescription` | (e?: React.ChangeEvent<HTMLElement>) => void                                                                                                                                                                                        | Description Props for event handling                                       |                                         |                                              |
-| `handleChangeNickname`    | (e?: React.ChangeEvent<HTMLElement>) => void                                                                                                                                                                                        | Nickname Props for event handling                                          |                                         |                                              |
-| `handleChangePassword`    | (e?: React.ChangeEvent<HTMLElement>) => void                                                                                                                                                                                        | Password Props for event handling                                          |                                         |                                              |
+| props | type | description | default| note |
+| - | - | - | - | - |
+| `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon | 
+| `theme` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>| Visitor Comment theme: 'basic', 'box', 'vertical' | basic | |
+| `backgroundColor`| string | VisitorComment background-color | whitesmoke | |
+| `inputBackgroundColor` | string | Background color of guest book preparation column | White | |
+| `userInputLineColor`| string | Underline color in the User Information field | #b4b4b4a2 | |
+| `buttonColor` | string | Font color of send button | #1877f | |
+| `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f| |
+| `isShowScrollDownIcon` | boolean| Whether to display icons that are generated when a scroll event occurs | true | |
+| `scrollDownIconColor` | string | Color in ScrollDown Icon | black | Only works when isShowScrollDownIcon is true |
+| `comment` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
+| `nickname` | string | the nickname of visitor comment | dev-portfolio| fetched variable |
+| `password` | string | the password of visitor comment | 1234 | fetched variable |
+| `commentInputPlacehoder` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
+| `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list| See "More about VisitorComment's Props" | fetched variable |
+| `handleCreateComment` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
+| `handleChangeDescription` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
+| `handleChangeNickname` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
+| `handleChangePassword` | (e?: React.ChangeEvent<HTMLElement>) => void | Password Props for event handling | | |
 
 ### More about VisitorComment's props
 
