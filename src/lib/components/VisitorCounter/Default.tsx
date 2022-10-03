@@ -1,19 +1,20 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  VisitorCounterPropsType,
-  VisitorCounterStylePropsType,
-} from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterPropsType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 const Default = (props: VisitorCounterPropsType) => {
-  const { title, todayVisitor, totalVisitor, backgroundColor, size, titleColor } = props;
+  const { title, todayVisitor, todayVisitorColor, totalVisitor, totalVisitorColor, backgroundColor, size, titleColor } =
+    props;
 
   return (
     <Wrap size={size}>
       <Counter backgroundColor={backgroundColor} titleColor={titleColor}>
         <span className="title">{title}</span>
-        <span className="today">{todayVisitor}</span>
-        <span className="total">{totalVisitor}</span>
+        <span className="today" style={{ color: `${todayVisitorColor}` }}>
+          {todayVisitor}
+        </span>
+        <span className="total" style={{ color: `${totalVisitorColor}` }}>
+          {totalVisitor}
+        </span>
       </Counter>
     </Wrap>
   );
@@ -21,7 +22,7 @@ const Default = (props: VisitorCounterPropsType) => {
 
 export default Default;
 
-const Wrap = styled.div<VisitorCounterStylePropsType>`
+const Wrap = styled.div<VisitorCounterPropsType>`
   display: flex;
   align-items: center;
   font-size: ${({ size }) => size ?? '14px'};
@@ -30,7 +31,7 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
   }
 `;
 
-const Counter = styled.div<VisitorCounterStylePropsType>`
+const Counter = styled.div<VisitorCounterPropsType>`
   padding: 5px 0px;
   border: 1px solid #989898;
   border-radius: 5px;

@@ -1,9 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  VisitorCounterPropsType,
-  VisitorCounterStylePropsType,
-} from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterPropsType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 export const BigSize = (props: VisitorCounterPropsType) => {
   const {
@@ -11,11 +7,11 @@ export const BigSize = (props: VisitorCounterPropsType) => {
     todayTitle,
     totalTitle,
     todayVisitor,
+    todayVisitorColor,
     totalVisitor,
+    totalVisitorColor,
     backgroundColor,
     size,
-    todayBoldColor,
-    totalBoldColor,
     titleColor,
     todayTitleColor,
     totalTitleColor,
@@ -24,11 +20,11 @@ export const BigSize = (props: VisitorCounterPropsType) => {
   return (
     <Wrap backgroundColor={backgroundColor} size={size} titleColor={titleColor}>
       <span className="title">{title}</span>
-      <Today todayBoldColor={todayBoldColor} todayTitleColor={todayTitleColor}>
+      <Today todayVisitorColor={todayVisitorColor} todayTitleColor={todayTitleColor}>
         <span className="today">{todayTitle}</span>
         <span className="today-visitor">{todayVisitor}</span>
       </Today>
-      <Total totalBoldColor={totalBoldColor} totalTitleColor={totalTitleColor}>
+      <Total totalVisitorColor={totalVisitorColor} totalTitleColor={totalTitleColor}>
         <span className="total">{totalTitle}</span>
         <span className="total-visitor">{totalVisitor}</span>
       </Total>
@@ -36,7 +32,7 @@ export const BigSize = (props: VisitorCounterPropsType) => {
   );
 };
 
-const Wrap = styled.div<VisitorCounterStylePropsType>`
+const Wrap = styled.div<VisitorCounterPropsType>`
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -53,7 +49,7 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
   }
 `;
 
-const Today = styled.div<VisitorCounterStylePropsType>`
+const Today = styled.div<VisitorCounterPropsType>`
   flex-grow: 1;
   padding: 10px;
   .today {
@@ -62,11 +58,11 @@ const Today = styled.div<VisitorCounterStylePropsType>`
   }
   .today-visitor {
     font-weight: bold;
-    color: ${({ todayBoldColor }) => todayBoldColor ?? 'red'};
+    color: ${({ todayVisitorColor }) => todayVisitorColor ?? 'red'};
   }
 `;
 
-const Total = styled.div<VisitorCounterStylePropsType>`
+const Total = styled.div<VisitorCounterPropsType>`
   flex-grow: 1;
   padding: 10px;
   .total {
@@ -75,6 +71,6 @@ const Total = styled.div<VisitorCounterStylePropsType>`
   }
   .total-visitor {
     font-weight: bold;
-    color: ${({ totalBoldColor }) => totalBoldColor ?? 'red'};
+    color: ${({ totalVisitorColor }) => totalVisitorColor ?? 'red'};
   }
 `;
