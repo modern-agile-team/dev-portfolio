@@ -748,15 +748,15 @@ export default App;
 | props | type| description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `backgroundColor` | string | Contact Background Color | whitesmoke |
-| `title` | string | Main title text of your contacts | Hello, my name is DEV_PORTFOLIO |
-| `titleColor` | string | Title color style | black | |
-| `subTitle` | string | Sub title text | If you're interested in me, please press the button below :D  |
-| `subTitleColor` | string | Sub title text color style | black | |
-| `email` | string | Your Email | abc@dev-portfolio.com |
-| `buttonText`| string | Text of button that function as a link to your email | Want to work with me? |
-| `buttonTextColor` | string | Button text color style | white | |
-| `buttonBorderColor` | string | Button border color style | black | | 
+| `backgroundColor` | string | Contact Background Color | `'whitesmoke'` | |
+| `title` | string | Main title text of your contacts | `'Hello, my name is DEV_PORTFOLIO'` | |
+| `titleColor` | string | Title color style | `'black'` | |
+| `subTitle` | string | Sub title text | `'If you're interested in me, please press the button below :D'`  | |
+| `subTitleColor` | string | Sub title text color style | `'black'` | |
+| `email` | string | Your Email | `'abc@dev-portfolio.com'` | |
+| `buttonText`| string | Text of button that function as a link to your email | `'Want to work with me?'` | |
+| `buttonTextColor` | string | Button text color style | `'white'` | |
+| `buttonBorderColor` | string | Button border color style | `'black'` | | 
 | `channels` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>| Channel-only props such as Github and LinkedIn, etc| See "More about Contact's Props" |
 | `aboutMeInfos` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Contact/AboutMeInfoType.ts#:~:text=AboutMeInfoPropsType">AboutMeInfoPropsType[]</a> | Your personal information like TEL, Home etc| See "More about Contact's Props" |
 
