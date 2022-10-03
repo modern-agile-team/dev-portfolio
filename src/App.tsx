@@ -40,7 +40,18 @@ function App() {
       <Channels />
 
       <VisitorCounter />
-      <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
+      <VisitorComment
+        id="['VisitorComment', 'akar-icons:comment-add']"
+        inputBackgroundColor="red"
+        inputFontColor="white"
+        inputPlacehoderColor="white"
+        buttonColor="white"
+        listBackgroundColor="red"
+        commentColor="white"
+        listNicknameColor="white"
+        listDateColor="white"
+        theme="vertical"
+      />
 
       <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
@@ -70,7 +81,13 @@ function App() {
       <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
       <TechStackInput />
 
-      <Experience id="['Experience', 'ic:outline-work-history']" />
+      <Experience
+        id="['Experience', 'ic:outline-work-history']"
+        historyTitleColor="red"
+        headerTitleColor="red"
+        dateColor="red"
+        descriptionColor="red"
+      />
 
       <Gallery id="['Gallery', 'clarity:image-gallery-line']" theme="mint-chocolate">
         <Item

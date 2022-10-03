@@ -21,6 +21,8 @@ const CommentInput = (props: VisitorCommentPropsType) => {
     comment,
     nickname,
     password,
+    inputFontColor,
+    inputPlacehoderColor,
   } = props;
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -33,7 +35,13 @@ const CommentInput = (props: VisitorCommentPropsType) => {
   };
 
   return (
-    <Wrap theme={theme} inputBackgroundColor={inputBackgroundColor} userInputLineColor={userInputLineColor}>
+    <Wrap
+      theme={theme}
+      inputBackgroundColor={inputBackgroundColor}
+      userInputLineColor={userInputLineColor}
+      inputFontColor={inputFontColor}
+      inputPlacehoderColor={inputPlacehoderColor}
+    >
       <textarea
         ref={textareaRef}
         onKeyDown={onKeyDown}
@@ -43,7 +51,7 @@ const CommentInput = (props: VisitorCommentPropsType) => {
         value={comment}
       />
       <InfoWrap>
-        <UserInfo>
+        <UserInfo inputPlacehoderColor={inputPlacehoderColor}>
           <input
             className="nickname"
             type="text"
@@ -83,6 +91,7 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
   border: ${({ inputBackgroundColor }) => inputBackgroundColor ?? '0.2px solid #b4b4b4a2'};
   box-shadow: ${({ theme }) => (theme === 'box' ? '0px 0px 5px 0px rgba(83, 83, 83, 0.14)' : 'none')};
   textarea {
+    color: ${({ inputFontColor }) => inputFontColor ?? 'black'};
     background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
     outline: none;
     border: none;
@@ -93,6 +102,9 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
     align-items: center;
     font-size: 16px;
     overflow: hidden;
+    ::placeholder {
+      color: ${({ inputPlacehoderColor }) => inputPlacehoderColor ?? 'black'};
+    }
     :focus::-webkit-input-placeholder {
       opacity: 0;
     }
@@ -106,6 +118,7 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
   }
   input {
     background-color: ${({ inputBackgroundColor }) => inputBackgroundColor ?? 'white'};
+    color: ${({ inputFontColor }) => inputFontColor ?? 'black'};
     outline: none;
     border: none;
     padding: 0;
@@ -128,12 +141,17 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
   }
 `;
 
-const UserInfo = styled.div`
+const UserInfo = styled.div<VisitorCommentStyledPropsType>`
   flex-grow: 3;
   display: flex;
   font-size: 14px;
   color: #959595;
   gap: 30px;
+  input {
+    ::placeholder {
+      color: ${({ inputPlacehoderColor }) => inputPlacehoderColor ?? 'black'};
+    }
+  }
   @media screen and (max-width: 500px) {
     flex-direction: row;
     width: 100%;
