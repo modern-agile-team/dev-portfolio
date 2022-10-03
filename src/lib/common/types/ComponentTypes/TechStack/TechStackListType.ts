@@ -4,7 +4,9 @@ type TechStackGapType = 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider';
 
 export interface TechStackPropsGapType {
   /**
-   * Spacing between TechStacks in TechStackList (default: normal) 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'
+   * Spacing between technical-stack elements in TechStackList. (default: 'normal')
+   *
+   * @type `'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'`
    */
   gap?: TechStackGapType;
 }
@@ -29,10 +31,4 @@ export interface TechStackListPropsType extends TechStackPropsGapType {
    * ```
    */
   techStackList?: TechStackPropsType[];
-  /**
-   * Spacing between technical-stack elements in TechStackList. (default: 'normal')
-   *
-   * @type `'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'`
-   */
-  gap?: TechStackGapType;
 }
