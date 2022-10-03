@@ -53,8 +53,7 @@ const Container = styled.div<SideBarStyledPropsType>`
   top: 0;
   right: 0;
   z-index: 1011;
-  width: 30%;
-  max-width: 280px;
+  max-width: 70%;
   padding: 16px;
   background-color: ${({ backgroundColor }) => backgroundColor};
   border-radius: 10px 0px 10px 10px;
