@@ -2,24 +2,13 @@ import TechStack from './TechStack';
 import { TechStackListPropsType } from '../../../common/types/ComponentTypes/TechStack/TechStackListType';
 
 /**
+ * You can freely show off the skills or abilities by using TechStackList component.
  *
- * @props id: Name to be added to Sidebar
- * @props gap: Spacing between TechStacks in TechStackList (default: normal) 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'
- * @props techStackList: TechStack-only props such as tech name, tech logo, and progressbar, etc	({@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/TechStack/TechStackType.ts "See More about TechStackList's Props"})
- * @techStackList nameOption: Choose name, logo and each size of techStack
- * @techStackList  progressBarOption: State of progressbar
- * @nameOption name: Name of skill (find skill from {@link "here"})
- * @nameOption logoName: Logo name of skill (find skill from {@link "here"})
- * @nameOption fontSize: Font size of skill name (unit: px)
- * @nameOption logoSize: Size of logo (unit: px)
- * @progressBarOption rate: How well you handle the skill (unit: %)
- * @progressBarOption isHiddenRateText: Whether show rate in progressbar
- * @progressBarOption colorTo: End color of wave animation of progressbar
- * @progressBarOption colorFrom: Start color of wave animation of progressbar
- * @progressBarOption width: Width of progressbar
- * @progressBarOption height: Height of progressbar
+ * @props id: Name to be added to Sidebar.
+ * @props techStackList: Enter the properties such as nameOption, progressBarOption and click the {@link https://github.com/modern-agile-team/dev-portfolio#techstacklist link} if you want to see the README.md about TechStackList.
+ * @props gap: Spacing between technical-stack elements in TechStackList. (default: 'normal') 'narrower' | 'narrow' | 'normal' | 'wide' | 'wider'
  */
-const TechStackList = ({ id, techStackList = techStacksDefault, gap = 'normal' }: TechStackListPropsType) => {
+const TechStackList = ({ id, techStackList, gap }: TechStackListPropsType) => {
   return (
     <div id={id}>
       {techStackList?.map(({ nameOption, progressBarOption }, idx) => (
@@ -32,38 +21,52 @@ const TechStackList = ({ id, techStackList = techStacksDefault, gap = 'normal' }
 export default TechStackList;
 
 TechStackList.defaultProps = {
+  techStackList: [
+    {
+      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
+      progressBarOption: {
+        rateText: '45%',
+        rateTextColor: 'black',
+        isHiddenRateText: false,
+        backgroundColor: 'black',
+        colorTo: '#E2D784',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+        animationType: 'fill-up-wave',
+        isBlinking: true,
+      },
+    },
+    {
+      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
+      progressBarOption: {
+        rateText: '30%',
+        rateTextColor: 'black',
+        isHiddenRateText: false,
+        backgroundColor: 'black',
+        colorTo: '#E34F26',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+        animationType: 'fill-up-wave',
+        isBlinking: true,
+      },
+    },
+    {
+      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
+      progressBarOption: {
+        rateText: '85%',
+        rateTextColor: 'black',
+        isHiddenRateText: false,
+        backgroundColor: 'black',
+        colorTo: '#339933',
+        colorFrom: 'whitesmoke',
+        width: '100%',
+        height: '40px',
+        animationType: 'fill-up-wave',
+        isBlinking: true,
+      },
+    },
+  ],
   gap: 'normal',
 };
-
-const techStacksDefault = [
-  {
-    nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
-    progressBarOption: {
-      rate: '45%',
-      colorTo: '#E2D784',
-      colorFrom: 'whitesmoke',
-      width: '100%',
-      height: '40px',
-    },
-  },
-  {
-    nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
-    progressBarOption: {
-      rate: '30%',
-      colorTo: '#E34F26',
-      colorFrom: 'whitesmoke',
-      width: '100%',
-      height: '40px',
-    },
-  },
-  {
-    nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
-    progressBarOption: {
-      rate: '85%',
-      colorTo: '#339933',
-      colorFrom: 'whitesmoke',
-      width: '100%',
-      height: '40px',
-    },
-  },
-];
