@@ -110,7 +110,6 @@ function App() {
         <Item />
         <Item />
       </Gallery>
-
       <Masonry id="['Masonry', 'ri:layout-masonry-line']">
         <Image
           subhead="hi"
