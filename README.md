@@ -376,7 +376,7 @@ export default App;
 ```js
 const techStackList = [
   {
-    nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
+    nameOption: { name: 'Javascript', nameTextColor: 'black', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
       rate: '45%',
       isHiddenRateText: false,
@@ -389,7 +389,7 @@ const techStackList = [
     },
   },
   {
-    nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
+    nameOption: { name: 'HTML5', nameTextColor: 'black', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
       rate: '30%',
       isHiddenRateText: false,
@@ -402,7 +402,7 @@ const techStackList = [
     },
   },
   {
-    nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
+    nameOption: { name: 'Nodejs', nameTextColor: 'black', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
       rate: '85%',
       isHiddenRateText: true,

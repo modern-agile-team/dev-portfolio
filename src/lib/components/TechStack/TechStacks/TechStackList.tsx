@@ -23,7 +23,13 @@ export default TechStackList;
 TechStackList.defaultProps = {
   techStackList: [
     {
-      nameOption: { name: 'Javascript', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
+      nameOption: {
+        name: 'Javascript',
+        nameTextColor: 'black',
+        logoName: 'Javascript',
+        fontSize: '18px',
+        logoSize: '24px',
+      },
       progressBarOption: {
         rateText: '45%',
         rateTextColor: 'black',
@@ -38,7 +44,7 @@ TechStackList.defaultProps = {
       },
     },
     {
-      nameOption: { name: 'HTML5', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
+      nameOption: { name: 'HTML5', nameTextColor: 'black', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rateText: '30%',
         rateTextColor: 'black',
@@ -53,7 +59,7 @@ TechStackList.defaultProps = {
       },
     },
     {
-      nameOption: { name: 'Nodejs', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
+      nameOption: { name: 'Nodejs', nameTextColor: 'black', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
       progressBarOption: {
         rateText: '85%',
         rateTextColor: 'black',
