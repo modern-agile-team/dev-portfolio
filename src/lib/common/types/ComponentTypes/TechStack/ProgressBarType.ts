@@ -1,42 +1,46 @@
-export interface ProgressBarPropsType extends ProgressBarContainerStyledPropsType, ProgressBarAnimationType {
+export interface ProgressBarPropsType {
   /**
-   * How well you handle the skill (default: 100%) (unit: %)
+   * How well you handle the skill. (default: '100%') (unit: %)
    */
-  rate?: string;
+  rateText?: string;
   /**
-   * Whether show text of rate (default: false)
+   * rateText color style. (default: 'black')
+   */
+  rateTextColor?: string;
+  /**
+   * Whether show text of rate. (default: false)
    */
   isHiddenRateText?: boolean;
   /**
-   * Start color of blinking animation of progressbar (default: white)
+   * ProgressBar's background color style. (default: 'whitesmoke')
    */
-  colorFrom?: string;
+  backgroundColor?: string;
   /**
-   * End color of blinking animation of progressbar (default: red)
-   */
-  colorTo?: string;
-  /**
-   * Progressbar blinking state (default: false)
-   */
-  isBlinking?: boolean;
-}
-
-export type ProgressBarAnimationType = {
-  /**
-   * Progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: 'wave')
-   */
-  animationType?: 'wave' | 'fill-up' | 'fill-up-wave' | 'none';
-};
-
-export interface ProgressBarContainerStyledPropsType {
-  /**
-   * Progressbar css width (default: 100%)
+   * Progressbar css width. (default: '100%')
    */
   width?: string;
   /**
-   * Progressbar css height (default: 40px)
+   * Progressbar css height. (default: '40px')
    */
   height?: string;
+  /**
+   * Start color of blinking animation of progressbar. (default: 'white')
+   */
+  colorFrom?: string;
+  /**
+   * End color of blinking animation of progressbar. (default: 'red')
+   */
+  colorTo?: string;
+  /**
+   * Progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: 'wave')
+   *
+   * @type `'wave' | 'fill-up' | 'fill-up-wave' | 'none'`
+   */
+  animationType?: 'wave' | 'fill-up' | 'fill-up-wave' | 'none';
+  /**
+   * Progressbar blinking state. (default: false)
+   */
+  isBlinking?: boolean;
 }
 
 export interface ProgreeBarColorType {
