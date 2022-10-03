@@ -35,6 +35,9 @@ export interface VisitorCounterPropsType {
    * Color of total visit count used in 'big-size' and 'simple' (default: red)
    */
   totalBoldColor?: string;
+  titleColor?: string;
+  todayTitleColor?: string;
+  totalTitleColor?: string;
 }
 
 export interface IndexPropsType extends VisitorCounterPropsType {
@@ -63,4 +66,7 @@ export interface VisitorCounterStylePropsType {
    * Color of total visit count used in 'big-size' and 'simple' (default: red)
    */
   totalBoldColor?: string;
+  titleColor?: string;
+  todayTitleColor?: string;
+  totalTitleColor?: string;
 }

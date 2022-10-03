@@ -64,9 +64,15 @@ export interface VisitorCommentPropsType {
   comment?: string;
   nickname?: string;
   password?: string;
+  listBackgroundColor?: string;
+  commentColor?: string;
+  inputFontColor?: string;
+  inputPlacehoderColor?: string;
+  listNicknameColor?: string;
+  listDateColor?: string;
 }
 
-export interface VisitorCommentListType {
+export interface VisitorCommentListType extends VisitorCommentStyledPropsType {
   /**
    * Description of your comment
    */
@@ -110,4 +116,10 @@ export interface VisitorCommentStyledPropsType {
   userInputLineColor?: string;
   scrollDownIconColor?: string;
   isOverflow?: boolean;
+  listBackgroundColor?: string;
+  commentColor?: string;
+  inputFontColor?: string;
+  inputPlacehoderColor?: string;
+  listNicknameColor?: string;
+  listDateColor?: string;
 }

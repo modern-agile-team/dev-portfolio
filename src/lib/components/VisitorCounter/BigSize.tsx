@@ -16,16 +16,19 @@ export const BigSize = (props: VisitorCounterPropsType) => {
     size,
     todayBoldColor,
     totalBoldColor,
+    titleColor,
+    todayTitleColor,
+    totalTitleColor,
   } = props;
 
   return (
-    <Wrap backgroundColor={backgroundColor} size={size}>
+    <Wrap backgroundColor={backgroundColor} size={size} titleColor={titleColor}>
       <span className="title">{title}</span>
-      <Today todayBoldColor={todayBoldColor}>
+      <Today todayBoldColor={todayBoldColor} todayTitleColor={todayTitleColor}>
         <span className="today">{todayTitle}</span>
         <span className="today-visitor">{todayVisitor}</span>
       </Today>
-      <Total totalBoldColor={totalBoldColor}>
+      <Total totalBoldColor={totalBoldColor} totalTitleColor={totalTitleColor}>
         <span className="total">{totalTitle}</span>
         <span className="total-visitor">{totalVisitor}</span>
       </Total>
@@ -46,6 +49,7 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
     padding: 10px;
     flex-grow: 1;
     font-weight: bold;
+    color: ${({ titleColor }) => titleColor ?? 'black'};
   }
 `;
 
@@ -54,6 +58,7 @@ const Today = styled.div<VisitorCounterStylePropsType>`
   padding: 10px;
   .today {
     margin-right: 5em;
+    color: ${({ todayTitleColor }) => todayTitleColor ?? 'black'};
   }
   .today-visitor {
     font-weight: bold;
@@ -66,6 +71,7 @@ const Total = styled.div<VisitorCounterStylePropsType>`
   padding: 10px;
   .total {
     margin-right: 5em;
+    color: ${({ totalTitleColor }) => totalTitleColor ?? 'black'};
   }
   .total-visitor {
     font-weight: bold;

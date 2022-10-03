@@ -19,9 +19,16 @@ export interface ExperiencePropsType extends ExperienceVerticalOptionType {
    * You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
    */
   theme?: ExperienceThemeType;
+    /**
+   * color of title specially used in 'vertical' theme
+   */
+  historyTitleColor?: string;
+  headerTitleColor?: string;
+  dateColor?: string;
+  descriptionColor ?: string;
 }
 
-export interface ExperienceHistoryListType {
+export interface ExperienceHistoryListType extends ExperienceStyledPropsType{
   /**
    * Date when you started that kind experience
    */
@@ -42,16 +49,12 @@ export interface ExperienceHistoryListType {
 
 export interface ExperienceVerticalOptionType {
   /**
-   * color of title specially used in 'vertical' theme
-   */
-  titleColor?: string;
-  /**
    * shape of card specially used in 'vertical' theme ('square' | 'round-square')
    */
   shape?: ExperienceShapeType;
 }
 
-export interface VerticalPropsType extends ExperienceHistoryListType, ExperienceVerticalOptionType {}
+export interface VerticalPropsType extends ExperienceHistoryListType, ExperienceVerticalOptionType, ExperienceStyledPropsType {}
 
 export interface IndexPropsType extends ExperienceHistoryListType, ExperienceVerticalOptionType {
   /**
@@ -66,10 +69,17 @@ type ExperienceShapeType = 'square' | 'round-square';
 /* For Styles */
 
 export interface ExperienceStyledPropsType {
+   /**
+   * color of title specially used in 'vertical' theme
+   */
+  historyTitleColor?: string;
   /**
    * Experience Text align (default: left)
    */
   textAlign?: string;
+  headerTitleColor?: string;
+  dateColor?: string;
+  descriptionColor ?: string;
 }
 
 export interface ExperienceChildStyledPropsType {
