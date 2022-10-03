@@ -44,7 +44,7 @@ export interface ExperienceHistoryListType extends ExperienceStyledPropsType{
   /**
    * Describe about your experience
    */
-  des?: string;
+  description?: string;
 }
 
 export interface ExperienceVerticalOptionType {

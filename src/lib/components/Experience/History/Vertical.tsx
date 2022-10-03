@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { VerticalPropsType, ExperiencePropsType } from '../../../common/types/ComponentTypes/ExperienceType';
 
 const Vertical = (props: VerticalPropsType) => {
-  const { startDate, endDate, title, des, shape, historyTitleColor, dateColor, descriptionColor } = props;
+  const { startDate, endDate, title, description, shape, historyTitleColor, dateColor, descriptionColor } = props;
 
   return (
     <Wrap shape={shape} historyTitleColor={historyTitleColor} dateColor={dateColor} descriptionColor={descriptionColor}>
@@ -13,7 +13,7 @@ const Vertical = (props: VerticalPropsType) => {
         </div>
         <div className="child-title">{title}</div>
       </div>
-      <span className="des">{des}</span>
+      <span className="des">{description}</span>
     </Wrap>
   );
 };

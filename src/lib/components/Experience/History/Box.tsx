@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ExperienceHistoryListType, ExperienceStyledPropsType } from '../../../common/types/ComponentTypes/ExperienceType';
 
 const Box = (props: ExperienceHistoryListType) => {
-  const { startDate, endDate, title, des, historyTitleColor, dateColor, descriptionColor } = props;
+  const { startDate, endDate, title, description, historyTitleColor, dateColor, descriptionColor } = props;
 
   return (
     <div>
@@ -12,7 +12,7 @@ const Box = (props: ExperienceHistoryListType) => {
           <span className="end-date">{endDate}</span>
         </div>
         <span className="child-title">{title}</span>
-        <span className="des">{des}</span>
+        <span className="des">{description}</span>
       </Wrap>
     </div>
   );
