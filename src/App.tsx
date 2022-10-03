@@ -70,7 +70,7 @@ function App() {
       <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
       <TechStackInput />
 
-      <Experience id="['Experience', 'ic:outline-work-history']" />
+      <Experience id="['Experience', 'ic:outline-work-history']" historyTitleColor="red" headerTitleColor="red" dateColor="red" descriptionColor="red" />
 
       <Gallery id="['Gallery', 'clarity:image-gallery-line']" theme="mint-chocolate">
         <Item

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { ExperienceHistoryListType } from '../../../common/types/ComponentTypes/ExperienceType';
+import { ExperienceHistoryListType, ExperienceStyledPropsType } from '../../../common/types/ComponentTypes/ExperienceType';
 
 const Box = (props: ExperienceHistoryListType) => {
-  const { startDate, endDate, title, des } = props;
+  const { startDate, endDate, title, des, historyTitleColor, dateColor, descriptionColor } = props;
 
   return (
     <div>
-      <Wrap>
+      <Wrap historyTitleColor={historyTitleColor} dateColor={dateColor} descriptionColor={descriptionColor}>
         <div className="date">
           <span className="start-date">{startDate}</span>
           <span className="end-date">{endDate}</span>
@@ -19,7 +19,7 @@ const Box = (props: ExperienceHistoryListType) => {
 };
 export default Box;
 
-const Wrap = styled.div`
+const Wrap = styled.div<ExperienceStyledPropsType>`
   margin: 10px;
   padding: 0em 4vw;
   display: flex;
@@ -32,6 +32,7 @@ const Wrap = styled.div`
     width: 15%;
     padding: 2em;
     flex-grow: 1;
+    color: ${({ dateColor }) => dateColor ?? 'black'};
     @media screen and (max-width: 800px) {
       width: 100%;
       text-align: center;
@@ -47,6 +48,7 @@ const Wrap = styled.div`
     }
   }
   .child-title {
+    color: ${({ historyTitleColor }) => historyTitleColor ?? 'black'};
     width: 15%;
     flex-grow: 1;
     font-size: 22px;
@@ -59,6 +61,7 @@ const Wrap = styled.div`
     }
   }
   .des {
+    color: ${({ descriptionColor }) => descriptionColor ?? 'black'};
     padding: 2em;
     flex-grow: 2;
     width: 30%;
