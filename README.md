@@ -475,12 +475,12 @@ const historyList = [
     startDate: '2022.01.01',
     endDate: '2022.03.10',
     title: 'this is title',
-    des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+    description: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
   },
   {
     startDate: '2020.02',
     title: 'this is title',
-    des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+    description: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
   },
   {
     startDate: '2018',

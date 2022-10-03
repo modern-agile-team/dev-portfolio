@@ -13,7 +13,7 @@ import { ProgressBar } from '../ProgressBar';
  *
  * @props id: Name to be added to Sidebar
  * @props commentList: List of Comment
- * @commentList des: Description of your comment
+ * @commentList description: Description of your comment
  * @commentList nickname: Nickname to display
  * @commentList date: Day when comment written
  * @props theme: Theme of Visitor Comment Component (default: basic) "basic" | "box" | "vertical"

@@ -18,7 +18,7 @@ import {
  * @historyList startData: Date when you started that kind experience
  * @historyList endDate: Date when you finished that kind experience
  * @historyList title: Title of experience
- * @historyList des: Describe about your experience
+ * @historyList description: Describe about your experience
  */
 const Experience = (props: ExperiencePropsType) => {
   const { id, historyList, title, textAlign, theme, historyTitleColor, shape, headerTitleColor, dateColor, descriptionColor } = props;
@@ -46,13 +46,13 @@ Experience.defaultProps = {
       startDate: 'startDate',
       endDate: 'endDate',
       title: 'this is title',
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+      description: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
     },
     {
       startDate: 'startDate',
       endDate: 'endDate',
       title: 'this is title',
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      description: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
     },
     {
       startDate: 'startDate',

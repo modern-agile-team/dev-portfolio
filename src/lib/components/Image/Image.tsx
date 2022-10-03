@@ -103,7 +103,7 @@ const Items = styled.div<ImagePropsType>`
         font-size: ${({ subheadSize }) => subheadSize};
         color: ${({ subheadColor }) => subheadColor};
         @media screen and (max-width: 800px) {
-          font-size: 1.5vw;
+          font-size: 1rem;
         }
       }
       .head {
@@ -111,7 +111,7 @@ const Items = styled.div<ImagePropsType>`
         font-weight: ${({ headWeight }) => headWeight};
         color: ${({ headColor }) => headColor};
         @media screen and (max-width: 800px) {
-          font-size: 1.5vw;
+          font-size: 1.2rem;
         }
       }
       margin-bottom: 10px;
