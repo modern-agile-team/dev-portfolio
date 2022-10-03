@@ -284,7 +284,7 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `textAlign` | string | Intro text align	style. You can choose one of the themes such as 'left' and 'center'. | 'left' | |
+| `textAlign` | string | Intro text align style. You can choose one of the themes such as `'left'` and `'center'`. | 'left' | |
 | `backgroundColor` | string | Intro background color style. | whitesmoke | |
 | `title` | string | Title of Intro section. | Intro | |
 | `shortIntro`| string | Main text that can express you the best. | shortIntro that will captivate people |
