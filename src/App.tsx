@@ -78,7 +78,32 @@ function App() {
         backgroundColor="#091c18"
       />
 
-      <TechStackList id="['TechStackList', 'vscode-icons:file-type-reactjs']" />
+      <TechStackList
+        id="['TechStackList', 'vscode-icons:file-type-reactjs']"
+        techStackList={[
+          {
+            nameOption: {
+              name: 'Javascript',
+              logoName: 'Javascript',
+              fontSize: '18px',
+              logoSize: '24px',
+              nameTextColor: '#20232a',
+            },
+            progressBarOption: {
+              rateText: '45%',
+              rateTextColor: '#61dafb',
+              isHiddenRateText: false,
+              backgroundColor: '#20232a',
+              colorTo: '#61dafb',
+              colorFrom: 'whitesmoke',
+              width: '100%',
+              height: '40px',
+              animationType: 'fill-up-wave',
+              isBlinking: false,
+            },
+          },
+        ]}
+      />
       <TechStackInput />
 
       <Experience
