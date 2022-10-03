@@ -4,8 +4,20 @@ import {
   ProgressBarCompleteStyledPropsType,
   ProgreeBarColorType,
   ProgressBarContainerStyledPropsType,
+  ProgressBarAnimationType,
 } from '../../common/types/ComponentTypes/TechStack/ProgressBarType';
 
+/**
+ * This is ProgressBar component that shows rate
+ * @props rate: How well you handle the skill (default: 100%) (unit: %) 
+ * @props isHiddenRateText: Whether show text of rate (default: false)
+ * @props colorFrom: Start color of blinking animation of progressbar (default: white)
+ * @props colorTo: End color of blinking animation of progressbar (default: red)
+ * @props width: Progressbar css width (default: 100%)
+ * @props height: Progressbar css height (default: 40px)
+ * @props animationType: Progressbar animation <'wave' | 'fill-up' | 'fill-up-wave' | 'none'> (default: 'wave')
+ * @props isBlinking: Progressbar blinking state (default: false)
+ */
 const ProgressBar = ({
   rate,
   isHiddenRateText,
@@ -13,13 +25,18 @@ const ProgressBar = ({
   colorTo,
   width,
   height,
-  animationType = 'wave',
-  isBlinking = false,
+  animationType,
+  isBlinking,
 }: ProgressBarPropsType) => {
   return (
     <ProgressBarContainer width={width} height={height}>
-      <ProgressBarComplete progressColor={{ from: colorFrom, to: colorTo }} rate={rate || '0'} isBlinking={isBlinking}>
-        {animationType === 'wave' && (
+      <ProgressBarComplete
+        animationType={animationType}
+        progressColor={{ from: colorFrom, to: colorTo }}
+        rate={rate || '0'}
+        isBlinking={isBlinking}
+      >
+        {animationType?.includes('wave') && (
           <ProgressBarLiquid progressColor={{ from: colorFrom, to: colorTo }} isBlinking={isBlinking} />
         )}
       </ProgressBarComplete>
@@ -33,10 +50,12 @@ export default ProgressBar;
 ProgressBar.defaultProps = {
   rate: '100%',
   isHiddenRateText: true,
-  colorFrom: 'red',
-  colorTo: 'white',
+  colorFrom: 'white',
+  colorTo: 'red',
   width: '100%',
   height: '40px',
+  animationType: 'wave',
+  isBlinking: false,
 };
 
 const g = ({ from, to }: ProgreeBarColorType) => keyframes`
@@ -81,17 +100,20 @@ const ProgressBarContainer = styled.div<ProgressBarContainerStyledPropsType>`
   background: whitesmoke;
 `;
 
-const ProgressBarComplete = styled.div<ProgressBarCompleteStyledPropsType & { isBlinking?: boolean; rate: string }>`
+const ProgressBarComplete = styled.div<
+  ProgressBarCompleteStyledPropsType & ProgressBarAnimationType & { isBlinking?: boolean; rate: string }
+>`
   position: absolute;
   width: 100%;
   left: 0;
   top: 0px;
   height: 100%;
   border-radius: 10px;
-  ${({ progressColor, isBlinking, rate }) => {
+  ${({ progressColor, isBlinking, rate, animationType }) => {
     return css`
-      background-color: ${progressColor.to};
-      animation: ${isBlinking && g(progressColor)} 2500ms infinite ease-in-out, ${fillUp(rate)} 1.5s ease-in-out;
+      background-color: ${progressColor.to || '#5225bd'};
+      animation: ${isBlinking && g(progressColor)} 2500ms infinite ease-in-out,
+        ${animationType?.includes('fill-up') && fillUp(rate)} 1.5s ease-in-out;
       transform: translateX(calc(-100% + ${rate}));
     `;
   }}
