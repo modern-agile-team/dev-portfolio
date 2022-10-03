@@ -270,6 +270,10 @@ const App = () => {
       title="Introduction"
       shortIntro="Hello I am a developer enjoys growing up!"
       description="My name is OOO, BE developer good at Nodejs bla bla..."
+      descriptionColor="black"
+      descriptionBackgroundColor="black"
+      textAlign="black"
+      backgroundColor="black"
     />
   );
 }
@@ -280,11 +284,15 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `textAlign` | string | Intro Text align | center | |
-| `backgroundColor` | string | Intro Background color| whitesmoke |
-| `title` | string | Core of your introduction | Intro | |
-| `shortIntro`| string | a brief introduction | shortIntro that will captivate people |
+| `textAlign` | string | Intro text align	style. You can choose one of the themes such as 'left' and 'center'. | 'left' | |
+| `backgroundColor` | string | Intro background color style. | whitesmoke | |
+| `title` | string | Title of Intro section. | Intro | |
+| `shortIntro`| string | Main text that can express you the best. | shortIntro that will captivate people |
 | `description` | string | Introduce yourself | This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! | |
+| `titleColor` | string | Title text color style. | black | |
+| `shortIntroColor` | string | ShortIntro text color style. | black | |
+| `descriptionColor` | string | Description text color style. | black | | 
+| `descriptionBackgroundColor` | string | Description background color style. | white | | 
 
 ### Skill
 
@@ -304,6 +312,11 @@ const App = () => {
       iconColor="#F0DB4F"
       margin="0px"
       padding="0px"
+      titleColor="black"
+      iconColor="#F0DB4F"
+      backgroundColor="white"
+      borderColor="white"
+      borderRadius="12px"
     />
   );
 }
@@ -321,6 +334,11 @@ export default App;
 | ```iconColor``` | string | Icon color style | #F0DB4F |
 | ```margin``` | string | Skill margin style | 0px | |
 | ```padding``` | string | Skill padding style | 0px | |
+| ```titleColor``` | string | Title color style | black | |
+| ```iconColor``` | string | Icon color style | #F0DB4F | |
+| ```borderColor``` | string | Skill border color style | white | |
+| ```backgroundColor``` | string | Skill background color style | white | |
+| ```borderRadius``` | string | Skill border-radius style | 12px | |
 
 ### TechStackList
 
@@ -348,7 +366,7 @@ export default App;
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
 | `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | normal |
-| `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackNameType.ts#:~:text=TechStackNamePropsType">TechStackPropsType[]</a> | TechStack-only props such as tech name, tech logo, and progressbar, etc | See "More about TechStackList's Props" | |
+| `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackNameType.ts#:~:text=TechStackNamePropsType">TechStackPropsType[]</a> | Array of TechStacks | <a href="#techStackList example">See "More about techStackList"</a> | |
 
 
 ### More about TechStackList's props
@@ -366,6 +384,8 @@ const techStackList = [
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
+      animationType: 'fill-up-wave'
+      isBlinking: true,
     },
   },
   {
@@ -377,6 +397,8 @@ const techStackList = [
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
+      animationType: 'wave'
+      isBlinking: true,
     },
   },
   {
@@ -388,6 +410,8 @@ const techStackList = [
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
+      animationType: 'fill-up'
+      isBlinking: false,
     },
   },
 ];
@@ -549,8 +573,8 @@ export default App;
 | `id`| string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
 | `column` | number | Number of vertical lines | 3| |
 | `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal | |
-| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can decorate your Gallery with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
-| `padding` | string | Gallery padding| 2em 10em | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can choose the color of your customized components in Gallery when they are hoverd with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
+| `padding` | string | Gallery padding | 2em 10em | |
 
 ### Masonry
 
@@ -597,6 +621,11 @@ const App = () => {
       redirectURL="/"
       noShowHead={false}
       zoomWhenHover={false}
+      headSize="20px"
+      headColor="black"
+      headWeight="bold"
+      subheadSize="14px"
+      subheadColor="white"
     />
   );
 };
@@ -608,8 +637,13 @@ export default App;
 | - | - | - | - | - |
 | `src` | string | Image source url | | |
 | `head` | string | Main Title Text| Write your head | |
+| `headSize` | string | Head text size style | 20px | |
+| `headColor` | string | Head color style | black | |
+| `headWeight` | string | Head font weight style | 700 | |
 | `subhead` | string | Sub Title Text | Write your subhead | |
-| `redirectURL` | string | URL to redirect| /| |
+| `subheadSize` | string | Subhead text size style | 14px | |
+| `subheadColor` | string | Subhead text color style | black | |
+| `redirectURL` | string | URL to redirect | / | |
 | `noShowHead` | boolean | Flag for whether to hide texts | false | |
 | `zoomWhenHover` | boolean | Flag for whether to zoom image when hovered on item | false | |
 
@@ -629,6 +663,8 @@ const App = () => {
       redirectURL="/"
       textRisingSpeed={300}
       isTextRising={false}
+      descriptionColor="white"
+      hoverdInnerBorderColor="white"
     />
   );
 };
@@ -643,7 +679,9 @@ export default App;
 | `description` | string | Description Text | description| |
 | `redirectURL` | string | URL to redirect | /| |
 | `textRisingSpeed` | number | | 300 |
-| `isTextRising` | boolean | | false|
+| `isTextRising` | boolean | | false |
+| `descriptionColor` | string | Description text color style | white | |
+| `hoverdInnerBorderColor` | string | Inner border color of item when hoverd | white | |
 
 ### Card
 
@@ -666,9 +704,8 @@ const App = () => {
 
 export default App;
 ```
-
 | props| type | description | default | note |
-| - | - | - | - | - |
+| - | - | - | - | - | 
 | `width` | string | Card width| 10em | |
 | `height`| string | Card height | 10em | |
 | `redirectURL` | string | URL to redirect  | / |
@@ -696,6 +733,11 @@ const App = () => {
       email="abc@dev-portfolio.com"
       channels={channels}
       aboutMeInfos={aboutMeInfos}
+      titleColor='black'
+      subTitleColor='black'
+      buttonTextColor='black'
+      buttonColor='black'
+      buttonBorderColor='black'
     />
   );
 };
@@ -706,11 +748,15 @@ export default App;
 | props | type| description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `backgroundColor` | string | Contact Background Color | whitesmoke|
-| `title` | string | Core of your contacts | Hello, my name is DEV_PORTFOLIO    |
-| `subTitle` | string | Sub title text | If you're interested in me, please press the button below :D   |
-| `email` | string | Your Email| abc@dev-portfolio.com |
+| `backgroundColor` | string | Contact Background Color | whitesmoke |
+| `title` | string | Main title text of your contacts | Hello, my name is DEV_PORTFOLIO |
+| `titleColor` | string | Title color style | black | |
+| `subTitle` | string | Sub title text | If you're interested in me, please press the button below :D  |
+| `subTitleColor` | string | Sub title text color style | black | |
+| `email` | string | Your Email | abc@dev-portfolio.com |
 | `buttonText`| string | Text of button that function as a link to your email | Want to work with me? |
+| `buttonTextColor` | string | Button text color style | white | |
+| `buttonBorderColor` | string | Button border color style | black | | 
 | `channels` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a>| Channel-only props such as Github and LinkedIn, etc| See "More about Contact's Props" |
 | `aboutMeInfos` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Contact/AboutMeInfoType.ts#:~:text=AboutMeInfoPropsType">AboutMeInfoPropsType[]</a> | Your personal information like TEL, Home etc| See "More about Contact's Props" |
 
