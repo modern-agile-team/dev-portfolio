@@ -1,9 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  VisitorCounterPropsType,
-  VisitorCounterStylePropsType,
-} from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterPropsType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 export const Simple = (props: VisitorCounterPropsType) => {
   const {
@@ -12,8 +8,8 @@ export const Simple = (props: VisitorCounterPropsType) => {
     totalTitle,
     totalVisitor,
     size,
-    todayBoldColor,
-    totalBoldColor,
+    todayVisitorColor,
+    totalVisitorColor,
     todayTitleColor,
     totalTitleColor,
   } = props;
@@ -21,8 +17,8 @@ export const Simple = (props: VisitorCounterPropsType) => {
   return (
     <Wrap
       size={size}
-      todayBoldColor={todayBoldColor}
-      totalBoldColor={totalBoldColor}
+      todayVisitorColor={todayVisitorColor}
+      totalVisitorColor={totalVisitorColor}
       todayTitleColor={todayTitleColor}
       totalTitleColor={totalTitleColor}
     >
@@ -34,7 +30,7 @@ export const Simple = (props: VisitorCounterPropsType) => {
   );
 };
 
-const Wrap = styled.div<VisitorCounterStylePropsType>`
+const Wrap = styled.div<VisitorCounterPropsType>`
   font-size: ${({ size }) => size ?? '14px'};
   span {
     padding: 3px;
@@ -44,7 +40,7 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
   }
   .today-visitor {
     font-weight: bold;
-    color: ${({ todayBoldColor }) => todayBoldColor ?? 'red'};
+    color: ${({ todayVisitorColor }) => todayVisitorColor ?? 'red'};
     ::after {
       content: '|';
       margin-left: 8px;
@@ -57,6 +53,6 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
   }
   .total-visitor {
     font-weight: bold;
-    color: ${({ totalBoldColor }) => totalBoldColor ?? 'black'};
+    color: ${({ totalVisitorColor }) => totalVisitorColor ?? 'black'};
   }
 `;
