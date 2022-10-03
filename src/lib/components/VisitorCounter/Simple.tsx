@@ -6,10 +6,26 @@ import {
 } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 export const Simple = (props: VisitorCounterPropsType) => {
-  const { todayTitle, todayVisitor, totalTitle, totalVisitor, size, todayBoldColor, totalBoldColor } = props;
+  const {
+    todayTitle,
+    todayVisitor,
+    totalTitle,
+    totalVisitor,
+    size,
+    todayBoldColor,
+    totalBoldColor,
+    todayTitleColor,
+    totalTitleColor,
+  } = props;
 
   return (
-    <Wrap size={size} todayBoldColor={todayBoldColor} totalBoldColor={totalBoldColor}>
+    <Wrap
+      size={size}
+      todayBoldColor={todayBoldColor}
+      totalBoldColor={totalBoldColor}
+      todayTitleColor={todayTitleColor}
+      totalTitleColor={totalTitleColor}
+    >
       <span className="today">{todayTitle}</span>
       <span className="today-visitor">{todayVisitor}</span>
       <span className="total">{totalTitle}</span>
@@ -23,6 +39,9 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
   span {
     padding: 3px;
   }
+  .today {
+    color: ${({ todayTitleColor }) => todayTitleColor ?? 'black'};
+  }
   .today-visitor {
     font-weight: bold;
     color: ${({ todayBoldColor }) => todayBoldColor ?? 'red'};
@@ -32,6 +51,9 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
       font-weight: normal;
       color: black;
     }
+  }
+  .total {
+    color: ${({ totalTitleColor }) => totalTitleColor ?? 'black'};
   }
   .total-visitor {
     font-weight: bold;

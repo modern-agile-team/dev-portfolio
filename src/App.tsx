@@ -39,7 +39,7 @@ function App() {
       <Channel />
       <Channels />
 
-      <VisitorCounter />
+      <VisitorCounter titleColor="red" />
       <VisitorComment
         id="['VisitorComment', 'akar-icons:comment-add']"
         inputBackgroundColor="red"
