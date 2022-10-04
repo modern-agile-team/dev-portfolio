@@ -105,7 +105,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
       />
       {isOverflow && (
         <ProgressBar
-          isHiddenRateText={false}
+          isHiddenRateText={true}
           rateText={`${rate}%`}
           height="3px"
           colorFrom={progressbarColor}
