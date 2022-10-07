@@ -378,40 +378,46 @@ const techStackList = [
   {
     nameOption: { name: 'Javascript', nameTextColor: 'black', logoName: 'Javascript', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
-      rate: '45%',
+      rateText: '45%',
+      rateTextColor: 'black',
       isHiddenRateText: false,
+      backgroundColor: 'black',
       colorTo: '#E2D784',
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
-      animationType: 'fill-up-wave'
+      animationType: 'fill-up-wave',
       isBlinking: true,
     },
   },
   {
     nameOption: { name: 'HTML5', nameTextColor: 'black', logoName: 'HTML-5', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
-      rate: '30%',
+      rateText: '30%',
+      rateTextColor: 'black',
       isHiddenRateText: false,
+      backgroundColor: 'black',
       colorTo: '#E34F26',
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
-      animationType: 'wave'
+      animationType: 'fill-up-wave',
       isBlinking: true,
     },
   },
   {
     nameOption: { name: 'Nodejs', nameTextColor: 'black', logoName: 'Nodejs', fontSize: '18px', logoSize: '24px' },
     progressBarOption: {
-      rate: '85%',
-      isHiddenRateText: true,
+      rateText: '85%',
+      rateTextColor: 'black',
+      isHiddenRateText: false,
+      backgroundColor: 'black',
       colorTo: '#339933',
       colorFrom: 'whitesmoke',
       width: '100%',
       height: '40px',
-      animationType: 'fill-up'
-      isBlinking: false,
+      animationType: 'fill-up-wave',
+      isBlinking: true,
     },
   },
 ];
