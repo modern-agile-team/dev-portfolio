@@ -100,9 +100,9 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| `headerHeight` | string | Header height style | 80px | |
-| `headerWidth` | string | Header width style | 100% | |
-| `headerBackgroundColor` | string | Header background color style | white| |
+| `headerHeight` | string | Header height style | `'80px'` | |
+| `headerWidth` | string | Header width style | `'100%'` | |
+| `headerBackgroundColor` | string | Header background color style | `'white'`| |
 | `logoOption` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/Header/HeaderLogoType.ts#:~:text=export%20interface-,HeaderLogoPropsType,-extends%20HeaderLogoImgStyledPropsType%2C">LogoOptionPropsType</a> | You can customize the attrs such as logo and title by using logoOption props. | See "More about Header's Props" | |
 | `channels` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Enter the props of the channel components as an array of objects. Enter channel to express yourself, such as personal blog, linked-in, etc. | See "More about Header's Props" | |
 | `sideBarOption`| <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/Header/SideBar/SideBarType.ts#1:~:text=SideBarOptionPropsType">SideBarOptionPropsType</a> | You can customize the attrs such as title and icon, item in sidebar by using sideBarOption props.| See "More about Header's Props" | | 
@@ -189,12 +189,12 @@ export default App;
 
 | props | type | description | default | note
 | - | - | - | - | - |
-| ```redirectUrl``` | string | URL you want to redirect when clicked | / | |
-| ```name``` | string | Channel name | github | |
-| ```color``` | string | Channel icon color style | black | |
-| ```size``` | string | Channel icon size style | 24px | |
-| ```margin``` | string | Channel margin style | 0px 6px | |
-| ```padding``` | string | Channel padding style | 0px | |
+| ```redirectUrl``` | string | URL you want to redirect when clicked | `'/'` | |
+| ```name``` | string | Channel name | `'github'` | |
+| ```color``` | string | Channel icon color style | `'black'` | |
+| ```size``` | string | Channel icon size style | `'24px'` | |
+| ```margin``` | string | Channel margin style | `'0px 6px'` | |
+| ```padding``` | string | Channel padding style | `'0px'` | |
 
 ### Channels
 
@@ -284,15 +284,15 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `textAlign` | string | Intro text align style. You can choose one of the themes such as `'left'` and `'center'`. | 'left' | |
-| `backgroundColor` | string | Intro background color style. | whitesmoke | |
-| `title` | string | Title of Intro section. | Intro | |
-| `shortIntro`| string | Main text that can express you the best. | shortIntro that will captivate people |
-| `description` | string | Introduce yourself | This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams! | |
-| `titleColor` | string | Title text color style. | black | |
-| `shortIntroColor` | string | ShortIntro text color style. | black | |
-| `descriptionColor` | string | Description text color style. | black | | 
-| `descriptionBackgroundColor` | string | Description background color style. | white | | 
+| `textAlign` | string | Intro text align style. You can choose one of the themes such as `'left'` and `'center'`. | `'left'` | |
+| `backgroundColor` | string | Intro background color style. | `'whitesmoke'` | |
+| `title` | string | Title of Intro section. | `'Intro'` | |
+| `shortIntro`| string | Main text that can express you the best. | `'shortIntro that will captivate people'`|
+| `description` | string | Introduce yourself | `'This props name is description.\nPlease write down your brief introduction here. If you want to change the line, type backslash-n between the letters. Also you want to move the letters to the center, change textAlign to center. code your dreams!'` | |
+| `titleColor` | string | Title text color style. | `'black'` | |
+| `shortIntroColor` | string | ShortIntro text color style. | `'black'` | |
+| `descriptionColor` | string | Description text color style. | `'black'` | | 
+| `descriptionBackgroundColor` | string | Description background color style. | `'white'` | | 
 
 ### Skill
 
@@ -326,19 +326,19 @@ export default App;
 
 | props | type | description | default | note
 | - | - | - | - | - |
-| ```title``` | string | Main text that expresses the skill | javascript | |
-| ```titleSize``` | string | Title size style | 24px | |
-| ```isHiddenTitle``` | boolean | If this value is set to True, you can hide the title. | false | |
-| ```iconName``` | string | Enter the name of the icon you searched on the following site. | ion:logo-javascript | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| ```iconSize``` | string | Icon size style | 40px | |
-| ```iconColor``` | string | Icon color style | #F0DB4F |
-| ```margin``` | string | Skill margin style | 0px | |
-| ```padding``` | string | Skill padding style | 0px | |
-| ```titleColor``` | string | Title color style | black | |
-| ```iconColor``` | string | Icon color style | #F0DB4F | |
-| ```borderColor``` | string | Skill border color style | white | |
-| ```backgroundColor``` | string | Skill background color style | white | |
-| ```borderRadius``` | string | Skill border-radius style | 12px | |
+| ```title``` | string | Main text that expresses the skill | `'javascript'` | |
+| ```titleSize``` | string | Title size style | `'24px'` | |
+| ```isHiddenTitle``` | boolean | If this value is set to True, you can hide the title. | `false` | |
+| ```iconName``` | string | Enter the name of the icon you searched on the following site. | `'ion:logo-javascript'` | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
+| ```iconSize``` | string | Icon size style | `'40px'` | |
+| ```iconColor``` | string | Icon color style | `'#F0DB4F'` |
+| ```margin``` | string | Skill margin style | `'0px'` | |
+| ```padding``` | string | Skill padding style | `'0px'` | |
+| ```titleColor``` | string | Title color style | `'black'` | |
+| ```iconColor``` | string | Icon color style | `'#F0DB4F'` | |
+| ```borderColor``` | string | Skill border color style | `'white'` | |
+| ```backgroundColor``` | string | Skill background color style | `'white'` | |
+| ```borderRadius``` | string | Skill border-radius style | `'12px'` | |
 
 ### TechStackList
 
@@ -365,7 +365,7 @@ export default App;
 | props | type| description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | normal |
+| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackListType.ts#:~:text=type-,TechStackGapType,-%3D%20%27narrower%27">TechStackGapType</a> | Spacing between TechStacks in TechStackList | `'normal'` |
 | `techStackList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/TechStack/TechStackNameType.ts#:~:text=TechStackNamePropsType">TechStackPropsType[]</a> | Array of TechStacks | <a href="#techStackList example">See "More about techStackList"</a> | |
 
 
@@ -466,14 +466,14 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar| |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `title` | string | Main title text of Experience Component | "Experience" |
-| `textAlign`| string | Experience Text align| "left" | |
-| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | 'basic' | |
-| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.| 'square' | |
-| `headerTitleColor` | string | Color of title in Experience component | "black" | |
-| `historyTitleColor` | string | Color of title at historyList | "black" | |
-| `dateColor` | string | Color of date in history List | "black" | |
-| `descriptionColor` | string | Color of description in history List | "black" | |
+| `title` | string | Main title text of Experience Component | `'Experience'` |
+| `textAlign`| string | Experience Text align| `'left'` | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | `'basic'` | |
+| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.| `'square'` | |
+| `headerTitleColor` | string | Color of title in Experience component | `'black'` | |
+| `historyTitleColor` | string | Color of title at historyList | `'black'` | |
+| `dateColor` | string | Color of date in history List | `'black'` | |
+| `descriptionColor` | string | Color of description in history List | `'black'` | |
 | `historyList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. | See "More about Experience's Props" | |
 
 
@@ -540,15 +540,15 @@ export default App;
 | props| type  | description | default | note|
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar| |      See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `width` | string | Carousel width | 100% | |
-| `transition` | number | Transition animation speed | 1000 | Unit : ms |
-| `autoplaySpeed` | number | Time to stay in a item | 3000 | Unit : ms |
-| `slideToShow` | number | Number of item to show at once| 1 | |
-| `isArrowShow` | boolean | Flag for whether to show buttons | true | |
-| `isAutoplay` | boolean | Flag for play carousel automatically| false |
-| `isAutoplayControl` | boolean | Flag for whether to show carousel player | true |
-| `arrowPosition` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of arrow icon | mid-side | |
-| `playerLocation` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon| bottom-mid | |
+| `width` | string | Carousel width | `'100%'` | |
+| `transition` | number | Transition animation speed | `1000` | Unit : ms |
+| `autoplaySpeed` | number | Time to stay in a item | `3000` | Unit : ms |
+| `slideToShow` | number | Number of item to show at once| `1` | |
+| `isArrowShow` | boolean | Flag for whether to show buttons | `true` | |
+| `isAutoplay` | boolean | Flag for play carousel automatically| `false` |
+| `isAutoplayControl` | boolean | Flag for whether to show carousel player | `true` |
+| `arrowPosition` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%27%20%7C%20%27mid%2Dside%27%20%7C%20%27top%27%20%7C%20%27bottom%2Dside%27%20%7C%20%27top%2Dside%27">ArrowLocationType</a> | Position of arrow icon | `'mid-side'` | |
+| `playerLocation` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CarouselType.ts#:~:text=%27bottom%2Dmid%27%20%7C%20%27bottom%2Dleft%27%20%7C%20%27bottom%2Dright%27%20%7C%20%27top%2Dmid%27%20%7C%20%27top%2Dleft%27%20%7C%20%27top%2Dright%27">PlayerLocationType</a> | Position of Play icon| `'bottom-mid'` | |
 | `prevArrowIcon` | ReactElement | Icon Component for moving into previous item | `<FiChevronLeft />` | |
 | `nextArrowIcon` | ReactElement | Icon Component for moving into next item | `<FiChevronRight />` | |
 | `startAutoplayIcon` | ReactElement | Icon Component for starting autoplay| `<TbPlayerPlay />` | |
@@ -583,10 +583,10 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id`| string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `column` | number | Number of vertical lines | 3| |
-| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | normal | |
-| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can choose the color of your customized components in Gallery when they are hoverd with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | mid-night | |
-| `padding` | string | Gallery padding | 2em 10em | |
+| `column` | number | Number of vertical lines | `3`| |
+| `gap` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryGapType,-%3D%20%27wider%27">GalleryGapType</a> | Spacing between items in Gallery | `'normal'` | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/GalleryType.ts#:~:text=type-,GalleryThemeType,-%3D%20%27mid%2Dnight">GalleryThemeType</a> | You can choose the color of your customized components in Gallery when they are hoverd with a variety of theme such as 'mid-night', 'blossom', 'fruits', 'bare-bare', 'mint-chocolate'. | `'mid-night'` | |
+| `padding` | string | Gallery padding | `'2em 10em'` | |
 
 ### Masonry
 
@@ -614,8 +614,8 @@ export default App;
 | props | type | description | default | note |
 | - | -- | - | - | - |
 | `id`| string | Name to be added to Sidebar | |   See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `column` | number | Number of vertical lines | 4 |
-| `padding` | string | Masonry padding | 2em 4em | |
+| `column` | number | Number of vertical lines | `4` |
+| `padding` | string | Masonry padding | `'2em 4em'` | |
 
 ### Image
 
@@ -648,16 +648,16 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `src` | string | Image source url | | |
-| `head` | string | Main Title Text| Write your head | |
-| `headSize` | string | Head text size style | 20px | |
-| `headColor` | string | Head color style | black | |
-| `headWeight` | string | Head font weight style | 700 | |
-| `subhead` | string | Sub Title Text | Write your subhead | |
-| `subheadSize` | string | Subhead text size style | 14px | |
-| `subheadColor` | string | Subhead text color style | black | |
-| `redirectURL` | string | URL to redirect | / | |
-| `noShowHead` | boolean | Flag for whether to hide texts | false | |
-| `zoomWhenHover` | boolean | Flag for whether to zoom image when hovered on item | false | |
+| `head` | string | Main Title Text| `'Write your head'` | |
+| `headSize` | string | Head text size style | `'20px'` | |
+| `headColor` | string | Head color style | `'black'` | |
+| `headWeight` | string | Head font weight style | `'700'` | |
+| `subhead` | string | Sub Title Text | `'Write your subhead'` | |
+| `subheadSize` | string | Subhead text size style | `'14px'` | |
+| `subheadColor` | string | Subhead text color style | `'black'` | |
+| `redirectURL` | string | URL to redirect | `'/'` | |
+| `noShowHead` | boolean | Flag for whether to hide texts | `false` | |
+| `zoomWhenHover` | boolean | Flag for whether to zoom image when hovered on item | `false` | |
 
 ### Item
 
@@ -686,14 +686,14 @@ export default App;
 
 | props | type | description| default | note |
 | - | - | - | - | - |
-| `src` | string | Image source url | https://picsum.photos/600/600/?random | |
-| `title` | string | Main Title Text | This is title |
-| `description` | string | Description Text | description| |
-| `redirectURL` | string | URL to redirect | /| |
-| `textRisingSpeed` | number | | 300 |
-| `isTextRising` | boolean | | false |
-| `descriptionColor` | string | Description text color style | white | |
-| `hoverdInnerBorderColor` | string | Inner border color of item when hoverd | white | |
+| `src` | string | Image source url | `'https://picsum.photos/600/600/?random'` | |
+| `title` | string | Main Title Text | `'This is title'` |
+| `description` | string | Description Text | `'description'`| |
+| `redirectURL` | string | URL to redirect | `'/'` | |
+| `textRisingSpeed` | number | | `300` |
+| `isTextRising` | boolean | | `false` |
+| `descriptionColor` | string | Description text color style | `'white'` | |
+| `hoverdInnerBorderColor` | string | Inner border color of item when hoverd | `'white'` | |
 
 ### Card
 
@@ -718,11 +718,11 @@ export default App;
 ```
 | props| type | description | default | note |
 | - | - | - | - | - | 
-| `width` | string | Card width| 10em | |
-| `height`| string | Card height | 10em | |
-| `redirectURL` | string | URL to redirect  | / |
-| `shape` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | square | |
-| `hover` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a> | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'. | none | |
+| `width` | string | Card width| `'10em'` | |
+| `height`| string | Card height | `'10em'` | |
+| `redirectURL` | string | URL to redirect  | `'/'` |
+| `shape` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardShapeType,-%3D%20%27square%27">CardShapeType</a> | You can decorate shape of Card a variety of theme such as 'square', 'round-square', 'round'. | `'square'` | |
+| `hover` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/CardType.ts#:~:text=type-,CardHoverType,-%3D%20%27up%27">CardHoverType</a> | You can make an effect on Card a variety of theme such as 'up', 'down', 'zoom'. | `'none'` | |
 
 ### Contact
 
@@ -838,18 +838,18 @@ export default App;
 ```
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```title``` | string | Hit title used in 'default' and 'big-size' | "hits" | |
-| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | 'default' | |
-| ```todayVisitor``` | number | Number of today's visitors | 0 | fetched variable |
-| ```totalVisitor``` | number | Number of total's visitors | 123 | fetched variable |
-| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | "today" | |
-| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | "total" | |
-| ```backgroundColor``` | string | Background color of todayTitle |"#91c230c4" | | |
-| ```todayVisitorColor``` | string | Today visitor color style |"red" | | |
-| ```totalVisitorColor``` | string | Total visitor color style |"red" | | |
-| ```todayTitleColor``` | string | Today title color style | "black" | | |
-| ```totalTitleColor``` | string | Total title color style |"black" | | |
-| ```size``` | string | Font size and component size in the visitor counter component | "14px" | Make sure to include 'px' |
+| ```title``` | string | Hit title used in 'default' and 'big-size' | `'hits'` | |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | `'default'` | |
+| ```todayVisitor``` | number | Number of today's visitors | `0` | fetched variable |
+| ```totalVisitor``` | number | Number of total's visitors | `123` | fetched variable |
+| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | `'today'` | |
+| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | `'total'` | |
+| ```backgroundColor``` | string | Background color of todayTitle | `'#91c230c4'` | | |
+| ```todayVisitorColor``` | string | Today visitor color style |`'red'` | | |
+| ```totalVisitorColor``` | string | Total visitor color style |`'red'` | | |
+| ```todayTitleColor``` | string | Today title color style | `'black'` | | |
+| ```totalTitleColor``` | string | Total title color style |`'black'` | | |
+| ```size``` | string | Font size and component size in the visitor counter component | `'14px'` | Make sure to include 'px' |
 
 ### More about VisitorCounter's props
 
@@ -916,23 +916,23 @@ export default App;
 | props | type | description | default| note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon | 
-| `theme` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>| Visitor Comment theme: 'basic', 'box', 'vertical' | 'basic' | |
-| `backgroundColor`| string | VisitorComment background-color | "whitesmoke" | |
-| `inputBackgroundColor` | string | Background color of guest book preparation column | "White" | |
-| `inputFontColor` | string | Font Color in input box when create comment, user infomation | "Black" | |
-| `inputPlacehoderColor` | string | Placehoder font Color in input comment, user infomation boxes | "Black" | |
-| `userInputLineColor`| string | Underline color in the User Information field | "#b4b4b4a2" | |
-| `buttonColor` | string | Font color of send button | "#1877f" | |
-| `listBackgroundColor` | string | Background color of comment list | "white" | |
-| `listCommentColor` | string | Color of comment in comment list | "black" | |
-| `listNicknameColor` | string | Color of nickname in comment list | "#959595" | |
-| `listDateColor` | string | Color of date in comment list | "#959595" | |
-| `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | "#5f5f5f" | |
-| `isShowScrollDownIcon` | boolean | Whether to display icons that are generated when a scroll event occurs | true | |
-| `scrollDownIconColor` | string | Color in ScrollDown Icon | "black" | Only works when isShowScrollDownIcon is true |
-| `comment` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
-| `nickname` | string | the nickname of visitor comment | dev-portfolio| fetched variable |
-| `password` | string | the password of visitor comment | 1234 | fetched variable |
+| `theme` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>| Visitor Comment theme: 'basic', 'box', 'vertical' | `'basic'` | |
+| `backgroundColor`| string | VisitorComment background-color | `'whitesmoke'` | |
+| `inputBackgroundColor` | string | Background color of guest book preparation column | `'White'` | |
+| `inputFontColor` | string | Font Color in input box when create comment, user infomation | `'Black'` | |
+| `inputPlacehoderColor` | string | Placehoder font Color in input comment, user infomation boxes | `'Black'` | |
+| `userInputLineColor`| string | Underline color in the User Information field | `'#b4b4b4a2'` | |
+| `buttonColor` | string | Font color of send button | `'#1877f'` | |
+| `listBackgroundColor` | string | Background color of comment list | `'white'` | |
+| `listCommentColor` | string | Color of comment in comment list | `'black'` | |
+| `listNicknameColor` | string | Color of nickname in comment list | `'#959595'` | |
+| `listDateColor` | string | Color of date in comment list | `'#959595'` | |
+| `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | `'#5f5f5f'` | |
+| `isShowScrollDownIcon` | boolean | Whether to display icons that are generated when a scroll event occurs | `true` | |
+| `scrollDownIconColor` | string | Color in ScrollDown Icon | `'black'` | Only works when isShowScrollDownIcon is true |
+| `comment` | string | the text of visitor comment | `'this portfolio is very nice'` | fetched variable |
+| `nickname` | string | the nickname of visitor comment | `'dev-portfolio'`| fetched variable |
+| `password` | string | the password of visitor comment | `'1234'` | fetched variable |
 | `commentInputPlacehoder` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
 | `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list| See "More about VisitorComment's Props" | fetched variable |
 | `handleCreateComment` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
@@ -1009,14 +1009,14 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| `rate` | string | How well you handle the skill (unit: %) | 100% | |
-| `isHiddenRateText` | boolean | Whether show rate in progressbar | true | |
-| `colorFrom` | string | Start color of blinking animation of progressbar | white | |
-| `colorTo` | string | End color of blinking animation of progressbar | red | 
-| `width` | string | Progressbar css width | 100% | |
-| `height` | string | Progressbar css width | 40px | | 
-| `animationType` | <a href="https://github.com/modern-agile-team/dev-portfolio/edit/feature/msk/%23152/README.md?pr=%2Fmodern-agile-team%2Fdev-portfolio%2Fpull%2F174#more-about-progressbars-props">animationType</a> | Progressbar animation | 'wave' | | 
-| `isBlinking` | boolean | Progressbar blinking state | false | | 
+| `rate` | string | How well you handle the skill (unit: %) | `'100%'` | |
+| `isHiddenRateText` | boolean | Whether show rate in progressbar | `true` | |
+| `colorFrom` | string | Start color of blinking animation of progressbar | `'white'` | |
+| `colorTo` | string | End color of blinking animation of progressbar | `'red'` | 
+| `width` | string | Progressbar css width | `'100%'` | |
+| `height` | string | Progressbar css width | `'40px'` | | 
+| `animationType` | <a href="https://github.com/modern-agile-team/dev-portfolio/edit/feature/msk/%23152/README.md?pr=%2Fmodern-agile-team%2Fdev-portfolio%2Fpull%2F174#more-about-progressbars-props">animationType</a> | Progressbar animation | `'wave'` | | 
+| `isBlinking` | boolean | Progressbar blinking state | `false` | | 
 
 ### More about ProgressBar's props
 - animationType 
