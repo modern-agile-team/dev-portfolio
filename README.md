@@ -882,8 +882,14 @@ const App = () => {
       theme="basic" // 'basic' | 'box' | 'vertical'
       backgroundColor="whitesmoke"
       inputBackgroundColor="White"
+      inputFontColor="black"
+      inputPlacehoderColor="black"
       userInputLineColor="#b4b4b4a2"
       buttonColor="#1877f2"
+      listBackgroundColor="white"
+      listCommentColor="black"
+      listNicknameColor="#959595"
+      listDateColor="#959595"
       progressbarColor="#5f5f5f"
       isShowScrollDownIcon={true}
       scrollDownIconColor='black'
@@ -906,14 +912,20 @@ export default App;
 | props | type | description | default| note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar | | See <a href="#guidelines-to-input-icons">Guideline</a> to add icon | 
-| `theme` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>| Visitor Comment theme: 'basic', 'box', 'vertical' | basic | |
-| `backgroundColor`| string | VisitorComment background-color | whitesmoke | |
-| `inputBackgroundColor` | string | Background color of guest book preparation column | White | |
-| `userInputLineColor`| string | Underline color in the User Information field | #b4b4b4a2 | |
-| `buttonColor` | string | Font color of send button | #1877f | |
-| `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | #5f5f5f| |
-| `isShowScrollDownIcon` | boolean| Whether to display icons that are generated when a scroll event occurs | true | |
-| `scrollDownIconColor` | string | Color in ScrollDown Icon | black | Only works when isShowScrollDownIcon is true |
+| `theme` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=type-,VisitorCommentThemeType,-%3D%20%27basic%27'>VisitorCommentThemeType</a>| Visitor Comment theme: 'basic', 'box', 'vertical' | 'basic' | |
+| `backgroundColor`| string | VisitorComment background-color | "whitesmoke" | |
+| `inputBackgroundColor` | string | Background color of guest book preparation column | "White" | |
+| `inputFontColor` | string | Font Color in input box when create comment, user infomation | "Black" | |
+| `inputPlacehoderColor` | string | Placehoder font Color in input comment, user infomation boxes | "Black" | |
+| `userInputLineColor`| string | Underline color in the User Information field | "#b4b4b4a2" | |
+| `buttonColor` | string | Font color of send button | "#1877f" | |
+| `listBackgroundColor` | string | Background color of comment list | "white" | |
+| `listCommentColor` | string | Color of comment in comment list | "black" | |
+| `listNicknameColor` | string | Color of nickname in comment list | "#959595" | |
+| `listDateColor` | string | Color of date in comment list | "#959595" | |
+| `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | "#5f5f5f" | |
+| `isShowScrollDownIcon` | boolean | Whether to display icons that are generated when a scroll event occurs | true | |
+| `scrollDownIconColor` | string | Color in ScrollDown Icon | "black" | Only works when isShowScrollDownIcon is true |
 | `comment` | string | the text of visitor comment | this portfolio is very nice | fetched variable |
 | `nickname` | string | the nickname of visitor comment | dev-portfolio| fetched variable |
 | `password` | string | the password of visitor comment | 1234 | fetched variable |
