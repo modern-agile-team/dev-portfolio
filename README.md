@@ -450,8 +450,11 @@ const App = () => {
       title="Experience Title"
       textAlign="left"
       theme="vertical" // 'basic' | 'box' | 'vertical'
-      titleColor="black"
       shape="square" // 'square' | 'round-square'
+      headerTitleColor="black"
+      historyTitleColor="black"
+      dateColor="black"
+      descriptionColor="black"
       historyList={historyList}
     />
   );
@@ -463,11 +466,14 @@ export default App;
 | props | type | description | default | note |
 | - | - | - | - | - |
 | `id` | string | Name to be added to Sidebar| |  See <a href="#guidelines-to-input-icons">Guideline</a> to add icon |
-| `title` | string | Main title text of Experience Component | Experience |
-| `textAlign`| string | Experience Text align| left | |
-| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | basic | |
-| `titleColor` | string | Color of title specially used in 'vertical' theme | black | |
-| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.| square | |
+| `title` | string | Main title text of Experience Component | "Experience" |
+| `textAlign`| string | Experience Text align| "left" | |
+| `theme` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceThemeType,-%3D%20%27basic%27">ExperienceThemeType</a> | You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'. | 'basic' | |
+| `shape` |  <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=type-,ExperienceShapeType,-%3D%20%27square%27">ExperienceVerticalOptionType</a> | Shape of card specially used in 'vertical' theme such as 'square', 'round-square'.| 'square' | |
+| `headerTitleColor` | string | Color of title in Experience component | "black" | |
+| `historyTitleColor` | string | Color of title at historyList | "black" | |
+| `dateColor` | string | Color of date in history List | "black" | |
+| `descriptionColor` | string | Color of description in history List | "black" | |
 | `historyList` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B">ExperienceHistoryListType[]</a> | You can add your history data such as date, title, description, etc. | See "More about Experience's Props" | |
 
 
