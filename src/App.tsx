@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <VisitorCounter />
       <div style={{ margin: '10px', display: 'flex' }}>
         <Skill
           titleColor="red"

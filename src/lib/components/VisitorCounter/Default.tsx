@@ -9,12 +9,14 @@ const Default = (props: VisitorCounterPropsType) => {
     <Wrap size={size}>
       <Counter backgroundColor={backgroundColor} titleColor={titleColor}>
         <span className="title">{title}</span>
-        <span className="today" style={{ color: `${todayVisitorColor}` }}>
-          {todayVisitor}
-        </span>
-        <span className="total" style={{ color: `${totalVisitorColor}` }}>
-          {totalVisitor}
-        </span>
+        <div className="count">
+          <span className="today" style={{ color: `${todayVisitorColor}` }}>
+            {todayVisitor}
+          </span>
+          <span className="total" style={{ color: `${totalVisitorColor}` }}>
+            {totalVisitor}
+          </span>
+        </div>
       </Counter>
     </Wrap>
   );
@@ -26,23 +28,28 @@ const Wrap = styled.div<VisitorCounterPropsType>`
   display: flex;
   align-items: center;
   font-size: ${({ size }) => size ?? '14px'};
-  span {
-    padding: 5px 10px;
-  }
 `;
 
 const Counter = styled.div<VisitorCounterPropsType>`
-  padding: 5px 0px;
-  border: 1px solid #989898;
   border-radius: 5px;
-  overflow: hidden;
   background-color: white;
+  display: flex;
   .title {
     background-color: ${({ backgroundColor }) => backgroundColor ?? '#91c230c4'};
     color: ${({ titleColor }) => titleColor ?? 'black'};
+    border: 1px solid #989898;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5px 10px;
+  }
+  .count {
+    border: 1px solid #989898;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 10px;
   }
   .today {
-    border-left: 1px solid #989898;
     padding-right: 0px;
     :after {
       content: '/';
