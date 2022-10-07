@@ -59,7 +59,13 @@ function App() {
         totalVisitor={403}
         totalVisitorColor="grey"
       />
-      <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
+      <VisitorComment
+        id="['VisitorComment', 'akar-icons:comment-add']"
+        listBackgroundColor="red"
+        listCommentColor="white"
+        inputFontColor="red"
+        // inputPlacehoderColor="red"
+      />
 
       <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
