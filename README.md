@@ -825,9 +825,11 @@ const App = () => {
       todayTitle="today"
       totalTitle="total"
       backgroundColor="#91c230c4"
+      todayVisitorColor="red"
+      totalVisitorColor="red"
+      todayTitleColor="black"
+      totalTitleColor="black"
       size="14px" // include: px
-      todayBoldColor="red"
-      totalBoldColor="red"
     />
   );
 };
@@ -836,16 +838,18 @@ export default App;
 ```
 | props | type | description | default | note |
 | - | - | - | - | - |
-| ```title``` | string | Hit title used in 'default' and 'big-size' | hits | |
-| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | default | |
+| ```title``` | string | Hit title used in 'default' and 'big-size' | "hits" | |
+| ```theme``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCounterType.ts#:~:text=type-,VisitorCounterThemeType,-%3D%20%27default%27">VisitorCounterThemeType</a> | Visitor Counter theme: 'default',  'big-size', 'simple' | 'default' | |
 | ```todayVisitor``` | number | Number of today's visitors | 0 | fetched variable |
 | ```totalVisitor``` | number | Number of total's visitors | 123 | fetched variable |
-| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | today | |
-| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | total | |
-| ```backgroundColor``` | string | Background color of todayTitle |#91c230c4 | | |
-| ```size``` | string | Font size and component size in the visitor counter component | 14px | Make sure to include 'px' |
-| ```todayBoldColor``` | string | Color of today's visit count used in 'big-size' and 'simple' | red | |
-| ```totalBoldColor``` | string | Color of total visit count used in 'big-size' and 'simple' | red | |
+| ```todayTitle``` | string | Title of today visit count used in 'big-size' and 'simple' | "today" | |
+| ```totalTitle``` | string | Title of total visit count used in 'big-size' and 'simple' | "total" | |
+| ```backgroundColor``` | string | Background color of todayTitle |"#91c230c4" | | |
+| ```todayVisitorColor``` | string | Today visitor color style |"red" | | |
+| ```totalVisitorColor``` | string | Total visitor color style |"red" | | |
+| ```todayTitleColor``` | string | Today title color style | "black" | | |
+| ```totalTitleColor``` | string | Total title color style |"black" | | |
+| ```size``` | string | Font size and component size in the visitor counter component | "14px" | Make sure to include 'px' |
 
 ### More about VisitorCounter's props
 
