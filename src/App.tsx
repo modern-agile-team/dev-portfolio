@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <VisitorCounter />
       <div style={{ margin: '10px', display: 'flex' }}>
         <Skill
           titleColor="red"
@@ -58,18 +59,7 @@ function App() {
         totalVisitor={403}
         totalVisitorColor="grey"
       />
-      <VisitorComment
-        id="['VisitorComment', 'akar-icons:comment-add']"
-        inputBackgroundColor="red"
-        inputFontColor="white"
-        inputPlacehoderColor="white"
-        buttonColor="white"
-        listBackgroundColor="red"
-        commentColor="white"
-        listNicknameColor="white"
-        listDateColor="white"
-        theme="vertical"
-      />
+      <VisitorComment id="['VisitorComment', 'akar-icons:comment-add']" />
 
       <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
