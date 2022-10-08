@@ -32,11 +32,12 @@ const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType)
   const [sideBarItems, setSideBarItems] = useState<SideBarItemsElementType[]>();
 
   const onClickSideBarIconHandler = () => {
-    const $tags: NodeListOf<ChildNode> | undefined = document.querySelector('.App')?.childNodes;
-    if (!$tags) return;
+    const app = document.querySelector('.App');
+    if (!app) return;
+    const $tags = Array.from(app.children);
 
     setSideBarItems(
-      Array.from($tags).reduce((result: any[], $tag: any) => {
+      Array.from(Array.prototype.slice.call($tags)).reduce((result: Element[], $tag: Element) => {
         const tagId: string = $tag.id;
 
         let title: string | undefined;
