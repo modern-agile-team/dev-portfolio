@@ -1,3 +1,23 @@
+# [2.1.0](https://github.com/modern-agile-team/dev-portfolio/compare/v2.0.0...v2.1.0) (2022-10-08)
+
+
+### Bug Fixes
+
+* curly braces are unnecessary here ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([997d62e](https://github.com/modern-agile-team/dev-portfolio/commit/997d62e33c3ae2ca2584c8a7699463ddaeb8d9a2))
+* do not use Array index in keys warning ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([b378bbe](https://github.com/modern-agile-team/dev-portfolio/commit/b378bbe8621b680a8ae7d76cdf2f51fa865b4df7))
+* eSLint error: Parsing error ([94ff2cf](https://github.com/modern-agile-team/dev-portfolio/commit/94ff2cfc6bc6c4da0f41afa9de1b81d1eac6211b))
+* fix 'npm run lint' error ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([b0c56e2](https://github.com/modern-agile-team/dev-portfolio/commit/b0c56e2a31e329c285d3dab8593e9e4c498693c3))
+* fix conflict ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([f3ae5cb](https://github.com/modern-agile-team/dev-portfolio/commit/f3ae5cbbf54b943f8ac5eb9d8f79feb93b9f5c00))
+* something is missing in props validation ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([64486bb](https://github.com/modern-agile-team/dev-portfolio/commit/64486bb9283999facd1bdbb5d1c7e2a43c1e7b79))
+* specify type to sideBarItems state ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([d600c00](https://github.com/modern-agile-team/dev-portfolio/commit/d600c0049c1b20c18676845b94676dc82e377c53))
+* statement not part of import statement (@typescript-eslint/no-var-requires) ([230c28d](https://github.com/modern-agile-team/dev-portfolio/commit/230c28deb41d51d5b179f94fe94297bb199c953c))
+* value must be omitted for boolean attributes warning ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([4414635](https://github.com/modern-agile-team/dev-portfolio/commit/4414635d3294d857709a7b5a2f2aeeb19b4c2f70))
+
+
+### Features
+
+* creat uuidv4 util function ([#187](https://github.com/modern-agile-team/dev-portfolio/issues/187)) ([92f9f9f](https://github.com/modern-agile-team/dev-portfolio/commit/92f9f9f7ab3622734c356492e8827ffc1ddbb09c))
+
 # [2.0.0](https://github.com/modern-agile-team/dev-portfolio/compare/v1.1.4...v2.0.0) (2022-10-08)
 
 
