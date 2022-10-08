@@ -7,6 +7,7 @@ import {
   SideBarItemsStyledPropsType,
   SideBarItemsElementStyledType,
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarItemsType';
+import { uuidv4 } from '../../../common/utils';
 
 const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPropsType) => {
   return (
@@ -25,7 +26,7 @@ const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPro
           idx
         ) => (
           <ItemContainer
-            key={idx}
+            key={uuidv4()}
             itemTextColor={itemTextColor}
             itemBackgroundColor={itemBackgroundColor}
             itemHoverdBackgroundColor={itemHoverdBackgroundColor}

@@ -6,6 +6,7 @@ import {
   TechStackInputStyledPropsType,
 } from '../../common/types/ComponentTypes/TechStack/TechStackInputType';
 import { MAIN } from '../../common/theme';
+import { uuidv4 } from '../../common/utils';
 
 const TechStackInput = () => {
   const [_, setInputValue] = useState('');
@@ -33,9 +34,9 @@ const TechStackInput = () => {
             {icons?.length >= 1
               ? icons.map((icon, idx) => {
                   return (
-                    <TechStackEachBoxContainer key={idx}>
+                    <TechStackEachBoxContainer key={uuidv4()}>
                       <TechStackEachBox>
-                        <Icon icon={icon} fontSize={'50px'} />
+                        <Icon icon={icon} fontSize="50px" />
                         <TechStackName>{(icon as string).replace('logos:', '')}</TechStackName>
                       </TechStackEachBox>
                     </TechStackEachBoxContainer>

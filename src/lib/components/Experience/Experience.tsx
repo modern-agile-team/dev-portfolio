@@ -5,6 +5,7 @@ import {
   ExperienceStyledPropsType,
   ExperienceChildStyledPropsType,
 } from '../../common/types/ComponentTypes/ExperienceType';
+import { uuidv4 } from '../../common/utils';
 
 /**
  *
@@ -44,7 +45,7 @@ const Experience = (props: ExperiencePropsType) => {
       <ChildWrap theme={theme}>
         {historyList?.map((elements, idx) => (
           <History
-            key={idx}
+            key={uuidv4()}
             {...elements}
             theme={theme}
             historyTitleColor={historyTitleColor}

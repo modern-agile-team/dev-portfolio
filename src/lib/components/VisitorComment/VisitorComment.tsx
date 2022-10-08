@@ -8,6 +8,7 @@ import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 import { HiChevronDoubleDown } from 'react-icons/hi';
 import { ProgressBar } from '../ProgressBar';
+import { uuidv4 } from '../../common/utils';
 
 /**
  *
@@ -111,7 +112,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
       />
       {isOverflow && (
         <ProgressBar
-          isHiddenRateText={true}
+          isHiddenRateText
           rateText={`${rate}%`}
           height="3px"
           colorFrom={progressbarColor}
@@ -125,7 +126,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
           .reverse()
           .map((elements, idx) => (
             <CommentList
-              key={idx}
+              key={uuidv4()}
               {...elements}
               theme={theme}
               listBackgroundColor={listBackgroundColor}
