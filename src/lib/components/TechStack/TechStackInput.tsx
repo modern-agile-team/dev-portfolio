@@ -6,9 +6,10 @@ import {
   TechStackInputStyledPropsType,
 } from '../../common/types/ComponentTypes/TechStack/TechStackInputType';
 import { MAIN } from '../../common/theme';
+import { uuidv4 } from '../../common/utils';
 
 const TechStackInput = () => {
-  const [_, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const [icons, setIcons] = useState([]);
 
@@ -26,16 +27,22 @@ const TechStackInput = () => {
 
   return (
     <Container>
-      <Input type="text" placeholder="Please write the tech-stack" onChange={onChange} isFocus={isFocus} />
+      <Input
+        type="text"
+        placeholder="Please write the tech-stack"
+        onChange={onChange}
+        isFocus={isFocus}
+        value={inputValue}
+      />
       {isFocus && (
         <>
           <Modal onClick={() => setIsFocus(false)}>
             {icons?.length >= 1
-              ? icons.map((icon, idx) => {
+              ? icons.map((icon) => {
                   return (
-                    <TechStackEachBoxContainer key={idx}>
+                    <TechStackEachBoxContainer key={uuidv4()}>
                       <TechStackEachBox>
-                        <Icon icon={icon} fontSize={'50px'} />
+                        <Icon icon={icon} fontSize="50px" />
                         <TechStackName>{(icon as string).replace('logos:', '')}</TechStackName>
                       </TechStackEachBox>
                     </TechStackEachBoxContainer>

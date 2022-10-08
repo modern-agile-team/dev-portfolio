@@ -4,6 +4,7 @@ import { TbPlayerPlay, TbPlayerPause } from 'react-icons/tb';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ChildrenWrapper, Container, Player, Wrapper } from './style';
 import { CarouselPropsType } from '../../common/types/ComponentTypes/CarouselType';
+import { uuidv4 } from '../../common/utils';
 
 /**
  * @props id: unique id of carousel
@@ -72,9 +73,9 @@ const Carousel = ({
       <Container len={itemLength} transition={transitionTime} showIndex={showIndex} slideToShow={slideToShow}>
         <div className="carousel-wrapper">
           <div className="carousel-container">
-            {itemList.map((child, index) => {
+            {itemList.map((child) => {
               return (
-                <ChildrenWrapper len={itemLength} slideToShow={slideToShow} key={index}>
+                <ChildrenWrapper len={itemLength} slideToShow={slideToShow} key={uuidv4()}>
                   {child}
                 </ChildrenWrapper>
               );

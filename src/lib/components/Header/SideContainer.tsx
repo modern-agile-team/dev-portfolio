@@ -7,6 +7,7 @@ import { SideContainerPropsType } from '../../common/types/ComponentTypes/Header
 import { SideBarOptionPropsType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarType';
 import { createPortal } from 'react-dom';
 import { MAIN } from '../../common/theme';
+import { SideBarItemsElementType } from '../../common/types/ComponentTypes/Header/SideBar/SideBarItemsType';
 
 const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType) => {
   // Default value of sideBarOption
@@ -28,13 +29,15 @@ const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType)
   }: SideBarOptionPropsType = sideBarOption;
 
   const [isClickedSideBarIcon, setIsClickedSideBarIcon] = useState(false);
-  const [sideBarItems, setSideBarItems] = useState([{}]);
+  const [sideBarItems, setSideBarItems] = useState<SideBarItemsElementType[]>();
 
   const onClickSideBarIconHandler = () => {
-    const $tags: any = document.querySelector('.App')?.childNodes;
+    const app = document.querySelector('.App');
+    if (!app) return;
+    const $tags = Array.from(app.children);
 
     setSideBarItems(
-      Array.from($tags).reduce((result: any[], $tag: any) => {
+      Array.from(Array.prototype.slice.call($tags)).reduce((result: Element[], $tag: Element) => {
         const tagId: string = $tag.id;
 
         let title: string | undefined;
@@ -90,7 +93,7 @@ const SideContainer = ({ channels, sideBarOption = {} }: SideContainerPropsType)
             mainTitleColor={mainTitleColor}
             mainTitleAlign={mainTitleAlign}
             mainTitleBorderColor={mainTitleBorderColor}
-            sideBarItems={sideBarItems}
+            sideBarItems={sideBarItems || []}
             isClickedSideBarIcon={isClickedSideBarIcon}
             backgroundColor={backgroundColor}
             setIsClickedSideBarIcon={setIsClickedSideBarIcon}

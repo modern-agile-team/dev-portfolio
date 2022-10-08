@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { AboutMeInfoPropsType } from '../../common/types/ComponentTypes/Contact/AboutMeInfoType';
+import { uuidv4 } from '../../common/utils';
 
-const AboutMe = ({ aboutMeInfos }: any) => {
+const AboutMe = ({ aboutMeInfos }: { aboutMeInfos: AboutMeInfoPropsType[] }) => {
   return (
     <Container>
-      {aboutMeInfos.map(({ title, titleColor, description, descriptionColor }: AboutMeInfoPropsType, idx: number) => (
-        <AboutMeEachContainer key={idx}>
+      {aboutMeInfos.map(({ title, titleColor, description, descriptionColor }: AboutMeInfoPropsType) => (
+        <AboutMeEachContainer key={uuidv4()}>
           <AboutMeTitle titleColor={titleColor}>{title}</AboutMeTitle>
           <AboutMeDescription descriptionColor={descriptionColor}>{description}</AboutMeDescription>
         </AboutMeEachContainer>

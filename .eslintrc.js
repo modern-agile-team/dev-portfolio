@@ -1,18 +1,27 @@
-const assign = require('object.assign');
-
-const baseStyleRules = require('eslint-config-airbnb-base/rules/style').rules;
-
-const dangleRules = baseStyleRules['no-underscore-dangle'];
 module.exports = {
-  plugins: ['react'],
+  plugins: ['@typescript-eslint', 'react'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
+    parser: 'babel-parser',
+    sourceType: 'module',
+    allowImportExportEverywhere: true,
+    ecmaVersion: 2017,
   },
   env: {
     es6: true,
   },
+  extends: ['plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  overrides: [
+    {
+      files: ['*.js', '*.jsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
+  ],
   // View link below for react rules documentation
   // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
   rules: {

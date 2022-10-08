@@ -1,22 +1,41 @@
-import { forwardRef, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useInterval } from '../../common/hooks';
 import { ItemPropsType, topType } from '../../common/types/ComponentTypes/ItemType';
 
-const Description = forwardRef<HTMLDivElement, ItemPropsType & topType>(
-  ({ title, top, description, textRisingSpeed, titleColor, descriptionColor, hoverdInnerBorderColor }, ref) => {
-    return (
-      <DescriptionContainer className="hover">
-        <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
-          <h3 style={{ color: `${titleColor}` }}>{title}</h3>
-          <DescriptionWrapper ref={ref} top={top} textRisingSpeed={textRisingSpeed}>
-            <text style={{ color: `${descriptionColor}` }}>{description}</text>
-          </DescriptionWrapper>
-        </HoverSection>
-      </DescriptionContainer>
-    );
-  }
-);
+const Description = ({
+  title,
+  description,
+  isTextRising,
+  textRisingSpeed,
+  titleColor,
+  descriptionColor,
+  hoverdInnerBorderColor,
+  itemRef,
+}: ItemPropsType & { itemRef: HTMLLIElement | null }) => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const [top, setTop] = useState(0);
+  const TEXT_RISING_STEP = 5;
+  useInterval(() => {
+    if (!isTextRising || !textRef.current || !itemRef || textRef.current.scrollHeight < itemRef.scrollHeight / 2)
+      return;
+    if (top >= textRef.current.scrollHeight) {
+      setTop(-TEXT_RISING_STEP * 2);
+    } else {
+      setTop(top + TEXT_RISING_STEP);
+    }
+  }, textRisingSpeed || 300);
+  return (
+    <DescriptionContainer className="hover">
+      <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
+        <h3 style={{ color: `${titleColor}` }}>{title}</h3>
+        <DescriptionWrapper ref={textRef} top={top} textRisingSpeed={textRisingSpeed}>
+          <text style={{ color: `${descriptionColor}` }}>{description}</text>
+        </DescriptionWrapper>
+      </HoverSection>
+    </DescriptionContainer>
+  );
+};
 
 /**
  * Express the section you want to brag about using item component.
@@ -43,10 +62,8 @@ const Item = ({
   hoverdInnerBorderColor,
 }: ItemPropsType) => {
   const [isHover, setIsHover] = useState<boolean>(false);
-  const [top, setTop] = useState(0);
-  const textRef = useRef<HTMLDivElement>(null);
+
   const itemRef = useRef<HTMLLIElement>(null);
-  const TEXT_RISING_STEP = 5;
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -56,37 +73,20 @@ const Item = ({
     setIsHover(false);
   };
 
-  useInterval(() => {
-    if (
-      !isTextRising ||
-      !textRef.current ||
-      !itemRef.current ||
-      textRef.current.scrollHeight < itemRef.current.scrollHeight / 2
-    )
-      return;
-    if (isHover) {
-      if (top >= textRef.current.scrollHeight) {
-        setTop(-TEXT_RISING_STEP * 2);
-      } else {
-        setTop(top + TEXT_RISING_STEP);
-      }
-    }
-  }, textRisingSpeed || 300);
-
   return (
     <StyledItem ref={itemRef} className="gallery-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <a href={redirectURL}>
         <img src={src} alt={title} />
         {isHover && (
           <Description
-            ref={textRef}
+            itemRef={itemRef.current}
             title={title}
             description={description}
             titleColor={titleColor}
             descriptionColor={descriptionColor}
-            top={top}
             textRisingSpeed={textRisingSpeed}
             hoverdInnerBorderColor={hoverdInnerBorderColor}
+            isTextRising={isTextRising}
           />
         )}
       </a>

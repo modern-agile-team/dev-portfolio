@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { ExperienceHistoryListType, ExperienceStyledPropsType } from '../../../common/types/ComponentTypes/ExperienceType';
+import {
+  ExperienceHistoryListType,
+  ExperienceStyledPropsType,
+} from '../../../common/types/ComponentTypes/ExperienceType';
 
 const Box = (props: ExperienceHistoryListType) => {
   const { startDate, endDate, title, description, historyTitleColor, dateColor, descriptionColor } = props;

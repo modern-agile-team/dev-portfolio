@@ -34,7 +34,7 @@ function App() {
           borderColor="blue"
           iconColor="red"
           backgroundColor="#bddaf7"
-          isHiddenTitle={true}
+          isHiddenTitle
         />
       </div>
       <Channel />

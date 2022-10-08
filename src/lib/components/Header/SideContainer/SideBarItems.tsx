@@ -1,31 +1,28 @@
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
-import { MAIN } from '../../../common/theme';
 import {
   SideBarItemsPropsType,
   SideBarItemsElementType,
   SideBarItemsStyledPropsType,
   SideBarItemsElementStyledType,
 } from '../../../common/types/ComponentTypes/Header/SideBar/SideBarItemsType';
+import { uuidv4 } from '../../../common/utils';
 
 const SideBarItems = ({ sideBarItems, setIsClickedSideBarIcon }: SideBarItemsPropsType) => {
   return (
     <>
       {sideBarItems.map(
-        (
-          {
-            tagId,
-            title,
-            itemTextColor,
-            itemTextAlign,
-            itemBackgroundColor,
-            itemHoverdBackgroundColor,
-            itemLogoName,
-          }: SideBarItemsElementType,
-          idx
-        ) => (
+        ({
+          tagId,
+          title,
+          itemTextColor,
+          itemTextAlign,
+          itemBackgroundColor,
+          itemHoverdBackgroundColor,
+          itemLogoName,
+        }: SideBarItemsElementType) => (
           <ItemContainer
-            key={idx}
+            key={uuidv4()}
             itemTextColor={itemTextColor}
             itemBackgroundColor={itemBackgroundColor}
             itemHoverdBackgroundColor={itemHoverdBackgroundColor}
