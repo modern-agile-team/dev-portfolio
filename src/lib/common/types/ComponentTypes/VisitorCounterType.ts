@@ -1,66 +1,63 @@
 export interface VisitorCounterPropsType {
   /**
-   * Hit title used in 'default' and 'big-size' (default: hit)
+   * You can dramatically change the UI of the VisitorCounter by choosing one of the following themes: `'default' | 'big-size' | 'simple'`. (default: 'default')
+   *
+   * @type `'default' | 'big-size' | 'simple'`
    */
-  title: string;
+  theme?: VisitorCounterThemeType;
   /**
-   * Number of today's visitors (default: 0)
+   * Hit title text used only on `'default'` and `'big-size'` themes. (default: 'hit')
    */
-  todayVisitor: number;
+  title?: string;
   /**
-   * Number of total visitors (default: 123)
+   * title color style. (default: 'black')
    */
-  totalVisitor: number;
+  titleColor?: string;
   /**
-   * Title of today's visit count used in 'big-size' and 'simple' (default: today)
+   * Number of today's visitors. (default: 0)
+   */
+  todayVisitor?: number;
+  /**
+   * todayVisitor color style. (default: 'red')
+   */
+  todayVisitorColor?: string;
+  /**
+   * Number of total visitors. (default: 123)
+   */
+  totalVisitor?: number;
+  /**
+   * totalVisitor color style. (default: 'red')
+   */
+  totalVisitorColor?: string;
+  /**
+   * Title of today's the number of visitors used only on `'big-size'` and `'simple'` themes. (default: 'today')
    */
   todayTitle?: string;
   /**
-   * Title of totla visit count used in 'big-size' and 'simple'(default: total)
+   * todayTitle color style. (default: 'black')
+   */
+  todayTitleColor?: string;
+  /**
+   * Title of total's the number of visitors used only on `'big-size'` and `'simple'` themes. (default: 'total')
    */
   totalTitle?: string;
   /**
-   * Background color (default: #91c230c4)
+   * totalTitle color style. (default: 'black')
+   */
+  totalTitleColor?: string;
+  /**
+   * Background color of todayTitle. (default: '#91c230c4')
    */
   backgroundColor?: string;
   /**
-   * Font size of all text used in VisitorCounter Component (default: 14px) (unit: px)
+   * Font size of all text used in VisitorCounter Component (default: '14px') (unit: px)
    */
   size?: string;
-  /**
-   * Color of today's visit count used in 'big-size' and 'simple' (default: red)
-   */
-  todayBoldColor?: string;
-  /**
-   * Color of total visit count used in 'big-size' and 'simple' (default: red)
-   */
-  totalBoldColor?: string;
 }
 
-export interface IndexPropsType extends VisitorCounterPropsType {
-  /**
-   * Visitor Counter theme 'default' | 'big-size' | 'simple' (default: 'default')
-   */
-  theme?: VisitorCounterThemeType;
-}
-
+/**
+ * You can dramatically change the UI of the VisitorCounter by choosing one of the following themes: `'default' | 'big-size' | 'simple'`.
+ *
+ * @type `'default' | 'big-size' | 'simple'`
+ */
 type VisitorCounterThemeType = 'default' | 'big-size' | 'simple';
-
-export interface VisitorCounterStylePropsType {
-  /**
-   * Background color of todayTitle (default: #91c230c4)
-   */
-  backgroundColor?: string;
-  /**
-   * Font size of all text used in VisitorCounter Component (default: 14px) (unit: px)
-   */
-  size?: string;
-  /**
-   * Color of today's visit count used in 'big-size' and 'simple' (default: red)
-   */
-  todayBoldColor?: string;
-  /**
-   * Color of total visit count used in 'big-size' and 'simple' (default: red)
-   */
-  totalBoldColor?: string;
-}

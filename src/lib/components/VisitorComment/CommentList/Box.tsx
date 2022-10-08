@@ -1,11 +1,14 @@
 import styled from 'styled-components';
-import { VisitorCommentListType } from '../../../common/types/ComponentTypes/VisitorCommentType';
+import {
+  VisitorCommentListType,
+  VisitorCommentStyledPropsType,
+} from '../../../common/types/ComponentTypes/VisitorCommentType';
 
 const Box = (props: VisitorCommentListType) => {
-  const { description, nickname, date } = props;
+  const { description, nickname, date, listBackgroundColor, listNicknameColor, listDateColor } = props;
 
   return (
-    <Wrap>
+    <Wrap listBackgroundColor={listBackgroundColor} listNicknameColor={listNicknameColor} listDateColor={listDateColor}>
       <span className="des">{description}</span>
       <div className="info">
         <span className="nickname">{nickname}</span>
@@ -16,10 +19,10 @@ const Box = (props: VisitorCommentListType) => {
 };
 export default Box;
 
-const Wrap = styled.div`
+const Wrap = styled.div<VisitorCommentStyledPropsType>`
   margin: 15px 5px;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.14);
-  background-color: white;
+  background-color: ${({ listBackgroundColor }) => listBackgroundColor ?? 'white'};
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -39,6 +42,10 @@ const Wrap = styled.div`
     color: #959595;
     .nickname {
       font-weight: bold;
+      color: ${({ listNicknameColor }) => listNicknameColor ?? '#959595'};
+    }
+    .date {
+      color: ${({ listDateColor }) => listDateColor ?? '#959595'};
     }
   }
   @media screen and (max-width: 768px) {

@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import { VerticalPropsType, ExperienceVerticalOptionType } from '../../../common/types/ComponentTypes/ExperienceType';
+import { VerticalPropsType, ExperiencePropsType } from '../../../common/types/ComponentTypes/ExperienceType';
 
 const Vertical = (props: VerticalPropsType) => {
-  const { startDate, endDate, title, des, shape, titleColor } = props;
+  const { startDate, endDate, title, description, shape, historyTitleColor, dateColor, descriptionColor } = props;
 
   return (
-    <Wrap shape={shape} titleColor={titleColor}>
+    <Wrap shape={shape} historyTitleColor={historyTitleColor} dateColor={dateColor} descriptionColor={descriptionColor}>
       <div className="intro">
         <div className="date">
           <span className="start-date">{startDate}</span>
@@ -13,7 +13,7 @@ const Vertical = (props: VerticalPropsType) => {
         </div>
         <div className="child-title">{title}</div>
       </div>
-      <span className="des">{des}</span>
+      <span className="des">{description}</span>
     </Wrap>
   );
 };
@@ -22,10 +22,10 @@ export default Vertical;
 
 Vertical.defaultProps = {
   shape: 'square',
-  titleColor: 'black',
+  historyTitleColor: 'black',
 };
 
-const Wrap = styled.div<ExperienceVerticalOptionType>`
+const Wrap = styled.div<ExperiencePropsType>`
   width: 25em;
   padding: 10px 2em 1.2em 2em;
   margin: 1em auto;
@@ -47,6 +47,7 @@ const Wrap = styled.div<ExperienceVerticalOptionType>`
   .intro {
     margin: 10px;
     .date {
+      color: ${({ dateColor }) => dateColor ?? 'black'};
       margin: 15px 0px 10px 0px;
       font-size: 13px;
       .start-date {
@@ -60,11 +61,14 @@ const Wrap = styled.div<ExperienceVerticalOptionType>`
       }
     }
     .child-title {
-      color: ${({ titleColor }) => titleColor ?? 'black'};
+      color: ${({ historyTitleColor }) => historyTitleColor ?? 'black'};
       font-size: 25px;
       font-weight: 600;
       padding: 7px;
       border-bottom: 1px solid #b4b4b4a2;
+    }
+    .des {
+      color: ${({ descriptionColor }) => descriptionColor ?? 'black'};
     }
   }
 `;

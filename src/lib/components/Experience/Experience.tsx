@@ -12,24 +12,46 @@ import {
  * @props title: Main title text of Experience Component	(default: Experience)
  * @props textAlign: Experience Text align (default: left)
  * @props theme: You can decorate your experience with a variety of theme such as 'basic', 'box', 'vertical'.	(default: basic)
- * @props titleColor: color of title specially used in 'vertical' theme
+ * @props headerTitleColor: color of title in Experience component
+ * @props historyTitleColor: color of title at historyList
+ * @props dateColor: color of date in history List
+ * @props descriptionColor: color of description in history List
  * @props shape: shape of card specially used in 'vertical' theme ('square' | 'round-square')
  * @props historyList: You can add your history data such as date, title, description, etc.	({@link https://github.com/modern-agile-team/dev-portfolio/blob/master/app/src/lib/common/types/ComponentTypes/ExperienceType.ts#:~:text=export%20interface-,ExperienceHistoryListType,-%7B "See More about Experience's Props"})
  * @historyList startData: Date when you started that kind experience
  * @historyList endDate: Date when you finished that kind experience
  * @historyList title: Title of experience
- * @historyList des: Describe about your experience
+ * @historyList description: Describe about your experience
  */
 const Experience = (props: ExperiencePropsType) => {
-  const { id, historyList, title, textAlign, theme, titleColor, shape } = props;
+  const {
+    id,
+    historyList,
+    title,
+    textAlign,
+    theme,
+    historyTitleColor,
+    shape,
+    headerTitleColor,
+    dateColor,
+    descriptionColor,
+  } = props;
 
   return (
-    <Wrap id={id} textAlign={textAlign}>
+    <Wrap id={id} textAlign={textAlign} headerTitleColor={headerTitleColor}>
       <div className="title">{title}</div>
       <hr />
       <ChildWrap theme={theme}>
         {historyList?.map((elements, idx) => (
-          <History key={idx} {...elements} theme={theme} titleColor={titleColor} shape={shape} />
+          <History
+            key={idx}
+            {...elements}
+            theme={theme}
+            historyTitleColor={historyTitleColor}
+            shape={shape}
+            dateColor={dateColor}
+            descriptionColor={descriptionColor}
+          />
         ))}
       </ChildWrap>
     </Wrap>
@@ -46,13 +68,14 @@ Experience.defaultProps = {
       startDate: 'startDate',
       endDate: 'endDate',
       title: 'this is title',
-      des: 'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
+      description:
+        'This prop name is des.\nWrite down the additional explanation you want here.\nYou can break the line to backslash-n.',
     },
     {
       startDate: 'startDate',
       endDate: 'endDate',
       title: 'this is title',
-      des: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
+      description: `If you just want to write the date and time without the text,\ndon't worry !\nYou can write a des props just by emptying it.\nAn example is shown below.`,
     },
     {
       startDate: 'startDate',
@@ -69,6 +92,7 @@ const Wrap = styled.div<ExperienceStyledPropsType>`
     padding: 10px 10px 20px 10px;
     font-size: 33px;
     font-weight: 800;
+    color: ${({ headerTitleColor }) => headerTitleColor ?? 'black'};
   }
   hr {
     border: 0;

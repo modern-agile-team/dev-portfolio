@@ -1,26 +1,27 @@
-import { ChannelType } from '../ChannelType';
+import { ChannelsPropsType } from '../ChannelType';
 import { AboutMeInfoPropsType } from './AboutMeInfoType';
 
-export interface ContactPropsType extends ContactOptionType {
+export interface ContactPropsType extends ChannelsPropsType {
   /**
    * Name to be added to Sidebar
    */
   id?: string;
   /**
-   * Contact Background Color	(default: whitesmoke)
-   */
-  backgroundColor?: string;
-}
-
-export interface ContactOptionType {
-  /**
-   * Core of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
+   * Main title text of your contacts (default: 'Hello, my name is DEV_PORTFOLIO')
    */
   title?: string;
+  /**
+   * Title color style (defualt: 'black')
+   */
+  titleColor?: string;
   /**
    * Sub title text (default: 'If you're interested in me, please press the button below :D')
    */
   subTitle?: string;
+  /**
+   * Sub title text color style (defualt: 'black')
+   */
+  subTitleColor?: string;
   /**
    * Your Email (default: 'abc@dev-portfolio.com')
    */
@@ -30,11 +31,28 @@ export interface ContactOptionType {
    */
   buttonText?: string;
   /**
-   * Array of your channels like github and blogs (default: an array of 4 in length)
+   * Button text color style (defualt: 'black')
    */
-  channels?: ChannelType[];
+  buttonTextColor?: string;
   /**
-   * Your personal information like TEL, Home etc
+   * Button background color style (default: 'white')
+   */
+  buttonColor?: string;
+  /**
+   * Button border color sylte (default: 'black')
+   */
+  buttonBorderColor?: string;
+  /**
+   * Contact background color	style (default: 'whitesmoke')
+   */
+  backgroundColor?: string;
+  /**
+   * Enter your personal informations such as TEL, home address, etc.
+   *
+   * @example aboutMeInfos
+   * ```ts
+   * [{ title: 'Where I live', titleColor: 'black', description: 'Seoul, Republic of Korea', descriptionColor: 'black' }, { title: 'Give me a call', titleColor: 'black', description: 'T. +82 (0)10 1234 5678', descriptionColor: 'black' }, { title: 'Or, why don’t you email me?', titleColor: 'black', description: 'dev-portfolio@gmail.com', descriptionColor: 'black' }]
+   * ```
    */
   aboutMeInfos?: AboutMeInfoPropsType[];
 }

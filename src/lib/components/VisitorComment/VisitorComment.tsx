@@ -13,7 +13,7 @@ import { ProgressBar } from '../ProgressBar';
  *
  * @props id: Name to be added to Sidebar
  * @props commentList: List of Comment
- * @commentList des: Description of your comment
+ * @commentList description: Description of your comment
  * @commentList nickname: Nickname to display
  * @commentList date: Day when comment written
  * @props theme: Theme of Visitor Comment Component (default: basic) "basic" | "box" | "vertical"
@@ -21,7 +21,13 @@ import { ProgressBar } from '../ProgressBar';
  * @props buttonColor: Text color of Send Button (default: #1877f2)
  * @props commentInputPlacehoder: Placeholder of inputs description, nickname and password
  * @props inputBackgroundColor: Background color of input area (default: white)
+ * @props inputFontColor: Font Color in input box when create comment, user infomation (default: black)
+ * @props inputPlacehoderColor: Placehoder font Color in input comment, user infomation boxes (default: black)
  * @props userInputLineColor: Color of bottom border used in nickname and password area (defualt: #b4b4b4a2)
+ * @props listBackgroundColor: Background color of comment list (default: white)
+ * @props listCommentColor: Color of comment in comment list (default: black)
+ * @props listNicknameColor: Color of nickname in comment list (default: #959595)
+ * @props listDateColor: Color of date in comment list (default: #959595)
  * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
  * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
  * @props scrollDownIconColor: Color of scroll down icon (default: black)
@@ -52,6 +58,12 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
     handleChangeDescription,
     handleChangeNickname,
     handleChangePassword,
+    listBackgroundColor,
+    listCommentColor,
+    inputFontColor,
+    inputPlacehoderColor,
+    listNicknameColor,
+    listDateColor,
   } = props;
 
   //make progressbar in commentList scroll-y
@@ -94,22 +106,32 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         comment={comment}
         nickname={nickname}
         password={password}
+        inputFontColor={inputFontColor}
+        inputPlacehoderColor={inputPlacehoderColor}
       />
       {isOverflow && (
         <ProgressBar
-          isHiddenRateText={false}
-          rate={`${rate}%`}
+          isHiddenRateText={true}
+          rateText={`${rate}%`}
           height="3px"
           colorFrom={progressbarColor}
           colorTo={progressbarColor}
+          animationType="none"
         />
       )}
-      <ChildWrap ref={ref} onScroll={scrollHandler} theme={theme}>
+      <ChildWrap ref={ref} onScroll={scrollHandler} theme={theme} listCommentColor={listCommentColor}>
         {commentList
           ?.slice(0)
           .reverse()
           .map((elements, idx) => (
-            <CommentList key={idx} {...elements} theme={theme} />
+            <CommentList
+              key={idx}
+              {...elements}
+              theme={theme}
+              listBackgroundColor={listBackgroundColor}
+              listNicknameColor={listNicknameColor}
+              listDateColor={listDateColor}
+            />
           ))}
       </ChildWrap>
     </Wrap>
@@ -175,6 +197,7 @@ const Wrap = styled.div<VisitorCommentStyledPropsType>`
 `;
 
 const ChildWrap = styled.div<VisitorCommentStyledPropsType>`
+  color: ${({ listCommentColor }) => listCommentColor ?? 'black'};
   margin-top: 3px;
   height: ${({ theme }) => (theme === 'vertical' ? '580px' : '400px')};
   overflow-y: scroll;

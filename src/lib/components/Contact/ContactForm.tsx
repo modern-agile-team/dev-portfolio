@@ -1,16 +1,34 @@
 import styled from 'styled-components';
-import { ContactOptionType } from '../../common/types/ComponentTypes/Contact/ContactType';
+import { ContactPropsType } from '../../common/types/ComponentTypes/Contact/ContactType';
 import Channels from '../Channels/Channels';
 
-const ContactForm = ({ title, subTitle, buttonText, channels, email }: ContactOptionType) => {
+const ContactForm = ({
+  title,
+  titleColor,
+  subTitle,
+  subTitleColor,
+  buttonText,
+  buttonTextColor,
+  buttonColor,
+  buttonBorderColor,
+  channels,
+  email,
+}: ContactPropsType) => {
   return (
     <Container>
       <Channels channels={channels} />
       <TitleContainer>
-        <Title>{title}</Title>
-        <span>{subTitle}</span>
+        <Title titleColor={titleColor}>{title}</Title>
+        <SubTitle subTitleColor={subTitleColor}>{subTitle}</SubTitle>
       </TitleContainer>
-      <SendEmailButton href={`mailto:${email}`}>{buttonText?.length ? buttonText : email}</SendEmailButton>
+      <SendEmailButton
+        href={`mailto:${email}`}
+        buttonTextColor={buttonTextColor}
+        buttonColor={buttonColor}
+        buttonBorderColor={buttonBorderColor}
+      >
+        {buttonText?.length ? buttonText : email}
+      </SendEmailButton>
     </Container>
   );
 };
@@ -34,18 +52,25 @@ const TitleContainer = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.div`
+const Title = styled.div<ContactPropsType>`
   font-weight: bold;
   font-size: 18px;
+  color: ${({ titleColor }) => titleColor};
 `;
 
-const SendEmailButton = styled.a`
-  color: black;
+const SubTitle = styled.span<ContactPropsType>`
+  color: ${({ subTitleColor }) => subTitleColor};
+`;
+
+const SendEmailButton = styled.a<ContactPropsType>`
+  color: ${({ buttonTextColor }) => buttonTextColor};
+  background-color: ${({ buttonColor }) => buttonColor};
+
   padding: 10px 10px;
   text-decoration: none;
   text-align: center;
   border-radius: 4px;
-  border: 0.5px solid #00000033;
+  border: 0.5px solid ${({ buttonBorderColor }) => buttonBorderColor};
   cursor: pointer;
   &:hover {
     transform: scale(1.02);

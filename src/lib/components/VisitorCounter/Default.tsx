@@ -1,19 +1,22 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  VisitorCounterPropsType,
-  VisitorCounterStylePropsType,
-} from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterPropsType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 const Default = (props: VisitorCounterPropsType) => {
-  const { title, todayVisitor, totalVisitor, backgroundColor, size } = props;
+  const { title, todayVisitor, todayVisitorColor, totalVisitor, totalVisitorColor, backgroundColor, size, titleColor } =
+    props;
 
   return (
     <Wrap size={size}>
-      <Counter backgroundColor={backgroundColor}>
+      <Counter backgroundColor={backgroundColor} titleColor={titleColor}>
         <span className="title">{title}</span>
-        <span className="today">{todayVisitor}</span>
-        <span className="total">{totalVisitor}</span>
+        <div className="count">
+          <span className="today" style={{ color: `${todayVisitorColor}` }}>
+            {todayVisitor}
+          </span>
+          <span className="total" style={{ color: `${totalVisitorColor}` }}>
+            {totalVisitor}
+          </span>
+        </div>
       </Counter>
     </Wrap>
   );
@@ -21,25 +24,32 @@ const Default = (props: VisitorCounterPropsType) => {
 
 export default Default;
 
-const Wrap = styled.div<VisitorCounterStylePropsType>`
+const Wrap = styled.div<VisitorCounterPropsType>`
   display: flex;
   align-items: center;
   font-size: ${({ size }) => size ?? '14px'};
-  span {
-    padding: 5px 10px;
-  }
 `;
 
-const Counter = styled.div<VisitorCounterStylePropsType>`
-  padding: 5px 0px;
-  border: 1px solid #989898;
+const Counter = styled.div<VisitorCounterPropsType>`
   border-radius: 5px;
-  overflow: hidden;
+  background-color: white;
+  display: flex;
   .title {
     background-color: ${({ backgroundColor }) => backgroundColor ?? '#91c230c4'};
+    color: ${({ titleColor }) => titleColor ?? 'black'};
+    border: 1px solid #989898;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5px 10px;
+  }
+  .count {
+    border: 1px solid #989898;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 10px;
   }
   .today {
-    border-left: 1px solid #989898;
     padding-right: 0px;
     :after {
       content: '/';

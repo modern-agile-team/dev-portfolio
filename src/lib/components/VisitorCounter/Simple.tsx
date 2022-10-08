@@ -1,15 +1,27 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  VisitorCounterPropsType,
-  VisitorCounterStylePropsType,
-} from '../../common/types/ComponentTypes/VisitorCounterType';
+import { VisitorCounterPropsType } from '../../common/types/ComponentTypes/VisitorCounterType';
 
 export const Simple = (props: VisitorCounterPropsType) => {
-  const { todayTitle, todayVisitor, totalTitle, totalVisitor, size, todayBoldColor, totalBoldColor } = props;
+  const {
+    todayTitle,
+    todayVisitor,
+    totalTitle,
+    totalVisitor,
+    size,
+    todayVisitorColor,
+    totalVisitorColor,
+    todayTitleColor,
+    totalTitleColor,
+  } = props;
 
   return (
-    <Wrap size={size} todayBoldColor={todayBoldColor} totalBoldColor={totalBoldColor}>
+    <Wrap
+      size={size}
+      todayVisitorColor={todayVisitorColor}
+      totalVisitorColor={totalVisitorColor}
+      todayTitleColor={todayTitleColor}
+      totalTitleColor={totalTitleColor}
+    >
       <span className="today">{todayTitle}</span>
       <span className="today-visitor">{todayVisitor}</span>
       <span className="total">{totalTitle}</span>
@@ -18,14 +30,17 @@ export const Simple = (props: VisitorCounterPropsType) => {
   );
 };
 
-const Wrap = styled.div<VisitorCounterStylePropsType>`
+const Wrap = styled.div<VisitorCounterPropsType>`
   font-size: ${({ size }) => size ?? '14px'};
   span {
     padding: 3px;
   }
+  .today {
+    color: ${({ todayTitleColor }) => todayTitleColor ?? 'black'};
+  }
   .today-visitor {
     font-weight: bold;
-    color: ${({ todayBoldColor }) => todayBoldColor ?? 'red'};
+    color: ${({ todayVisitorColor }) => todayVisitorColor ?? 'red'};
     ::after {
       content: '|';
       margin-left: 8px;
@@ -33,8 +48,11 @@ const Wrap = styled.div<VisitorCounterStylePropsType>`
       color: black;
     }
   }
+  .total {
+    color: ${({ totalTitleColor }) => totalTitleColor ?? 'black'};
+  }
   .total-visitor {
     font-weight: bold;
-    color: ${({ totalBoldColor }) => totalBoldColor ?? 'black'};
+    color: ${({ totalVisitorColor }) => totalVisitorColor ?? 'black'};
   }
 `;

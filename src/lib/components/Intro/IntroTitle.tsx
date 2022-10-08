@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { IntroTitlePropsType } from '../../common/types/ComponentTypes/IntroType';
+import { IntroPropsType } from '../../common/types/ComponentTypes/IntroType';
 
-const IntroTitle = ({ title, shortIntro }: IntroTitlePropsType) => {
+const IntroTitle = ({ title, titleColor, shortIntro, shortIntroColor }: IntroPropsType) => {
   return (
     <Wrap>
-      <Title>{title}</Title>
-      <ShortIntro>{shortIntro}</ShortIntro>
+      <Title titleColor={titleColor}>{title}</Title>
+      <ShortIntro shortIntroColor={shortIntroColor}>{shortIntro}</ShortIntro>
     </Wrap>
   );
 };
@@ -18,16 +18,18 @@ const Wrap = styled.div`
   width: 100%;
 `;
 
-const Title = styled.div`
+const Title = styled.div<IntroPropsType>`
   padding: 0px 5px;
   font-size: 35px;
   font-weight: 800;
+  color: ${({ titleColor }) => titleColor};
 `;
 
-const ShortIntro = styled.div`
+const ShortIntro = styled.div<IntroPropsType>`
   padding: 10px 5px 20px 5px;
   font-size: 17.5px;
   font-weight: bold;
+  color: ${({ shortIntroColor }) => shortIntroColor};
   animation: slide 2s;
   @keyframes slide {
     from {
