@@ -43,7 +43,7 @@ const Experience = (props: ExperiencePropsType) => {
       <div className="title">{title}</div>
       <hr />
       <ChildWrap theme={theme}>
-        {historyList?.map((elements, idx) => (
+        {historyList?.map((elements) => (
           <History
             key={uuidv4()}
             {...elements}

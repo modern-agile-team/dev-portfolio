@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ChannelsPropsType, ChannelType, ChannelStyledType } from '../../common/types/ComponentTypes/ChannelType';
+import { ChannelsPropsType, ChannelType } from '../../common/types/ComponentTypes/ChannelType';
 import { uuidv4 } from '../../common/utils';
 import Channel from './Channel';
 
@@ -16,7 +16,7 @@ import Channel from './Channel';
 const Channels = ({ channels }: ChannelsPropsType) => {
   return (
     <Container>
-      {channels?.map(({ redirectUrl, name, color, size, margin }: ChannelType, idx: number) => (
+      {channels?.map(({ redirectUrl, name, color, size, margin }: ChannelType) => (
         <Channel key={uuidv4()} redirectUrl={redirectUrl} name={name} color={color} size={size} margin={margin} />
       ))}
     </Container>

@@ -24,7 +24,7 @@ const SideBar = ({
           {mainTitle}
         </MainTitle>
         <Line mainTitleBorderColor={mainTitleBorderColor} />
-        <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />
+        {sideBarItems && <SideBarItems setIsClickedSideBarIcon={setIsClickedSideBarIcon} sideBarItems={sideBarItems} />}
       </Container>
       <Background
         isClickedSideBarIcon={isClickedSideBarIcon}

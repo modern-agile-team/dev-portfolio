@@ -73,7 +73,7 @@ const Carousel = ({
       <Container len={itemLength} transition={transitionTime} showIndex={showIndex} slideToShow={slideToShow}>
         <div className="carousel-wrapper">
           <div className="carousel-container">
-            {itemList.map((child, index) => {
+            {itemList.map((child) => {
               return (
                 <ChildrenWrapper len={itemLength} slideToShow={slideToShow} key={uuidv4()}>
                   {child}

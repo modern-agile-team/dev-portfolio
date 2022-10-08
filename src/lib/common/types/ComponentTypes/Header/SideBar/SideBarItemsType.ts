@@ -1,5 +1,5 @@
 export interface SideBarItemsPropsType {
-  sideBarItems: any[];
+  sideBarItems: SideBarItemsElementType[];
   setIsClickedSideBarIcon: (isClickedSideBarIcon: boolean) => void;
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-const useInterval = (callback: Function, delay: number, deps?: any[]) => {
-  const autoPlayRef = useRef<any>(null);
+const useInterval = (callback: () => void, delay: number, deps?: unknown[]) => {
+  const autoPlayRef = useRef<NodeJS.Timeout>();
 
   function resetTimeout() {
     if (autoPlayRef.current) {
