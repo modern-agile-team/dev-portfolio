@@ -36,7 +36,7 @@ const TechStackInput = () => {
                   return (
                     <TechStackEachBoxContainer key={uuidv4()}>
                       <TechStackEachBox>
-                        <Icon icon={icon} fontSize={'50px'} />
+                        <Icon icon={icon} fontSize="50px" />
                         <TechStackName>{(icon as string).replace('logos:', '')}</TechStackName>
                       </TechStackEachBox>
                     </TechStackEachBoxContainer>
