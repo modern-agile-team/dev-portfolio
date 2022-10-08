@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.0...v2.1.1) (2022-10-08)
+
+
+### Bug Fixes
+
+* conflict resolve ([61733d2](https://github.com/modern-agile-team/dev-portfolio/commit/61733d2842a366aa44b36cb65845264a5524f9d0))
+
 # [2.1.0](https://github.com/modern-agile-team/dev-portfolio/compare/v2.0.0...v2.1.0) (2022-10-08)
 
 
