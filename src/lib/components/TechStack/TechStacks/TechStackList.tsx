@@ -12,7 +12,7 @@ import { uuidv4 } from '../../../common/utils';
 const TechStackList = ({ id, techStackList, gap }: TechStackListPropsType) => {
   return (
     <div id={id}>
-      {techStackList?.map(({ nameOption, progressBarOption }, idx) => (
+      {techStackList?.map(({ nameOption, progressBarOption }) => (
         <TechStack key={uuidv4()} nameOption={nameOption} progressBarOption={progressBarOption} gap={gap} />
       ))}
     </div>

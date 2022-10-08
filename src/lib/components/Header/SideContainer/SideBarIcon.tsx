@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
 import { Icon } from '@iconify/react';
 import {
   SideBarIconPropsType,

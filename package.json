@@ -35,7 +35,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "rm -rf dist && mkdir dist && tsc && husky install",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -86,7 +88,7 @@
     "@types/tapable": "^2.2.2",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.6",
     "commitizen": "^4.2.5",

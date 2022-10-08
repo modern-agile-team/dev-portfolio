@@ -70,7 +70,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
   //make progressbar in commentList scroll-y
   const [rate, setRate] = useState<number>(0);
   const [isOverflow, setIsOverflow] = useState<boolean>(false);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = ref.current;
@@ -124,7 +124,7 @@ const VisitorComment = (props: VisitorCommentPropsType) => {
         {commentList
           ?.slice(0)
           .reverse()
-          .map((elements, idx) => (
+          .map((elements) => (
             <CommentList
               key={uuidv4()}
               {...elements}

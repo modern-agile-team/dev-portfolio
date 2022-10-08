@@ -9,7 +9,7 @@ const useCarousel = ({
   autoplaySpeed = 3000,
   isAutoplay = false,
 }: useCarouselPropsType) => {
-  const [itemList, setItemList] = useState<any[]>([]);
+  const [itemList, setItemList] = useState<React.ReactNode[]>([]);
   const [coordinateX, setCoordinateX] = useState(0);
   const [autoPlayStatus, setAutoPlayStatus] = useState<boolean>(isAutoplay);
   const [transitionTime, setTransitionTime] = useState(0);
@@ -167,7 +167,7 @@ const setNextItem = ({
   slideToShow,
   showIndex,
 }: {
-  prevList: any[];
+  prevList: React.ReactNode[];
   childrenLength: number;
   slideToShow: number;
   showIndex: number;
@@ -203,7 +203,7 @@ const setPreviousItem = ({
   slideToShow,
   showIndex,
 }: {
-  prevList: any[];
+  prevList: React.ReactNode[];
   childrenLength: number;
   slideToShow: number;
   showIndex: number;

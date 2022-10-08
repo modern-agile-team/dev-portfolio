@@ -55,7 +55,7 @@ const Contact = ({
         buttonBorderColor={buttonBorderColor}
         channels={channels}
       />
-      <AboutMe aboutMeInfos={aboutMeInfos} />
+      {aboutMeInfos && <AboutMe aboutMeInfos={aboutMeInfos} />}
     </Container>
   );
 };
