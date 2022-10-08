@@ -313,7 +313,6 @@ const App = () => {
       margin="0px"
       padding="0px"
       titleColor="black"
-      iconColor="#F0DB4F"
       backgroundColor="white"
       borderColor="white"
       borderRadius="12px"
@@ -335,7 +334,6 @@ export default App;
 | ```margin``` | string | Skill margin style | `'0px'` | |
 | ```padding``` | string | Skill padding style | `'0px'` | |
 | ```titleColor``` | string | Title color style | `'black'` | |
-| ```iconColor``` | string | Icon color style | `'#F0DB4F'` | |
 | ```borderColor``` | string | Skill border color style | `'white'` | |
 | ```backgroundColor``` | string | Skill background color style | `'white'` | |
 | ```borderRadius``` | string | Skill border-radius style | `'12px'` | |
@@ -992,14 +990,16 @@ import { ProgressBar } from 'dev-portfolio';
 const App = () => {
   return (
     <ProgressBar
-      rate={"100%"}
-      isHiddenRateText={true}
-      colorFrom={"red"}
-      colorTo={"blue"}
-      width={"100%"}
-      height={"30px"}
-      animationType={"fill-up-wav"}
-      isBlinking={true}
+      rateText="100%"
+      rateTextColor="black"
+      isHiddenRateText={false}
+      backgroundColor="whitesmoke"
+      colorFrom="white"
+      colorTo="red"
+      width="100%"
+      height="40px"
+      animationType="wave" // "wave" | "fill-up" | "fill-up-wave" | "none"
+      isBlinking={false}
     />
   );
 }
@@ -1009,8 +1009,10 @@ export default App;
 
 | props | type | description | default | note |
 | - | - | - | - | - |
-| `rate` | string | How well you handle the skill (unit: %) | `'100%'` | |
+| `rateText` | string | How well you handle the skill (unit: %) | `'100%'` | |
+| `rateTextColor` | string | rateText color style | `'black'` | |
 | `isHiddenRateText` | boolean | Whether show rate in progressbar | `true` | |
+| `backgroundColor` | string | ProgressBar's background color style | `whitesmoke` | |
 | `colorFrom` | string | Start color of blinking animation of progressbar | `'white'` | |
 | `colorTo` | string | End color of blinking animation of progressbar | `'red'` | 
 | `width` | string | Progressbar css width | `'100%'` | |
