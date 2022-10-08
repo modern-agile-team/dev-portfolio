@@ -1,8 +1,3 @@
-const assign = require('object.assign');
-
-const baseStyleRules = require('eslint-config-airbnb-base/rules/style').rules;
-
-const dangleRules = baseStyleRules['no-underscore-dangle'];
 module.exports = {
   plugins: ['@typescript-eslint', 'react'],
   parserOptions: {
