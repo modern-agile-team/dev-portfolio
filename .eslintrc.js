@@ -9,6 +9,10 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    parser: 'babel-eslint',
+    sourceType: 'module',
+    allowImportExportEverywhere: true,
+    ecmaVersion: 2017,
   },
   env: {
     es6: true,
