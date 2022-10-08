@@ -29,4 +29,4 @@ export interface SideBarStyledPropsType extends ClickValidationType {
   backgroundColor?: string;
   mainTitleBorderColor?: string;
 }
-export type SideBarBackgroundStyledPropsType = ClickValidationType
+export type SideBarBackgroundStyledPropsType = ClickValidationType;

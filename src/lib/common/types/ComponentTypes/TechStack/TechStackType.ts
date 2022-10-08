@@ -30,4 +30,4 @@ export interface TechStackPropsType extends TechStackPropsGapType {
   progressBarOption: ProgressBarPropsType;
 }
 
-export type TechStackStyledPropsType = TechStackPropsGapType
+export type TechStackStyledPropsType = TechStackPropsGapType;
