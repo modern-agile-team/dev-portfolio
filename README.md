@@ -7,7 +7,7 @@
 
 dev-portfolio is React library that helps you develop your web portfolio easily and quickly.
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/189902674-bb3593a2-b388-42ab-98fa-6acb65f04588.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/194718430-5404fa1f-c24b-48a0-8730-15db2d3bde00.gif)
 
 ## List
 
@@ -1029,12 +1029,20 @@ type amimationType = "wave" | "fill-up" | "fill-up-wave" | "none"
 # Example
 
 1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> https://dev-portfolio-app.vercel.app/
-   <img width="1000" alt="스크린샷 2022-09-12 오후 8 53 37" src="https://user-images.githubusercontent.com/56839474/189646788-5c28a9f6-ab65-4471-83e7-04bf2cf8368f.png">
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/194718430-5404fa1f-c24b-48a0-8730-15db2d3bde00.gif)
 
 <br>
 
-2. <[seohyunsim](https://github.com/seohyunsim/seohyunsim-portfolio)> https://seohyunsim-portfolio.vercel.app/
-   <img width="1000" alt="스크린샷 2022-09-12 오후 8 52 52" src="https://user-images.githubusercontent.com/56839474/189646646-7faf4842-e881-42bc-bcb9-422975adac95.png">
+2. <[woorim960](https://github.com/woorim960/woorim-personal-website)> 
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/56839474/194719475-1cc2469e-7b7b-4ef0-8f87-236fa3aefbe1.gif)
+
+<br>
+
+3. <[seohyunsim](https://github.com/seohyunsim/seohyunsim-portfolio)> https://seohyunsim-portfolio.vercel.app/
+
+<img width="1000" alt="스크린샷 2022-09-12 오후 8 52 52" src="https://user-images.githubusercontent.com/56839474/189646646-7faf4842-e881-42bc-bcb9-422975adac95.png">
 
 ## Guidelines to input icons
 Enter the name of the icon you searched on the following <a href='https://icon-sets.iconify.design/'>site.</a>
