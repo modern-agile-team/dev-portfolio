@@ -1,5 +1,6 @@
 import TechStack from './TechStack';
 import { TechStackListPropsType } from '../../../common/types/ComponentTypes/TechStack/TechStackListType';
+import { uuidv4 } from '../../../common/utils';
 
 /**
  * You can freely show off the skills or abilities by using TechStackList component.
@@ -12,7 +13,7 @@ const TechStackList = ({ id, techStackList, gap }: TechStackListPropsType) => {
   return (
     <div id={id}>
       {techStackList?.map(({ nameOption, progressBarOption }, idx) => (
-        <TechStack key={idx} nameOption={nameOption} progressBarOption={progressBarOption} gap={gap} />
+        <TechStack key={uuidv4()} nameOption={nameOption} progressBarOption={progressBarOption} gap={gap} />
       ))}
     </div>
   );
