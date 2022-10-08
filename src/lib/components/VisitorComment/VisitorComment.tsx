@@ -7,8 +7,8 @@ import {
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 import { HiChevronDoubleDown } from 'react-icons/hi';
-import { ProgressBar } from '../ProgressBar';
 import { uuidv4 } from '../../common/utils';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 /**
  *

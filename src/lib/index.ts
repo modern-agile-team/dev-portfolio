@@ -16,3 +16,4 @@ export { default as VisitorCounter } from './components/VisitorCounter/VisitorCo
 export { default as VisitorComment } from './components/VisitorComment/VisitorComment';
 export { default as Skill } from './components/Skill/Skill';
 export { default as Channel } from './components/Channels/Channel';
+export { default as ProgressBar } from './components/ProgressBar/ProgressBar';

@@ -4,7 +4,7 @@ import {
   TechStackPropsType,
   TechStackStyledPropsType,
 } from '../../../common/types/ComponentTypes/TechStack/TechStackType';
-import { ProgressBar } from '../../ProgressBar';
+import ProgressBar from '../../ProgressBar/ProgressBar';
 
 const TechStack = ({ nameOption, progressBarOption, gap }: TechStackPropsType) => {
   return (
