@@ -110,7 +110,7 @@ export default App;
 
 ### More about Header's props
 
-- logoOption example
+#### logoOption example
 
 <img width="180" alt="image" src="https://user-images.githubusercontent.com/83394348/193384391-ff363c34-9a28-40b1-b462-9d16a624799b.png">
 
@@ -129,13 +129,13 @@ const logoOption = {
 };
 ```
 
-- channels example
+#### channels example
 
 <img width="140" alt="스크린샷 2022-10-01 오후 1 55 33" src="https://user-images.githubusercontent.com/56839474/193393251-a182a876-956d-4ccf-a18d-b0f4a713ad3e.png">
 
 For an example of channels, see: <a href="#more-about-channels-props">channels example</a>
 
-- sideBarOption example
+#### sideBarOption example
 
 <img width="45" alt="image" src="https://user-images.githubusercontent.com/83394348/193385692-028f193d-a82a-4a19-87cf-74bebfdd3cd7.png">
 <img height="200px" alt="image" src="https://user-images.githubusercontent.com/83394348/193385720-7c68dc98-3264-4ea9-ba5c-1b0876347a91.png"
@@ -221,7 +221,7 @@ export default App;
 | ```channels``` | <a href="https://github.com/modern-agile-team/dev-portfolio/blob/8b8f85015e356e649deee3e988cc3e33036a3b33/app/src/lib/common/types/ComponentTypes/ChannelType.ts#:~:text=export%20interface-,ChannelType,-extends%20ChannelStyledType%20%7B">ChannelType[]</a> | Channel-only props such as Github and LinkedIn, etc | See "More about Channels's Props" | |
 
 ### More about Channels Props
-- channels example
+#### channels example
 ```js
 const channels = [
     {
@@ -369,7 +369,7 @@ export default App;
 
 ### More about TechStackList's props
 
-- techStackList example
+#### techStackList example
 
 ```js
 const techStackList = [
@@ -421,7 +421,7 @@ const techStackList = [
 ];
 ```
 
-- gap example
+#### gap example
 
  <img width="100%" alt="스크린샷 2022-08-20 오후 12 22 27" src="https://user-images.githubusercontent.com/56839474/185727226-b401ce50-50fb-4572-b78e-692ff6cf63ef.png">
 
@@ -477,7 +477,7 @@ export default App;
 
 ### More about Experience's props
 
-- historyList example
+#### historyList example
 
 ```js
 const historyList = [
@@ -772,7 +772,7 @@ export default App;
 
 ### More about Contact's props
 
-- channels example
+#### channels example
 
  <img width="200" alt="channels" src="https://user-images.githubusercontent.com/83394348/193384430-55a671a8-0a97-45b5-8590-f12de4526057.png">
 
@@ -785,7 +785,7 @@ const channels = [
 ];
 ```
 
-- aboutMeInfos example
+#### aboutMeInfos example
 
  <img width="200" alt="aboutMeInfos" src="https://user-images.githubusercontent.com/83394348/193386818-ea657a2c-0544-4eca-9225-688ce0a58958.png">
 
@@ -851,14 +851,14 @@ export default App;
 
 ### More about VisitorCounter's props
 
-- theme example
+#### theme example
 
 ```js
 // 'default' | 'big-size' | 'simple'
 const theme = 'default';
 ```
 
-- VisitorCounter example
+#### VisitorCounter example
 
 ```js
 const visitorCounter = {
@@ -895,11 +895,13 @@ const App = () => {
       progressbarColor="#5f5f5f"
       isShowScrollDownIcon={true}
       scrollDownIconColor='black'
-      commentInputPlacehoder={commentInputPlacehoder}
-      comment='this portfolio is very nice' // Your fetched variable
-      nickname='dev-portfolio' // Your fetched variable
-      password='1234' // Your fetched variable
+      descriptionPlaceholder='write your description...'
+      nicknamePlaceholder='ID'
+      passwordPlaceholder='PW'
       commentList={commentList} // Your fetched variable
+      comment='this portfolio is very nice' // Data you entered in comment-input
+      nickname='dev-portfolio' // Data you entered in comment-input
+      password='1234' // Data you entered in comment-input
       handleCreateComment={handleCreateComment} // Event handling variable
       handleChangeDescription={handleChangeDescription} // Event handling variable
       handleChangeNickname={handleChangeNickname} // Event handling variable
@@ -928,11 +930,13 @@ export default App;
 | `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | `'#5f5f5f'` | |
 | `isShowScrollDownIcon` | boolean | Whether to display icons that are generated when a scroll event occurs | `true` | |
 | `scrollDownIconColor` | string | Color in ScrollDown Icon | `'black'` | Only works when isShowScrollDownIcon is true |
-| `comment` | string | the text of visitor comment | `'this portfolio is very nice'` | fetched variable |
-| `nickname` | string | the nickname of visitor comment | `'dev-portfolio'`| fetched variable |
-| `password` | string | the password of visitor comment | `'1234'` | fetched variable |
-| `commentInputPlacehoder` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
-| `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list| See "More about VisitorComment's Props" | fetched variable |
+| `descriptionPlaceholder` | string | Placeholder of description area | `'write your description...'` | |
+| `nicknamePlaceholder` | string | Placeholder of nickname area | `'ID'` | |
+| `passwordPlaceholder` | string | Placeholder of password area | `'PW'` | |
+| `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | List of Comment such as description, nickname, date | See "More about VisitorComment's Props" | fetched variable |
+| `comment` | string | Please put the data you entered in the comment-input into this props. This will sends an http request to the server and be stored in the DB | `'this portfolio is very nice'` | Data you entered in comment-input |
+| `nickname` | string | Please put the data you entered in the nickname-input into this props. This will sends an http request to the server and be stored in the DB | `'dev-portfolio'`| Data you entered in nickname-input |
+| `password` | string | Please put the data you entered in the password-input into this props. This will sends an http request to the server and be stored in the DB | `'1234'` | Data you entered in password-input |
 | `handleCreateComment` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
 | `handleChangeDescription` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
 | `handleChangeNickname` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
@@ -940,14 +944,11 @@ export default App;
 
 ### More about VisitorComment's props
 
-- VisitorComment example
-
+#### commentList example  
+List of Comment such as description, nickname, date.  
+This props is fetched datas from the backend.
 ```js
-const visitorComment = {
-  theme: 'basic',
-  progressbarColor: '#5f5f5f',
-  isShowScrollDownIcon: true,
-  commentList: [
+const commentList: [
     {
       description: `The scroll customization method is the same as the teckstack component progress bar, so please use it!`,
       nickname: 'woorim960',
@@ -1021,20 +1022,20 @@ export default App;
 | `isBlinking` | boolean | Progressbar blinking state | `false` | | 
 
 ### More about ProgressBar's props
-- animationType 
+#### animationType 
 ```ts
 type amimationType = "wave" | "fill-up" | "fill-up-wave" | "none"
 ```
 
 # Example
 
-1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> https://dev-portfolio-app.vercel.app/
+1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> http://52.78.64.144/
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/194718430-5404fa1f-c24b-48a0-8730-15db2d3bde00.gif)
 
 <br>
 
-2. <[woorim960](https://github.com/woorim960/woorim-personal-website)> 
+2. <[woorim960](https://github.com/woorim960/woorim-personal-website)> http://152.70.89.184/
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/56839474/194719475-1cc2469e-7b7b-4ef0-8f87-236fa3aefbe1.gif)
 

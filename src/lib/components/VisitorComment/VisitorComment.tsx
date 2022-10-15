@@ -13,14 +13,10 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 /**
  *
  * @props id: Name to be added to Sidebar
- * @props commentList: List of Comment
- * @commentList description: Description of your comment
- * @commentList nickname: Nickname to display
- * @commentList date: Day when comment written
+ * @props commentList: List of Comment such as description, nickname, date
  * @props theme: Theme of Visitor Comment Component (default: basic) "basic" | "box" | "vertical"
  * @props backgroundColor: Background color of area that out of comment list component (default: whitesmoke)
  * @props buttonColor: Text color of Send Button (default: #1877f2)
- * @props commentInputPlacehoder: Placeholder of inputs description, nickname and password
  * @props inputBackgroundColor: Background color of input area (default: white)
  * @props inputFontColor: Font Color in input box when create comment, user infomation (default: black)
  * @props inputPlacehoderColor: Placehoder font Color in input comment, user infomation boxes (default: black)
@@ -32,9 +28,15 @@ import ProgressBar from '../ProgressBar/ProgressBar';
  * @props progressbarColor: Color of progressbar appearing when if comment list overflowed comment area (default: #5f5f5f)
  * @props isShowScrollDownIcon: Flag wheter show scroll down icon (default: true)
  * @props scrollDownIconColor: Color of scroll down icon (default: black)
- * @commentInputPlacehoder desPlaceholder: Placeholder of description area (default: 'write your description...')
- * @commentInputPlacehoder nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
- * @commentInputPlacehoder passwordPlaceholder: Placeholder of password area (default: 'PW')
+ * @props descriptionPlaceholder: Placeholder of description area (default: 'write your description...')
+ * @props nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
+ * @props passwordPlaceholder: Placeholder of password area (default: 'PW')
+ * @props comment: Please put the data you entered in the comment-input into this props. This will sends an http request to the server and be stored in the DB
+ * @props nickname: Please put the data you entered in the nickname-input into this props. This will sends an http request to the server and be stored in the DB
+ * @props password: Please put the data you entered in the password-input into this props. This will sends an http request to the server and be stored in the DB
+ *
+ * @refer
+ * If you want to check the value of commentList please check the following link. {@link https://github.com/modern-agile-team/dev-portfolio#more-about-visitorcomments-props}
  */
 
 const VisitorComment = (props: VisitorCommentPropsType) => {
