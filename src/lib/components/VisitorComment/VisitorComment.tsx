@@ -31,6 +31,9 @@ import ProgressBar from '../ProgressBar/ProgressBar';
  * @props descriptionPlaceholder: Placeholder of description area (default: 'write your description...')
  * @props nicknamePlaceholder: Placeholder of nickname area (default: 'ID')
  * @props passwordPlaceholder: Placeholder of password area (default: 'PW')
+ * @props comment: Please put the data you entered in the comment-input into this props. This will sends an http request to the server and be stored in the DB
+ * @props nickname: Please put the data you entered in the nickname-input into this props. This will sends an http request to the server and be stored in the DB
+ * @props password: Please put the data you entered in the password-input into this props. This will sends an http request to the server and be stored in the DB
  *
  * @refer
  * If you want to check the value of commentList please check the following link. {@link https://github.com/modern-agile-team/dev-portfolio#more-about-visitorcomments-props}

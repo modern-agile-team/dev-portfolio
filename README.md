@@ -899,8 +899,11 @@ const App = () => {
       nicknamePlaceholder='ID'
       passwordPlaceholder='PW'
       commentList={commentList} // Your fetched variable
+      comment='this portfolio is very nice' // Data you entered in comment-input
+      nickname='dev-portfolio' // Data you entered in comment-input
+      password='1234' // Data you entered in comment-input
       handleCreateComment={handleCreateComment} // Event handling variable
-      handleChangeDescription={handleChangeDescription} // Event handling variable
+      handleChangeDescription={handleChangeDescription} // Event handlings variable
       handleChangeNickname={handleChangeNickname} // Event handling variable
       handleChangePassword={handleChangePassword} // Event handling variable
     />
@@ -931,6 +934,9 @@ export default App;
 | `nicknamePlaceholder` | string | Placeholder of nickname area | `'ID'` | |
 | `passwordPlaceholder` | string | Placeholder of password area | `'PW'` | |
 | `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | List of Comment such as description, nickname, date | See "More about VisitorComment's Props" | fetched variable |
+| `comment` | string | Please put the data you entered in the comment-input into this props. This will sends an http request to the server and be stored in the DB | `'this portfolio is very nice'` | Data you entered in comment-input |
+| `nickname` | string | Please put the data you entered in the nickname-input into this props. This will sends an http request to the server and be stored in the DB | `'dev-portfolio'`| Data you entered in nickname-input |
+| `password` | string | Please put the data you entered in the password-input into this props. This will sends an http request to the server and be stored in the DB | `'1234'` | Data you entered in password-input |
 | `handleCreateComment` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
 | `handleChangeDescription` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
 | `handleChangeNickname` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
