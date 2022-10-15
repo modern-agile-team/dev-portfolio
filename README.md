@@ -903,7 +903,7 @@ const App = () => {
       nickname='dev-portfolio' // Data you entered in comment-input
       password='1234' // Data you entered in comment-input
       handleCreateComment={handleCreateComment} // Event handling variable
-      handleChangeDescription={handleChangeDescription} // Event handlings variable
+      handleChangeDescription={handleChangeDescription} // Event handling variable
       handleChangeNickname={handleChangeNickname} // Event handling variable
       handleChangePassword={handleChangePassword} // Event handling variable
     />
