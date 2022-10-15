@@ -65,6 +65,8 @@ function App() {
         listCommentColor="white"
         inputFontColor="red"
         // inputPlacehoderColor="red"
+        descriptionPlaceholder="hi"
+        nicknamePlaceholder="dd"
       />
 
       <CardWrap id="['CardWrap','bi:card-list']">

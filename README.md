@@ -895,10 +895,9 @@ const App = () => {
       progressbarColor="#5f5f5f"
       isShowScrollDownIcon={true}
       scrollDownIconColor='black'
-      commentInputPlacehoder={commentInputPlacehoder}
-      comment='this portfolio is very nice' // Your fetched variable
-      nickname='dev-portfolio' // Your fetched variable
-      password='1234' // Your fetched variable
+      descriptionPlaceholder='write your description...'
+      nicknamePlaceholder='ID'
+      passwordPlaceholder='PW'
       commentList={commentList} // Your fetched variable
       handleCreateComment={handleCreateComment} // Event handling variable
       handleChangeDescription={handleChangeDescription} // Event handling variable
@@ -928,11 +927,10 @@ export default App;
 | `progressbarColor` | string | The color of the progress bar that is generated when a scroll event occurs | `'#5f5f5f'` | |
 | `isShowScrollDownIcon` | boolean | Whether to display icons that are generated when a scroll event occurs | `true` | |
 | `scrollDownIconColor` | string | Color in ScrollDown Icon | `'black'` | Only works when isShowScrollDownIcon is true |
-| `comment` | string | the text of visitor comment | `'this portfolio is very nice'` | fetched variable |
-| `nickname` | string | the nickname of visitor comment | `'dev-portfolio'`| fetched variable |
-| `password` | string | the password of visitor comment | `'1234'` | fetched variable |
-| `commentInputPlacehoder` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,CommentInputPlaceholderType,-%7B'>CommentInputPlaceholderType</a> | Placeholder in the input that you write in the visitor comment | See "More about VisitorComment's Props" | |
-| `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | Description, nickname, and date displayed in comment list| See "More about VisitorComment's Props" | fetched variable |
+| `descriptionPlaceholder` | string | Placeholder of description area | `'write your description...'` | |
+| `nicknamePlaceholder` | string | Placeholder of nickname area | `'ID'` | |
+| `passwordPlaceholder` | string | Placeholder of password area | `'PW'` | |
+| `commentList` | <a href='https://github.com/modern-agile-team/dev-portfolio/blob/master/src/lib/common/types/ComponentTypes/VisitorCommentType.ts#:~:text=export%20interface-,VisitorCommentListType,-%7B'>VisitorCommentListType</a> | List of Comment such as description, nickname, date | See "More about VisitorComment's Props" | fetched variable |
 | `handleCreateComment` | (e?: React.MouseEvent<HTMLButtonElement>) => void | Comments Props for event handling | | |
 | `handleChangeDescription` | (e?: React.ChangeEvent<HTMLElement>) => void | Description Props for event handling | | |
 | `handleChangeNickname` | (e?: React.ChangeEvent<HTMLElement>) => void | Nickname Props for event handling | | |
