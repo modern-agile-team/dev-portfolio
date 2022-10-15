@@ -1,3 +1,11 @@
+## [2.1.2](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.1...v2.1.2) (2022-10-15)
+
+
+### Bug Fixes
+
+* add comment input props in typedoc, README.md from VisitorComment ([3cc30dc](https://github.com/modern-agile-team/dev-portfolio/commit/3cc30dcbee17b170ae621d353814b51b3417d777))
+* modify typedoc, README.md in VisitorComment component ([e9eb643](https://github.com/modern-agile-team/dev-portfolio/commit/e9eb6431911e78fc1283d3445fb3203c6511f48e))
+
 ## [2.1.1](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.0...v2.1.1) (2022-10-08)
 
 
