@@ -30,7 +30,7 @@ const Description = ({
       <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
         <h3 style={{ color: `${titleColor}` }}>{title}</h3>
         <DescriptionWrapper ref={textRef} top={top} textRisingSpeed={textRisingSpeed}>
-          <text style={{ color: `${descriptionColor}` }}>{description}</text>
+          <pre style={{ color: `${descriptionColor}` }}>{`${description}`}</pre>
         </DescriptionWrapper>
       </HoverSection>
     </DescriptionContainer>
