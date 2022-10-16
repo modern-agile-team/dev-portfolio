@@ -119,8 +119,8 @@ const useCarousel = ({
     itemLength,
     transitionTime,
     listeners: {
-      onMouseDown,
-      onMouseUp,
+      // onMouseDown,
+      // onMouseUp,
       onTouchEnd,
       onTouchStart,
       showNext,
