@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.2...v2.1.3) (2022-10-16)
+
+
+### Bug Fixes
+
+* enable to line break in Item component ([#207](https://github.com/modern-agile-team/dev-portfolio/issues/207)) ([61712b8](https://github.com/modern-agile-team/dev-portfolio/commit/61712b8f70b26edb59b1a861da4b33a52db567ca))
+
 ## [2.1.2](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.1...v2.1.2) (2022-10-15)
 
 
