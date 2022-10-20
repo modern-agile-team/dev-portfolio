@@ -74,15 +74,15 @@ const useCarousel = ({
     setCoordinateX(0);
   };
 
-  const onMouseDown = (e: React.MouseEvent) => {
-    setCoordinateX(e.clientX);
-  };
+  // const onMouseDown = (e: React.MouseEvent) => {
+  //   setCoordinateX(e.clientX);
+  // };
 
-  const onMouseUp = (e: React.MouseEvent) => {
-    if (coordinateX - e.clientX > 100) showNext();
-    if (e.clientX - coordinateX > 100) showPrev();
-    setCoordinateX(0);
-  };
+  // const onMouseUp = (e: React.MouseEvent) => {
+  //   if (coordinateX - e.clientX > 100) showNext();
+  //   if (e.clientX - coordinateX > 100) showPrev();
+  //   setCoordinateX(0);
+  // };
 
   const playCarousel = () => {
     setAutoPlayStatus(true);
@@ -119,8 +119,8 @@ const useCarousel = ({
     itemLength,
     transitionTime,
     listeners: {
-      onMouseDown,
-      onMouseUp,
+      // onMouseDown,
+      // onMouseUp,
       onTouchEnd,
       onTouchStart,
       showNext,
