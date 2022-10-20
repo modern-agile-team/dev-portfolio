@@ -1,3 +1,11 @@
+## [2.1.4](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.3...v2.1.4) (2022-10-20)
+
+
+### Bug Fixes
+
+* fix build error ([2dd9a2f](https://github.com/modern-agile-team/dev-portfolio/commit/2dd9a2f3ca71ffd2cbc96f281bb798d78db47218))
+* specific components of Carousel cannot be redirected when clicked ([#210](https://github.com/modern-agile-team/dev-portfolio/issues/210)) ([5ab29a7](https://github.com/modern-agile-team/dev-portfolio/commit/5ab29a7ca03c030295e7657f06cf17172c56bb7c))
+
 ## [2.1.3](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.2...v2.1.3) (2022-10-16)
 
 
