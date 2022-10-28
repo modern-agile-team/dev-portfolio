@@ -16,7 +16,7 @@ import { uuidv4 } from '../../common/utils';
  * @props isArrowShow: flag for whether to show buttons (default: true)
  * @props prevArrowIcon: previous arrow button icon (default: <FiChevronLeft />)
  * @props nextArrowIcon: next arrow button icon (default: <FiChevronRight />)
- * @props arrowLocation: position of arrows (default: 'mid-side')
+ * @props arrowPosition: position of arrows (default: 'mid-side')
  * @props isAutoplay: flag for play carousel automatically (default: false)
  * @props isAutoplayControl: flag for whether to show carousel player (default: true)
  * @props startAutoplayIcon: start play carousel icon (default: <TbPlayerPlay />)
@@ -33,7 +33,7 @@ const Carousel = ({
   isArrowShow = true,
   isAutoplay = false,
   isAutoplayControl = true,
-  arrowLocation = 'mid-side',
+  arrowPosition = 'mid-side',
   playerLocation = 'bottom-mid',
   prevArrowIcon = <FiChevronLeft />,
   nextArrowIcon = <FiChevronRight />,
@@ -54,7 +54,7 @@ const Carousel = ({
   const sizedPauseAutoplayIcon = useMemo(() => cloneElement(pauseAutoplayIcon), [pauseAutoplayIcon]);
 
   return (
-    <Wrapper id={id} arrowLocation={arrowLocation} width={width} {...listeners}>
+    <Wrapper id={id} arrowLocation={arrowPosition} width={width} {...listeners}>
       {isArrowShow && (
         <div className="arrow-icon-wrapper" id="prev-button" onClick={showPrev}>
           {sizedPrevArrowIcon}
@@ -111,7 +111,7 @@ Carousel.defaultProps = {
   isArrowShow: true,
   isAutoplay: false,
   isAutoplayControl: true,
-  arrowLocation: 'mid-side',
+  arrowPosition: 'mid-side',
   prevArrowIcon: <FiChevronLeft />,
   nextArrowIcon: <FiChevronRight />,
   startAutoplayIcon: <TbPlayerPlay />,
