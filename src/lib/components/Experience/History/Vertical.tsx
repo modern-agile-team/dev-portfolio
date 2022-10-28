@@ -67,8 +67,8 @@ const Wrap = styled.div<ExperiencePropsType>`
       padding: 7px;
       border-bottom: 1px solid #b4b4b4a2;
     }
-    .des {
-      color: ${({ descriptionColor }) => descriptionColor ?? 'black'};
-    }
+  }
+  .des {
+    color: ${({ descriptionColor }) => descriptionColor ?? 'black'};
   }
 `;
