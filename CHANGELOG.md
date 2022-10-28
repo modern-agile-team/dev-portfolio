@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.4...v2.1.5) (2022-10-28)
+
+
+### Bug Fixes
+
+* fix Vertical style to change description color ([62692df](https://github.com/modern-agile-team/dev-portfolio/commit/62692df77a470829bf6bd90570d9ee8fc58ee70a))
+
 ## [2.1.4](https://github.com/modern-agile-team/dev-portfolio/compare/v2.1.3...v2.1.4) (2022-10-20)
 
 
