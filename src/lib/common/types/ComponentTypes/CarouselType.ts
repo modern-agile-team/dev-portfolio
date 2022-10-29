@@ -43,7 +43,7 @@ export interface CarouselPropsType {
   /**
    * position of arrows (default: 'mid-side')
    */
-  arrowPosition?: ArrowLocationType;
+  arrowLocation?: ArrowLocationType;
   /**
    * position of player (default: 'bottom-mid')
    */
