@@ -1,6 +1,5 @@
-import { lazy, Suspense, useRef, useState } from 'react';
-import styled from 'styled-components';
-import { useInterval } from '../../common/hooks';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { ItemPropsType, topType } from '../../common/types/ComponentTypes/ItemType';
 import { Spinner } from '../Loader';
 const LazyImage = lazy(() => import('../Lazy/Image'));
@@ -8,31 +7,33 @@ const LazyImage = lazy(() => import('../Lazy/Image'));
 const Description = ({
   title,
   description,
-  isTextRising,
   textRisingSpeed,
   titleColor,
   descriptionColor,
   hoverdInnerBorderColor,
-  itemRef,
-}: ItemPropsType & { itemRef: HTMLLIElement | null }) => {
+  isTextRising,
+}: ItemPropsType) => {
   const textRef = useRef<HTMLDivElement>(null);
-  const [top, setTop] = useState(0);
-  const TEXT_RISING_STEP = 5;
-  useInterval(() => {
-    if (!isTextRising || !textRef.current || !itemRef || textRef.current.scrollHeight < itemRef.scrollHeight / 2)
-      return;
-    if (top >= textRef.current.scrollHeight) {
-      setTop(-TEXT_RISING_STEP * 2);
-    } else {
-      setTop(top + TEXT_RISING_STEP);
-    }
-  }, textRisingSpeed || 300);
+  const [textHeight, setTextHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (!textRef.current) return;
+    setTextHeight(textRef.current.scrollHeight);
+  }, [textRef.current]);
+
   return (
     <DescriptionContainer className="hover">
       <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
         <h3 style={{ color: `${titleColor}` }}>{title}</h3>
-        <DescriptionWrapper ref={textRef} top={top} textRisingSpeed={textRisingSpeed}>
-          <pre style={{ color: `${descriptionColor}` }}>{`${description}`}</pre>
+        <DescriptionWrapper
+          ref={textRef}
+          top={textHeight}
+          textRisingSpeed={textRisingSpeed}
+          isTextRising={isTextRising}
+        >
+          {description?.split('\n').map((description) => (
+            <p style={{ color: descriptionColor }}>{description}</p>
+          ))}
         </DescriptionWrapper>
       </HoverSection>
     </DescriptionContainer>
@@ -48,7 +49,7 @@ const Description = ({
  * @props titleColor: title text color style (default: 'white')
  * @props descriptionColor: description text color style (default: 'white')
  * @props redirectURL: URL you want to redirect when clicked (default: '/')
- * @props textRisingSpeed: (default: 300)
+ * @props textRisingSpeed: (default: 1000 * 10) (unit: ms)
  * @props isTextRising: (default: false)
  * @props hoverdInnerBorderColor: Inner border color of item when hoverd (default: 'white')
  */
@@ -87,7 +88,6 @@ const Item = ({
           <LazyImage src={src || ''} alt={title} />
           {isHover && (
             <Description
-              itemRef={itemRef.current}
               title={title}
               description={description}
               titleColor={titleColor}
@@ -112,7 +112,7 @@ Item.defaultProps = {
   titleColor: 'white',
   descriptionColor: 'white',
   redirectURL: '/',
-  textRisingSpeed: 300,
+  textRisingSpeed: 1000 * 10,
   isTextRising: false,
   hoverdInnerBorderColor: 'white',
 };
@@ -170,7 +170,20 @@ const HoverSection = styled.section<ItemPropsType>`
     text-align: center;
     width: 90%;
     top: 0;
+    margin-top: 10px;
     overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
+
+const risingText = (height: number) => keyframes`
+  from {
+    top: 10px;
+  }
+  to {
+    top: -${height}px;
   }
 `;
 
@@ -178,16 +191,20 @@ const DescriptionWrapper = styled.div<ItemPropsType & topType>`
   position: absolute;
   top: 20%;
   width: 90%;
-  max-height: calc(70% - 20px);
+  max-height: 70%;
   overflow: hidden;
   text-align: center;
-  margin: 20px 0;
-  text {
+  p {
     margin: 0;
     position: relative;
     height: 100%;
     overflow-wrap: break-word;
-    top: -${(props) => props.top}px;
-    transition: ${(props) => (props.textRisingSpeed ?? 300 / 1000) * 4}s;
+    ${({ top, textRisingSpeed, isTextRising }) => {
+      const TRANSITION = textRisingSpeed || 3000 * 4;
+      if (top < 150 || !isTextRising) return;
+      return css`
+        animation: ${risingText(top)} ${TRANSITION}ms linear infinite backwards;
+      `;
+    }}
   }
 `;
