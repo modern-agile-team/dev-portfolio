@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react';
+import { lazy, Suspense, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useInterval } from '../../common/hooks';
 import { ItemPropsType, topType } from '../../common/types/ComponentTypes/ItemType';
+import { Spinner } from '../Loader';
+const LazyImage = lazy(() => import('../Lazy/Image'));
 
 const Description = ({
   title,
@@ -74,23 +76,30 @@ const Item = ({
   };
 
   return (
-    <StyledItem ref={itemRef} className="gallery-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <a href={redirectURL}>
-        <img src={src} alt={title} />
-        {isHover && (
-          <Description
-            itemRef={itemRef.current}
-            title={title}
-            description={description}
-            titleColor={titleColor}
-            descriptionColor={descriptionColor}
-            textRisingSpeed={textRisingSpeed}
-            hoverdInnerBorderColor={hoverdInnerBorderColor}
-            isTextRising={isTextRising}
-          />
-        )}
-      </a>
-    </StyledItem>
+    <Suspense fallback={<Spinner />}>
+      <StyledItem
+        ref={itemRef}
+        className="gallery-item"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <a href={redirectURL}>
+          <LazyImage src={src || ''} alt={title} />
+          {isHover && (
+            <Description
+              itemRef={itemRef.current}
+              title={title}
+              description={description}
+              titleColor={titleColor}
+              descriptionColor={descriptionColor}
+              textRisingSpeed={textRisingSpeed}
+              hoverdInnerBorderColor={hoverdInnerBorderColor}
+              isTextRising={isTextRising}
+            />
+          )}
+        </a>
+      </StyledItem>
+    </Suspense>
   );
 };
 

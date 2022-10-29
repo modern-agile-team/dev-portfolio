@@ -1,5 +1,8 @@
+import { lazy, Suspense } from 'react';
 import styled from 'styled-components';
 import { ImagePropsType } from '../../common/types/ComponentTypes/ImageType';
+import { Spinner } from '../Loader';
+const LazyImage = lazy(() => import('../Lazy/Image'));
 
 /**
  * Express the section you want to brag about using Image component.
@@ -30,27 +33,29 @@ const Image = ({
   zoomWhenHover,
 }: ImagePropsType) => {
   return (
-    <Wrap>
-      <Items
-        subheadSize={subheadSize}
-        subheadColor={subheadColor}
-        headSize={headSize}
-        headWeight={headWeight}
-        headColor={headColor}
-        noShowHead={noShowHead}
-        zoomWhenHover={zoomWhenHover}
-      >
-        <a href={redirectURL}>
-          <div className="imgWrap">
-            <img src={src} />
-          </div>
-          <div className="imgDes">
-            <p className="subhead">{subhead}</p>
-            <div className="head">{head}</div>
-          </div>
-        </a>
-      </Items>
-    </Wrap>
+    <Suspense fallback={<Spinner />}>
+      <Wrap>
+        <Items
+          subheadSize={subheadSize}
+          subheadColor={subheadColor}
+          headSize={headSize}
+          headWeight={headWeight}
+          headColor={headColor}
+          noShowHead={noShowHead}
+          zoomWhenHover={zoomWhenHover}
+        >
+          <a href={redirectURL}>
+            <div className="imgWrap">
+              <LazyImage src={src || ''} />
+            </div>
+            <div className="imgDes">
+              <p className="subhead">{subhead}</p>
+              <div className="head">{head}</div>
+            </div>
+          </a>
+        </Items>
+      </Wrap>
+    </Suspense>
   );
 };
 
