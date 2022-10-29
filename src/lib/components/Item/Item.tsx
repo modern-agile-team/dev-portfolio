@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ItemPropsType, topType } from '../../common/types/ComponentTypes/ItemType';
+import { Spinner } from '../Loader';
+const LazyImage = lazy(() => import('../Lazy/Image'));
 
 const Description = ({
   title,
@@ -9,6 +11,7 @@ const Description = ({
   titleColor,
   descriptionColor,
   hoverdInnerBorderColor,
+  isTextRising,
 }: ItemPropsType) => {
   const textRef = useRef<HTMLDivElement>(null);
   const [textHeight, setTextHeight] = useState<number>(0);
@@ -22,8 +25,15 @@ const Description = ({
     <DescriptionContainer className="hover">
       <HoverSection className="inner-hover" hoverdInnerBorderColor={hoverdInnerBorderColor}>
         <h3 style={{ color: `${titleColor}` }}>{title}</h3>
-        <DescriptionWrapper ref={textRef} top={textHeight} textRisingSpeed={textRisingSpeed}>
-          <text style={{ color: `${descriptionColor}` }}>{description}</text>
+        <DescriptionWrapper
+          ref={textRef}
+          top={textHeight}
+          textRisingSpeed={textRisingSpeed}
+          isTextRising={isTextRising}
+        >
+          {description?.split('\n').map((description) => (
+            <p style={{ color: descriptionColor }}>{description}</p>
+          ))}
         </DescriptionWrapper>
       </HoverSection>
     </DescriptionContainer>
@@ -67,22 +77,29 @@ const Item = ({
   };
 
   return (
-    <StyledItem ref={itemRef} className="gallery-item" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <a href={redirectURL}>
-        <img src={src} alt={title} />
-        {isHover && (
-          <Description
-            title={title}
-            description={description}
-            titleColor={titleColor}
-            descriptionColor={descriptionColor}
-            textRisingSpeed={textRisingSpeed}
-            hoverdInnerBorderColor={hoverdInnerBorderColor}
-            isTextRising={isTextRising}
-          />
-        )}
-      </a>
-    </StyledItem>
+    <Suspense fallback={<Spinner />}>
+      <StyledItem
+        ref={itemRef}
+        className="gallery-item"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <a href={redirectURL}>
+          <LazyImage src={src || ''} alt={title} />
+          {isHover && (
+            <Description
+              title={title}
+              description={description}
+              titleColor={titleColor}
+              descriptionColor={descriptionColor}
+              textRisingSpeed={textRisingSpeed}
+              hoverdInnerBorderColor={hoverdInnerBorderColor}
+              isTextRising={isTextRising}
+            />
+          )}
+        </a>
+      </StyledItem>
+    </Suspense>
   );
 };
 
@@ -177,13 +194,14 @@ const DescriptionWrapper = styled.div<ItemPropsType & topType>`
   max-height: 70%;
   overflow: hidden;
   text-align: center;
-  text {
+  p {
     margin: 0;
     position: relative;
     height: 100%;
     overflow-wrap: break-word;
-    ${({ top, textRisingSpeed }) => {
+    ${({ top, textRisingSpeed, isTextRising }) => {
       const TRANSITION = textRisingSpeed || 3000 * 4;
+      if (top < 150 || !isTextRising) return;
       return css`
         animation: ${risingText(top)} ${TRANSITION}ms linear infinite backwards;
       `;
