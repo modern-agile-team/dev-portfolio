@@ -39,7 +39,6 @@ function App() {
       </div>
       <Channel />
       <Channels />
-
       <VisitorCounter
         titleColor="green"
         backgroundColor="blue"
@@ -68,7 +67,6 @@ function App() {
         descriptionPlaceholder="hi"
         nicknamePlaceholder="dd"
       />
-
       <CardWrap id="['CardWrap','bi:card-list']">
         <Card width="20vw" height="20vw" hover="down" redirectURL="/1">
           This is Card component
@@ -80,7 +78,6 @@ function App() {
           See official documentation for details
         </Card>
       </CardWrap>
-
       <Intro
         id="['Intro', 'icon-park-outline:hi']"
         title="꿈을 꾸는 개발자"
@@ -93,7 +90,6 @@ function App() {
         textAlign="left"
         backgroundColor="#091c18"
       />
-
       <TechStackList
         id="['TechStackList', 'vscode-icons:file-type-reactjs']"
         techStackList={[
@@ -121,7 +117,6 @@ function App() {
         ]}
       />
       <TechStackInput />
-
       <Experience
         id="['Experience', 'ic:outline-work-history']"
         historyTitleColor="red"
@@ -129,7 +124,7 @@ function App() {
         dateColor="red"
         descriptionColor="red"
       />
-
+      a
       <Gallery id="['Gallery', 'clarity:image-gallery-line']" theme="mint-chocolate">
         <Item
           src="https://picsum.photos/500/300/?random"
@@ -174,7 +169,6 @@ function App() {
         <Image src="https://picsum.photos/500/600/?random" />
         <Image src="https://picsum.photos/500/600/?random" />
       </Masonry>
-
       <Carousel id="['Carousel', 'material-symbols:view-carousel-outline-rounded']" slideToShow={6}>
         <Card>0</Card>
         <Card>1</Card>
@@ -187,7 +181,6 @@ function App() {
         <Card>8</Card>
         <Card>9</Card>
       </Carousel>
-
       <Contact
         id="['Contact', 'fluent:contact-card-16-regular']"
         titleColor="red"
