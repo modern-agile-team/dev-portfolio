@@ -124,7 +124,7 @@ function App() {
         dateColor="red"
         descriptionColor="red"
       />
-
+      a
       <Gallery id="['Gallery', 'clarity:image-gallery-line']" theme="mint-chocolate">
         <Item
           src="https://picsum.photos/500/300/?random"
